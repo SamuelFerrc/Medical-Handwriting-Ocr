@@ -1,0 +1,15 @@
+datasets:
+  - name: RxHandBD
+    labels: data/raw/rxhandbd/labels.csv
+    image_root: data/raw/rxhandbd/images
+    image_col: image_path
+    text_col: text
+    writer_col:
+    document_col:
+  - name: PrescriptionBD
+    labels: data/raw/prescriptionbd/labels.csv
+    image_root: data/raw/prescriptionbd/images
+    image_col: image_path
+    text_col: text
+    writer_col:
+    document_col:

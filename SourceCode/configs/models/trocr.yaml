@@ -1,0 +1,14 @@
+model:
+  name: trocr
+  role: transformer_encoder_decoder
+  pretrained: true
+  checkpoint: microsoft/trocr-base-handwritten
+  input:
+    channels: 3
+    height: 384
+    width: 384
+  tokenizer: checkpoint_default
+  max_target_length: 128
+  decoding:
+    num_beams: 4
+  loss: cross_entropy

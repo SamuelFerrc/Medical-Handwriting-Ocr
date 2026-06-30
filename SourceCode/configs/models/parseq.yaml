@@ -1,0 +1,12 @@
+model:
+  name: parseq
+  role: transformer_text_recognition
+  pretrained: true
+  checkpoint: to_define
+  input:
+    channels: 3
+    height: 32
+    width: 128
+  max_label_length: 128
+  decoding: model_default
+  loss: cross_entropy

@@ -1,0 +1,13 @@
+model:
+  name: cnn
+  role: baseline
+  pretrained: false
+  input:
+    channels: 1
+    height: 64
+    max_width: 512
+  decoding: fixed_length_or_closed_vocab
+  loss: to_define
+  notes: >
+    CNN pura deve ser usada com cuidado para texto livre. Definir se a tarefa
+    sera vocabulario fechado, token/palavra ou sequencia de comprimento fixo.

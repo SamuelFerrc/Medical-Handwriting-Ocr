@@ -1,0 +1,56 @@
+project:
+  name: med-ocr-research
+  planning_root: ../ImagensMedicas
+
+paths:
+  data_root: data
+  raw_dir: data/raw
+  processed_dir: data/processed
+  splits_dir: data/splits
+  outputs_dir: outputs
+  predictions_dir: outputs/predictions
+  metrics_dir: outputs/metrics
+  runs_dir: outputs/runs
+
+reproducibility:
+  seed: 42
+
+text_normalization:
+  lowercase: true
+  strip_accents: false
+  remove_punctuation: false
+  normalize_whitespace: true
+  keep_numbers: true
+  keep_dose_symbols: true
+
+split:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  group_columns:
+    - writer_id
+    - document_id
+
+preprocessing:
+  mode: grayscale
+  target_height: 64
+  max_width: 512
+  padding_value: 255
+  preserve_aspect_ratio: true
+
+training:
+  optimizer: AdamW
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  batch_size: 16
+  max_epochs: 50
+  early_stopping_metric: val_cer
+  early_stopping_mode: min
+  patience: 8
+  checkpoint_metric: val_cer
+
+evaluation:
+  metrics:
+    - accuracy
+    - cer
+    - wer

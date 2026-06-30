@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"home","type":"file","file":"Welcome.md","x":0,"y":0,"width":360,"height":220},
+		{"id":"projeto","type":"file","file":"01-Projeto/Resumo-Executivo.md","x":460,"y":-260,"width":360,"height":220},
+		{"id":"dados","type":"file","file":"03-Datasets/Preparacao-dos-Dados.md","x":460,"y":0,"width":360,"height":220},
+		{"id":"metodologia","type":"file","file":"04-Metodologia/Desenho-Experimental.md","x":460,"y":260,"width":360,"height":220},
+		{"id":"modelos","type":"file","file":"06-Experimentos/Matriz-de-Experimentos.md","x":940,"y":0,"width":360,"height":220},
+		{"id":"metricas","type":"file","file":"07-Metricas/Acuracia-CER-WER.md","x":1420,"y":0,"width":360,"height":220},
+		{"id":"resultados","type":"file","file":"08-Resultados/Tabela-Comparativa.md","x":1900,"y":-120,"width":360,"height":220},
+		{"id":"artigo","type":"file","file":"09-Escrita/Estrutura-do-Artigo.md","x":1900,"y":140,"width":360,"height":220}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"home","fromSide":"right","toNode":"projeto","toSide":"left"},
+		{"id":"e2","fromNode":"home","fromSide":"right","toNode":"dados","toSide":"left"},
+		{"id":"e3","fromNode":"home","fromSide":"right","toNode":"metodologia","toSide":"left"},
+		{"id":"e4","fromNode":"dados","fromSide":"right","toNode":"modelos","toSide":"left"},
+		{"id":"e5","fromNode":"metodologia","fromSide":"right","toNode":"modelos","toSide":"left"},
+		{"id":"e6","fromNode":"modelos","fromSide":"right","toNode":"metricas","toSide":"left"},
+		{"id":"e7","fromNode":"metricas","fromSide":"right","toNode":"resultados","toSide":"left"},
+		{"id":"e8","fromNode":"metricas","fromSide":"right","toNode":"artigo","toSide":"left"}
+	]
+}

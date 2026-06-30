@@ -1,0 +1,30 @@
+[project]
+name = "med-ocr-research"
+version = "0.1.0"
+description = "Ambiente de desenvolvimento para pesquisa em OCR/HTR de prescricoes manuscritas medicas."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "Pillow>=10.0",
+  "PyYAML>=6.0",
+  "tqdm>=4.66"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0"
+]
+train = [
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "transformers>=4.40",
+  "timm>=1.0",
+  "accelerate>=0.30",
+  "albumentations>=1.4"
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

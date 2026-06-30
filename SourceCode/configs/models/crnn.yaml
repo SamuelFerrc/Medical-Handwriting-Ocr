@@ -1,0 +1,16 @@
+model:
+  name: crnn
+  role: sequential_baseline
+  pretrained: false
+  input:
+    channels: 1
+    height: 64
+    max_width: 512
+  cnn_backbone: small_cnn
+  rnn:
+    type: bilstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.1
+  decoding: ctc_greedy
+  loss: ctc
