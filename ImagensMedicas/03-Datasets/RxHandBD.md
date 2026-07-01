@@ -14,27 +14,27 @@ Dataset previsto para uso na pesquisa. Preencher os detalhes confirmados apos do
 
 ## Metadados a documentar
 
-| Campo | Valor |
-|---|---|
-| Fonte/link | A preencher |
-| Licenca/termos de uso | A preencher |
-| Numero de imagens | A preencher |
-| Granularidade | Imagem inteira / linha / palavra / outro |
-| Formato das imagens | A preencher |
-| Formato dos rotulos | A preencher |
-| Idioma predominante | A preencher |
-| Metadados de escritor/documento | A preencher |
-| Possui split oficial? | Sim / Nao / Parcial |
+| Campo                           | Valor                                                                                                                              |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Fonte/link                      | Mendeley Data - RxHandBD: A Handwritten Prescription Word Image Dataset: https://data.mendeley.com/datasets/dsb5r6vskg/3           |
+| Licenca/termos de uso           | CC BY 4.0; DOI: 10.17632/dsb5r6vskg.3                                                                                              |
+| Numero de imagens               | 5578                                                                                                                               |
+| Granularidade                   | Imagem com rotulo                                                                                                                  |
+| Formato das imagens             | .jpg                                                                                                                               |
+| Formato dos rotulos             | .csv                                                                                                                               |
+| Idioma predominante             | Inglês                                                                                                                             |
+| Metadados de escritor/documento | Islam, Md Masudul (2026), “RxHandBD: A Handwritten Prescription Word Image Dataset”, Mendeley Data, V3, doi: 10.17632/dsb5r6vskg.3 |
+| Possui split oficial?           | Não                                                                                                                                |
 
 ## Auditoria inicial
 
-- [ ] Verificar integridade dos arquivos.
-- [ ] Contar imagens e rotulos.
-- [ ] Identificar imagens sem transcricao.
-- [ ] Identificar transcricoes sem imagem.
-- [ ] Verificar duplicidades.
-- [ ] Observar resolucao media e variacao de tamanho.
-- [ ] Listar exemplos dificeis.
+- [x] Verificar integridade dos arquivos.
+- [x] Contar imagens e rotulos.
+- [x] Identificar imagens sem transcricao.
+- [x] Identificar transcricoes sem imagem.
+- [x] Verificar duplicidades.
+- [x] Observar resolucao media e variacao de tamanho.
+- [x] Listar exemplos dificeis.
 
 ## Observacoes
 

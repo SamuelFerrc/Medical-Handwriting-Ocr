@@ -10,20 +10,20 @@ tags:
 
 ## Experimentos principais
 
-| ID | Modelo | Dataset treino | Dataset teste | Objetivo | Status |
-|---|---|---|---|---|---|
-| E01 | CNN | RxHandBD | RxHandBD | Baseline in-domain | Pendente |
-| E02 | CNN | PrescriptionBD | PrescriptionBD | Baseline in-domain | Pendente |
-| E03 | CNN | Combinado | Combinado | Baseline combinado | Pendente |
-| E04 | CRNN | RxHandBD | RxHandBD | Sequencial in-domain | Pendente |
-| E05 | CRNN | PrescriptionBD | PrescriptionBD | Sequencial in-domain | Pendente |
-| E06 | CRNN | Combinado | Combinado | Sequencial combinado | Pendente |
-| E07 | TrOCR | RxHandBD | RxHandBD | Transformer in-domain | Pendente |
-| E08 | TrOCR | PrescriptionBD | PrescriptionBD | Transformer in-domain | Pendente |
-| E09 | TrOCR | Combinado | Combinado | Transformer combinado | Pendente |
-| E10 | PARSeq | RxHandBD | RxHandBD | Transformer in-domain | Pendente |
+| ID  | Modelo | Dataset treino | Dataset teste  | Objetivo              | Status   |
+| --- | ------ | -------------- | -------------- | --------------------- | -------- |
+| E01 | CNN    | RxHandBD       | RxHandBD       | Baseline in-domain    | Pendente |
+| E02 | CNN    | PrescriptionBD | PrescriptionBD | Baseline in-domain    | Pendente |
+| E03 | CNN    | Combinado      | Combinado      | Baseline combinado    | Pendente |
+| E04 | CRNN   | RxHandBD       | RxHandBD       | Sequencial in-domain  | Pendente |
+| E05 | CRNN   | PrescriptionBD | PrescriptionBD | Sequencial in-domain  | Pendente |
+| E06 | CRNN   | Combinado      | Combinado      | Sequencial combinado  | Pendente |
+| E07 | TrOCR  | RxHandBD       | RxHandBD       | Transformer in-domain | Pendente |
+| E08 | TrOCR  | PrescriptionBD | PrescriptionBD | Transformer in-domain | Pendente |
+| E09 | TrOCR  | Combinado      | Combinado      | Transformer combinado | Pendente |
+| E10 | PARSeq | RxHandBD       | RxHandBD       | Transformer in-domain | Pendente |
 | E11 | PARSeq | PrescriptionBD | PrescriptionBD | Transformer in-domain | Pendente |
-| E12 | PARSeq | Combinado | Combinado | Transformer combinado | Pendente |
+| E12 | PARSeq | Combinado      | Combinado      | Transformer combinado | Pendente |
 
 ## Experimentos opcionais
 

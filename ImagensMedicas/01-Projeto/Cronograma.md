@@ -24,8 +24,8 @@ tags:
 
 ## Marcos
 
-- [ ] M1: Pergunta de pesquisa validada.
-- [ ] M2: Datasets auditados.
+- [x] M1: Pergunta de pesquisa validada.
+- [x] M2: Datasets auditados.
 - [ ] M3: Pipeline de avaliacao funcionando.
 - [ ] M4: Todos os modelos treinados.
 - [ ] M5: Tabela comparativa concluida.
