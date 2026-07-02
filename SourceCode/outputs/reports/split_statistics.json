@@ -1,0 +1,426 @@
+{
+  "generated_at": "2026-06-30T22:11:08",
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "total_samples": 10258,
+  "split_methods": {
+    "PrescriptionBD": "split original preservado (train/val/test ja presente)",
+    "RxHandBD": "split 70/15/15 gerado por amostra, seed 757"
+  },
+  "samples_by_dataset": [
+    {
+      "dataset": "PrescriptionBD",
+      "samples": 4680
+    },
+    {
+      "dataset": "RxHandBD",
+      "samples": 5578
+    }
+  ],
+  "samples_by_split": [
+    {
+      "split": "test",
+      "samples": 1616
+    },
+    {
+      "split": "train",
+      "samples": 7025
+    },
+    {
+      "split": "val",
+      "samples": 1617
+    }
+  ],
+  "samples_by_dataset_split": [
+    {
+      "dataset": "PrescriptionBD",
+      "split": "test",
+      "samples": 780
+    },
+    {
+      "dataset": "PrescriptionBD",
+      "split": "train",
+      "samples": 3120
+    },
+    {
+      "dataset": "PrescriptionBD",
+      "split": "val",
+      "samples": 780
+    },
+    {
+      "dataset": "RxHandBD",
+      "split": "test",
+      "samples": 836
+    },
+    {
+      "dataset": "RxHandBD",
+      "split": "train",
+      "samples": 3905
+    },
+    {
+      "dataset": "RxHandBD",
+      "split": "val",
+      "samples": 837
+    }
+  ],
+  "scenario_datasets": [
+    {
+      "scenario": "RxHandBD",
+      "split": "all",
+      "samples": 5578,
+      "path": "data/splits/scenarios/rxhandbd/all.csv"
+    },
+    {
+      "scenario": "RxHandBD",
+      "split": "train",
+      "samples": 3905,
+      "path": "data/splits/scenarios/rxhandbd/train.csv"
+    },
+    {
+      "scenario": "RxHandBD",
+      "split": "val",
+      "samples": 837,
+      "path": "data/splits/scenarios/rxhandbd/val.csv"
+    },
+    {
+      "scenario": "RxHandBD",
+      "split": "test",
+      "samples": 836,
+      "path": "data/splits/scenarios/rxhandbd/test.csv"
+    },
+    {
+      "scenario": "PrescriptionBD",
+      "split": "all",
+      "samples": 4680,
+      "path": "data/splits/scenarios/prescriptionbd/all.csv"
+    },
+    {
+      "scenario": "PrescriptionBD",
+      "split": "train",
+      "samples": 3120,
+      "path": "data/splits/scenarios/prescriptionbd/train.csv"
+    },
+    {
+      "scenario": "PrescriptionBD",
+      "split": "val",
+      "samples": 780,
+      "path": "data/splits/scenarios/prescriptionbd/val.csv"
+    },
+    {
+      "scenario": "PrescriptionBD",
+      "split": "test",
+      "samples": 780,
+      "path": "data/splits/scenarios/prescriptionbd/test.csv"
+    },
+    {
+      "scenario": "Combinado",
+      "split": "all",
+      "samples": 10258,
+      "path": "data/splits/scenarios/combined/all.csv"
+    },
+    {
+      "scenario": "Combinado",
+      "split": "train",
+      "samples": 7025,
+      "path": "data/splits/scenarios/combined/train.csv"
+    },
+    {
+      "scenario": "Combinado",
+      "split": "val",
+      "samples": 1617,
+      "path": "data/splits/scenarios/combined/val.csv"
+    },
+    {
+      "scenario": "Combinado",
+      "split": "test",
+      "samples": 1616,
+      "path": "data/splits/scenarios/combined/test.csv"
+    }
+  ],
+  "experiment_datasets": [
+    {
+      "id": "E01",
+      "model": "cnn",
+      "scenario": "in_domain_rxhandbd",
+      "train_dataset": "RxHandBD",
+      "test_dataset": "RxHandBD",
+      "train_manifest": "data/splits/scenarios/rxhandbd/train.csv",
+      "val_manifest": "data/splits/scenarios/rxhandbd/val.csv",
+      "test_manifest": "data/splits/scenarios/rxhandbd/test.csv"
+    },
+    {
+      "id": "E02",
+      "model": "cnn",
+      "scenario": "in_domain_prescriptionbd",
+      "train_dataset": "PrescriptionBD",
+      "test_dataset": "PrescriptionBD",
+      "train_manifest": "data/splits/scenarios/prescriptionbd/train.csv",
+      "val_manifest": "data/splits/scenarios/prescriptionbd/val.csv",
+      "test_manifest": "data/splits/scenarios/prescriptionbd/test.csv"
+    },
+    {
+      "id": "E03",
+      "model": "cnn",
+      "scenario": "combined",
+      "train_dataset": "Combinado",
+      "test_dataset": "Combinado",
+      "train_manifest": "data/splits/scenarios/combined/train.csv",
+      "val_manifest": "data/splits/scenarios/combined/val.csv",
+      "test_manifest": "data/splits/scenarios/combined/test.csv"
+    },
+    {
+      "id": "E04",
+      "model": "crnn",
+      "scenario": "in_domain_rxhandbd",
+      "train_dataset": "RxHandBD",
+      "test_dataset": "RxHandBD",
+      "train_manifest": "data/splits/scenarios/rxhandbd/train.csv",
+      "val_manifest": "data/splits/scenarios/rxhandbd/val.csv",
+      "test_manifest": "data/splits/scenarios/rxhandbd/test.csv"
+    },
+    {
+      "id": "E05",
+      "model": "crnn",
+      "scenario": "in_domain_prescriptionbd",
+      "train_dataset": "PrescriptionBD",
+      "test_dataset": "PrescriptionBD",
+      "train_manifest": "data/splits/scenarios/prescriptionbd/train.csv",
+      "val_manifest": "data/splits/scenarios/prescriptionbd/val.csv",
+      "test_manifest": "data/splits/scenarios/prescriptionbd/test.csv"
+    },
+    {
+      "id": "E06",
+      "model": "crnn",
+      "scenario": "combined",
+      "train_dataset": "Combinado",
+      "test_dataset": "Combinado",
+      "train_manifest": "data/splits/scenarios/combined/train.csv",
+      "val_manifest": "data/splits/scenarios/combined/val.csv",
+      "test_manifest": "data/splits/scenarios/combined/test.csv"
+    },
+    {
+      "id": "E07",
+      "model": "trocr",
+      "scenario": "in_domain_rxhandbd",
+      "train_dataset": "RxHandBD",
+      "test_dataset": "RxHandBD",
+      "train_manifest": "data/splits/scenarios/rxhandbd/train.csv",
+      "val_manifest": "data/splits/scenarios/rxhandbd/val.csv",
+      "test_manifest": "data/splits/scenarios/rxhandbd/test.csv"
+    },
+    {
+      "id": "E08",
+      "model": "trocr",
+      "scenario": "in_domain_prescriptionbd",
+      "train_dataset": "PrescriptionBD",
+      "test_dataset": "PrescriptionBD",
+      "train_manifest": "data/splits/scenarios/prescriptionbd/train.csv",
+      "val_manifest": "data/splits/scenarios/prescriptionbd/val.csv",
+      "test_manifest": "data/splits/scenarios/prescriptionbd/test.csv"
+    },
+    {
+      "id": "E09",
+      "model": "trocr",
+      "scenario": "combined",
+      "train_dataset": "Combinado",
+      "test_dataset": "Combinado",
+      "train_manifest": "data/splits/scenarios/combined/train.csv",
+      "val_manifest": "data/splits/scenarios/combined/val.csv",
+      "test_manifest": "data/splits/scenarios/combined/test.csv"
+    },
+    {
+      "id": "E10",
+      "model": "parseq",
+      "scenario": "in_domain_rxhandbd",
+      "train_dataset": "RxHandBD",
+      "test_dataset": "RxHandBD",
+      "train_manifest": "data/splits/scenarios/rxhandbd/train.csv",
+      "val_manifest": "data/splits/scenarios/rxhandbd/val.csv",
+      "test_manifest": "data/splits/scenarios/rxhandbd/test.csv"
+    },
+    {
+      "id": "E11",
+      "model": "parseq",
+      "scenario": "in_domain_prescriptionbd",
+      "train_dataset": "PrescriptionBD",
+      "test_dataset": "PrescriptionBD",
+      "train_manifest": "data/splits/scenarios/prescriptionbd/train.csv",
+      "val_manifest": "data/splits/scenarios/prescriptionbd/val.csv",
+      "test_manifest": "data/splits/scenarios/prescriptionbd/test.csv"
+    },
+    {
+      "id": "E12",
+      "model": "parseq",
+      "scenario": "combined",
+      "train_dataset": "Combinado",
+      "test_dataset": "Combinado",
+      "train_manifest": "data/splits/scenarios/combined/train.csv",
+      "val_manifest": "data/splits/scenarios/combined/val.csv",
+      "test_manifest": "data/splits/scenarios/combined/test.csv"
+    }
+  ],
+  "text_lengths_by_dataset": [
+    {
+      "dataset": "PrescriptionBD",
+      "chars_mean": 6.33,
+      "chars_median": 6.0,
+      "chars_min": 2,
+      "chars_max": 11,
+      "words_mean": 1.01,
+      "words_median": 1.0,
+      "words_min": 1,
+      "words_max": 2
+    },
+    {
+      "dataset": "RxHandBD",
+      "chars_mean": 6.81,
+      "chars_median": 7.0,
+      "chars_min": 2,
+      "chars_max": 18,
+      "words_mean": 1.13,
+      "words_median": 1.0,
+      "words_min": 1,
+      "words_max": 4
+    }
+  ],
+  "processed_resolution_counts": [
+    {
+      "resolution": "512x512",
+      "samples": 10258
+    }
+  ],
+  "top_characters": [
+    {
+      "character": "a",
+      "count": 6879
+    },
+    {
+      "character": "e",
+      "count": 6305
+    },
+    {
+      "character": "o",
+      "count": 5713
+    },
+    {
+      "character": "i",
+      "count": 5657
+    },
+    {
+      "character": "n",
+      "count": 5375
+    },
+    {
+      "character": "l",
+      "count": 4614
+    },
+    {
+      "character": "t",
+      "count": 4512
+    },
+    {
+      "character": "r",
+      "count": 3610
+    },
+    {
+      "character": "c",
+      "count": 2973
+    },
+    {
+      "character": "x",
+      "count": 2637
+    },
+    {
+      "character": "m",
+      "count": 2594
+    },
+    {
+      "character": "d",
+      "count": 2029
+    },
+    {
+      "character": "s",
+      "count": 1990
+    },
+    {
+      "character": "f",
+      "count": 1880
+    },
+    {
+      "character": "p",
+      "count": 1807
+    },
+    {
+      "character": "u",
+      "count": 1492
+    },
+    {
+      "character": "b",
+      "count": 1454
+    },
+    {
+      "character": "z",
+      "count": 1111
+    },
+    {
+      "character": "v",
+      "count": 842
+    },
+    {
+      "character": "<space>",
+      "count": 783
+    },
+    {
+      "character": "k",
+      "count": 601
+    },
+    {
+      "character": "g",
+      "count": 572
+    },
+    {
+      "character": "h",
+      "count": 560
+    },
+    {
+      "character": "y",
+      "count": 503
+    },
+    {
+      "character": "-",
+      "count": 468
+    },
+    {
+      "character": "j",
+      "count": 120
+    },
+    {
+      "character": "0",
+      "count": 117
+    },
+    {
+      "character": ".",
+      "count": 102
+    },
+    {
+      "character": "w",
+      "count": 69
+    },
+    {
+      "character": "2",
+      "count": 65
+    }
+  ],
+  "quality": {
+    "duplicated_sample_id": 0,
+    "empty_text_raw": 0,
+    "empty_text_normalized": 0,
+    "missing_before_repair": 0,
+    "repaired": 0,
+    "missing_after_repair": 0
+  }
+}

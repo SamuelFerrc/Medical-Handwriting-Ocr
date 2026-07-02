@@ -7,11 +7,6 @@ __pycache__/
 .coverage
 htmlcov/
 
-data/raw/**
-data/processed/**
-data/splits/**
-outputs/**
-
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/splits/.gitkeep

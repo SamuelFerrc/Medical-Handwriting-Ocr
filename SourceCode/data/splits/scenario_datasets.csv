@@ -1,0 +1,13 @@
+scenario,split,samples,path
+RxHandBD,all,5578,data/splits/scenarios/rxhandbd/all.csv
+RxHandBD,train,3905,data/splits/scenarios/rxhandbd/train.csv
+RxHandBD,val,837,data/splits/scenarios/rxhandbd/val.csv
+RxHandBD,test,836,data/splits/scenarios/rxhandbd/test.csv
+PrescriptionBD,all,4680,data/splits/scenarios/prescriptionbd/all.csv
+PrescriptionBD,train,3120,data/splits/scenarios/prescriptionbd/train.csv
+PrescriptionBD,val,780,data/splits/scenarios/prescriptionbd/val.csv
+PrescriptionBD,test,780,data/splits/scenarios/prescriptionbd/test.csv
+Combinado,all,10258,data/splits/scenarios/combined/all.csv
+Combinado,train,7025,data/splits/scenarios/combined/train.csv
+Combinado,val,1617,data/splits/scenarios/combined/val.csv
+Combinado,test,1616,data/splits/scenarios/combined/test.csv

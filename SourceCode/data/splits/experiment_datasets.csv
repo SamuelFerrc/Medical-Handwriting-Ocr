@@ -1,0 +1,13 @@
+id,model,scenario,train_dataset,test_dataset,train_manifest,val_manifest,test_manifest
+E01,cnn,in_domain_rxhandbd,RxHandBD,RxHandBD,data/splits/scenarios/rxhandbd/train.csv,data/splits/scenarios/rxhandbd/val.csv,data/splits/scenarios/rxhandbd/test.csv
+E02,cnn,in_domain_prescriptionbd,PrescriptionBD,PrescriptionBD,data/splits/scenarios/prescriptionbd/train.csv,data/splits/scenarios/prescriptionbd/val.csv,data/splits/scenarios/prescriptionbd/test.csv
+E03,cnn,combined,Combinado,Combinado,data/splits/scenarios/combined/train.csv,data/splits/scenarios/combined/val.csv,data/splits/scenarios/combined/test.csv
+E04,crnn,in_domain_rxhandbd,RxHandBD,RxHandBD,data/splits/scenarios/rxhandbd/train.csv,data/splits/scenarios/rxhandbd/val.csv,data/splits/scenarios/rxhandbd/test.csv
+E05,crnn,in_domain_prescriptionbd,PrescriptionBD,PrescriptionBD,data/splits/scenarios/prescriptionbd/train.csv,data/splits/scenarios/prescriptionbd/val.csv,data/splits/scenarios/prescriptionbd/test.csv
+E06,crnn,combined,Combinado,Combinado,data/splits/scenarios/combined/train.csv,data/splits/scenarios/combined/val.csv,data/splits/scenarios/combined/test.csv
+E07,trocr,in_domain_rxhandbd,RxHandBD,RxHandBD,data/splits/scenarios/rxhandbd/train.csv,data/splits/scenarios/rxhandbd/val.csv,data/splits/scenarios/rxhandbd/test.csv
+E08,trocr,in_domain_prescriptionbd,PrescriptionBD,PrescriptionBD,data/splits/scenarios/prescriptionbd/train.csv,data/splits/scenarios/prescriptionbd/val.csv,data/splits/scenarios/prescriptionbd/test.csv
+E09,trocr,combined,Combinado,Combinado,data/splits/scenarios/combined/train.csv,data/splits/scenarios/combined/val.csv,data/splits/scenarios/combined/test.csv
+E10,parseq,in_domain_rxhandbd,RxHandBD,RxHandBD,data/splits/scenarios/rxhandbd/train.csv,data/splits/scenarios/rxhandbd/val.csv,data/splits/scenarios/rxhandbd/test.csv
+E11,parseq,in_domain_prescriptionbd,PrescriptionBD,PrescriptionBD,data/splits/scenarios/prescriptionbd/train.csv,data/splits/scenarios/prescriptionbd/val.csv,data/splits/scenarios/prescriptionbd/test.csv
+E12,parseq,combined,Combinado,Combinado,data/splits/scenarios/combined/train.csv,data/splits/scenarios/combined/val.csv,data/splits/scenarios/combined/test.csv
