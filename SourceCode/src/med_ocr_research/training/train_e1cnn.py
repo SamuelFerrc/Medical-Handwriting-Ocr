@@ -25,23 +25,64 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 from med_ocr_research.models.E1Cnn import E1Cnn
+from med_ocr_research.models.E2CnnBiLSTM import E2CnnBiLSTM
 
 
-DEFAULT_TRAIN_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/train.csv"
-DEFAULT_VAL_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/val.csv"
+DEFAULT_TRAIN_CSV = PROJECT_ROOT / "data/splits/scenarios/prescriptionbd/train.csv"
+DEFAULT_VAL_CSV = PROJECT_ROOT / "data/splits/scenarios/prescriptionbd/val.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 DEFAULT_RUNS_DIR = PROJECT_ROOT / "outputs/runs"
 DEFAULT_RUN_NAME = "e1cnn"
+DEFAULT_MODEL_KIND = "e1cnn"
+
+MODEL_REGISTRY = {
+    "e1cnn": {
+        "display_name": "E1Cnn",
+        "artifact_prefix": "e1cnn",
+        "default_run_name": DEFAULT_RUN_NAME,
+        "class": E1Cnn,
+    },
+    "e2cnn-bilstm": {
+        "display_name": "E2CnnBiLSTM",
+        "artifact_prefix": "e2cnn_bilstm",
+        "default_run_name": "e2cnn_bilstm",
+        "class": E2CnnBiLSTM,
+    },
+}
 
 
-def parse_args() -> argparse.Namespace:
+def get_model_config(model_kind: str) -> dict[str, object]:
+    try:
+        return MODEL_REGISTRY[model_kind]
+    except KeyError as exc:
+        supported = ", ".join(sorted(MODEL_REGISTRY))
+        raise ValueError(
+            f"Modelo nao suportado: {model_kind}. Opcoes: {supported}"
+        ) from exc
+
+
+def parse_args(default_model_kind: str = DEFAULT_MODEL_KIND) -> argparse.Namespace:
+    default_model_config = get_model_config(default_model_kind)
     parser = argparse.ArgumentParser(
-        description="Treina a CNN E1Cnn usando o split Training do dataset."
+        description=(
+            "Treina classificadores CNN usando os splits de treino e validacao "
+            f"do dataset. Padrao: {default_model_config['display_name']}."
+        )
+    )
+    parser.add_argument(
+        "--model-kind",
+        choices=tuple(MODEL_REGISTRY),
+        default=default_model_kind,
+        help="Arquitetura que sera treinada.",
     )
     parser.add_argument("--train-csv", type=Path, default=DEFAULT_TRAIN_CSV)
     parser.add_argument("--val-csv", type=Path, default=DEFAULT_VAL_CSV)
     parser.add_argument("--data-root", type=Path, default=DEFAULT_DATA_ROOT)
-    parser.add_argument("--run-name", default=DEFAULT_RUN_NAME)
+    parser.add_argument(
+        "--run-name",
+        default=None,
+        help="Padrao: e1cnn para E1Cnn, e2cnn_bilstm para E2CnnBiLSTM.",
+    )
     parser.add_argument(
         "--output-dir",
         type=Path,
@@ -252,8 +293,10 @@ def infer_num_outputs(model: nn.Module, device: torch.device, image_size: tuple[
         return int(model(sample).shape[1])
 
 
-def build_model(num_classes: int) -> E1Cnn:
-    model = E1Cnn(num_classes=num_classes)
+def build_model(model_kind: str, num_classes: int) -> nn.Module:
+    model_config = get_model_config(model_kind)
+    model_class = model_config["class"]
+    model = model_class(num_classes=num_classes)
     return model
 
 
@@ -293,6 +336,11 @@ def save_run_config_csv(
         [
             {
                 "run_name": args.run_name,
+                "model_kind": args.model_kind,
+                "model_name": get_model_config(args.model_kind)["display_name"],
+                "artifact_prefix": get_model_config(args.model_kind)[
+                    "artifact_prefix"
+                ],
                 "output_dir": str(output_dir),
                 "train_csv": str(args.train_csv),
                 "val_csv": str(args.val_csv),
@@ -387,8 +435,13 @@ def evaluate(
     return average_loss, accuracy
 
 
-def main() -> None:
-    args = parse_args()
+def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
+    args = parse_args(default_model_kind=default_model_kind)
+    model_config = get_model_config(args.model_kind)
+    if args.run_name is None:
+        args.run_name = str(model_config["default_run_name"])
+    model_name = str(model_config["display_name"])
+    artifact_prefix = str(model_config["artifact_prefix"])
     seed_everything(args.seed)
     output_dir = resolve_output_dir(args.run_name, args.output_dir)
 
@@ -434,7 +487,10 @@ def main() -> None:
         pin_memory=device.type == "cuda",
     )
 
-    model = build_model(num_classes=len(dataset.class_to_idx)).to(device)
+    model = build_model(
+        model_kind=args.model_kind,
+        num_classes=len(dataset.class_to_idx),
+    ).to(device)
     num_outputs = infer_num_outputs(
         model,
         device=device,
@@ -442,7 +498,7 @@ def main() -> None:
     )
     if len(dataset.class_to_idx) != num_outputs:
         raise ValueError(
-            "A E1Cnn retorna "
+            f"A {model_name} retorna "
             f"{num_outputs} classes, mas o alvo possui {len(dataset.class_to_idx)}. "
             "Ajuste num_classes na criacao do modelo."
         )
@@ -455,9 +511,9 @@ def main() -> None:
     )
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    class_map_path = output_dir / "e1cnn_class_to_idx.json"
-    checkpoint_path = output_dir / "e1cnn_training_checkpoint.pt"
-    best_checkpoint_path = output_dir / "e1cnn_best_checkpoint.pt"
+    class_map_path = output_dir / f"{artifact_prefix}_class_to_idx.json"
+    checkpoint_path = output_dir / f"{artifact_prefix}_training_checkpoint.pt"
+    best_checkpoint_path = output_dir / f"{artifact_prefix}_best_checkpoint.pt"
     history_csv_path = output_dir / "training_history.csv"
     run_config_csv_path = output_dir / "run_config.csv"
     run_summary_csv_path = output_dir / "run_summary.csv"
@@ -482,12 +538,13 @@ def main() -> None:
     )
 
     print(f"Nome da execucao: {args.run_name}")
+    print(f"Modelo: {model_name} ({args.model_kind})")
     print(f"Pasta da execucao: {output_dir}")
     print(f"Dispositivo: {device}")
     print(f"Amostras de treino: {len(dataset)}")
     print(f"Amostras de validacao: {len(val_dataset)}")
     print(f"Palavras/classes: {len(dataset.class_to_idx)}")
-    print(f"Saidas da E1Cnn: {num_outputs}")
+    print(f"Saidas da {model_name}: {num_outputs}")
     print(f"CSV de treino: {args.train_csv}")
     print(f"CSV de validacao: {args.val_csv}")
     print(f"Data augmentation: {'desligado' if args.no_augmentation else 'ligado'}")
@@ -528,6 +585,8 @@ def main() -> None:
             torch.save(
                 {
                     "run_name": args.run_name,
+                    "model_kind": args.model_kind,
+                    "model_name": model_name,
                     "model_state_dict": model.state_dict(),
                     "class_to_idx": dataset.class_to_idx,
                     "idx_to_class": dataset.idx_to_class,
@@ -566,6 +625,8 @@ def main() -> None:
     torch.save(
         {
             "run_name": args.run_name,
+            "model_kind": args.model_kind,
+            "model_name": model_name,
             "model_state_dict": model.state_dict(),
             "class_to_idx": dataset.class_to_idx,
             "idx_to_class": dataset.idx_to_class,
