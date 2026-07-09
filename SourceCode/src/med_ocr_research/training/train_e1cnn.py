@@ -26,6 +26,7 @@ if str(SRC_ROOT) not in sys.path:
 
 from med_ocr_research.models.E1Cnn import E1Cnn
 from med_ocr_research.models.E2CnnBiLSTM import E2CnnBiLSTM
+from med_ocr_research.training.augmentation import build_handwriting_train_transform
 
 
 DEFAULT_TRAIN_CSV = PROJECT_ROOT / "data/splits/scenarios/prescriptionbd/train.csv"
@@ -34,6 +35,9 @@ DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 DEFAULT_RUNS_DIR = PROJECT_ROOT / "outputs/runs"
 DEFAULT_RUN_NAME = "e1cnn"
 DEFAULT_MODEL_KIND = "e1cnn"
+CTC_BLANK_TOKEN = "<blank>"
+CLASSIFICATION_TARGET = "class"
+CTC_TARGET = "ctc"
 
 MODEL_REGISTRY = {
     "e1cnn": {
@@ -41,12 +45,14 @@ MODEL_REGISTRY = {
         "artifact_prefix": "e1cnn",
         "default_run_name": DEFAULT_RUN_NAME,
         "class": E1Cnn,
+        "target_kind": CLASSIFICATION_TARGET,
     },
     "e2cnn-bilstm": {
         "display_name": "E2CnnBiLSTM",
         "artifact_prefix": "e2cnn_bilstm",
         "default_run_name": "e2cnn_bilstm",
         "class": E2CnnBiLSTM,
+        "target_kind": CTC_TARGET,
     },
 }
 
@@ -59,6 +65,14 @@ def get_model_config(model_kind: str) -> dict[str, object]:
         raise ValueError(
             f"Modelo nao suportado: {model_kind}. Opcoes: {supported}"
         ) from exc
+
+
+def get_target_kind(model_kind: str) -> str:
+    return str(get_model_config(model_kind)["target_kind"])
+
+
+def is_ctc_model(model_kind: str) -> bool:
+    return get_target_kind(model_kind) == CTC_TARGET
 
 
 def parse_args(default_model_kind: str = DEFAULT_MODEL_KIND) -> argparse.Namespace:
@@ -142,78 +156,7 @@ def resolve_image_path(data_root: Path, image_path: str) -> Path:
 
 
 def build_train_transform(strength: str) -> transforms.Compose:
-    if transforms is None:
-        raise RuntimeError(
-            "torchvision nao esta instalado. Instale requirements-train.txt "
-            "ou rode com --no-augmentation."
-        )
-
-    configs = {
-        "light": {
-            "degrees": 4,
-            "translate": (0.02, 0.03),
-            "scale": (0.97, 1.03),
-            "shear": 2,
-            "brightness": 0.10,
-            "contrast": 0.15,
-            "affine_p": 0.7,
-            "jitter_p": 0.4,
-            "blur_p": 0.1,
-        },
-        "medium": {
-            "degrees": 8,
-            "translate": (0.05, 0.06),
-            "scale": (0.90, 1.08),
-            "shear": 5,
-            "brightness": 0.20,
-            "contrast": 0.25,
-            "affine_p": 0.8,
-            "jitter_p": 0.5,
-            "blur_p": 0.25,
-        },
-        "strong": {
-            "degrees": 10,
-            "translate": (0.07, 0.08),
-            "scale": (0.85, 1.12),
-            "shear": 7,
-            "brightness": 0.25,
-            "contrast": 0.35,
-            "affine_p": 0.9,
-            "jitter_p": 0.6,
-            "blur_p": 0.3,
-        },
-    }
-    config = configs[strength]
-
-    return transforms.Compose(
-        [
-            transforms.RandomApply(
-                [
-                    transforms.RandomAffine(
-                        degrees=config["degrees"],
-                        translate=config["translate"],
-                        scale=config["scale"],
-                        shear=config["shear"],
-                        fill=255,
-                    )
-                ],
-                p=config["affine_p"],
-            ),
-            transforms.RandomApply(
-                [
-                    transforms.ColorJitter(
-                        brightness=config["brightness"],
-                        contrast=config["contrast"],
-                    )
-                ],
-                p=config["jitter_p"],
-            ),
-            transforms.RandomApply(
-                [transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 0.8))],
-                p=config["blur_p"],
-            ),
-        ]
-    )
+    return build_handwriting_train_transform(transforms, strength)
 
 
 class TrainingSplitDataset(Dataset):
@@ -226,6 +169,8 @@ class TrainingSplitDataset(Dataset):
         image_size: tuple[int, int],
         split: str | None = None,
         class_to_idx: dict[str, int] | None = None,
+        char_to_idx: dict[str, int] | None = None,
+        target_kind: str = CLASSIFICATION_TARGET,
         image_transform: transforms.Compose | None = None,
     ) -> None:
         self.data_root = data_root
@@ -233,6 +178,7 @@ class TrainingSplitDataset(Dataset):
         self.image_column = image_column
         self.image_size = image_size
         self.image_transform = image_transform
+        self.target_kind = target_kind
 
         rows = pd.read_csv(csv_path)
         if split is not None and "split" in rows.columns:
@@ -247,24 +193,64 @@ class TrainingSplitDataset(Dataset):
 
         rows[label_column] = rows[label_column].astype(str)
         rows["_target_label"] = rows[label_column]
-        if class_to_idx is None:
-            labels = sorted(rows["_target_label"].unique())
-            self.class_to_idx = {label: index for index, label in enumerate(labels)}
-        else:
-            self.class_to_idx = class_to_idx
-            rows = rows[rows["_target_label"].isin(class_to_idx)].copy()
-            if rows.empty:
-                raise ValueError(
-                    f"Nenhuma amostra de {csv_path} possui palavra presente no treino"
+        if target_kind == CLASSIFICATION_TARGET:
+            if class_to_idx is None:
+                labels = sorted(rows["_target_label"].unique())
+                self.class_to_idx = {label: index for index, label in enumerate(labels)}
+            else:
+                self.class_to_idx = class_to_idx
+                rows = rows[rows["_target_label"].isin(class_to_idx)].copy()
+                if rows.empty:
+                    raise ValueError(
+                        f"Nenhuma amostra de {csv_path} possui palavra presente no treino"
+                    )
+            self.idx_to_class = {
+                index: label for label, index in self.class_to_idx.items()
+            }
+            self.char_to_idx: dict[str, int] = {}
+            self.idx_to_char: dict[int, str] = {}
+            self.blank_idx: int | None = None
+        elif target_kind == CTC_TARGET:
+            if char_to_idx is None:
+                characters = sorted(
+                    {char for label in rows["_target_label"] for char in label}
                 )
+                self.char_to_idx = {CTC_BLANK_TOKEN: 0}
+                self.char_to_idx.update(
+                    {char: index for index, char in enumerate(characters, start=1)}
+                )
+            else:
+                if CTC_BLANK_TOKEN not in char_to_idx:
+                    raise ValueError(
+                        f"O vocabulario CTC precisa conter {CTC_BLANK_TOKEN!r}."
+                    )
+                self.char_to_idx = char_to_idx
+                valid_characters = set(char_to_idx).difference({CTC_BLANK_TOKEN})
+                rows = rows[
+                    rows["_target_label"].map(
+                        lambda label: all(char in valid_characters for char in label)
+                    )
+                ].copy()
+                if rows.empty:
+                    raise ValueError(
+                        f"Nenhuma amostra de {csv_path} possui caracteres presentes "
+                        "no vocabulario de treino"
+                    )
+            self.class_to_idx = self.char_to_idx
+            self.idx_to_char = {
+                index: char for char, index in self.char_to_idx.items()
+            }
+            self.idx_to_class = self.idx_to_char
+            self.blank_idx = self.char_to_idx[CTC_BLANK_TOKEN]
+        else:
+            raise ValueError(f"target_kind nao suportado: {target_kind}")
 
-        self.idx_to_class = {index: label for label, index in self.class_to_idx.items()}
         self.rows = rows.reset_index(drop=True)
 
     def __len__(self) -> int:
         return len(self.rows)
 
-    def __getitem__(self, index: int) -> tuple[torch.Tensor, torch.Tensor]:
+    def __getitem__(self, index: int):
         row = self.rows.iloc[index]
         image_path = resolve_image_path(self.data_root, row[self.image_column])
 
@@ -279,23 +265,53 @@ class TrainingSplitDataset(Dataset):
             image_array = np.asarray(image, dtype=np.float32) / 255.0
 
         image_tensor = torch.from_numpy(image_array).unsqueeze(0)
+        label = str(row["_target_label"])
+        if self.target_kind == CTC_TARGET:
+            label_tensor = torch.tensor(
+                [self.char_to_idx[char] for char in label],
+                dtype=torch.long,
+            )
+            return image_tensor, label_tensor, label
+
         label_tensor = torch.tensor(
-            self.class_to_idx[str(row["_target_label"])],
+            self.class_to_idx[label],
             dtype=torch.long,
         )
         return image_tensor, label_tensor
+
+
+def ctc_collate(batch):
+    images, targets, texts = zip(*batch)
+    target_lengths = torch.tensor([target.numel() for target in targets], dtype=torch.long)
+    if targets:
+        concatenated_targets = torch.cat(targets)
+    else:
+        concatenated_targets = torch.empty(0, dtype=torch.long)
+    return (
+        torch.stack(images),
+        concatenated_targets,
+        target_lengths,
+        list(texts),
+    )
 
 
 def infer_num_outputs(model: nn.Module, device: torch.device, image_size: tuple[int, int]) -> int:
     model.eval()
     with torch.no_grad():
         sample = torch.zeros(1, 1, image_size[0], image_size[1], device=device)
-        return int(model(sample).shape[1])
+        logits = model(sample)
+        return int(logits.shape[-1])
 
 
-def build_model(model_kind: str, num_classes: int) -> nn.Module:
+def build_model(model_kind: str, num_classes: int, blank_idx: int = 0) -> nn.Module:
     model_config = get_model_config(model_kind)
     model_class = model_config["class"]
+    if get_target_kind(model_kind) == CTC_TARGET:
+        return model_class(
+            num_classes=num_classes,
+            blank_idx=blank_idx,
+            default_return_sequence=True,
+        )
     model = model_class(num_classes=num_classes)
     return model
 
@@ -307,8 +323,16 @@ def save_class_distribution_csv(
 ) -> None:
     rows = []
     for split_name, dataset in (("train", train_dataset), ("val", val_dataset)):
-        counts = dataset.rows["_target_label"].value_counts().to_dict()
-        total = len(dataset)
+        if dataset.target_kind == CTC_TARGET:
+            counts: dict[str, int] = {}
+            for label in dataset.rows["_target_label"]:
+                for char in str(label):
+                    counts[char] = counts.get(char, 0) + 1
+            total = sum(counts.values())
+        else:
+            counts = dataset.rows["_target_label"].value_counts().to_dict()
+            total = len(dataset)
+
         for label, class_index in dataset.class_to_idx.items():
             count = int(counts.get(label, 0))
             rows.append(
@@ -341,6 +365,8 @@ def save_run_config_csv(
                 "artifact_prefix": get_model_config(args.model_kind)[
                     "artifact_prefix"
                 ],
+                "target_kind": get_target_kind(args.model_kind),
+                "blank_idx": train_dataset.blank_idx,
                 "output_dir": str(output_dir),
                 "train_csv": str(args.train_csv),
                 "val_csv": str(args.val_csv),
@@ -378,21 +404,52 @@ def save_run_config_csv(
 def train_one_epoch(
     model: nn.Module,
     dataloader: DataLoader,
-    criterion: nn.Module,
+    criterion: nn.Module | None,
     optimizer: torch.optim.Optimizer,
     device: torch.device,
+    target_kind: str = CLASSIFICATION_TARGET,
+    idx_to_token: dict[int, str] | None = None,
 ) -> tuple[float, float]:
     model.train()
     total_loss = 0.0
     total_correct = 0
     total_samples = 0
 
-    for images, labels in dataloader:
+    for batch in dataloader:
+        optimizer.zero_grad(set_to_none=True)
+
+        if target_kind == CTC_TARGET:
+            images, targets, target_lengths, texts = batch
+            images = images.to(device)
+            targets = targets.to(device)
+            target_lengths = target_lengths.to(device)
+
+            logits = model(images)
+            loss = model.ctc_loss(
+                logits=logits,
+                targets=targets,
+                target_lengths=target_lengths,
+            )
+            loss.backward()
+            optimizer.step()
+
+            predictions = model.ctc_decode(logits, idx_to_token=idx_to_token)
+            batch_size = len(texts)
+            total_loss += loss.item() * batch_size
+            total_correct += sum(
+                str(prediction) == str(target)
+                for prediction, target in zip(predictions, texts)
+            )
+            total_samples += batch_size
+            continue
+
+        images, labels = batch
         images = images.to(device)
         labels = labels.to(device)
 
-        optimizer.zero_grad(set_to_none=True)
         logits = model(images)
+        if criterion is None:
+            raise ValueError("criterion precisa ser informado para classificacao.")
         loss = criterion(logits, labels)
         loss.backward()
         optimizer.step()
@@ -410,8 +467,10 @@ def train_one_epoch(
 def evaluate(
     model: nn.Module,
     dataloader: DataLoader,
-    criterion: nn.Module,
+    criterion: nn.Module | None,
     device: torch.device,
+    target_kind: str = CLASSIFICATION_TARGET,
+    idx_to_token: dict[int, str] | None = None,
 ) -> tuple[float, float]:
     model.eval()
     total_loss = 0.0
@@ -419,10 +478,36 @@ def evaluate(
     total_samples = 0
 
     with torch.no_grad():
-        for images, labels in dataloader:
+        for batch in dataloader:
+            if target_kind == CTC_TARGET:
+                images, targets, target_lengths, texts = batch
+                images = images.to(device)
+                targets = targets.to(device)
+                target_lengths = target_lengths.to(device)
+
+                logits = model(images)
+                loss = model.ctc_loss(
+                    logits=logits,
+                    targets=targets,
+                    target_lengths=target_lengths,
+                )
+
+                predictions = model.ctc_decode(logits, idx_to_token=idx_to_token)
+                batch_size = len(texts)
+                total_loss += loss.item() * batch_size
+                total_correct += sum(
+                    str(prediction) == str(target)
+                    for prediction, target in zip(predictions, texts)
+                )
+                total_samples += batch_size
+                continue
+
+            images, labels = batch
             images = images.to(device)
             labels = labels.to(device)
             logits = model(images)
+            if criterion is None:
+                raise ValueError("criterion precisa ser informado para classificacao.")
             loss = criterion(logits, labels)
 
             batch_size = labels.size(0)
@@ -438,6 +523,8 @@ def evaluate(
 def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
     args = parse_args(default_model_kind=default_model_kind)
     model_config = get_model_config(args.model_kind)
+    target_kind = get_target_kind(args.model_kind)
+    collate_fn = ctc_collate if target_kind == CTC_TARGET else None
     if args.run_name is None:
         args.run_name = str(model_config["default_run_name"])
     model_name = str(model_config["display_name"])
@@ -461,6 +548,7 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
         image_column=args.image_column,
         image_size=(args.image_height, args.image_width),
         split="train",
+        target_kind=target_kind,
         image_transform=train_transform,
     )
     dataloader = DataLoader(
@@ -469,6 +557,7 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
         shuffle=True,
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
+        collate_fn=collate_fn,
     )
     val_dataset = TrainingSplitDataset(
         csv_path=args.val_csv,
@@ -478,6 +567,8 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
         image_size=(args.image_height, args.image_width),
         split="val",
         class_to_idx=dataset.class_to_idx,
+        char_to_idx=dataset.char_to_idx if target_kind == CTC_TARGET else None,
+        target_kind=target_kind,
     )
     val_dataloader = DataLoader(
         val_dataset,
@@ -485,11 +576,13 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
         shuffle=False,
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
+        collate_fn=collate_fn,
     )
 
     model = build_model(
         model_kind=args.model_kind,
         num_classes=len(dataset.class_to_idx),
+        blank_idx=dataset.blank_idx or 0,
     ).to(device)
     num_outputs = infer_num_outputs(
         model,
@@ -503,7 +596,7 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
             "Ajuste num_classes na criacao do modelo."
         )
 
-    criterion = nn.CrossEntropyLoss()
+    criterion = None if target_kind == CTC_TARGET else nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=args.learning_rate,
@@ -543,7 +636,11 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
     print(f"Dispositivo: {device}")
     print(f"Amostras de treino: {len(dataset)}")
     print(f"Amostras de validacao: {len(val_dataset)}")
-    print(f"Palavras/classes: {len(dataset.class_to_idx)}")
+    if target_kind == CTC_TARGET:
+        print(f"Caracteres/classes CTC: {len(dataset.class_to_idx)}")
+        print(f"Blank CTC: {dataset.blank_idx} ({CTC_BLANK_TOKEN})")
+    else:
+        print(f"Palavras/classes: {len(dataset.class_to_idx)}")
     print(f"Saidas da {model_name}: {num_outputs}")
     print(f"CSV de treino: {args.train_csv}")
     print(f"CSV de validacao: {args.val_csv}")
@@ -562,12 +659,16 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
             criterion=criterion,
             optimizer=optimizer,
             device=device,
+            target_kind=target_kind,
+            idx_to_token=dataset.idx_to_char if target_kind == CTC_TARGET else None,
         )
         val_loss, val_accuracy = evaluate(
             model=model,
             dataloader=val_dataloader,
             criterion=criterion,
             device=device,
+            target_kind=target_kind,
+            idx_to_token=dataset.idx_to_char if target_kind == CTC_TARGET else None,
         )
         print(
             f"Epoch {epoch:03d}/{args.epochs} "
@@ -590,6 +691,11 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
                     "model_state_dict": model.state_dict(),
                     "class_to_idx": dataset.class_to_idx,
                     "idx_to_class": dataset.idx_to_class,
+                    "target_kind": target_kind,
+                    "blank_token": CTC_BLANK_TOKEN if target_kind == CTC_TARGET else None,
+                    "blank_idx": dataset.blank_idx,
+                    "char_to_idx": dataset.char_to_idx,
+                    "idx_to_char": dataset.idx_to_char,
                     "image_size": (args.image_height, args.image_width),
                     "train_csv": str(args.train_csv),
                     "val_csv": str(args.val_csv),
@@ -630,6 +736,11 @@ def main(default_model_kind: str = DEFAULT_MODEL_KIND) -> None:
             "model_state_dict": model.state_dict(),
             "class_to_idx": dataset.class_to_idx,
             "idx_to_class": dataset.idx_to_class,
+            "target_kind": target_kind,
+            "blank_token": CTC_BLANK_TOKEN if target_kind == CTC_TARGET else None,
+            "blank_idx": dataset.blank_idx,
+            "char_to_idx": dataset.char_to_idx,
+            "idx_to_char": dataset.idx_to_char,
             "image_size": (args.image_height, args.image_width),
             "train_csv": str(args.train_csv),
             "val_csv": str(args.val_csv),

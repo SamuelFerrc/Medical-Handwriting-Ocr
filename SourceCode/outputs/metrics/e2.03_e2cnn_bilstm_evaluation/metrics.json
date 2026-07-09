@@ -1,45 +1,45 @@
 {
   "run_name": "e2.03_e2cnn_bilstm_evaluation",
-  "created_at_utc": "2026-07-07T04:15:20.227792+00:00",
+  "created_at_utc": "2026-07-08T01:01:33.238725+00:00",
   "source": "outputs/runs/e2.03/e2cnn_bilstm_best_checkpoint.pt",
   "test_csv": "data/splits/scenarios/combined/test.csv",
   "primary_metric": "exact_match_accuracy",
   "metrics": {
     "samples": 1616,
-    "exact_match_accuracy": 0.6392326732673267,
-    "cer": 0.2846667293409796,
-    "wer": 0.3818286371477861,
-    "correct": 1033,
-    "total_char_errors": 3028,
+    "exact_match_accuracy": 0.5736386138613861,
+    "cer": 0.20635517533139042,
+    "wer": 0.4370327774583094,
+    "correct": 927,
+    "total_char_errors": 2195,
     "total_reference_chars": 10637,
-    "total_word_errors": 664,
+    "total_word_errors": 760,
     "total_reference_words": 1739
   },
   "per_dataset_metrics": [
     {
       "dataset": "PrescriptionBD",
       "samples": 780,
-      "exact_match_accuracy": 0.7282051282051282,
-      "cer": 0.23198380566801619,
-      "wer": 0.27341772151898736,
-      "correct": 568
+      "exact_match_accuracy": 0.6679487179487179,
+      "cer": 0.19736842105263158,
+      "wer": 0.3329113924050633,
+      "correct": 521
     },
     {
       "dataset": "RxHandBD",
       "samples": 836,
-      "exact_match_accuracy": 0.55622009569378,
-      "cer": 0.3303493066526242,
-      "wer": 0.4720758693361433,
-      "correct": 465
+      "exact_match_accuracy": 0.48564593301435405,
+      "cer": 0.2141477970861857,
+      "wer": 0.523709167544784,
+      "correct": 406
     }
   ],
   "confidence": {
     "count": 1616,
-    "mean": 0.7716680474828301,
-    "median": 0.9102321565151215,
-    "std": 0.2644262043270126,
-    "min": 0.07936657965183258,
-    "max": 0.9999526739120483
+    "mean": 0.9822909681513758,
+    "median": 0.9880998730659485,
+    "std": 0.017955194905042618,
+    "min": 0.893208384513855,
+    "max": 0.9999864101409912
   },
   "text_true_length": {
     "count": 1616,
@@ -51,27 +51,27 @@
   },
   "text_pred_length": {
     "count": 1616,
-    "mean": 6.53279702970297,
+    "mean": 6.329207920792079,
     "median": 6.0,
-    "std": 1.783148177844341,
-    "min": 2.0,
-    "max": 15.0
+    "std": 1.720735039330816,
+    "min": 1.0,
+    "max": 14.0
   },
   "char_error_statistics": {
     "count": 1616,
-    "mean": 1.8737623762376239,
+    "mean": 1.3582920792079207,
     "median": 0.0,
-    "std": 2.8404616663824935,
+    "std": 1.9986921599719405,
     "min": 0.0,
-    "max": 12.0
+    "max": 9.0
   },
   "word_error_statistics": {
     "count": 1616,
-    "mean": 0.41089108910891087,
+    "mean": 0.47029702970297027,
     "median": 0.0,
-    "std": 0.5871817216816543,
+    "std": 0.5805075543731077,
     "min": 0.0,
-    "max": 3.0
+    "max": 2.0
   },
   "dataset_distribution": [
     {
@@ -167,28 +167,28 @@
   ],
   "top_error_pairs": [
     {
-      "text_true": "beklo",
-      "text_pred": "napa",
-      "count": 5
+      "text_true": "flexibac",
+      "text_pred": "flexilax",
+      "count": 4
+    },
+    {
+      "text_true": "denixil",
+      "text_pred": "denoril",
+      "count": 3
+    },
+    {
+      "text_true": "diflu",
+      "text_pred": "riflu",
+      "count": 3
+    },
+    {
+      "text_true": "injection",
+      "text_pred": "inj",
+      "count": 3
     },
     {
       "text_true": "tab",
       "text_pred": "tablet",
-      "count": 4
-    },
-    {
-      "text_true": "maxpro",
-      "text_pred": "lumona",
-      "count": 3
-    },
-    {
-      "text_true": "montair",
-      "text_pred": "axodin",
-      "count": 3
-    },
-    {
-      "text_true": "neuro-b",
-      "text_pred": "neuro b",
       "count": 3
     },
     {
@@ -203,67 +203,67 @@
     },
     {
       "text_true": "baclon",
-      "text_pred": "romycin",
+      "text_pred": "baclin",
       "count": 2
     },
     {
-      "text_true": "biscor",
-      "text_pred": "biscor 5",
-      "count": 2
-    },
-    {
-      "text_true": "clindacin",
-      "text_pred": "histacin",
-      "count": 2
-    },
-    {
-      "text_true": "clindamycin",
-      "text_pred": "omeprazole",
-      "count": 2
-    },
-    {
-      "text_true": "coralgue d",
-      "text_pred": "cor algen-d",
-      "count": 2
-    },
-    {
-      "text_true": "dancel",
-      "text_pred": "disopan",
-      "count": 2
-    },
-    {
-      "text_true": "devixil",
-      "text_pred": "denixil",
+      "text_true": "beklo",
+      "text_pred": "ace",
       "count": 2
     },
     {
       "text_true": "dinafex",
-      "text_pred": "lumona",
-      "count": 2
-    },
-    {
-      "text_true": "disopan",
-      "text_pred": "axodin",
-      "count": 2
-    },
-    {
-      "text_true": "disopan",
-      "text_pred": "omastin",
-      "count": 2
-    },
-    {
-      "text_true": "esoral",
-      "text_pred": "fexo",
-      "count": 2
-    },
-    {
-      "text_true": "etizin",
-      "text_pred": "zithrin",
+      "text_pred": "dinaair",
       "count": 2
     },
     {
       "text_true": "fenadin",
       "text_pred": "fexo",
+      "count": 2
+    },
+    {
+      "text_true": "ferix-v",
+      "text_pred": "fenix-v",
+      "count": 2
+    },
+    {
+      "text_true": "fexo",
+      "text_pred": "fixo",
+      "count": 2
+    },
+    {
+      "text_true": "flugal",
+      "text_pred": "progut",
+      "count": 2
+    },
+    {
+      "text_true": "maxpro",
+      "text_pred": "banana",
+      "count": 2
+    },
+    {
+      "text_true": "montene",
+      "text_pred": "maxna",
+      "count": 2
+    },
+    {
+      "text_true": "neuro-b",
+      "text_pred": "neuro b",
+      "count": 2
+    },
+    {
+      "text_true": "prestel",
+      "text_pred": "prtel",
+      "count": 2
+    },
+    {
+      "text_true": "sergel",
+      "text_pred": "ketgel",
+      "count": 2
+    },
+    {
+      "text_true": "vifas",
+      "text_pred": "ketzol",
       "count": 2
     }
   ],
@@ -272,48 +272,64 @@
       "sample_id": "rxhandbd_000010",
       "dataset": "RxHandBD",
       "text_true": "aaxius",
-      "text_pred": "dexter",
-      "char_errors": 5,
+      "text_pred": "anius",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000018",
+      "dataset": "RxHandBD",
+      "text_true": "ace",
+      "text_pred": "all",
+      "char_errors": 2,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000019",
       "dataset": "RxHandBD",
       "text_true": "ace",
-      "text_pred": "diet",
-      "char_errors": 3,
+      "text_pred": "al",
+      "char_errors": 2,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000029",
       "dataset": "RxHandBD",
       "text_true": "acliz plus",
-      "text_pred": "lestarin",
-      "char_errors": 9,
+      "text_pred": "aclizplus",
+      "char_errors": 1,
       "word_errors": 2
     },
     {
       "sample_id": "rxhandbd_000031",
       "dataset": "RxHandBD",
       "text_true": "acron",
-      "text_pred": "domin",
-      "char_errors": 4,
+      "text_pred": "neron",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000071",
+      "dataset": "RxHandBD",
+      "text_true": "alafix",
+      "text_pred": "alfix",
+      "char_errors": 1,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000082",
       "dataset": "RxHandBD",
       "text_true": "alanol",
-      "text_pred": "algin",
-      "char_errors": 4,
+      "text_pred": "altil",
+      "char_errors": 3,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000086",
       "dataset": "RxHandBD",
       "text_true": "alben",
-      "text_pred": "high",
-      "char_errors": 5,
+      "text_pred": "alen",
+      "char_errors": 1,
       "word_errors": 1
     },
     {
@@ -328,80 +344,72 @@
       "sample_id": "rxhandbd_000107",
       "dataset": "RxHandBD",
       "text_true": "alfane",
-      "text_pred": "hermoquf",
-      "char_errors": 8,
-      "word_errors": 1
-    },
-    {
-      "sample_id": "rxhandbd_000136",
-      "dataset": "RxHandBD",
-      "text_true": "algin",
-      "text_pred": "a-fun",
-      "char_errors": 3,
+      "text_pred": "gofore",
+      "char_errors": 4,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000193",
       "dataset": "RxHandBD",
       "text_true": "algin plus",
-      "text_pred": "acliz plus",
+      "text_pred": "alizplus",
       "char_errors": 3,
-      "word_errors": 1
+      "word_errors": 2
     },
     {
       "sample_id": "rxhandbd_000195",
       "dataset": "RxHandBD",
       "text_true": "alix",
-      "text_pred": "xinc",
-      "char_errors": 4,
+      "text_pred": "afix",
+      "char_errors": 1,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000197",
       "dataset": "RxHandBD",
       "text_true": "allyglot",
-      "text_pred": "calboral",
-      "char_errors": 7,
+      "text_pred": "adgal",
+      "char_errors": 6,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000198",
       "dataset": "RxHandBD",
       "text_true": "almex tab",
-      "text_pred": "anustat",
-      "char_errors": 6,
+      "text_pred": "aletat",
+      "char_errors": 4,
       "word_errors": 2
     },
     {
       "sample_id": "rxhandbd_000199",
       "dataset": "RxHandBD",
       "text_true": "alolrol",
-      "text_pred": "algin",
-      "char_errors": 5,
+      "text_pred": "alatil",
+      "char_errors": 4,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000200",
       "dataset": "RxHandBD",
       "text_true": "alos",
-      "text_pred": "fexo",
-      "char_errors": 4,
+      "text_pred": "aco",
+      "char_errors": 2,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000210",
       "dataset": "RxHandBD",
       "text_true": "ambroy",
-      "text_pred": "naprox",
-      "char_errors": 4,
+      "text_pred": "ambrin",
+      "char_errors": 2,
       "word_errors": 1
     },
     {
       "sample_id": "rxhandbd_000215",
       "dataset": "RxHandBD",
       "text_true": "amikacin",
-      "text_pred": "histacin",
-      "char_errors": 4,
+      "text_pred": "arilacin",
+      "char_errors": 2,
       "word_errors": 1
     },
     {
@@ -413,19 +421,11 @@
       "word_errors": 1
     },
     {
-      "sample_id": "rxhandbd_000247",
+      "sample_id": "rxhandbd_000242",
       "dataset": "RxHandBD",
       "text_true": "anadol",
-      "text_pred": "ursocol",
-      "char_errors": 5,
-      "word_errors": 1
-    },
-    {
-      "sample_id": "rxhandbd_000256",
-      "dataset": "RxHandBD",
-      "text_true": "analac",
-      "text_pred": "dexter",
-      "char_errors": 6,
+      "text_pred": "amadol",
+      "char_errors": 1,
       "word_errors": 1
     }
   ],

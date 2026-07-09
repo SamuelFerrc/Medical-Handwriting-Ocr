@@ -18,9 +18,9 @@ from med_ocr_research.models.E2CnnBiLSTM import E2CnnBiLSTM
 
 
 DEFAULT_CHECKPOINT = (
-    PROJECT_ROOT / "outputs/runs/e2.01/e2cnn_bilstm_best_checkpoint.pt"
+    PROJECT_ROOT / "outputs/runs/e2.02/e2cnn_bilstm_best_checkpoint.pt"
 )
-DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/prescriptionbd/test.csv"
+DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 
 
@@ -69,11 +69,19 @@ def main() -> None:
         print(f"CUDA disponivel: usando GPU {torch.cuda.get_device_name(0)}")
 
     checkpoint = torch.load(args.checkpoint, map_location=device)
-    class_to_idx = checkpoint["class_to_idx"]
+    uses_ctc = checkpoint.get("target_kind") == "ctc"
+    if uses_ctc and "char_to_idx" in checkpoint:
+        class_to_idx = checkpoint["char_to_idx"]
+    else:
+        class_to_idx = checkpoint["class_to_idx"]
     idx_to_class = {index: label for label, index in class_to_idx.items()}
     image_size = tuple(checkpoint.get("image_size", (64, 512)))
 
-    model = E2CnnBiLSTM(num_classes=len(class_to_idx)).to(device)
+    model = E2CnnBiLSTM(
+        num_classes=len(class_to_idx),
+        blank_idx=int(checkpoint.get("blank_idx", 0)),
+        default_return_sequence=uses_ctc,
+    ).to(device)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
 
@@ -96,9 +104,20 @@ def main() -> None:
             image_path = resolve_image_path(args.data_root, row[args.image_column])
             image_tensor = load_image(image_path, image_size).to(device)
             logits = model(image_tensor)
-            probabilities = torch.softmax(logits, dim=1)
-            confidence, predicted_idx = probabilities.max(dim=1)
-            predicted_word = idx_to_class[int(predicted_idx.item())]
+            if uses_ctc:
+                predicted_word = model.ctc_decode(
+                    logits,
+                    idx_to_token=idx_to_class,
+                    blank_idx=int(checkpoint.get("blank_idx", 0)),
+                )[0]
+                probabilities = torch.softmax(logits, dim=-1)
+                confidence = probabilities.max(dim=-1).values.mean()
+            else:
+                if logits.ndim == 3:
+                    logits = logits[:, -1, :]
+                probabilities = torch.softmax(logits, dim=1)
+                confidence, predicted_idx = probabilities.max(dim=1)
+                predicted_word = idx_to_class[int(predicted_idx.item())]
             real_word = str(row[args.label_column])
             is_correct = predicted_word == real_word
             correct += int(is_correct)

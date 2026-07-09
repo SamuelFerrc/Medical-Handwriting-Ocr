@@ -31,6 +31,7 @@ from med_ocr_research.evaluation.metrics import (  # noqa: E402
 DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 DEFAULT_METRICS_DIR = PROJECT_ROOT / "outputs/metrics"
+CTC_TARGET = "ctc"
 
 
 def parse_args() -> argparse.Namespace:
@@ -148,9 +149,24 @@ def load_image_tensor(
     return torch.from_numpy(image_array).unsqueeze(0).unsqueeze(0).to(device)
 
 
-def load_class_maps(checkpoint: dict[str, Any], class_map_json: Path | None) -> tuple[dict[str, int], dict[int, str]]:
-    if "class_to_idx" in checkpoint:
-        class_to_idx = {str(label): int(index) for label, index in checkpoint["class_to_idx"].items()}
+def is_ctc_checkpoint(checkpoint: dict[str, Any]) -> bool:
+    return checkpoint.get("target_kind") == CTC_TARGET
+
+
+def load_class_maps(
+    checkpoint: dict[str, Any],
+    class_map_json: Path | None,
+) -> tuple[dict[str, int], dict[int, str]]:
+    if is_ctc_checkpoint(checkpoint) and "char_to_idx" in checkpoint:
+        class_to_idx = {
+            str(label): int(index)
+            for label, index in checkpoint["char_to_idx"].items()
+        }
+    elif "class_to_idx" in checkpoint:
+        class_to_idx = {
+            str(label): int(index)
+            for label, index in checkpoint["class_to_idx"].items()
+        }
     elif class_map_json is not None:
         class_to_idx = {
             str(label): int(index)
@@ -174,6 +190,7 @@ def generate_predictions_from_checkpoint(args: argparse.Namespace) -> pd.DataFra
     checkpoint_obj = torch.load(args.checkpoint, map_location=device, weights_only=False)
     checkpoint = checkpoint_obj if isinstance(checkpoint_obj, dict) else {}
     class_to_idx, idx_to_class = load_class_maps(checkpoint, args.class_map_json)
+    uses_ctc = is_ctc_checkpoint(checkpoint)
 
     image_size = infer_image_size(args, checkpoint)
     model = load_model(args, checkpoint, class_to_idx, device)
@@ -197,9 +214,21 @@ def generate_predictions_from_checkpoint(args: argparse.Namespace) -> pd.DataFra
             logits = model(image_tensor)
             if isinstance(logits, (tuple, list)):
                 logits = logits[0]
-            probabilities = torch.softmax(logits, dim=1)
-            confidence, predicted_idx = probabilities.max(dim=1)
-            predicted_text = idx_to_class[int(predicted_idx.item())]
+            if uses_ctc:
+                decoded = model.ctc_decode(
+                    logits,
+                    idx_to_token=idx_to_class,
+                    blank_idx=int(checkpoint.get("blank_idx", 0)),
+                )
+                predicted_text = str(decoded[0])
+                probabilities = torch.softmax(logits, dim=-1)
+                confidence = probabilities.max(dim=-1).values.mean()
+            else:
+                if logits.ndim == 3:
+                    logits = logits[:, -1, :]
+                probabilities = torch.softmax(logits, dim=1)
+                confidence, predicted_idx = probabilities.max(dim=1)
+                predicted_text = idx_to_class[int(predicted_idx.item())]
 
             prediction_rows.append(
                 {
@@ -271,7 +300,11 @@ def load_model(
     if args.model_kind == "e2cnn-bilstm":
         from med_ocr_research.models.E2CnnBiLSTM import E2CnnBiLSTM
 
-        model = E2CnnBiLSTM(num_classes=len(class_to_idx)).to(device)
+        model = E2CnnBiLSTM(
+            num_classes=len(class_to_idx),
+            blank_idx=int(checkpoint.get("blank_idx", 0)),
+            default_return_sequence=is_ctc_checkpoint(checkpoint),
+        ).to(device)
         model.load_state_dict(checkpoint["model_state_dict"])
         return model
 

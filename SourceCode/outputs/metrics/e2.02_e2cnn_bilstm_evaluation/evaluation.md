@@ -3,20 +3,20 @@
 - Fonte: `outputs/runs/e2.02/e2cnn_bilstm_best_checkpoint.pt`
 - Amostras: 836
 - Metrica primaria: `exact_match_accuracy`
-- Palavras Exatas: 0.576555
-- CER: 0.307355
-- WER: 0.448894
-- Corretas: 482
-- Erros: 354
+- Palavras Exatas: 0.521531
+- CER: 0.181148
+- WER: 0.498419
+- Corretas: 436
+- Erros: 400
 
 ## Confianca
 
 - Predicoes com confianca: 836
-- Media: 0.728390
-- Mediana: 0.876031
-- Desvio padrao: 0.296430
-- Minimo: 0.049443
-- Maximo: 0.999942
+- Media: 0.976656
+- Mediana: 0.980850
+- Desvio padrao: 0.018236
+- Minimo: 0.874504
+- Maximo: 0.999989
 
 ## Artefatos
 

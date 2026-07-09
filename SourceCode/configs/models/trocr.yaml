@@ -12,3 +12,21 @@ model:
   decoding:
     num_beams: 4
   loss: cross_entropy
+training:
+  script: src/med_ocr_research/training/train_trocr.py
+  sequence_script: scripts/train_trocr_sequence.py
+  default_dataset: prescriptionbd
+  available_datasets:
+    - prescriptionbd
+    - rxhandbd
+    - combined
+  batch_size: 2
+  effective_batch_size: 16
+  gradient_accumulation_steps: 8
+  fp16: true
+  gradient_checkpointing: true
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  max_epochs: 50
+  checkpoint_metric: val_cer
+  checkpoint_mode: min

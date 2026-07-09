@@ -58,6 +58,58 @@ python -m pip install -r requirements-train.txt
 4. Desenvolva preprocessamento, treino e avaliacao dentro de `src/`.
 5. Grave checkpoints, predicoes, metricas e relatorios em `outputs/`.
 
+## Fine-tuning do TrOCR
+
+O treino do TrOCR fica em `src/med_ocr_research/training/train_trocr.py`.
+Use `--dataset` para alternar entre os splits prontos:
+
+```powershell
+python src/med_ocr_research/training/train_trocr.py --dataset prescriptionbd
+python src/med_ocr_research/training/train_trocr.py --dataset rxhandbd
+python src/med_ocr_research/training/train_trocr.py --dataset combined
+```
+
+Ele aceita os mesmos argumentos principais usados nos treinos E1/E2:
+
+```powershell
+python3 src/med_ocr_research/training/train_trocr.py `
+  --run-name e3.03 `
+  --dataset combined `
+  --epochs 200 `
+  --batch-size 2 `
+  --gradient-accumulation-steps 8 `
+  --learning-rate 0.0001 `
+  --augmentation-strength strong `
+  --fp16 `
+  --gradient-checkpointing
+```
+
+Em GPUs com cerca de 6 GB de VRAM, como RTX 3050, `--batch-size 16`
+costuma estourar memoria no TrOCR. O exemplo acima usa micro-batch 2 e
+acumulacao 8, mantendo batch efetivo 16.
+
+Para um dataset novo, informe os CSVs diretamente, mantendo as colunas de imagem
+e texto do manifesto:
+
+```powershell
+python src/med_ocr_research/training/train_trocr.py `
+  --train-csv data/splits/meu_dataset/train.csv `
+  --val-csv data/splits/meu_dataset/val.csv `
+  --data-root data `
+  --label-column text_normalized `
+  --image-column image_path
+```
+
+Tambem ha um executor sequencial no mesmo estilo dos treinos CNN:
+
+```powershell
+python scripts/train_trocr_sequence.py --datasets prescriptionbd rxhandbd combined
+```
+
+Os artefatos sao salvos em `outputs/runs/<run-name>/`, incluindo `trocr_best/`,
+`trocr_final/`, historico de treino, resumo da execucao e predicoes da melhor
+validacao.
+
 ## Contrato do manifesto
 
 O arquivo principal deve conter:
