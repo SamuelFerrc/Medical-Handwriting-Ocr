@@ -1,0 +1,26 @@
+{
+  "run_name": "e4.02",
+  "model_kind": "parseq",
+  "model_name": "parseq",
+  "hub_repo": "baudm/parseq:1902db043c029a7e03a3818c616c06600af574be",
+  "pretrained": true,
+  "dataset": "rxhandbd",
+  "train_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/rxhandbd/train.csv",
+  "val_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/rxhandbd/val.csv",
+  "label_column": "text_normalized",
+  "image_column": "image_path",
+  "image_size": [
+    64,
+    512
+  ],
+  "max_target_length": 64,
+  "max_generation_length": 64,
+  "num_beams": 1,
+  "charset": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ",
+  "gradient_checkpointing": true,
+  "best_epoch": 147,
+  "best_val_loss": 1.1597680524414407,
+  "best_val_accuracy": 0.7037037037037037,
+  "best_val_cer": 0.10474860335195531,
+  "best_val_wer": 0.3033826638477801
+}

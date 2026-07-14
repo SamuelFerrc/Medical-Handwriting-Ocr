@@ -2,11 +2,36 @@ model:
   name: parseq
   role: transformer_text_recognition
   pretrained: true
-  checkpoint: to_define
+  source: baudm/parseq
+  source_commit: 1902db043c029a7e03a3818c616c06600af574be
+  checkpoint: parseq
   input:
     channels: 3
-    height: 32
-    width: 128
-  max_label_length: 128
-  decoding: model_default
-  loss: cross_entropy
+    height: 64
+    width: 512
+  max_label_length: 64
+  decoding:
+    autoregressive: true
+    refinement_iterations: 1
+    num_beams: 1
+  loss: permutation_cross_entropy
+training:
+  script: src/med_ocr_research/training/train_parseq.py
+  sequence_script: scripts/train_parseq_sequence.py
+  evaluation_script: src/med_ocr_research/evaluation/evaluate_parseq.py
+  default_dataset: prescriptionbd
+  available_datasets:
+    - prescriptionbd
+    - rxhandbd
+    - combined
+  batch_size: 16
+  effective_batch_size: 256
+  gradient_accumulation_steps: 16
+  fp16: true
+  gradient_checkpointing: true
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  max_epochs: 200
+  augmentation_strength: strong
+  checkpoint_metric: val_cer
+  checkpoint_mode: min

@@ -110,6 +110,75 @@ Os artefatos sao salvos em `outputs/runs/<run-name>/`, incluindo `trocr_best/`,
 `trocr_final/`, historico de treino, resumo da execucao e predicoes da melhor
 validacao.
 
+## Fine-tuning do PARSeq
+
+O PARSeq usa a implementacao e os pesos oficiais de `baudm/parseq`, fixados em
+um commit compativel com PyTorch Lightning 2.x. Na primeira execucao, o Torch
+Hub baixa aproximadamente 91 MB de pesos; depois disso, usa o cache local.
+
+O pipeline mantem os mesmos splits, data augmentation, otimizador, scheduler,
+metricas, criterio de melhor checkpoint e artefatos do TrOCR. O checkpoint
+oficial e nativo em `32x128` e 25 caracteres; este pipeline interpola seus
+embeddings posicionais para `64x512` e expande o limite para 64, preservando os
+pesos pre-treinados e os parametros experimentais usados no TrOCR.
+
+```powershell
+python src/med_ocr_research/training/train_parseq.py --dataset prescriptionbd
+python src/med_ocr_research/training/train_parseq.py --dataset rxhandbd
+python src/med_ocr_research/training/train_parseq.py --dataset combined
+```
+
+Para executar os tres cenarios em sequencia, gerando as runs `e4.01`, `e4.02`
+e `e4.03`:
+
+```powershell
+python scripts/train_parseq_sequence.py --datasets prescriptionbd rxhandbd combined
+```
+
+Exemplo equivalente ao treino longo do TrOCR:
+
+```powershell
+python src/med_ocr_research/training/train_parseq.py `
+  --run-name e4.03 `
+  --dataset combined `
+  --data-root data `
+  --model-name parseq `
+  --epochs 200 `
+  --batch-size 16 `
+  --learning-rate 0.0001 `
+  --weight-decay 0.01 `
+  --num-workers 2 `
+  --max-target-length 64 `
+  --max-generation-length 64 `
+  --num-beams 1 `
+  --image-height 64 `
+  --image-width 512 `
+  --gradient-accumulation-steps 16 `
+  --warmup-ratio 0.1 `
+  --max-grad-norm 1.0 `
+  --label-column text_normalized `
+  --image-column image_path `
+  --seed 42 `
+  --augmentation-strength strong `
+  --fp16 `
+  --gradient-checkpointing
+```
+
+O melhor checkpoint e salvo em `outputs/runs/<run-name>/parseq_best/`. Para
+avaliar no teste correspondente ao dataset salvo nos metadados:
+
+```powershell
+python src/med_ocr_research/evaluation/evaluate_parseq.py `
+  --checkpoint outputs/runs/e4.03/parseq_best
+```
+
+Para inspecionar algumas predicoes manualmente:
+
+```powershell
+python tests/test_parseq_predictions.py `
+  --checkpoint outputs/runs/e4.03/parseq_best
+```
+
 ## Contrato do manifesto
 
 O arquivo principal deve conter:

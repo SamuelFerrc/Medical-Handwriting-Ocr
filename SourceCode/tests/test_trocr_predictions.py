@@ -16,8 +16,8 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e3.02/trocr_best"
-DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
+DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e3.03/trocr_best"
+DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/prescriptionbd/test.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 DEFAULT_IMAGE_SIZE = (384, 384)
 DEFAULT_MAX_GENERATION_LENGTH = 128
