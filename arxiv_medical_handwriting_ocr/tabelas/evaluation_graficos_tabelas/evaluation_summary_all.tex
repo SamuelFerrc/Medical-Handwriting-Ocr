@@ -1,0 +1,28 @@
+% Metrics recalculated from evaluated_predictions.csv; CER/WER are aggregated as total errors divided by total reference units.
+\begin{table}[htbp]
+\centering
+\caption{Evaluation summary by model and scenario}
+\label{tab:evaluation-summary-all}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrr}
+\toprule
+\textbf{Model} & \textbf{Scenario} & \textbf{N} & \textbf{Correct} & \textbf{Accuracy} & \textbf{CER} & \textbf{WER} & \textbf{Mean confidence} \\
+\midrule
+CNN & PrescriptionBD & 780 & 322 & 0.4128 & 0.5328 & 0.5911 & 0.2728 \\
+CNN & RxHandBD & 836 & 262 & 0.3134 & 0.5866 & 0.7313 & 0.2831 \\
+CNN & Combined & 1616 & 463 & 0.2865 & 0.6467 & 0.7412 & 0.2458 \\
+CNN-BiLSTM & PrescriptionBD & 780 & 527 & 0.6756 & 0.1868 & 0.3278 & 0.9822 \\
+CNN-BiLSTM & RxHandBD & 836 & 436 & 0.5215 & 0.1811 & 0.4984 & 0.9767 \\
+CNN-BiLSTM & Combined & 1616 & 927 & 0.5736 & 0.2064 & 0.4370 & 0.9823 \\
+TrOCR & PrescriptionBD & 780 & 693 & 0.8885 & 0.0864 & 0.1127 & 0.9886 \\
+TrOCR & RxHandBD & 836 & 612 & 0.7321 & 0.1122 & 0.2824 & 0.9745 \\
+TrOCR & Combined & 1616 & 1307 & 0.8088 & 0.1024 & 0.2018 & 0.9826 \\
+PARSeq & PrescriptionBD & 780 & 703 & 0.9013 & 0.0680 & 0.1000 & 0.9649 \\
+PARSeq & RxHandBD & 836 & 579 & 0.6926 & 0.1067 & 0.3130 & 0.8880 \\
+PARSeq & Combined & 1616 & 1270 & 0.7859 & 0.0943 & 0.2214 & 0.9344 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

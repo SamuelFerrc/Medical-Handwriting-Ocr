@@ -1,0 +1,13 @@
+run_name,accuracy,cer,wer,samples
+e1.01cnn_evaluation,0.0,0.0,0.0,0
+e1.02cnn_evaluation,0.0,0.0,0.0,0
+e1.03cnn_evaluation,0.0,0.0,0.0,0
+e2.01_e2cnn_bilstm_evaluation,0.0,0.0,0.0,0
+e2.02_e2cnn_bilstm_evaluation,0.0,0.0,0.0,0
+e2.03_e2cnn_bilstm_evaluation,0.0,0.0,0.0,0
+e3.01_trocr_evaluation,0.0,0.0,0.0,0
+e3.02_trocr_evaluation,0.0,0.0,0.0,0
+e3.03_trocr_evaluation,0.0,0.0,0.0,0
+e4.01_parseq_evaluation,0.0,0.0,0.0,0
+e4.02_parseq_evaluation,0.0,0.0,0.0,0
+e4.03_parseq_evaluation,0.0,0.0,0.0,0

@@ -1,0 +1,69 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ali et~al.(2024)Ali, Ranmbail, Nadeem, Ishfaq, Ramzan, and
+  Ali]{ali2024leveraging}
+Usman Ali, Sahil Ranmbail, Muhammad Nadeem, Hamid Ishfaq, Muhammad~Umer Ramzan,
+  and Waqas Ali.
+\newblock Leveraging deep learning with multi-head attention for accurate
+  extraction of medicine from handwritten prescriptions, 2024.
+\newblock URL \url{https://doi.org/10.48550/arXiv.2412.18199}.
+
+\bibitem[Islam(2026)]{islam2026rxhandbd}
+Md~Masudul Islam.
+\newblock {RxHandBD}: A handwritten prescription word image dataset.
+\newblock Mendeley Data, 2026.
+\newblock Version 3.
+
+\bibitem[Mia et~al.(2024{\natexlab{a}})Mia, Mamun, Sajid, and
+  Ruddra]{abdur_rahim_mia_abdullah_al_mamun_abdullah_al_sajid_aurunave_mollik_ruddra_2024}
+Abdur~Rahim Mia, Abdullah~Al Mamun, Abdullah~Al Sajid, and Aurunave~Mollik
+  Ruddra.
+\newblock Doctor's handwritten prescription {BD} dataset.
+\newblock Kaggle, 2024{\natexlab{a}}.
+\newblock URL \url{https://www.kaggle.com/dsv/8378585}.
+
+\bibitem[Mia et~al.(2024{\natexlab{b}})Mia, Chowdhury, Mamun, Ruddra, and
+  Tanny]{mia2024deep}
+A.~R. Mia, M.~A.-A.-S. Chowdhury, A.~A. Mamun, A.~M. Ruddra, and N.~T. Tanny.
+\newblock A deep neural network approach with pioneering local dataset to
+  recognize doctor's handwritten prescription in bangladesh.
+\newblock In \emph{2024 International Conference on Advances in Computing,
+  Communication, Electrical, and Smart Systems (iCACCESS)}, Dhaka, Bangladesh,
+  2024{\natexlab{b}}.
+
+\bibitem[Hubel and Wiesel(1962)]{hubel1962receptive}
+David~H. Hubel and Torsten~N. Wiesel.
+\newblock Receptive fields, binocular interaction and functional architecture
+  in the cat's visual cortex.
+\newblock 1962.
+
+\bibitem[Fukushima(1980)]{fukushima1980neocognitron}
+Kunihiko Fukushima.
+\newblock Neocognitron: A self-organizing neural network model for a mechanism
+  of pattern recognition unaffected by shift in position.
+\newblock \emph{Biological Cybernetics}, 36\penalty0 (4):\penalty0 193--202,
+  1980.
+\newblock \doi{10.1007/BF00344251}.
+
+\bibitem[LeCun et~al.(1998)LeCun, Bottou, Bengio, and
+  Haffner]{lecun1998gradient}
+Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock \emph{Proceedings of the IEEE}, 86\penalty0 (11):\penalty0
+  2278--2324, 1998.
+\newblock \doi{10.1109/5.726791}.
+
+\bibitem[Shi et~al.(2016)Shi, Bai, and Yao]{shi2016crnn}
+Baoguang Shi, Xiang Bai, and Cong Yao.
+\newblock An end-to-end trainable neural network for image-based sequence
+  recognition and its application to scene text recognition.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 2564--2572, 2016.
+\newblock \doi{10.1109/CVPR.2016.277}.
+
+\end{thebibliography}

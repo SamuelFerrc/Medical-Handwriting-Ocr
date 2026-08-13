@@ -1,0 +1,32 @@
+% In the combined scenario, metrics are calculated separately for PrescriptionBD and RxHandBD.
+\begin{table}[htbp]
+\centering
+\caption{Evaluation summary stratified by dataset}
+\label{tab:evaluation-summary-by-dataset}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrrr}
+\toprule
+\textbf{Model} & \textbf{Scenario} & \textbf{Dataset} & \textbf{N} & \textbf{Correct} & \textbf{Accuracy} & \textbf{CER} & \textbf{WER} \\
+\midrule
+CNN & PrescriptionBD & PrescriptionBD & 780 & 322 & 0.4128 & 0.5328 & 0.5911 \\
+CNN & RxHandBD & RxHandBD & 836 & 262 & 0.3134 & 0.5866 & 0.7313 \\
+CNN & Combined & PrescriptionBD & 780 & 194 & 0.2487 & 0.7091 & 0.7557 \\
+CNN & Combined & RxHandBD & 836 & 269 & 0.3218 & 0.5926 & 0.7292 \\
+CNN-BiLSTM & PrescriptionBD & PrescriptionBD & 780 & 527 & 0.6756 & 0.1868 & 0.3278 \\
+CNN-BiLSTM & RxHandBD & RxHandBD & 836 & 436 & 0.5215 & 0.1811 & 0.4984 \\
+CNN-BiLSTM & Combined & PrescriptionBD & 780 & 521 & 0.6679 & 0.1974 & 0.3329 \\
+CNN-BiLSTM & Combined & RxHandBD & 836 & 406 & 0.4856 & 0.2141 & 0.5237 \\
+TrOCR & PrescriptionBD & PrescriptionBD & 780 & 693 & 0.8885 & 0.0864 & 0.1127 \\
+TrOCR & RxHandBD & RxHandBD & 836 & 612 & 0.7321 & 0.1122 & 0.2824 \\
+TrOCR & Combined & PrescriptionBD & 780 & 695 & 0.8910 & 0.0850 & 0.1089 \\
+TrOCR & Combined & RxHandBD & 836 & 612 & 0.7321 & 0.1174 & 0.2792 \\
+PARSeq & PrescriptionBD & PrescriptionBD & 780 & 703 & 0.9013 & 0.0680 & 0.1000 \\
+PARSeq & RxHandBD & RxHandBD & 836 & 579 & 0.6926 & 0.1067 & 0.3130 \\
+PARSeq & Combined & PrescriptionBD & 780 & 687 & 0.8808 & 0.0826 & 0.1215 \\
+PARSeq & Combined & RxHandBD & 836 & 583 & 0.6974 & 0.1044 & 0.3045 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

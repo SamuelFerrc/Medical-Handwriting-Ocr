@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_english.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: unsrtnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--I didn't find a database entry for "exemplo2024"
+Warning--empty journal in hubel1962receptive
+You've used 8 entries,
+            2481 wiz_defined-function locations,
+            605 strings with 6398 characters,
+and the built_in function-call counts, 3169 in all, are:
+= -- 260
+> -- 176
+< -- 4
++ -- 69
+- -- 52
+* -- 238
+:= -- 507
+add.period$ -- 29
+call.type$ -- 8
+change.case$ -- 16
+chr.to.int$ -- 7
+cite$ -- 9
+duplicate$ -- 153
+empty$ -- 287
+format.name$ -- 62
+if$ -- 674
+int.to.chr$ -- 2
+int.to.str$ -- 9
+missing$ -- 5
+newline$ -- 53
+num.names$ -- 24
+pop$ -- 82
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 0
+skip$ -- 96
+stack$ -- 0
+substring$ -- 112
+swap$ -- 29
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 1
+while$ -- 23
+width$ -- 0
+write$ -- 116
+(There were 2 warnings)
