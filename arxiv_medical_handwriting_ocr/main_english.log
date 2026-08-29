@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.20)  7 AUG 2026 00:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2026.5.9)  14 AUG 2026 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -95,10 +95,10 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 )
 (C:\Users\lacer\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilia
 n.ldf
-Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
+Language: portuges 2026/01/24 v1.2u Portuguese support from the babel system
 Package babel Info: Hyphen rules for 'brazilian' set to \l@portuguese
-(babel)             (\language56). Reported on input line 111.
-Package babel Info: Making " an active character on input line 143.
+(babel)             (\language56). Reported on input line 100.
+Package babel Info: Making " an active character on input line 132.
 ))
 (C:\Users\lacer\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel
 -brazilian.tex
@@ -149,7 +149,7 @@ File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 )
 (C:\Users\lacer\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+Package: geometry 2026/03/07 v6.0 Page Geometry
 
 (C:\Users\lacer\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -815,40 +815,40 @@ e 173.
 <imagens/211.png, id=139, 103.38625pt x 30.1125pt>
 File: imagens/211.png Graphic file (type png)
 <use imagens/211.png>
-Package pdftex.def Info: imagens/211.png  used on input line 233.
+Package pdftex.def Info: imagens/211.png  used on input line 221.
 (pdftex.def)             Requested size: 67.94241pt x 19.78929pt.
 <imagens/139.png, id=140, 128.8815pt x 35.53275pt>
 File: imagens/139.png Graphic file (type png)
 <use imagens/139.png>
-Package pdftex.def Info: imagens/139.png  used on input line 240.
+Package pdftex.def Info: imagens/139.png  used on input line 228.
 (pdftex.def)             Requested size: 67.94241pt x 18.73248pt.
 <imagens/171.png, id=142, 103.587pt x 45.771pt>
 File: imagens/171.png Graphic file (type png)
 <use imagens/171.png>
-Package pdftex.def Info: imagens/171.png  used on input line 247.
+Package pdftex.def Info: imagens/171.png  used on input line 235.
 (pdftex.def)             Requested size: 67.94241pt x 30.02107pt.
  [5 <./imagens/211.png (PNG copy)> <./imagens/139.png> <./imagens/171.png>]
 <imagens/P0302.jpg, id=154, 154.176pt x 154.176pt>
 File: imagens/P0302.jpg Graphic file (type jpg)
 <use imagens/P0302.jpg>
-Package pdftex.def Info: imagens/P0302.jpg  used on input line 270.
+Package pdftex.def Info: imagens/P0302.jpg  used on input line 258.
 (pdftex.def)             Requested size: 67.94241pt x 67.9435pt.
 <imagens/P0163.jpg, id=155, 154.176pt x 154.176pt>
 File: imagens/P0163.jpg Graphic file (type jpg)
 <use imagens/P0163.jpg>
-Package pdftex.def Info: imagens/P0163.jpg  used on input line 277.
+Package pdftex.def Info: imagens/P0163.jpg  used on input line 265.
 (pdftex.def)             Requested size: 67.94241pt x 67.9435pt.
 <imagens/P0220.jpg, id=156, 154.176pt x 154.176pt>
 File: imagens/P0220.jpg Graphic file (type jpg)
 <use imagens/P0220.jpg>
-Package pdftex.def Info: imagens/P0220.jpg  used on input line 284.
+Package pdftex.def Info: imagens/P0220.jpg  used on input line 272.
 (pdftex.def)             Requested size: 67.94241pt x 67.9435pt.
 File: imagens/211.png Graphic file (type png)
 <use imagens/211.png>
-Package pdftex.def Info: imagens/211.png  used on input line 302.
+Package pdftex.def Info: imagens/211.png  used on input line 290.
 (pdftex.def)             Requested size: 195.39471pt x 56.9055pt.
 
-Overfull \hbox (14.21033pt too wide) in paragraph at lines 302--303
+Overfull \hbox (14.21033pt too wide) in paragraph at lines 290--291
  [][] 
  []
 
@@ -856,7 +856,7 @@ Overfull \hbox (14.21033pt too wide) in paragraph at lines 302--303
 File: imagens/prescriptionbd_test_000212.png Graphic file (type png)
 <use imagens/prescriptionbd_test_000212.png>
 Package pdftex.def Info: imagens/prescriptionbd_test_000212.png  used on input 
-line 309.
+line 297.
 (pdftex.def)             Requested size: 56.89993pt x 56.9055pt.
 [6{C:/Users/lacer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 :/Users/lacer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <
@@ -866,32 +866,32 @@ scriptionbd_test_000212.png (PNG copy)>]
 File: imagens/rxhandbd_000001_original.png Graphic file (type png)
 <use imagens/rxhandbd_000001_original.png>
 Package pdftex.def Info: imagens/rxhandbd_000001_original.png  used on input li
-ne 348.
+ne 336.
 (pdftex.def)             Requested size: 113.24197pt x 113.23526pt.
 <imagens/rxhandbd_000001_random_affine.png, id=173, 513.92pt x 513.92pt>
 File: imagens/rxhandbd_000001_random_affine.png Graphic file (type png)
 <use imagens/rxhandbd_000001_random_affine.png>
 Package pdftex.def Info: imagens/rxhandbd_000001_random_affine.png  used on inp
-ut line 357.
+ut line 345.
 (pdftex.def)             Requested size: 113.24197pt x 113.23526pt.
 <imagens/rxhandbd_000001_colorjitter.png, id=174, 513.92pt x 513.92pt>
 File: imagens/rxhandbd_000001_colorjitter.png Graphic file (type png)
 <use imagens/rxhandbd_000001_colorjitter.png>
 Package pdftex.def Info: imagens/rxhandbd_000001_colorjitter.png  used on input
- line 368.
+ line 356.
 (pdftex.def)             Requested size: 113.24197pt x 113.23526pt.
 <imagens/rxhandbd_000001_blur.png, id=175, 513.92pt x 513.92pt>
 File: imagens/rxhandbd_000001_blur.png Graphic file (type png)
 <use imagens/rxhandbd_000001_blur.png>
 Package pdftex.def Info: imagens/rxhandbd_000001_blur.png  used on input line 3
-77.
+65.
 (pdftex.def)             Requested size: 113.24197pt x 113.23526pt.
  [7{C:/Users/lacer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
 nc} <./imagens/rxhandbd_000001_original.png (PNG copy)> <./imagens/rxhandbd_000
 001_random_affine.png (PNG copy)> <./imagens/rxhandbd_000001_colorjitter.png (P
 NG copy)> <./imagens/rxhandbd_000001_blur.png (PNG copy)>] [8] [9] [10]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-83.
+71.
 
 (C:\Users\lacer\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -909,7 +909,7 @@ ng Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/comparison_all_evaluations_accuracy.pn
 g>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/comparison_all_eva
-luations_accuracy.png  used on input line 565.
+luations_accuracy.png  used on input line 553.
 (pdftex.def)             Requested size: 425.79092pt x 241.92955pt.
  [12]
 <imagens/evaluation_graficos_tabelas/comparison_all_evaluations_cer.png, id=230
@@ -918,7 +918,7 @@ File: imagens/evaluation_graficos_tabelas/comparison_all_evaluations_cer.png Gr
 aphic file (type png)
 <use imagens/evaluation_graficos_tabelas/comparison_all_evaluations_cer.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/comparison_all_eva
-luations_cer.png  used on input line 572.
+luations_cer.png  used on input line 560.
 (pdftex.def)             Requested size: 425.79092pt x 241.92955pt.
 <imagens/evaluation_graficos_tabelas/comparison_all_evaluations_wer.png, id=231
 , 529.98pt x 301.125pt>
@@ -926,7 +926,7 @@ File: imagens/evaluation_graficos_tabelas/comparison_all_evaluations_wer.png Gr
 aphic file (type png)
 <use imagens/evaluation_graficos_tabelas/comparison_all_evaluations_wer.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/comparison_all_eva
-luations_wer.png  used on input line 579.
+luations_wer.png  used on input line 567.
 (pdftex.def)             Requested size: 425.79092pt x 241.92955pt.
  [13 <./imagens/evaluation_graficos_tabelas/comparison_all_evaluations_accuracy
 .png (PNG copy)> <./imagens/evaluation_graficos_tabelas/comparison_all_evaluati
@@ -937,7 +937,7 @@ File: imagens/evaluation_graficos_tabelas/comparison_combined_by_dataset.png Gr
 aphic file (type png)
 <use imagens/evaluation_graficos_tabelas/comparison_combined_by_dataset.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/comparison_combine
-d_by_dataset.png  used on input line 603.
+d_by_dataset.png  used on input line 591.
 (pdftex.def)             Requested size: 425.79092pt x 241.92955pt.
  [14 <./imagens/evaluation_graficos_tabelas/comparison_all_evaluations_wer.png 
 (PNG copy)>]
@@ -948,7 +948,7 @@ ions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e1.01cnn_evaluation_evaluated_predicti
 ons.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e1.01cnn_evaluatio
-n_evaluated_predictions.png  used on input line 627.
+n_evaluated_predictions.png  used on input line 615.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e1.01cnn_evaluation_per_label_metrics.png,
  id=249, 481.8pt x 332.442pt>
@@ -957,7 +957,7 @@ File: imagens/evaluation_graficos_tabelas/e1.01cnn_evaluation_per_label_metrics
 <use imagens/evaluation_graficos_tabelas/e1.01cnn_evaluation_per_label_metrics.
 png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e1.01cnn_evaluatio
-n_per_label_metrics.png  used on input line 632.
+n_per_label_metrics.png  used on input line 620.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
  [15 <./imagens/evaluation_graficos_tabelas/comparison_combined_by_dataset.png 
 (PNG copy)>]
@@ -968,7 +968,7 @@ ions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e1.02cnn_evaluation_evaluated_predicti
 ons.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e1.02cnn_evaluatio
-n_evaluated_predictions.png  used on input line 643.
+n_evaluated_predictions.png  used on input line 631.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e1.02cnn_evaluation_per_label_metrics.png,
  id=256, 481.8pt x 332.442pt>
@@ -977,7 +977,7 @@ File: imagens/evaluation_graficos_tabelas/e1.02cnn_evaluation_per_label_metrics
 <use imagens/evaluation_graficos_tabelas/e1.02cnn_evaluation_per_label_metrics.
 png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e1.02cnn_evaluatio
-n_per_label_metrics.png  used on input line 648.
+n_per_label_metrics.png  used on input line 636.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e1.03cnn_evaluation_evaluated_predictions.
 png, id=257, 481.8pt x 337.26pt>
@@ -986,7 +986,7 @@ ions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e1.03cnn_evaluation_evaluated_predicti
 ons.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e1.03cnn_evaluatio
-n_evaluated_predictions.png  used on input line 659.
+n_evaluated_predictions.png  used on input line 647.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e1.03cnn_evaluation_per_label_metrics.png,
  id=258, 481.8pt x 332.442pt>
@@ -995,7 +995,7 @@ File: imagens/evaluation_graficos_tabelas/e1.03cnn_evaluation_per_label_metrics
 <use imagens/evaluation_graficos_tabelas/e1.03cnn_evaluation_per_label_metrics.
 png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e1.03cnn_evaluatio
-n_per_label_metrics.png  used on input line 664.
+n_per_label_metrics.png  used on input line 652.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm_evaluation_evaluated_pr
 edictions.png, id=259, 481.8pt x 337.26pt>
@@ -1004,7 +1004,7 @@ ed_predictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm_evaluation_evaluate
 d_predictions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm
-_evaluation_evaluated_predictions.png  used on input line 677.
+_evaluation_evaluated_predictions.png  used on input line 665.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm_evaluation_per_label_me
 trics.png, id=260, 481.8pt x 332.442pt>
@@ -1013,7 +1013,7 @@ el_metrics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm_evaluation_per_labe
 l_metrics.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm
-_evaluation_per_label_metrics.png  used on input line 682.
+_evaluation_per_label_metrics.png  used on input line 670.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
  [16 <./imagens/evaluation_graficos_tabelas/e1.01cnn_evaluation_evaluated_predi
 ctions.png (PNG copy)> <./imagens/evaluation_graficos_tabelas/e1.01cnn_evaluati
@@ -1030,7 +1030,7 @@ ed_predictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e2.02_e2cnn_bilstm_evaluation_evaluate
 d_predictions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e2.02_e2cnn_bilstm
-_evaluation_evaluated_predictions.png  used on input line 693.
+_evaluation_evaluated_predictions.png  used on input line 681.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e2.02_e2cnn_bilstm_evaluation_per_label_me
 trics.png, id=269, 481.8pt x 332.442pt>
@@ -1039,7 +1039,7 @@ el_metrics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e2.02_e2cnn_bilstm_evaluation_per_labe
 l_metrics.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e2.02_e2cnn_bilstm
-_evaluation_per_label_metrics.png  used on input line 698.
+_evaluation_per_label_metrics.png  used on input line 686.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e2.03_e2cnn_bilstm_evaluation_evaluated_pr
 edictions.png, id=270, 481.8pt x 337.26pt>
@@ -1048,7 +1048,7 @@ ed_predictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e2.03_e2cnn_bilstm_evaluation_evaluate
 d_predictions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e2.03_e2cnn_bilstm
-_evaluation_evaluated_predictions.png  used on input line 709.
+_evaluation_evaluated_predictions.png  used on input line 697.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e2.03_e2cnn_bilstm_evaluation_per_label_me
 trics.png, id=271, 481.8pt x 332.442pt>
@@ -1057,7 +1057,7 @@ el_metrics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e2.03_e2cnn_bilstm_evaluation_per_labe
 l_metrics.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e2.03_e2cnn_bilstm
-_evaluation_per_label_metrics.png  used on input line 714.
+_evaluation_per_label_metrics.png  used on input line 702.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e3.01_trocr_evaluation_evaluated_predictio
 ns.png, id=272, 481.8pt x 337.26pt>
@@ -1066,7 +1066,7 @@ ictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e3.01_trocr_evaluation_evaluated_predi
 ctions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e3.01_trocr_evalua
-tion_evaluated_predictions.png  used on input line 727.
+tion_evaluated_predictions.png  used on input line 715.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e3.01_trocr_evaluation_per_label_metrics.p
 ng, id=273, 481.8pt x 332.442pt>
@@ -1075,7 +1075,7 @@ ics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e3.01_trocr_evaluation_per_label_metri
 cs.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e3.01_trocr_evalua
-tion_per_label_metrics.png  used on input line 732.
+tion_per_label_metrics.png  used on input line 720.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
  [17 <./imagens/evaluation_graficos_tabelas/e2.01_e2cnn_bilstm_evaluation_evalu
 ated_predictions.png (PNG copy)> <./imagens/evaluation_graficos_tabelas/e2.01_e
@@ -1093,7 +1093,7 @@ ictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e3.02_trocr_evaluation_evaluated_predi
 ctions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e3.02_trocr_evalua
-tion_evaluated_predictions.png  used on input line 743.
+tion_evaluated_predictions.png  used on input line 731.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e3.02_trocr_evaluation_per_label_metrics.p
 ng, id=282, 481.8pt x 332.442pt>
@@ -1102,7 +1102,7 @@ ics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e3.02_trocr_evaluation_per_label_metri
 cs.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e3.02_trocr_evalua
-tion_per_label_metrics.png  used on input line 748.
+tion_per_label_metrics.png  used on input line 736.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e3.03_trocr_evaluation_evaluated_predictio
 ns.png, id=283, 481.8pt x 337.26pt>
@@ -1111,7 +1111,7 @@ ictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e3.03_trocr_evaluation_evaluated_predi
 ctions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e3.03_trocr_evalua
-tion_evaluated_predictions.png  used on input line 759.
+tion_evaluated_predictions.png  used on input line 747.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e3.03_trocr_evaluation_per_label_metrics.p
 ng, id=284, 481.8pt x 332.442pt>
@@ -1120,7 +1120,7 @@ ics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e3.03_trocr_evaluation_per_label_metri
 cs.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e3.03_trocr_evalua
-tion_per_label_metrics.png  used on input line 764.
+tion_per_label_metrics.png  used on input line 752.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e4.01_parseq_evaluation_evaluated_predicti
 ons.png, id=285, 481.8pt x 337.26pt>
@@ -1129,7 +1129,7 @@ dictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e4.01_parseq_evaluation_evaluated_pred
 ictions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e4.01_parseq_evalu
-ation_evaluated_predictions.png  used on input line 777.
+ation_evaluated_predictions.png  used on input line 765.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e4.01_parseq_evaluation_per_label_metrics.
 png, id=286, 481.8pt x 332.442pt>
@@ -1138,7 +1138,7 @@ rics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e4.01_parseq_evaluation_per_label_metr
 ics.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e4.01_parseq_evalu
-ation_per_label_metrics.png  used on input line 782.
+ation_per_label_metrics.png  used on input line 770.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
  [18 <./imagens/evaluation_graficos_tabelas/e3.01_trocr_evaluation_evaluated_pr
 edictions.png (PNG copy)> <./imagens/evaluation_graficos_tabelas/e3.01_trocr_ev
@@ -1155,7 +1155,7 @@ dictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e4.02_parseq_evaluation_evaluated_pred
 ictions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e4.02_parseq_evalu
-ation_evaluated_predictions.png  used on input line 793.
+ation_evaluated_predictions.png  used on input line 781.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e4.02_parseq_evaluation_per_label_metrics.
 png, id=295, 481.8pt x 332.442pt>
@@ -1164,7 +1164,7 @@ rics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e4.02_parseq_evaluation_per_label_metr
 ics.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e4.02_parseq_evalu
-ation_per_label_metrics.png  used on input line 798.
+ation_per_label_metrics.png  used on input line 786.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
 <imagens/evaluation_graficos_tabelas/e4.03_parseq_evaluation_evaluated_predicti
 ons.png, id=296, 481.8pt x 337.26pt>
@@ -1173,7 +1173,7 @@ dictions.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e4.03_parseq_evaluation_evaluated_pred
 ictions.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e4.03_parseq_evalu
-ation_evaluated_predictions.png  used on input line 809.
+ation_evaluated_predictions.png  used on input line 797.
 (pdftex.def)             Requested size: 221.95676pt x 155.3679pt.
 <imagens/evaluation_graficos_tabelas/e4.03_parseq_evaluation_per_label_metrics.
 png, id=297, 481.8pt x 332.442pt>
@@ -1182,7 +1182,7 @@ rics.png Graphic file (type png)
 <use imagens/evaluation_graficos_tabelas/e4.03_parseq_evaluation_per_label_metr
 ics.png>
 Package pdftex.def Info: imagens/evaluation_graficos_tabelas/e4.03_parseq_evalu
-ation_per_label_metrics.png  used on input line 814.
+ation_per_label_metrics.png  used on input line 802.
 (pdftex.def)             Requested size: 221.95676pt x 153.14836pt.
  [19 <./imagens/evaluation_graficos_tabelas/e4.01_parseq_evaluation_evaluated_p
 redictions.png (PNG copy)> <./imagens/evaluation_graficos_tabelas/e4.01_parseq_
@@ -1205,11 +1205,11 @@ Package rerunfilecheck Info: File `main_english.out' has not changed.
 (rerunfilecheck)             Checksum: CC87473F82085FE8692B6561282805CD;3061.
  ) 
 Here is how much of TeX's memory you used:
- 23422 strings out of 474485
- 484257 string characters out of 5743733
+ 23412 strings out of 474486
+ 484145 string characters out of 5743756
  1944542 words of memory out of 5000000
- 45113 multiletter control sequences out of 15000+600000
- 637834 words of font info for 196 fonts, out of 8000000 for 9000
+ 45112 multiletter control sequences out of 15000+600000
+ 637231 words of font info for 191 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,11n,80p,1423b,1191s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lacer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
@@ -1225,7 +1225,7 @@ ers/lacer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/User
 s/lacer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/User
 s/lacer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
 s/lacer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main_english.pdf (21 pages, 3545809 bytes).
+Output written on main_english.pdf (21 pages, 3544775 bytes).
 PDF statistics:
  406 PDF objects out of 1000 (max. 8388607)
  85 named destinations out of 1000 (max. 500000)

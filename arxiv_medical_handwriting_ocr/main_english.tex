@@ -190,27 +190,14 @@ The adopted methodology for comparing the models consisted of standardizing all 
 \begin{enumerate}
 \item \textbf{Initializing the models:} Each architecture was configured with its respective parameters and output vocabulary. For transformer-based models, pre-trained checkpoints were used as the initial weights, whereas the remaining architectures were initialized with their default settings.
 
+
+		\item \textbf{Data Processing:} These images were converted to a grayscale, they were dimensioned to a new height of 64 pixels, with max width of 512 pixels, with that we are preserving aspect ratio and applying preenchimento when necessary. The text labels were normalized by removing excdents spaces and converting to minor letters. The data were organized on fixed training sets, validation and test.
+
+	\item \textbf{Optimization:} the train was realized  using batches with AdamW optimizer. Loss function was defined accodrdinly to a strategy of prediction from each architecture, it includes loss by cross entropy , CTC ou permutation loss basis. At the end of each epoch, the best accurary was iteractive selected as the best checkpoint for the moment.
 	
-	\item \textbf{Processamento dos dados:} as imagens foram convertidas para
-	escala de cinza, redimensionadas para altura de 64 pixels, com largura máxima
-	de 512 pixels, preservando-se a razão de aspecto e aplicando-se preenchimento	
-	quando necessário. Os rótulos textuais foram normalizados por meio da remoção
-	de espaços excedentes e conversão para letras minúsculas. Os dados foram
-	organizados em conjuntos fixos de treinamento, validação e teste.
+	\item \textbf{Evaluation:} the best checkpoint from evaluation was applied to the test set. The performace was mesured by exact word acurracy, Character Error Rate (CER) and Word Error Rate (WER), allowing us to evaluate integral correction of the predictions and the caracteres error level.
 	
-	\item \textbf{Otimização:} o treinamento foi realizado em \textit{batches},
-	utilizando o otimizador AdamW. A função de perda foi definida de acordo com a
-	estratégia de predição de cada arquitetura, incluindo perda por entropia
-	cruzada, CTC ou perda baseada em permutações. Ao final de cada época, o
-	desempenho no conjunto de validação foi monitorado para selecionar o melhor
-	\textit{checkpoint}.
 	
-	\item \textbf{Avaliação:} o melhor \textit{checkpoint} selecionado na
-	validação foi aplicado exclusivamente ao conjunto de teste. O desempenho foi
-	quantificado por acurácia de correspondência exata, \textit{Character Error
-		Rate} (CER) e \textit{Word Error Rate} (WER), permitindo avaliar tanto a
-	correção integral das predições quanto os erros em nível de caracteres e
-	palavras.
 \end{enumerate}
 
 \section{Experimental Setup}
@@ -219,11 +206,12 @@ The adopted methodology for comparing the models consisted of standardizing all 
 \subsection{Datasets and Preprocessing}
 \label{sec:datasets}
 
-O \textit{Doctor's Handwritten Prescription BD Dataset} (\textit{PrescriptionBD}) foi desenvolvido por pesquisadores de Bangladesh com o propósito de disponibilizar um conjunto de dados público voltado ao reconhecimento de prescrições médicas manuscritas~\cite{mia2024deep}. O desenvolvimento do dataset foi motivado pela limitada disponibilidade de bases públicas para o treinamento e a avaliação de modelos de reconhecimento de escrita manuscrita aplicados ao contexto médico. Para sua construção, foram coletadas prescrições médicas reais provenientes de Bangladesh, das quais palavras individuais foram segmentadas e posteriormente anotadas para compor o conjunto de dados. Ao final do processo, o dataset foi disponibilizado publicamente, possibilitando sua utilização em pesquisas relacionadas ao reconhecimento óptico de caracteres (OCR), ao reconhecimento de texto manuscrito (HTR) e a aplicações de inteligência artificial na área da saúde.
 
-A construção do \textit{PrescriptionBD} envolveu procedimentos de segmentação, rotulação e classificação das palavras extraídas das prescrições médicas, resultando em um conjunto de dados organizado e apropriado para o treinamento e a avaliação de modelos de reconhecimento de escrita manuscrita. As amostras apresentam, em geral, boa qualidade visual, com níveis de nitidez que favorecem a extração de características pelas arquiteturas de aprendizado profundo.
+The Doctor's Handwritten Prescription BD Dataset Prescription was developed by researchers from Banglasdes with the proposital to disponibilize a public dataset to recognition of handwritten medical prescriptions~\cite{mia2024deep}. The development was motivated by the limited avaliablity of public databases for training and evaluation of Optical Character Recognition (OCR) medical models. To its building, were collected real medical prescriptions from Bangladesh's doctors, where individual words were segmented and sequencialy anotadas to compose the dataset. At the end of the process, the dataset was made publicy avaliable.
 
-Na Figura~\ref{fig:prescriptionbd} são apresentadas algumas amostras do \textit{PrescriptionBD}. Observa-se que o dataset possui imagens com resoluções variáveis, tanto em altura quanto em largura, tornando necessária a realização de uma etapa de padronização para um tamanho único antes do treinamento das redes neurais. Além disso, o \textit{PrescriptionBD} já disponibiliza uma divisão oficial dos dados em conjuntos de treinamento e teste (\textit{train/test split}), característica que contribui para a reprodutibilidade dos experimentos e permite a comparação consistente entre diferentes abordagens.
+The construction of PrescriptionBD involves segmentation, labeling and classification of each word extracted from medical prescriptions, it results in an appropiated organized dataset for training and evaluation of the models. Generally, the samples presents good quality, and enought nitidez levels userfull for deep learning archictectures.
+
+On the Figure~\ref{fig:prescriptionbd} are presented some samples of PrescriptionBD. It is possible to observe that the dataset has images with variable resolutaion, with differentes height and width, it make necessary to padronize height and width of all imagems before training. Therefore, o PrescriptionBD disponibilize a official split of all images to train, validation and test.
 
 \begin{figure}[H]
 	\centering
@@ -249,15 +237,16 @@ Na Figura~\ref{fig:prescriptionbd} são apresentadas algumas amostras do \textit
 		\label{fig:171}
 	\end{subfigure}
 	
-	\caption{Amostras do PrescriptionBD}
+	\caption{PrescriptionBD Samples}
 	\label{fig:prescriptionbd}
 \end{figure}
 	
 	
 
-O RxHandBD é um conjunto de dados desenvolvido por Md. Masudul Islam, da Bangladesh University of Business and Technology (BUBT) \cite{islam2026rxhandbd}, e disponibilizado publicamente por meio dos repositórios Zenodo e Mendeley Data. O dataset foi criado com o objetivo de fornecer um benchmark padronizado para pesquisas em reconhecimento de escrita manuscrita (HTR) e reconhecimento óptico de caracteres (OCR) aplicados a prescrições médicas manuscritas.
-	
-A documentação do \textit{RxHandBD} informa que as amostras foram obtidas a partir de prescrições médicas físicas, das quais palavras individuais foram segmentadas e posteriormente anotadas. No entanto, a documentação disponibilizada não fornece informações detalhadas sobre o processo de aquisição das prescrições, o número de profissionais participantes da coleta, nem os procedimentos empregados para digitalização e segmentação das amostras. O dataset é composto por 5.578 imagens de palavras extraídas de prescrições médicas manuscritas, correspondentes a 1.559 palavras distintas. As imagens são disponibilizadas no formato JPG, enquanto suas respectivas anotações são fornecidas em arquivos CSV.
+
+The RxHandBD is a dataset developed by Md. Masudul Islam, from Bangladesh University of Business and Technology (BUBT) \cite{islam2026rxhandbd}, the data was make publicity avaliable by Zenode e Mendeley Data repositories. The dataset was created with the objective to give standard data for OCR and Handwritten recognition (HTR) applied directly to medical prescriptions.
+
+The documetation to RxHandBD informs that the samples were physical medical prescriptions, whiche one were individual words were segmented and sequencialy anotadas. Therefore, the avaliable documentation doesn't give detailed information about the metodhology to achive the result, neither numbre of professionals and digitalization process. The dataset has 5.578 images of words extracted from handwritten medical prescriptions, it is 1.559 distincts words. The disponibiliezes images are in JPG format, while their respective notes are in .CSV files.
 
 O \textit{RxHandBD} foi selecionado neste estudo por disponibilizar um conjunto padronizado de palavras provenientes de prescrições médicas manuscritas, contendo transcrições anotadas e uma divisão oficial entre os conjuntos de treinamento e teste. Em comparação ao \textit{PrescriptionBD}, esse dataset apresenta características como maior espessura dos traços das letras e maior expressão da variabilidade regional das caligrafias presentes em prescrições médicas. Essas diferenças tornam o \textit{RxHandBD} um recurso relevante para avaliar a capacidade de generalização dos modelos em cenários com diferentes padrões de escrita manuscrita. Sob uma perspectiva comparativa, é de interesse investigar o desempenho das arquiteturas diante de materiais de escrita com características distintas. Essas particularidades podem ser observadas na Figura~\ref{fig:rxhandbd}, que ilustra exemplos representativos das características caligráficas presentes no dataset.
 
