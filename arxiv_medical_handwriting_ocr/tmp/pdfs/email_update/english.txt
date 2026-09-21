@@ -1,0 +1,49 @@
+Comparative Benchmarking of Neural OCR Methods for
+Handwritten Word Recognition in Medical Prescription Images
+under Limited-Data and Computational Constraints
+Samuel F. Santos∗
+Universidade Estadual de Santa Cruz
+
+Abstract
+This study presents a practical comparison of CNN-based and Transformer-based models
+for handwritten word recognition in medical prescription images. Two source datasets,
+RxHandBD and Doctor’s Handwritten PrescriptionBD, were evaluated individually and in a
+combined training scenario. From-scratch training was used for a CNN baseline formulated
+as a closed-set word classifier and for a CNN-BiLSTM sequence-recognition model, whereas
+the pre-trained TrOCR and PARSeq Transformers were fine-tuned for character-sequence
+transcription. The study examines how dataset characteristics, training regimes, and task
+formulations affect recognition performance, model limitations, and training cost under
+limited-data conditions.
+
+Keywords: Neural Networks; Convolution; Transformers; Artificial Intelligence.
+
+1
+
+Introduction
+
+During medical appointments, patients are often issued a medical prescription containing information about medications and treatment instructions intended to support their recovery.
+However, the readability of these prescriptions is frequently affected by the physician’s handwriting and the context in which they are written. Factors such as the urgency of medical care and
+the high demand for patient consultations can negatively impact the legibility of handwritten
+prescriptions, making their interpretation more challenging for both healthcare professionals and
+patients.
+As a consequence, medical prescriptions often present low legibility, making their interpretation challenging for both pharmacists and patients. This difficulty has led several countries to
+adopt digital prescription systems as a way to reduce interpretation errors and improve patient
+safety. However, this transition has not occurred universally, and handwritten prescriptions are
+still widely used in many healthcare settings.
+Therefore, it is important to investigate and understand the challenges of applying Optical
+Character Recognition (OCR) to handwritten medical prescriptions, including both textual
+characters and medical symbols. Furthermore, it is relevant to evaluate whether the knowledge
+and techniques developed for this domain can be generalized to other types of handwritten
+documents.
+It is understood that handwritten manuscripts exhibit several characteristics relevant to
+this study, as they are composed of simplified geometric shapes and structural patterns that
+can be interpreted from the symbols present in the writing. Figures 1a and 1b illustrate these
+fundamental shapes while also highlighting the presence of noise and irregularities resulting from
+environmental conditions and the writing process, as previously discussed. Consequently, these
+∗
+
+E-mail: sfsantos.cic@uesc.br
+
+1
+
+

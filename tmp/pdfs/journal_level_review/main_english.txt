@@ -1,0 +1,789 @@
+   Comparative Benchmarking of Neural OCR Methods for
+ Handwritten Word Recognition in Medical Prescription Images
+     under Limited-Data and Computational Constraints
+                                             Samuel F. Santos∗
+                                   Universidade Estadual de Santa Cruz
+
+
+
+                                                 Abstract
+              This study presents a practical comparison of CNN-based and Transformer-based models
+          for handwritten word recognition in medical prescription images. Two source datasets,
+          RxHandBD and Doctor’s Handwritten PrescriptionBD, were evaluated individually and in a
+          combined training scenario. From-scratch training was used for a CNN baseline formulated
+          as a closed-set word classifier and for a CNN-BiLSTM sequence-recognition model, whereas
+          the pre-trained TrOCR and PARSeq Transformers were fine-tuned for character-sequence
+          transcription. The study examines how dataset characteristics, training regimes, and task
+          formulations affect recognition performance, model limitations, and training cost under
+          limited-data conditions.
+
+Keywords: Neural Networks; Convolution; Transformers; Artificial Intelligence.
+
+
+1        Introduction
+During medical appointments, patients are often issued a medical prescription containing in-
+formation about medications and treatment instructions intended to support their recovery.
+However, the readability of these prescriptions is frequently affected by the physician’s handwrit-
+ing and the context in which they are written. Factors such as the urgency of medical care and
+the high demand for patient consultations can negatively impact the legibility of handwritten
+prescriptions, making their interpretation more challenging for both healthcare professionals and
+patients.
+     As a consequence, medical prescriptions often present low legibility, making their interpreta-
+tion challenging for both pharmacists and patients. This difficulty has led several countries to
+adopt digital prescription systems as a way to reduce interpretation errors and improve patient
+safety. However, this transition has not occurred universally, and handwritten prescriptions are
+still widely used in many healthcare settings.
+     Therefore, it is important to investigate and understand the challenges of applying Optical
+Character Recognition (OCR) to handwritten medical prescriptions, including both textual
+characters and medical symbols. Furthermore, it is relevant to evaluate whether the knowledge
+and techniques developed for this domain can be generalized to other types of handwritten
+documents.
+     It is understood that handwritten manuscripts exhibit several characteristics relevant to
+this study, as they are composed of simplified geometric shapes and structural patterns that
+can be interpreted from the symbols present in the writing. Figures 1a and 1b illustrate these
+fundamental shapes while also highlighting the presence of noise and irregularities resulting from
+environmental conditions and the writing process, as previously discussed. Consequently, these
+    ∗
+        E-mail: sfsantos.cic@uesc.br
+
+
+                                                     1
+images provide an appropriate basis for investigating complex geometric patterns, offering a
+representative depiction of the structural characteristics inherent to handwriting.
+
+
+
+
+                 (a)                                                          (b)
+
+          Figure 1: Geometric Characteristics of Handwritten Medical Prescriptions
+
+    In the context of neural networks, it is important to evaluate the ability of different ar-
+chitectures to learn and recognize handwriting structures. This motivation is justified by the
+possibility of automatically classifying medical prescriptions and by the potential to use these
+structures as a basis for learning robust representations applicable to problems involving more
+complex geometric patterns, as demonstrated in [1].
+    The characteristics present in handwritten medical prescriptions are particularly relevant for
+model training because they reflect the natural variability introduced during the handwriting
+process. Furthermore, handwritten prescriptions incorporate variations arising from the writing
+process, the writer’s individual style, and external influences. This differs from synthetic data,
+which generally exhibit more controlled patterns and lower variability.
+    Consequently, these characteristics play an important role in neural network training by
+enabling models to learn more robust representations with greater generalization capability when
+dealing with the variability found in real-world scenarios.
+    However, neural network training using handwritten medical prescription data faces challenges
+related to data scarcity, image quality, and annotation quality. Data scarcity results from the
+limited availability of publicly available datasets for training, making it necessary to adopt data
+augmentation techniques to increase the number and diversity of training samples. Regarding
+image quality, this challenge is associated with the age of existing datasets, as older datasets
+often contain images with lower resolution, reduced sharpness, and a higher incidence of artifacts.
+These factors should be carefully considered during the data collection and preprocessing stages.
+Annotation quality also represents an important challenge, as each dataset may exhibit limitations
+associated with regional characteristics. Consequently, there is no guarantee that a dataset
+collected in the United States, for example, shares the same handwriting patterns, terminology,
+and structural characteristics as medical prescriptions written in Brazil or European countries.
+These differences reflect linguistic, cultural, and healthcare system variations across regions. To
+address these challenges, different strategies were adopted throughout this study to mitigate
+their impact and improve both the quality of model training and the generalization capability of
+the proposed neural networks.
+    Despite the limitations related to data availability, this study does not aim to collect new
+handwritten medical prescriptions or construct a novel dataset. Nevertheless, an adequate
+number of training samples is required to effectively train the neural network models. To
+address this limitation, data augmentation techniques are employed to increase data diversity
+
+                                                2
+and improve the generalization capability of the models.
+    In this project, two datasets will be used to train the neural networks. Initially, each dataset
+will be used independently, allowing the performance of the models to be evaluated on each
+dataset separately. Subsequently, a new training process will be conducted using a combination
+of both datasets. This strategy aims to increase the number of available training samples while
+reducing the likelihood of overfitting.
+    The datasets selected for this study were RxHandBD [2] and PrescriptionBD [3], as they
+present characteristics that are well suited to the proposed task. Then, after applying data
+augmentation techniques and organizing the training sets, the data will be ready to be used for
+training the neural networks.
+    To conduct these experiments, four neural network architectures were evaluated: two based
+on Convolutional Neural Networks (CNNs) and two based on Transformers. The convolutional
+architectures selected were a CNN Baseline and a CNN-BiLSTM. They were chosen because
+they require lower computational cost and are less dependent on large volumes of training data,
+characteristics that are consistent with the data scarcity scenario addressed in this study.
+    The Transformer-based architectures selected were TrOCR and PARSeq. Both models
+were initialized from pre-trained weights and subsequently fine-tuned for the proposed task.
+This approach leverages knowledge acquired during pre-training, reducing the need for large
+task-specific datasets.
+    The performance evaluation was conducted by considering the characteristics of each archi-
+tecture. Accordingly, the CNN-based models were analyzed within the training from scratch
+paradigm, whereas the Transformer-based models were evaluated under the fine-tuning paradigm.
+Thus, the comparisons were performed within the context of each training strategy, avoiding
+direct comparisons that could lead to misleading interpretations due to the inherent differences
+between their training processes.
+    A dedicated hardware platform was used throughout this study to support the continuous
+training and evaluation of the proposed models. The hardware specifications are presented in
+Table 1.
+
+                   Table 1: Hardware configuration used in the experiments.
+
+            Component                   Specification
+            CPU                         Intel Xeon E5-2680 v4 (28 cores, 56 threads)
+            Motherboard                 MOUGOL X99
+            RAM                         8 GB DDR4
+            GPU                         NVIDIA GeForce RTX 3050 Low Profile
+            Video Memory (VRAM)         6 GB
+
+    To evaluate the performance of the neural network architectures, multiple evaluation metrics
+were employed, with particular emphasis on the Word Error Rate (WER) and the Character
+Error Rate (CER). In addition to these metrics, the training and validation loss and accuracy
+were monitored throughout each training epoch, enabling the learning progression of the models
+to be analyzed.
+    The analysis of these metrics makes it possible not only to assess the models’ ability to
+recognize words and characters but also to identify learning trends, including potential periods
+of stagnation or convergence. Consequently, it provides insights into how the characteristics
+of the datasets influence the performance of the different architectures, helping to identify the
+factors that improve or limit their recognition capabilities.
+    Within this context, the objective of this study is to evaluate, under a controlled experimental
+setting, four neural network architectures for handwritten medical prescription recognition.
+Furthermore, the study aims to investigate how the characteristics of the selected datasets
+
+
+
+                                                 3
+influence the performance of each architecture by analyzing the factors that contribute to
+improvements or reductions in recognition performance across different datasets.
+
+
+2     Method
+To ensure a fair comparison among all models, the same training configuration was adopted
+for every architecture. This approach enabled a consistent and unbiased benchmark across all
+evaluated models. To achieve this, a standardized training protocol was developed, in which all
+architectures were trained using the same settings, including the number of epochs, learning rate,
+and batch size. This protocol sought to minimize the influence of external factors on the training
+process, ensuring that the observed differences in performance were predominantly attributable
+to the characteristics of the evaluated architectures and datasets. Consequently, the comparison
+became more consistent, reliable, and representative of each model’s actual performance.
+    At the end of the training process, the obtained results were consolidated through different
+evaluation procedures. To this end, tables containing the main performance metrics throughout
+the training process were generated, and the best-performing model across all training epochs
+was saved. Subsequently, this model was evaluated to obtain the final performance metrics,
+enabling a consistent assessment of its generalization capability. This approach provided a
+reliable basis for comparing the evaluated architectures.
+
+2.1    Proposed Approach
+The adopted methodology for comparing the models consisted of standardizing all experimental
+stages to ensure equivalent evaluation conditions. First, the dataset was preprocessed, including
+its organization and partitioning into training, validation, and test splits. Next, the models were
+implemented in Python and trained using the same hyperparameters, ensuring that performance
+differences were attributable to the evaluated architectures rather than training configurations.
+Finally, the models were evaluated using the test set, enabling a systematic comparison of the
+obtained results.
+
+    1. Initializing the models: Each architecture was configured with its respective parameters
+       and output vocabulary. For transformer-based models, pre-trained checkpoints were used
+       as the initial weights, whereas the remaining architectures were initialized with their default
+       settings.
+
+    2. Data processing: The images were converted to grayscale, resized to a height of 64
+       pixels and a maximum width of 512 pixels, while preserving the aspect ratio and applying
+       padding when necessary. Text labels were normalized by removing excess whitespace
+       and converting all characters to lowercase. The data were organized into fixed training,
+       validation, and test sets.
+
+    3. Optimization: Training was performed in batches using the AdamW optimizer. The loss
+       function was defined according to the prediction strategy of each architecture, including
+       cross-entropy loss, CTC loss, or a permutation-based loss. At the end of each epoch,
+       performance on the validation set was monitored to select the best checkpoint.
+
+    4. Evaluation: The best checkpoint selected on the validation set was applied exclusively
+       to the test set. Performance was quantified using exact-match accuracy, Character Error
+       Rate (CER), and Word Error Rate (WER), allowing both complete prediction correctness
+       and character- and word-level errors to be assessed.
+
+
+
+
+                                                  4
+3     Experimental Setup
+3.1   Datasets and Preprocessing
+The Doctor’s Handwritten Prescription BD Dataset (PrescriptionBD) was developed by re-
+searchers from Bangladesh to provide a public dataset for handwritten medical prescription
+recognition [4]. Its development was motivated by the limited availability of public datasets for
+training and evaluating handwriting recognition models in the medical domain. To construct
+the dataset, real medical prescriptions from Bangladesh were collected, and individual words
+were segmented and annotated. The dataset was then made publicly available, enabling its use
+in research on optical character recognition (OCR), handwritten text recognition (HTR), and
+artificial intelligence applications in healthcare.
+    The construction of PrescriptionBD involved segmenting, labeling, and classifying words
+extracted from medical prescriptions, resulting in an organized dataset suitable for training and
+evaluating handwriting recognition models. In general, the samples have good visual quality
+and sufficient sharpness to support feature extraction by deep learning architectures.
+    Figure 2 presents samples from PrescriptionBD. The dataset contains images with variable
+resolutions in both height and width, making it necessary to standardize them to a single
+size before training the neural networks. In addition, PrescriptionBD provides an official data
+split, which supports experiment reproducibility and consistent comparisons among different
+approaches.
+
+
+
+
+      (a)                                       (b)                                        (c)
+
+                             Figure 2: Samples from PrescriptionBD
+
+    RxHandBD is a dataset developed by Md. Masudul Islam of the Bangladesh University
+of Business and Technology (BUBT) [2] and made publicly available through the Zenodo and
+Mendeley Data repositories. The dataset was created to provide a standardized benchmark for
+handwritten text recognition (HTR) and optical character recognition (OCR) research applied
+to handwritten medical prescriptions.
+    The RxHandBD documentation states that the samples were obtained from physical medical
+prescriptions, from which individual words were segmented and subsequently annotated. However,
+the available documentation does not provide detailed information about the prescription
+acquisition process, the number of professionals who participated in the collection, or the
+procedures used to digitize and segment the samples. The dataset contains 5,578 word images
+extracted from handwritten medical prescriptions, corresponding to 1,559 distinct words. Images
+are provided in JPG format, while their annotations are supplied in CSV files.
+    RxHandBD was selected for this study because it provides a standardized collection of words
+from handwritten medical prescriptions, including annotated transcriptions and an official division
+between training and test sets. Compared with PrescriptionBD, this dataset presents features
+such as thicker letter strokes and greater expression of regional variability in medical handwriting.
+These differences make RxHandBD relevant for evaluating model generalization under different
+handwriting patterns. From a comparative perspective, it is useful to investigate how the
+architectures perform on writing samples with distinct characteristics. These particularities can
+be observed in Figure 3, which shows representative examples of the handwriting characteristics
+found in the dataset.
+
+
+
+
+                                                 5
+     (a)                                          (b)                                    (c)
+
+                                Figure 3: Samples from RxHandBD
+
+    As previously discussed, PrescriptionBD contains images with non-standardized resolutions
+whose dimensions vary in both height and width. To ensure dataset uniformity and enable a
+direct comparison with RxHandBD, a resolution of 512 × 512 pixels was adopted as the input
+standard for all evaluated architectures. This standardization is also required to convert the
+images into fixed-size tensors, which is fundamental for training the neural networks.
+    White padding was used to preserve the prescription content and avoid distortions introduced
+by disproportionate resizing. In this procedure, each image was placed on a white background
+until it reached a resolution of 512 × 512 pixels, preserving its original proportions and adding
+padding pixels only to the remaining regions. As a result, all samples acquired uniform dimensions,
+making them suitable for processing by the deep learning architectures and enabling a fairer
+methodological comparison between the datasets. Figure 4 compares an image before and after
+standardization: Figure 4a shows the Lenixil prescription at 103 × 30 pixels, whereas Figure 4b
+shows it after standardization to 512 × 512 pixels.
+
+
+
+
+                       (a)                                               (b)
+
+Figure 4: Example from PrescriptionBD after standardization to a resolution of 512 × 512 pixels.
+
+    Three distinct scenarios were considered in the experiments: training and evaluation exclu-
+sively on PrescriptionBD, training and evaluation exclusively on RxHandBD, and an additional
+combined scenario formed by joining the samples from both datasets. For the combined dataset,
+a new division into training and test sets was created according to the splits presented in
+Table 2. For PrescriptionBD, the official split provided by the authors was preserved to support
+experiment reproducibility and result comparability.
+
+                  Table 2: Splits used in the different experimental scenarios.
+
+      Scenario           Train      Val    Test    Total   Method
+      RxHandBD               3905    837    836     5578   70/15/15 by sample, seed 757
+      PrescriptionBD         3120    780    780     4680   Official split preserved
+      Combined               7025   1617   1616    10258   Union of the corresponding splits
+
+   Because of the limited number of samples available for training, data augmentation was
+used to increase data variability and reduce the risk of model overfitting. The transformations
+were applied randomly during training, generating different variations of the same image in each
+epoch.
+   Three data augmentation techniques were used. The first was RandomAffine, which applies
+random rotations and translations to the images with a probability of 90%. The second was
+
+                                                   6
+ColorJitter, which randomly changes image brightness and contrast, with variations of 0.25
+for brightness and 0.35 for contrast, and was applied with a probability of 60%. Finally,
+GaussianBlur was used with a kernel size of 3 and σ values ranging from 0.1 to 0.8, with
+an application probability of 30%. Figure 5 shows the result of applying this augmentation
+methodology to a sample from RxHandBD.
+
+
+
+
+                            (a) Original image       (b) Random Affine
+
+
+
+
+                             (c) ColorJitter          (d) Gaussian blur
+
+
+
+Figure 5: Example of data augmentation transformations applied to a sample from the Rx-
+HandBD training set.
+
+    These transformations supported more consistent training with a lower occurrence of overfit-
+ting.
+
+3.2     Computational Models
+Four architectures were used in this study: a CNN baseline, a CNN-BiLSTM, TrOCR, and
+PARSeq.
+
+3.2.1    CNN Baseline
+Convolutional Neural Networks (CNNs) are inspired by principles observed in the biological
+visual system, particularly the studies of the visual cortex conducted by Hubel and Wiesel [5].
+Although they do not faithfully reproduce how the human brain operates, these architectures
+were conceived from the observation that the visual system can recognize complex patterns
+through hierarchical combinations of simple visual features.
+    In the experiments conducted by Hubel and Wiesel, neurons in the visual cortex were found
+to respond selectively to specific stimuli such as edges, orientations, and contrasts. Visual infor-
+mation processing was also observed to occur hierarchically, with higher-level neurons integrating
+information extracted by simpler neurons to represent increasingly complex structures [5].
+
+                                                 7
+    Inspired by these principles, CNNs introduce local receptive fields through convolutional layers,
+in which filters automatically learn patterns present in the images. As multiple convolutional
+layers are stacked, hierarchical feature representations can be constructed, beginning with basic
+elements such as edges and textures and progressing toward more complex patterns such as
+shapes and objects. This organization has made CNNs one of the main architectures used in
+computer vision and pattern recognition tasks.
+    The conceptual foundations of modern CNN models can be traced to Fukushima’s work,
+presented in Neocognitron: A Self-Organizing Neural Network Model for a Mechanism of Pattern
+Recognition Unaffected by Shift in Position [6]. That study proposed a hierarchical architecture
+inspired by the visual cortex, with layers responsible for progressive feature extraction and
+invariance to small translations in the input patterns. Although the Neocognitron did not use
+backpropagation training, its architectural principles helped establish the foundation for modern
+CNNs.
+    LeCun et al. [7] later consolidated this paradigm by presenting a convolutional architecture
+trained with backpropagation for optical character recognition (OCR), demonstrating that
+automatically learned convolutional filters could achieve high performance in pattern recognition
+tasks. This work established a practical basis for the widespread adoption of CNNs in computer
+vision problems.
+    In this study, the CNN was used as a reference model (baseline), representing the starting
+point for comparison among the evaluated architectures. It establishes an initial performance
+level for traditional convolutional models in handwritten medical prescription recognition and
+provides a basis for analyzing the gains obtained with more sophisticated architectures.
+    However, the problem addressed in this work differs from a conventional image classification
+task. The objective is to recognize complete words in prescriptions, which characterizes a
+sequence recognition problem. A conventional CNN produces only one classification for each
+input image, preventing it from directly predicting all characters that form a word in a single
+inference.
+    To address this limitation, the CNN baseline was formulated as a word classifier. In this
+approach, each word in the training set is treated as a distinct class. The network output
+therefore corresponds to a probability distribution over all known classes, and the word with
+the highest probability is selected as the prediction. The model does not perform sequential
+character recognition; instead, it directly estimates which previously learned word corresponds
+to the input image.
+    As an extension of the CNN baseline, an architecture incorporating a Bidirectional Long
+Short-Term Memory (BiLSTM) layer was developed. This modification allows the model to
+move beyond the classification of previously known words and recognize the character sequence
+in the image, making it more suitable for handwritten text recognition tasks.
+
+
+
+
+                                                 8
+3.2.2    CNN BiLSTM
+To improve recognition accuracy, a Bidirectional Long Short-Term Memory (BiLSTM) module
+was incorporated into the CNN baseline. This architecture is a recurrent neural network capable
+of modeling long-range sequential dependencies by processing a sequence in both the forward
+and backward directions [8]. The model can therefore consider not only the current element but
+also the context supplied by preceding and subsequent characters.
+    The inclusion of the BiLSTM is motivated by the inherent sequential structure of handwritten
+words. In a language, some characters are more likely to occur together, including common
+alternations between consonants and vowels and the spelling patterns associated with each
+word. By exploring these contextual dependencies, the BiLSTM complements the visual features
+extracted by the CNN, allowing the classification process to consider both character appearance
+and the sequential relationships among characters. The CNN-BiLSTM architecture was therefore
+evaluated for its ability to improve handwritten medical prescription recognition relative to the
+CNN baseline.
+    After incorporating the BiLSTM, the architecture produced temporal outputs and was
+trained with CTC over a character vocabulary. During greedy decoding, consecutive repetitions
+and the blank symbol are removed to reconstruct the predicted word. Unlike the CNN baseline,
+CNN-BiLSTM is therefore not restricted to a closed set of word classes and can form sequences
+that were not observed during training, provided that their characters belong to the learned
+vocabulary.
+    To broaden the comparison with sequence architectures initialized through large-scale pre-
+training, Transformer-based models were subsequently evaluated. These models also perform
+recognition at the character-sequence level and can recognize words that were not present in the
+training set.
+
+3.2.3    TrOCR
+TrOCR (Transformer-based Optical Character Recognition) is an optical character recognition
+model proposed by Li et al. [9] that uses an encoder-decoder architecture based entirely on
+Transformers. The model employs a visual Transformer to extract representations from the
+input image and a textual Transformer to generate the corresponding sequence of characters or
+tokens, eliminating the need for traditional CNN-, RNN-, and CTC-based architectures. TrOCR
+can also be pre-trained on large synthetic datasets and subsequently fine-tuned with labeled
+data, with applications to printed, handwritten, and scene text.
+
+3.2.4    PARSeq
+PARSeq (Permuted Autoregressive Sequence) is a Transformer-based model developed for
+text recognition in images, particularly in the context of Scene Text Recognition [10]. Unlike
+conventional autoregressive models, which generate characters only from left to right, PARSeq
+uses Permutation Language Modeling, allowing the model to learn different prediction orders
+and explore bidirectional context during recognition. This approach combines autoregressive
+inference, non-autoregressive inference, and iterative refinement within a single architecture,
+providing a balance among accuracy, parameter count, and computational cost.
+
+3.3     Baselines and Metrics
+An experiment matrix was initially defined to establish the training and test sets used for each
+model. This standardization enabled systematic evaluation with consistent metrics, making
+it possible to analyze the performance of each architecture and understand the factors that
+influenced the results. The results from all experiments were then compared.
+
+
+
+                                               9
+    To support a fair comparison among the architectures, specific comparison matrices were
+defined for each group of experiments. These matrices consider the conceptual differences
+among the models and their training particularities, avoiding inappropriate comparisons between
+distinct approaches. This procedure made it possible to evaluate the generalization capability
+and performance of each architecture under different scenarios and quantities of training data.
+    All experiments are presented in Table 3.
+
+                   Table 3: Experiment matrix by architecture and dataset.
+
+            Exp.    Architecture     Dataset           Train    Validation    Test
+             E1     CNN baseline     PrescriptionBD      3120           780     780
+             E1     CNN baseline     RxHandBD            3905           837     836
+             E1     CNN baseline     Combined            7025          1617    1616
+             E2     CNN-BiLSTM       PrescriptionBD      3120           780     780
+             E2     CNN-BiLSTM       RxHandBD            3905           837     836
+             E2     CNN-BiLSTM       Combined            7025          1617    1616
+             E3     TrOCR            PrescriptionBD      3120           780     780
+             E3     TrOCR            RxHandBD            3905           837     836
+             E3     TrOCR            Combined            7025          1617    1616
+             E4     PARSeq           PrescriptionBD      3120           780     780
+             E4     PARSeq           RxHandBD            3905           837     836
+             E4     PARSeq           Combined            7025          1617    1616
+
+    Throughout training, performance metrics were collected at each epoch to characterize the
+progression of model learning. The loss values on the training and validation sets and the
+accuracy achieved on both sets were recorded.
+    The models were evaluated using metrics that capture different aspects of text recognition
+performance. Accuracy measured whether the model correctly recognized the complete character
+sequence in an image. Character Error Rate (CER) quantified character-level errors through the
+number of insertions, deletions, and substitutions required to transform the prediction into the
+reference text. Word Error Rate (WER) complemented this analysis by measuring word-level
+errors as the number of incorrectly recognized words relative to the expected text.
+
+3.4   Implementation Details
+The experiments were implemented in Python using the package developed for this project,
+named med-ocr-research. The execution environment uses Python 3.10 or later, with PyTorch
+as the main deep learning framework. All training runs were performed with CUDA acceleration
+on an NVIDIA GeForce RTX 3050 GPU with 6 GB of memory. The complete computational
+environment configuration is shown in Table 1.
+    The main dependencies used during development are presented in Table 4. The listed
+values represent the minimum versions used in the experimental environment. For TrOCR, the
+pre-trained model files record the use of Transformers version 5.12.1.
+    The random seed 42 was used throughout all experiments to support result reproducibility.
+This seed was applied to the generators from the random, NumPy, and PyTorch libraries, including
+CUDA initialization through torch.cuda.manual_seed_all. The official PrescriptionBD split
+was preserved when organizing the datasets. RxHandBD was divided into 70% for training,
+15% for validation, and 15% for testing using the derived seed 757. The combined dataset was
+obtained by joining the corresponding subsets from the two datasets.
+
+
+
+                                               10
+            Table 4: Software dependencies used in the experimental environment.
+
+                   Library               Version    Library          Version
+                   Python                ≥ 3.10     PyTorch          ≥ 2.2
+                   Torchvision           ≥ 0.17     Transformers     5.12.1
+                   NumPy                 ≥ 1.24     Pandas           ≥ 2.0
+                   Pillow                ≥ 10.0     Timm             ≥ 1.0
+                   PyTorch Lightning     ≥ 2.2      Accelerate       ≥ 0.30
+                   Albumentations        ≥ 1.4      SentencePiece    ≥ 0.2.1
+                   NLTK                  ≥ 3.8      Tqdm             ≥ 4.66
+                   PyYAML                ≥ 6.0      Protobuf         ≥ 4.25
+
+
+    The CNN baseline and CNN-BiLSTM were implemented in this project. TrOCR used the pre-
+trained microsoft/trocr-small-handwritten checkpoint. PARSeq used the implementation
+available in the baudm/parseq repository, fixed at the following commit:
+
+                        1902db043c029a7e03a3818c616c06600af574be
+
+All developed source code, experimental configurations, and evaluation scripts are available in
+the project repository:
+
+               https://github.com/SamuelFerrc/Medical-Handwriting-Ocr
+
+
+4     Results and Discussion
+This section presents the results from twelve evaluations: four model families, each evaluated on
+PrescriptionBD, RxHandBD, and the combined scenario. The results are organized to support
+discussion at three levels: (i) aggregate comparison among models, (ii) dataset effects, and (iii)
+diagnostic analysis of each evaluation. The metrics were recalculated directly from the evaluated
+prediction files. Detailed tables remain available in the artifact folder for consultation but are
+not included in the main article in order to keep the results section concise.
+
+4.1   Overall comparison
+The aggregate comparison by model and scenario is presented in Figures 6, 7, and 8, which show
+exact-match accuracy, CER, and WER, respectively, for all twelve evaluations.
+    In addition to the graphs, Table 5 presents the aggregate metrics for each model and scenario
+in a compact format.
+
+
+
+
+                                               11
+                Table 5: Evaluation summary by model and scenario
+
+Model       Scenario          N Correct Accuracy CER WER Mean confidence
+CNN        PrescriptionBD 780         322      0.4128 0.5328 0.5911         0.2728
+CNN        RxHandBD       836         262      0.3134 0.5866 0.7313         0.2831
+CNN        Combined      1616         463      0.2865 0.6467 0.7412         0.2458
+CNN-BiLSTM PrescriptionBD 780         527      0.6756 0.1868 0.3278         0.9822
+CNN-BiLSTM RxHandBD       836         436      0.5215 0.1811 0.4984         0.9767
+CNN-BiLSTM Combined      1616         927      0.5736 0.2064 0.4370         0.9823
+TrOCR      PrescriptionBD 780         693      0.8885 0.0864 0.1127         0.9886
+TrOCR      RxHandBD       836         612      0.7321 0.1122 0.2824         0.9745
+TrOCR      Combined      1616        1307      0.8088 0.1024 0.2018         0.9826
+PARSeq     PrescriptionBD 780         703      0.9013 0.0680 0.1000         0.9649
+PARSeq     RxHandBD       836         579      0.6926 0.1067 0.3130         0.8880
+PARSeq     Combined      1616        1270      0.7859 0.0943 0.2214         0.9344
+
+
+
+
+            Figure 6: Exact-match accuracy across all twelve evaluations.
+
+
+
+
+                                         12
+             Figure 7: Character Error Rate (CER) across all twelve evaluations.
+
+
+
+
+               Figure 8: Word Error Rate (WER) across all twelve evaluations.
+
+    The results in Figure 6 show that all models achieved their best performance on Prescrip-
+tionBD. This pattern was not observed on RxHandBD, where most models performed worse,
+except for the CNN baseline, which produced relatively more consistent results.
+    This difference may be associated primarily with the visual characteristics of each dataset.
+As illustrated in Figure 3, RxHandBD images contain thicker, more blurred, and less clearly
+defined strokes, making it more difficult for both CNNs and Transformer-based models to extract
+discriminative features. In contrast, Figure 2 shows that PrescriptionBD contains characters with
+thinner, more continuous, and better-defined strokes, which may facilitate pattern identification
+and the learning of more robust representations by the neural networks. The observed visual-
+quality differences between the datasets are therefore consistent with the differences in model
+
+                                               13
+performance during training and inference.
+    The experiments on the combined dataset produced intermediate performance relative to
+the two original datasets. This behavior was expected because the combined set includes both
+the favorable characteristics of PrescriptionBD and the challenges present in RxHandBD. The
+models were exposed to higher-quality examples as well as samples with greater visual complexity,
+resulting in average performance between the two original scenarios.
+    One notable result was that CNN-BiLSTM achieved a lower CER on RxHandBD than on
+PrescriptionBD, as shown in Figure 7. This result indicates that, although RxHandBD was more
+challenging for most of the evaluated models, CNN-BiLSTM recognized individual characters
+more accurately in this specific scenario.
+    Across all evaluated models and datasets, WER behaved consistently with overall accuracy,
+as illustrated in Figure 8. In general, models with higher accuracy also had lower WER values,
+showing the inverse relationship between these metrics and supporting the consistency of the
+experimental results.
+
+4.2   Dataset-specific comparison
+To separate the effect of the combined scenario from the effect of the architecture, Figure 9
+presents the comparison of accuracy, CER, and WER by dataset.
+
+
+
+
+                  Figure 9: Comparison of the combined scenario by dataset.
+
+   For each neural network model, the difference between the results represented by the blue
+and orange bars was calculated for overall accuracy. The CNN baseline was the only model for
+which the orange bar exceeded the blue bar, with a difference of 7.3 percentage points. For the
+remaining models, the blue bar showed better performance, with differences of 18.2 percentage
+points for CNN-BiLSTM, 15.9 percentage points for TrOCR, and 18.4 percentage points for
+PARSeq.
+
+4.3   Per-evaluation diagnostic views
+The figures in this subsection complement the aggregate metrics. Each evaluated prediction
+panel includes the error distribution, the relationship between performance and reference length,
+and accuracy by confidence range. The per-label panel shows the distribution of performance
+
+                                               14
+across words, highlighting the most frequent labels and those with the lowest accuracy. These
+panels are descriptive and should be used to investigate error patterns rather than as substitutes
+for the aggregate metrics.
+
+4.3.1   CNN baseline
+
+
+
+
+           (a) Evaluated predictions.                          (b) Per-label metrics.
+
+                    Figure 10: CNN baseline evaluated on PrescriptionBD.
+
+
+
+
+           (a) Evaluated predictions.                          (b) Per-label metrics.
+
+                      Figure 11: CNN baseline evaluated on RxHandBD.
+
+
+
+
+                                               15
+         (a) Evaluated predictions.                      (b) Per-label metrics.
+
+              Figure 12: CNN baseline evaluated in the combined scenario.
+
+4.3.2   CNN-BiLSTM
+
+
+
+
+         (a) Evaluated predictions.                      (b) Per-label metrics.
+
+                 Figure 13: CNN-BiLSTM evaluated on PrescriptionBD.
+
+
+
+
+         (a) Evaluated predictions.                      (b) Per-label metrics.
+
+                   Figure 14: CNN-BiLSTM evaluated on RxHandBD.
+
+
+
+
+                                          16
+         (a) Evaluated predictions.                     (b) Per-label metrics.
+
+              Figure 15: CNN-BiLSTM evaluated in the combined scenario.
+
+4.3.3   TrOCR
+
+
+
+
+         (a) Evaluated predictions.                     (b) Per-label metrics.
+
+                     Figure 16: TrOCR evaluated on PrescriptionBD.
+
+
+
+
+         (a) Evaluated predictions.                     (b) Per-label metrics.
+
+                       Figure 17: TrOCR evaluated on RxHandBD.
+
+
+
+
+                                          17
+         (a) Evaluated predictions.                      (b) Per-label metrics.
+
+                  Figure 18: TrOCR evaluated in the combined scenario.
+
+4.3.4   PARSeq
+
+
+
+
+         (a) Evaluated predictions.                      (b) Per-label metrics.
+
+                     Figure 19: PARSeq evaluated on PrescriptionBD.
+
+
+
+
+         (a) Evaluated predictions.                      (b) Per-label metrics.
+
+                       Figure 20: PARSeq evaluated on RxHandBD.
+
+
+
+
+                                          18
+           (a) Evaluated predictions.                         (b) Per-label metrics.
+
+                   Figure 21: PARSeq evaluated in the combined scenario.
+
+
+5    Limitations
+This study has limitations related to the amount of available data and the training batch sizes,
+which were restricted by the available memory capacity. These limitations may have introduced
+some bias into the results. However, all models were trained and evaluated under the same
+experimental conditions, using the same computational environment and training configurations,
+to provide the fairest possible comparison among the methods.
+
+
+6    Conclusion
+The results demonstrate the potential of sequence-recognition models for transcribing handwritten
+words in medical prescriptions. In particular, TrOCR and PARSeq achieved the best performance
+among the evaluated methods, with consistent advantages over the CNN baseline in all three
+experimental scenarios. PARSeq performed best on PrescriptionBD, reaching 90.13% accuracy,
+a CER of 0.0680, and a WER of 0.1000, whereas TrOCR achieved the best overall performance
+in the combined scenario in terms of accuracy (80.88%) and WER (0.2018). These results
+indicate that pre-trained models adapted through fine-tuning are an effective strategy for OCR
+of handwritten medical text, even under limited-data conditions.
+
+
+Code and Data Availability
+The code, data, and supplementary materials are available at:
+
+               https://github.com/SamuelFerrc/Medical-Handwriting-Ocr
+
+
+References
+ [1] Usman Ali, Sahil Ranmbail, Muhammad Nadeem, Hamid Ishfaq, Muhammad Umer Ramzan,
+     and Waqas Ali. Leveraging deep learning with multi-head attention for accurate extraction
+     of medicine from handwritten prescriptions, 2024. URL https://doi.org/10.48550/
+     arXiv.2412.18199.
+
+ [2] Md Masudul Islam. RxHandBD: A handwritten prescription word image dataset. Mendeley
+     Data, 2026. Version 3.
+
+
+
+                                               19
+ [3] Abdur Rahim Mia, Abdullah Al Mamun, Abdullah Al Sajid, and Aurunave Mollik Ruddra.
+     Doctor’s handwritten prescription BD dataset. Kaggle, 2024. URL https://www.kaggle.
+     com/dsv/8378585.
+
+ [4] A. R. Mia, M. A.-A.-S. Chowdhury, A. A. Mamun, A. M. Ruddra, and N. T. Tanny. A deep
+     neural network approach with pioneering local dataset to recognize doctor’s handwritten
+     prescription in bangladesh. In 2024 International Conference on Advances in Computing,
+     Communication, Electrical, and Smart Systems (iCACCESS), Dhaka, Bangladesh, 2024.
+
+ [5] David H. Hubel and Torsten N. Wiesel. Receptive fields, binocular interaction and functional
+     architecture in the cat’s visual cortex. 1962.
+
+ [6] Kunihiko Fukushima. Neocognitron: A self-organizing neural network model for a mechanism
+     of pattern recognition unaffected by shift in position. Biological Cybernetics, 36(4):193–202,
+     1980. doi: 10.1007/BF00344251.
+
+ [7] Yann LeCun, Léon Bottou, Yoshua Bengio, and Patrick Haffner. Gradient-based learning
+     applied to document recognition. Proceedings of the IEEE, 86(11):2278–2324, 1998. doi:
+     10.1109/5.726791.
+
+ [8] Baoguang Shi, Xiang Bai, and Cong Yao. An end-to-end trainable neural network for image-
+     based sequence recognition and its application to scene text recognition. In Proceedings of
+     the IEEE Conference on Computer Vision and Pattern Recognition, pages 2564–2572, 2016.
+     doi: 10.1109/CVPR.2016.277.
+
+ [9] Minghao Li, Tengchao Lv, Jingye Chen, Lei Cui, Yijuan Lu, Dinei Florencio, Cha Zhang,
+     Zhoujun Li, and Furu Wei. TrOCR: Transformer-based optical character recognition with
+     pre-trained models. In Proceedings of the AAAI Conference on Artificial Intelligence,
+     volume 37, pages 13094–13102, 2023. doi: 10.1609/aaai.v37i11.26538.
+
+[10] Darwin Bautista and Rowel Atienza. Scene text recognition with permuted autoregressive
+     sequence models. arXiv preprint arXiv:2207.06966, 2022.
+
+
+
+
+                                                20
+

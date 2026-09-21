@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -65,5 +65,20 @@ Baoguang Shi, Xiang Bai, and Cong Yao.
 \newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and
   Pattern Recognition}, pages 2564--2572, 2016.
 \newblock \doi{10.1109/CVPR.2016.277}.
+
+\bibitem[Li et~al.(2023)Li, Lv, Chen, Cui, Lu, Florencio, Zhang, Li, and
+  Wei]{li2023trocr}
+Minghao Li, Tengchao Lv, Jingye Chen, Lei Cui, Yijuan Lu, Dinei Florencio, Cha
+  Zhang, Zhoujun Li, and Furu Wei.
+\newblock {TrOCR}: Transformer-based optical character recognition with
+  pre-trained models.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~37, pages 13094--13102, 2023.
+\newblock \doi{10.1609/aaai.v37i11.26538}.
+
+\bibitem[Bautista and Atienza(2022)]{bautista2022parseq}
+Darwin Bautista and Rowel Atienza.
+\newblock Scene text recognition with permuted autoregressive sequence models.
+\newblock \emph{arXiv preprint arXiv:2207.06966}, 2022.
 
 \end{thebibliography}

@@ -31,7 +31,7 @@
 % --- Configurações ---
 \graphicspath{{figures/}}
 \hypersetup{
-  pdftitle={Comparative Benchmarking of Neural OCR Methods for Handwritten Word Recognition in Medical Prescription Images under Limited-Data and Computational Constraints},
+  pdftitle={Avaliação Comparativa de Métodos Neurais de OCR para o Reconhecimento de Palavras Manuscritas em Imagens de Prescrições Médicas},
   pdfauthor={Samuel F. Santos},
   pdfsubject={Artigo científico}
 }
@@ -43,10 +43,10 @@
 
 % --- Metadados do artigo ---
 %Utilização de diferentes tecnicas de benchmark para reconhecimento de escritas medicas à mão.
-\title{Comparative Benchmarking of Neural OCR Methods for Handwritten Word Recognition in Medical Prescription Images under Limited-Data and Computational Constraints}
+\title{Avaliação Comparativa de Métodos Neurais de OCR para o Reconhecimento de Palavras Manuscritas em Imagens de Prescrições Médicas}
 
 \author{
-  Samuel F. Santos\thanks{E-mail: lacerdasamuel26@gmail.com}
+  Samuel F. Santos\thanks{E-mail: sfsantos.cic@uesc.br}
   \\ Universidade Estadual de Santa Cruz
 }
 
@@ -151,11 +151,11 @@ A análise dessas métricas possibilita avaliar não apenas a capacidade de reco
 Diante desse contexto, o objetivo deste estudo é, em um ambiente controlado, avaliar 4 arquiteturas de redes neurais aplicadas ao reconhecimento de prescrições médicas manuscritas. Além disso, busca-se identificar as características dos datasets que influenciam o desempenho de cada arquitetura, analisando quais fatores contribuem para o aumento ou a redução da capacidade de reconhecimento em cada conjunto de dados.
 
 
-\section{Related Work}
-\label{sec:related-work}
+%\section{Related Work}
+%\label{sec:related-work}
 
-Apresente os trabalhos mais relevantes e explique como este artigo se diferencia
-da literatura. Use citações no formato \citep{exemplo2024} ou \citet{exemplo2024}.
+%presente os trabalhos mais relevantes e explique como este artigo se diferencia
+%da literatura. Use citações no formato \citep{exemplo2024} ou \citet{exemplo2024}.
 
 \section{Method}
 \label{sec:method}
@@ -407,13 +407,19 @@ Posteriormente, visando aumentar a precisão do reconhecimento, foi incorporado 
 
 A inclusão do BiLSTM justifica-se pelo fato de palavras manuscritas apresentarem uma estrutura sequencial inerente. Em um idioma, determinados caracteres possuem maior probabilidade de ocorrer em conjunto, como a frequente alternância entre consoantes e vogais, além de padrões ortográficos característicos de cada palavra. Ao explorar essas dependências contextuais, o BiLSTM complementa as características visuais extraídas pela CNN, permitindo que a classificação considere tanto a aparência dos caracteres quanto a relação sequencial existente entre eles. Assim, a arquitetura CNN-BiLSTM foi avaliada quanto à sua capacidade de melhorar o reconhecimento de prescrições médicas manuscritas em comparação à CNN baseline.
 
-Com a incorporação do BiLSTM, manteve-se a abordagem de reconhecimento baseada em um conjunto de classes previamente definidas. Embora a modelagem sequencial tenha proporcionado um melhor aproveitamento do contexto entre os caracteres, a arquitetura continuou limitada à classificação de palavras pertencentes às classes conhecidas durante o treinamento. Dessa forma, o problema de reconhecer palavras inéditas ou compostas por combinações arbitrárias de caracteres permaneceu presente.
+Com a incorporação do BiLSTM, a arquitetura passou a produzir saídas temporais e foi treinada com CTC sobre um vocabulário de caracteres. Na decodificação gulosa, repetições consecutivas e o símbolo de preenchimento (\textit{blank}) são removidos para reconstruir a palavra predita. Assim, diferentemente da CNN \textit{baseline}, a CNN-BiLSTM não ficou restrita a um conjunto fechado de classes de palavras e pode formar sequências não observadas durante o treinamento, desde que seus caracteres pertençam ao vocabulário aprendido.
 
-Para superar essa limitação, foram posteriormente avaliadas arquiteturas baseadas em \textit{Transformers}. Diferentemente da abordagem de classificação por classes, esses modelos realizam o reconhecimento em nível de sequência de caracteres. Assim, tornam-se capazes de reconhecer palavras que não estavam presentes no conjunto de treinamento.
+Para ampliar a comparação com arquiteturas sequenciais inicializadas a partir de pré-treinamento em larga escala, foram posteriormente avaliados modelos baseados em \textit{Transformers}. Esses modelos também realizam o reconhecimento em nível de sequência de caracteres e podem reconhecer palavras que não estavam presentes no conjunto de treinamento.
 
 
-\subsubsection{Trocqr}
-\subsubsection{Parseq}
+\subsubsection{TrOCR}
+
+O TrOCR (Transformer-based Optical Character Recognition) é um modelo de reconhecimento óptico de caracteres proposto por Li et al \cite{li2023trocr}. que utiliza uma arquitetura encoder-decoder baseada inteiramente em Transformers. O modelo emprega um Transformer visual para extrair representações da imagem de entrada e um Transformer textual para gerar a sequência correspondente de caracteres ou tokens, eliminando a necessidade de arquiteturas tradicionais baseadas em CNN, RNN e CTC. Além disso, o TrOCR pode ser pré-treinado em grandes conjuntos de dados sintéticos e posteriormente ajustado com dados rotulados, apresentando aplicação em textos impressos, manuscritos e presentes em cenas naturais.
+
+\subsubsection{PARSeq}
+
+O PARSeq (Permuted Autoregressive Sequence) é um modelo baseado em Transformers desenvolvido para reconhecimento de texto em imagens, especialmente no contexto de Scene Text Recognition \cite{bautista2022parseq}. Diferentemente de modelos autoregressivos convencionais, que geram os caracteres seguindo apenas a ordem da esquerda para a direita, o PARSeq utiliza Permutation Language Modeling, permitindo que o modelo aprenda diferentes ordens de predição e explore contexto bidirecional durante o reconhecimento. Essa abordagem possibilita combinar inferência autoregressiva, não autoregressiva e refinamento iterativo em uma única arquitetura, oferecendo bom equilíbrio entre precisão, número de parâmetros e custo computacional.
+
 \subsection{Baselines and Metrics}
 \label{sec:baselines}
 

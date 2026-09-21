@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_portuguese.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: unsrtnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty journal in hubel1962receptive
+Warning--can't use both volume and number fields in li2023trocr
+You've used 10 entries,
+            2481 wiz_defined-function locations,
+            617 strings with 6882 characters,
+and the built_in function-call counts, 4258 in all, are:
+= -- 347
+> -- 248
+< -- 7
++ -- 95
+- -- 74
+* -- 326
+:= -- 673
+add.period$ -- 36
+call.type$ -- 10
+change.case$ -- 20
+chr.to.int$ -- 9
+cite$ -- 12
+duplicate$ -- 206
+empty$ -- 372
+format.name$ -- 88
+if$ -- 910
+int.to.chr$ -- 2
+int.to.str$ -- 11
+missing$ -- 7
+newline$ -- 64
+num.names$ -- 30
+pop$ -- 100
+preamble$ -- 1
+purify$ -- 10
+quote$ -- 0
+skip$ -- 138
+stack$ -- 0
+substring$ -- 164
+swap$ -- 49
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 70
+warning$ -- 2
+while$ -- 30
+width$ -- 0
+write$ -- 144
+(There were 2 warnings)

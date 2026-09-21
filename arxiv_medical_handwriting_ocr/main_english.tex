@@ -1,19 +1,18 @@
-% Modelo de artigo para submissão ao arXiv.
-% Compile com: pdflatex main.tex (duas vezes, se necessário).
-% Para usar BibTeX, substitua a seção de referências por um arquivo .bib.
+% Article prepared for submission to arXiv.
+% Compile with: pdflatex main_english.tex (twice, if necessary).
 
 \documentclass[11pt,a4paper]{article}
 
-% --- Pacotes básicos ---
+% --- Basic packages ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[english,brazilian]{babel}
+\usepackage[brazilian,english]{babel}
 \usepackage{microtype}
 \usepackage{geometry}
 \geometry{margin=1in}
 
-% --- Matemática, figuras e tabelas ---
+% --- Mathematics, figures, and tables ---
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -23,34 +22,28 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
-% --- Referências e links ---
+% --- References and links ---
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
 
-% --- Configurações ---
+% --- Settings ---
 \graphicspath{{figures/}}
 \hypersetup{
   pdftitle={Comparative Benchmarking of Neural OCR Methods for Handwritten Word Recognition in Medical Prescription Images under Limited-Data and Computational Constraints},
   pdfauthor={Samuel F. Santos},
-  pdfsubject={Artigo científico}
+  pdfsubject={Scientific article}
 }
 
-% Comandos úteis para manter a notação consistente.
-\newcommand{\methodname}{NomeDoMetodo}
-\newcommand{\datasetname}{NomeDoConjuntoDeDados}
-\newcommand{\TODO}[1]{\textcolor{red}{[TODO: #1]}}
-
-% --- Metadados do artigo ---
-%Utilização de diferentes tecnicas de benchmark para reconhecimento de escritas medicas à mão.
+% --- Article metadata ---
 \title{Comparative Benchmarking of Neural OCR Methods for Handwritten Word Recognition in Medical Prescription Images under Limited-Data and Computational Constraints}
 
 \author{
-  Samuel F. Santos\thanks{E-mail: lacerdasamuel26@gmail.com}
+  Samuel F. Santos\thanks{E-mail: sfsantos.cic@uesc.br}
   \\ Universidade Estadual de Santa Cruz
 }
 
-\date{} % Remova esta linha para exibir a data atual.
+\date{}
 
 \begin{document}
 
@@ -58,18 +51,18 @@
 
 \begin{abstract}
 
-This study presents a practical comparison of CNN-based and Transformer-based models for handwritten word recognition in medical prescription images. Two source datasets, RxHandBD and Doctor’s Handwritten PrescriptionBD, were evaluated individually and in a combined training scenario. From-scratch training was used for a CNN baseline formulated as a closed-set word classifier and for a CNN-BiLSTM sequence-recognition model, whereas the pre-trained TrOCR and PARSeq Transformers were fine-tuned for character-sequence transcription. The study examines how dataset characteristics, training regimes, and task formulations affect recognition performance, model limitations, and training cost under limited-data conditions.
+This study presents a practical comparison of CNN-based and Transformer-based models for handwritten word recognition in medical prescription images. Two source datasets, RxHandBD and Doctor's Handwritten PrescriptionBD, were evaluated individually and in a combined training scenario. From-scratch training was used for a CNN baseline formulated as a closed-set word classifier and for a CNN-BiLSTM sequence-recognition model, whereas the pre-trained TrOCR and PARSeq Transformers were fine-tuned for character-sequence transcription. The study examines how dataset characteristics, training regimes, and task formulations affect recognition performance, model limitations, and training cost under limited-data conditions.
 \end{abstract}
 
-\noindent\textbf{Keywords:} Neural Network; Convulation; Transformers; Artificial Intelligence.
+\noindent\textbf{Keywords:} Neural Networks; Convolution; Transformers; Artificial Intelligence.
 
 \section{Introduction}
 \label{sec:introduction}
 
-%--Contexto do Problema
+%--Problem context
 
 
-%Prescrições Medicas no contexto social
+%Medical prescriptions in their social context
 
 
 During medical appointments, patients are often issued a medical prescription containing information about medications and treatment instructions intended to support their recovery. However, the readability of these prescriptions is frequently affected by the physician's handwriting and the context in which they are written. Factors such as the urgency of medical care and the high demand for patient consultations can negatively impact the legibility of handwritten prescriptions, making their interpretation more challenging for both healthcare professionals and patients.
@@ -78,7 +71,7 @@ As a consequence, medical prescriptions often present low legibility, making the
 
 Therefore, it is important to investigate and understand the challenges of applying Optical Character Recognition (OCR) to handwritten medical prescriptions, including both textual characters and medical symbols. Furthermore, it is relevant to evaluate whether the knowledge and techniques developed for this domain can be generalized to other types of handwritten documents.
 
-%O que letras medicam descrevem, metalinguagem
+%Geometric description of handwritten symbols
 
 
 
@@ -105,7 +98,7 @@ It is understood that handwritten manuscripts exhibit several characteristics re
 	\caption{Geometric Characteristics of Handwritten Medical Prescriptions}
 	\label{fig:comparacao}
 \end{figure}
-%Porque seriam uteis para redes neurais entende-los
+%Why these characteristics are relevant to neural networks
 
 In the context of neural networks, it is important to evaluate the ability of different architectures to learn and recognize handwriting structures. This motivation is justified by the possibility of automatically classifying medical prescriptions and by the potential to use these structures as a basis for learning robust representations applicable to problems involving more complex geometric patterns, as demonstrated in \cite{ali2024leveraging}.
 
@@ -114,7 +107,7 @@ The characteristics present in handwritten medical prescriptions are particularl
 Consequently, these characteristics play an important role in neural network training by enabling models to learn more robust representations with greater generalization capability when dealing with the variability found in real-world scenarios.
 
 
-%Porque é problematico (dados, qualidade de imagens, rotulação e coleta)
+%Challenges involving data availability, image quality, labeling, and collection
 
 However, neural network training using handwritten medical prescription data faces challenges related to data scarcity, image quality, and annotation quality. Data scarcity results from the limited availability of publicly available datasets for training, making it necessary to adopt data augmentation techniques to increase the number and diversity of training samples. Regarding image quality, this challenge is associated with the age of existing datasets, as older datasets often contain images with lower resolution, reduced sharpness, and a higher incidence of artifacts. These factors should be carefully considered during the data collection and preprocessing stages. Annotation quality also represents an important challenge, as each dataset may exhibit limitations associated with regional characteristics. Consequently, there is no guarantee that a dataset collected in the United States, for example, shares the same handwriting patterns, terminology, and structural characteristics as medical prescriptions written in Brazil or European countries. These differences reflect linguistic, cultural, and healthcare system variations across regions.  To address these challenges, different strategies were adopted throughout this study to mitigate their impact and improve both the quality of model training and the generalization capability of the proposed neural networks.
 
@@ -122,8 +115,8 @@ However, neural network training using handwritten medical prescription data fac
 
 
 
-%%--Maneiras de solucionar o problema
-%%	Para o problema dos dados
+%%--Strategies adopted to address the problem
+%%	Data availability
 
 Despite the limitations related to data availability, this study does not aim to collect new handwritten medical prescriptions or construct a novel dataset. Nevertheless, an adequate number of training samples is required to effectively train the neural network models. To address this limitation, data augmentation techniques are employed to increase data diversity and improve the generalization capability of the models.
 
@@ -166,12 +159,6 @@ Within this context, the objective of this study is to evaluate, under a control
 
 
 
-\section{Related Work}
-\label{sec:related-work}
-
-Apresente os trabalhos mais relevantes e explique como este artigo se diferencia
-da literatura. Use citações no formato \citep{exemplo2024} ou \citet{exemplo2024}.
-
 \section{Method}
 \label{sec:method}
 
@@ -191,11 +178,11 @@ The adopted methodology for comparing the models consisted of standardizing all 
 \item \textbf{Initializing the models:} Each architecture was configured with its respective parameters and output vocabulary. For transformer-based models, pre-trained checkpoints were used as the initial weights, whereas the remaining architectures were initialized with their default settings.
 
 
-		\item \textbf{Data Processing:} These images were converted to a grayscale, they were dimensioned to a new height of 64 pixels, with max width of 512 pixels, with that we are preserving aspect ratio and applying preenchimento when necessary. The text labels were normalized by removing excdents spaces and converting to minor letters. The data were organized on fixed training sets, validation and test.
+	\item \textbf{Data processing:} The images were converted to grayscale, resized to a height of 64 pixels and a maximum width of 512 pixels, while preserving the aspect ratio and applying padding when necessary. Text labels were normalized by removing excess whitespace and converting all characters to lowercase. The data were organized into fixed training, validation, and test sets.
 
-	\item \textbf{Optimization:} the train was realized  using batches with AdamW optimizer. Loss function was defined accodrdinly to a strategy of prediction from each architecture, it includes loss by cross entropy , CTC ou permutation loss basis. At the end of each epoch, the best accurary was iteractive selected as the best checkpoint for the moment.
+	\item \textbf{Optimization:} Training was performed in batches using the AdamW optimizer. The loss function was defined according to the prediction strategy of each architecture, including cross-entropy loss, CTC loss, or a permutation-based loss. At the end of each epoch, performance on the validation set was monitored to select the best checkpoint.
 	
-	\item \textbf{Evaluation:} the best checkpoint from evaluation was applied to the test set. The performace was mesured by exact word acurracy, Character Error Rate (CER) and Word Error Rate (WER), allowing us to evaluate integral correction of the predictions and the caracteres error level.
+	\item \textbf{Evaluation:} The best checkpoint selected on the validation set was applied exclusively to the test set. Performance was quantified using exact-match accuracy, Character Error Rate (CER), and Word Error Rate (WER), allowing both complete prediction correctness and character- and word-level errors to be assessed.
 	
 	
 \end{enumerate}
@@ -207,11 +194,11 @@ The adopted methodology for comparing the models consisted of standardizing all 
 \label{sec:datasets}
 
 
-The Doctor's Handwritten Prescription BD Dataset Prescription was developed by researchers from Banglasdes with the proposital to disponibilize a public dataset to recognition of handwritten medical prescriptions~\cite{mia2024deep}. The development was motivated by the limited avaliablity of public databases for training and evaluation of Optical Character Recognition (OCR) medical models. To its building, were collected real medical prescriptions from Bangladesh's doctors, where individual words were segmented and sequencialy anotadas to compose the dataset. At the end of the process, the dataset was made publicy avaliable.
+The \textit{Doctor's Handwritten Prescription BD Dataset} (\textit{PrescriptionBD}) was developed by researchers from Bangladesh to provide a public dataset for handwritten medical prescription recognition~\cite{mia2024deep}. Its development was motivated by the limited availability of public datasets for training and evaluating handwriting recognition models in the medical domain. To construct the dataset, real medical prescriptions from Bangladesh were collected, and individual words were segmented and annotated. The dataset was then made publicly available, enabling its use in research on optical character recognition (OCR), handwritten text recognition (HTR), and artificial intelligence applications in healthcare.
 
-The construction of PrescriptionBD involves segmentation, labeling and classification of each word extracted from medical prescriptions, it results in an appropiated organized dataset for training and evaluation of the models. Generally, the samples presents good quality, and enought nitidez levels userfull for deep learning archictectures.
+The construction of \textit{PrescriptionBD} involved segmenting, labeling, and classifying words extracted from medical prescriptions, resulting in an organized dataset suitable for training and evaluating handwriting recognition models. In general, the samples have good visual quality and sufficient sharpness to support feature extraction by deep learning architectures.
 
-On the Figure~\ref{fig:prescriptionbd} are presented some samples of PrescriptionBD. It is possible to observe that the dataset has images with variable resolutaion, with differentes height and width, it make necessary to padronize height and width of all imagems before training. Therefore, o PrescriptionBD disponibilize a official split of all images to train, validation and test.
+Figure~\ref{fig:prescriptionbd} presents samples from \textit{PrescriptionBD}. The dataset contains images with variable resolutions in both height and width, making it necessary to standardize them to a single size before training the neural networks. In addition, \textit{PrescriptionBD} provides an official data split, which supports experiment reproducibility and consistent comparisons among different approaches.
 
 \begin{figure}[H]
 	\centering
@@ -237,18 +224,18 @@ On the Figure~\ref{fig:prescriptionbd} are presented some samples of Prescriptio
 		\label{fig:171}
 	\end{subfigure}
 	
-	\caption{PrescriptionBD Samples}
+	\caption{Samples from PrescriptionBD}
 	\label{fig:prescriptionbd}
 \end{figure}
 	
 	
 
 
-The RxHandBD is a dataset developed by Md. Masudul Islam, from Bangladesh University of Business and Technology (BUBT) \cite{islam2026rxhandbd}, the data was make publicity avaliable by Zenode e Mendeley Data repositories. The dataset was created with the objective to give standard data for OCR and Handwritten recognition (HTR) applied directly to medical prescriptions.
+RxHandBD is a dataset developed by Md. Masudul Islam of the Bangladesh University of Business and Technology (BUBT)~\cite{islam2026rxhandbd} and made publicly available through the Zenodo and Mendeley Data repositories. The dataset was created to provide a standardized benchmark for handwritten text recognition (HTR) and optical character recognition (OCR) research applied to handwritten medical prescriptions.
 
-The documetation to RxHandBD informs that the samples were physical medical prescriptions, whiche one were individual words were segmented and sequencialy anotadas. Therefore, the avaliable documentation doesn't give detailed information about the metodhology to achive the result, neither numbre of professionals and digitalization process. The dataset has 5.578 images of words extracted from handwritten medical prescriptions, it is 1.559 distincts words. The disponibiliezes images are in JPG format, while their respective notes are in .CSV files.
+The RxHandBD documentation states that the samples were obtained from physical medical prescriptions, from which individual words were segmented and subsequently annotated. However, the available documentation does not provide detailed information about the prescription acquisition process, the number of professionals who participated in the collection, or the procedures used to digitize and segment the samples. The dataset contains 5,578 word images extracted from handwritten medical prescriptions, corresponding to 1,559 distinct words. Images are provided in JPG format, while their annotations are supplied in CSV files.
 
-O \textit{RxHandBD} foi selecionado neste estudo por disponibilizar um conjunto padronizado de palavras provenientes de prescrições médicas manuscritas, contendo transcrições anotadas e uma divisão oficial entre os conjuntos de treinamento e teste. Em comparação ao \textit{PrescriptionBD}, esse dataset apresenta características como maior espessura dos traços das letras e maior expressão da variabilidade regional das caligrafias presentes em prescrições médicas. Essas diferenças tornam o \textit{RxHandBD} um recurso relevante para avaliar a capacidade de generalização dos modelos em cenários com diferentes padrões de escrita manuscrita. Sob uma perspectiva comparativa, é de interesse investigar o desempenho das arquiteturas diante de materiais de escrita com características distintas. Essas particularidades podem ser observadas na Figura~\ref{fig:rxhandbd}, que ilustra exemplos representativos das características caligráficas presentes no dataset.
+\textit{RxHandBD} was selected for this study because it provides a standardized collection of words from handwritten medical prescriptions, including annotated transcriptions and an official division between training and test sets. Compared with \textit{PrescriptionBD}, this dataset presents features such as thicker letter strokes and greater expression of regional variability in medical handwriting. These differences make \textit{RxHandBD} relevant for evaluating model generalization under different handwriting patterns. From a comparative perspective, it is useful to investigate how the architectures perform on writing samples with distinct characteristics. These particularities can be observed in Figure~\ref{fig:rxhandbd}, which shows representative examples of the handwriting characteristics found in the dataset.
 
 
 \begin{figure}[H]
@@ -275,57 +262,57 @@ O \textit{RxHandBD} foi selecionado neste estudo por disponibilizar um conjunto 
 		\label{fig:p0220}
 	\end{subfigure}
 	
-	\caption{Amostras do RxHandBD}
+	\caption{Samples from RxHandBD}
 	\label{fig:rxhandbd}
 \end{figure}
 
-Conforme discutido anteriormente, o \textit{PrescriptionBD} apresenta imagens com resoluções não padronizadas, cujas dimensões variam tanto em altura quanto em largura. Para garantir a uniformidade do conjunto de dados e possibilitar uma comparação direta com o \textit{RxHandBD}, adotou-se a resolução de ($512 \times 512$) pixels como padrão de entrada para todas as arquiteturas avaliadas. Essa padronização também se faz necessária para a conversão das imagens em tensores de dimensões fixas, requisito fundamental para o treinamento das redes neurais.
+As previously discussed, \textit{PrescriptionBD} contains images with non-standardized resolutions whose dimensions vary in both height and width. To ensure dataset uniformity and enable a direct comparison with \textit{RxHandBD}, a resolution of $512 \times 512$ pixels was adopted as the input standard for all evaluated architectures. This standardization is also required to convert the images into fixed-size tensors, which is fundamental for training the neural networks.
 
-Para preservar integralmente o conteúdo das prescrições e evitar distorções geométricas decorrentes de redimensionamentos não proporcionais, optou-se pela técnica de extensão em branco (\textit{padding}). Nesse procedimento, cada imagem foi posicionada sobre um fundo branco até atingir a resolução de ($512 \times 512$) pixels, mantendo suas proporções originais e adicionando apenas pixels de preenchimento nas regiões excedentes. Dessa forma, todas as amostras passaram a apresentar dimensões uniformes, tornando-se adequadas para o processamento pelas arquiteturas de aprendizado profundo e permitindo uma comparação metodológica mais justa entre os datasets. Na Figura~\ref{fig:comp} é possivel ver uma comparação entre imagens antes da padronização e após a padronização, Figura~\ref{fig:stani} é possivel ver a prescrição do medicamento Lenixil em $103\times30$ e na Figura~\ref{fig:512i} após a padronização em $512\times512$.
+White padding was used to preserve the prescription content and avoid distortions introduced by disproportionate resizing. In this procedure, each image was placed on a white background until it reached a resolution of $512 \times 512$ pixels, preserving its original proportions and adding padding pixels only to the remaining regions. As a result, all samples acquired uniform dimensions, making them suitable for processing by the deep learning architectures and enabling a fairer methodological comparison between the datasets. Figure~\ref{fig:comp} compares an image before and after standardization: Figure~\ref{fig:stani} shows the Lenixil prescription at $103 \times 30$ pixels, whereas Figure~\ref{fig:512i} shows it after standardization to $512 \times 512$ pixels.
 
 \begin{figure}[H]
 	\centering
 	
 	\begin{subfigure}{0.4\textwidth}
 		\centering
-		\includegraphics[height=2cm,keepaspectratio]{imagens/211.png}
+		\includegraphics[width=\linewidth,height=2cm,keepaspectratio]{imagens/211.png}
 		\caption{}
 		\label{fig:stani}
 	\end{subfigure}
 	\hspace{1.5cm}
 	\begin{subfigure}{0.4\textwidth}
 		\centering
-		\includegraphics[height=2cm,keepaspectratio]{imagens/prescriptionbd_test_000212.png}
+		\includegraphics[width=\linewidth,height=2cm,keepaspectratio]{imagens/prescriptionbd_test_000212.png}
 		\caption{}
 		\label{fig:512i}
 	\end{subfigure}
 	
-\caption{Exemplos de imagens do \textit{PrescriptionBD} após a padronização para resolução de $512 \times 512$ pixels.}
+\caption{Example from \textit{PrescriptionBD} after standardization to a resolution of $512 \times 512$ pixels.}
 
 	\label{fig:comp}
 \end{figure}
 
-Para a realização dos experimentos, foram considerados três cenários distintos: treinamento e avaliação utilizando exclusivamente o \textit{PrescriptionBD}, treinamento e avaliação utilizando exclusivamente o \textit{RxHandBD}, e um cenário adicional composto por um dataset combinado, formado pela união das amostras de ambos os conjuntos de dados. Para esse dataset combinado, foi realizada uma nova divisão entre os conjuntos de treinamento e teste, seguindo os \textit{splits} apresentados na Tabela~\ref{tab:splits}. No caso do \textit{PrescriptionBD}, foi preservada a divisão oficial disponibilizada pelos autores, de modo a garantir a reprodutibilidade dos experimentos e a comparabilidade dos resultados.
+Three distinct scenarios were considered in the experiments: training and evaluation exclusively on \textit{PrescriptionBD}, training and evaluation exclusively on \textit{RxHandBD}, and an additional combined scenario formed by joining the samples from both datasets. For the combined dataset, a new division into training and test sets was created according to the splits presented in Table~\ref{tab:splits}. For \textit{PrescriptionBD}, the official split provided by the authors was preserved to support experiment reproducibility and result comparability.
 
 \begin{table}[htbp]
 	\centering
-	\caption{Splits utilizados nos diferentes cenários experimentais.}
+	\caption{Splits used in the different experimental scenarios.}
 	\label{tab:splits}
 	\begin{tabular}{lrrrrl}
 		\toprule
-		\textbf{Cenário} & \textbf{Train} & \textbf{Val} & \textbf{Test} & \textbf{Total} & \textbf{Método} \\
+		\textbf{Scenario} & \textbf{Train} & \textbf{Val} & \textbf{Test} & \textbf{Total} & \textbf{Method} \\
 		\midrule
-		RxHandBD       & 3905 & 837  & 836  & 5578  & 70/15/15 por amostra, seed 757 \\
-		PrescriptionBD & 3120 & 780  & 780  & 4680  & Split oficial preservado \\
-		Combinado      & 7025 & 1617 & 1616 & 10258 & União dos splits correspondentes \\
+		RxHandBD       & 3905 & 837  & 836  & 5578  & 70/15/15 by sample, seed 757 \\
+		PrescriptionBD & 3120 & 780  & 780  & 4680  & Official split preserved \\
+		Combined       & 7025 & 1617 & 1616 & 10258 & Union of the corresponding splits \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 
-Devido à limitada quantidade de amostras disponíveis para treinamento, empregou-se a técnica de \textit{data augmentation} com o objetivo de aumentar a variabilidade dos dados e reduzir o risco de sobreajuste (\textit{overfitting}) dos modelos. As transformações foram aplicadas de forma aleatória durante o treinamento, gerando diferentes variações de uma mesma imagem a cada época.
+Because of the limited number of samples available for training, data augmentation was used to increase data variability and reduce the risk of model overfitting. The transformations were applied randomly during training, generating different variations of the same image in each epoch.
 
-Foram utilizadas três técnicas de aumento de dados. A primeira consistiu na transformação \textit{RandomAffine}, responsável por aplicar rotações e translações aleatórias às imagens, com probabilidade de $90\%$. A segunda foi a transformação \textit{ColorJitter}, utilizada para modificar aleatoriamente o brilho e o contraste das imagens, com variação de $0{,}25$ para o brilho e $0{,}35$ para o contraste, sendo aplicada com probabilidade de $60\%$. Por fim, empregou-se a transformação \textit{GaussianBlur}, que aplica um desfoque gaussiano utilizando \textit{kernel} de tamanho 3 e valor de $\sigma$ variando entre $0{,}1$ e $0{,}8$, com probabilidade de aplicação de $30\%$. Na Figura~\ref{fig:data-augmentation-examples} é possivel visualizar o resultado da aplicação da metodologia de aumentação em uma amostra do conjunto de dados \textit{RxHandBD}.
+Three data augmentation techniques were used. The first was \textit{RandomAffine}, which applies random rotations and translations to the images with a probability of $90\%$. The second was \textit{ColorJitter}, which randomly changes image brightness and contrast, with variations of $0.25$ for brightness and $0.35$ for contrast, and was applied with a probability of $60\%$. Finally, \textit{GaussianBlur} was used with a kernel size of 3 and $\sigma$ values ranging from $0.1$ to $0.8$, with an application probability of $30\%$. Figure~\ref{fig:data-augmentation-examples} shows the result of applying this augmentation methodology to a sample from \textit{RxHandBD}.
 
 \begin{figure}[H]
 	\centering
@@ -335,7 +322,7 @@ Foram utilizadas três técnicas de aumento de dados. A primeira consistiu na tr
 		\includegraphics[width=\linewidth]{
 			imagens/rxhandbd_000001_original.png
 		}
-		\caption{Imagem original}
+		\caption{Original image}
 		\label{fig:augmentation-original}
 	\end{subfigure}
 		\vspace{0.8cm}
@@ -364,132 +351,135 @@ Foram utilizadas três técnicas de aumento de dados. A primeira consistiu na tr
 		\includegraphics[width=\linewidth]{
 			imagens/rxhandbd_000001_blur.png
 		}
-		\caption{Desfoque gaussiano}
+		\caption{Gaussian blur}
 		\label{fig:augmentation-blur}
 	\end{subfigure}
 	
-	\caption{Exemplo das transformações de data augmentation aplicadas a uma amostra do conjunto de treinamento do RxHandBD.}
+	\caption{Example of data augmentation transformations applied to a sample from the RxHandBD training set.}
 	\label{fig:data-augmentation-examples}
 \end{figure}
 
-Essas aplicações permitiram um treinamento dos dados mais conciso com menor ocorrência de over-fitting.
+These transformations supported more consistent training with a lower occurrence of overfitting.
 
 
 \subsection{Computational Models}
 \label{sec:models}
 
-Para este projeto foram utilizado 4 arquiteturas, e são elas: Uma CNN baseline, CNN com Bilstm, Trocqr e o Parseq
+Four architectures were used in this study: a CNN baseline, a CNN-BiLSTM, TrOCR, and PARSeq.
 
 \subsubsection{CNN Baseline}
 
 
 
-As redes neurais convolucionais (\textit{Convolutional Neural Networks} -- CNNs) possuem inspiração em princípios observados no sistema visual biológico, especialmente nos estudos sobre o córtex visual realizados por Hubel e Wiesel \cite{hubel1962receptive}. Embora não representem uma reprodução fiel do funcionamento do cérebro humano, essas arquiteturas foram concebidas a partir da observação de que o sistema visual é capaz de reconhecer padrões complexos por meio da combinação hierárquica de características visuais simples.
+Convolutional Neural Networks (CNNs) are inspired by principles observed in the biological visual system, particularly the studies of the visual cortex conducted by Hubel and Wiesel~\cite{hubel1962receptive}. Although they do not faithfully reproduce how the human brain operates, these architectures were conceived from the observation that the visual system can recognize complex patterns through hierarchical combinations of simple visual features.
 
-Nos experimentos conduzidos por Hubel e Wiesel, observou-se que neurônios presentes no córtex visual respondem seletivamente a estímulos específicos, como bordas, orientações e contrastes. Além disso, verificou-se que o processamento da informação visual ocorre de forma hierárquica, na qual neurônios de níveis superiores integram informações extraídas por neurônios mais simples para representar estruturas cada vez mais complexas \cite{hubel1962receptive}.
+In the experiments conducted by Hubel and Wiesel, neurons in the visual cortex were found to respond selectively to specific stimuli such as edges, orientations, and contrasts. Visual information processing was also observed to occur hierarchically, with higher-level neurons integrating information extracted by simpler neurons to represent increasingly complex structures~\cite{hubel1962receptive}.
 
-Inspiradas nesses princípios, as CNNs introduzem o conceito de campos receptivos locais por meio das camadas de convolução, nas quais filtros aprendem automaticamente padrões presentes nas imagens. À medida que múltiplas camadas convolucionais são empilhadas, torna-se possível construir representações hierárquicas das características visuais, iniciando pela detecção de elementos básicos, como bordas e texturas, e evoluindo para padrões mais complexos, como formas e objetos. Essa organização tornou as CNNs uma das principais arquiteturas para tarefas de visão computacional e reconhecimento de padrões.
+Inspired by these principles, CNNs introduce local receptive fields through convolutional layers, in which filters automatically learn patterns present in the images. As multiple convolutional layers are stacked, hierarchical feature representations can be constructed, beginning with basic elements such as edges and textures and progressing toward more complex patterns such as shapes and objects. This organization has made CNNs one of the main architectures used in computer vision and pattern recognition tasks.
 
 
-Os modelos computacionais das CNNs, tal como são conhecidos atualmente, têm suas bases conceituais no trabalho de Fukushima, apresentado no artigo \textit{Neocognitron: A Self-Organizing Neural Network Model for a Mechanism of Pattern Recognition Unaffected by Shift in Position} \cite{fukushima1980neocognitron}. Nesse estudo foi proposta uma arquitetura hierárquica inspirada no córtex visual, composta por camadas responsáveis pela extração progressiva de características e pela obtenção de invariância a pequenas translações dos padrões de entrada. Embora o Neocognitron não utilizasse treinamento por \textit{backpropagation}, seus princípios arquiteturais serviram de base para o desenvolvimento das CNNs modernas.
+The conceptual foundations of modern CNN models can be traced to Fukushima's work, presented in \textit{Neocognitron: A Self-Organizing Neural Network Model for a Mechanism of Pattern Recognition Unaffected by Shift in Position}~\cite{fukushima1980neocognitron}. That study proposed a hierarchical architecture inspired by the visual cortex, with layers responsible for progressive feature extraction and invariance to small translations in the input patterns. Although the Neocognitron did not use \textit{backpropagation} training, its architectural principles helped establish the foundation for modern CNNs.
 
-Posteriormente, LeCun et al. \cite{lecun1998gradient} consolidaram esse paradigma ao apresentar uma arquitetura convolucional treinada por \textit{backpropagation} para reconhecimento óptico de caracteres (OCR), demonstrando que a aprendizagem automática de filtros convolucionais possibilitava elevados níveis de desempenho em tarefas de reconhecimento de padrões. Esse trabalho estabeleceu as bases práticas para a ampla adoção das CNNs em problemas de visão computacional.
+LeCun et al.~\cite{lecun1998gradient} later consolidated this paradigm by presenting a convolutional architecture trained with \textit{backpropagation} for optical character recognition (OCR), demonstrating that automatically learned convolutional filters could achieve high performance in pattern recognition tasks. This work established a practical basis for the widespread adoption of CNNs in computer vision problems.
 
-Esta CNN foi utilizada neste projeto como um modelo de referência (\textit{baseline}), representando o ponto de partida para a comparação entre as arquiteturas avaliadas. Seu emprego permite estabelecer um desempenho inicial para modelos convolucionais tradicionais em tarefas de reconhecimento de prescrições médicas manuscritas, servindo como base para a análise dos ganhos proporcionados por arquiteturas mais sofisticadas.
+In this study, the CNN was used as a reference model (\textit{baseline}), representing the starting point for comparison among the evaluated architectures. It establishes an initial performance level for traditional convolutional models in handwritten medical prescription recognition and provides a basis for analyzing the gains obtained with more sophisticated architectures.
 
-Entretanto, o problema abordado neste trabalho difere de uma tarefa convencional de classificação de imagens. O objetivo consiste em reconhecer palavras completas presentes nas prescrições, caracterizando um problema de reconhecimento de sequências. Uma CNN convencional realiza apenas uma única classificação para cada imagem de entrada, o que a impede de predizer diretamente todos os caracteres que compõem uma palavra em uma única inferência.
+However, the problem addressed in this work differs from a conventional image classification task. The objective is to recognize complete words in prescriptions, which characterizes a sequence recognition problem. A conventional CNN produces only one classification for each input image, preventing it from directly predicting all characters that form a word in a single inference.
 
-Para contornar essa limitação, a CNN \textit{baseline} foi modelada como um classificador de palavras. Nessa abordagem, cada palavra presente no conjunto de treinamento é tratada como uma classe distinta. Consequentemente, a saída da rede corresponde a uma distribuição de probabilidades sobre todas as classes conhecidas, sendo selecionada como predição a palavra com maior probabilidade. Dessa forma, o modelo não realiza o reconhecimento sequencial dos caracteres, mas estima diretamente a qual palavra previamente aprendida a imagem de entrada pertence.
+To address this limitation, the CNN \textit{baseline} was formulated as a word classifier. In this approach, each word in the training set is treated as a distinct class. The network output therefore corresponds to a probability distribution over all known classes, and the word with the highest probability is selected as the prediction. The model does not perform sequential character recognition; instead, it directly estimates which previously learned word corresponds to the input image.
 
-Como evolução da CNN \textit{baseline}, foi desenvolvida uma arquitetura que incorpora uma camada \textit{Bidirectional Long Short-Term Memory} (BiLSTM). Essa modificação permite que o modelo deixe de realizar apenas a classificação de palavras previamente conhecidas e passe a reconhecer a sequência de caracteres presente na imagem, tornando-o mais adequado para tarefas de reconhecimento de texto manuscrito.
+As an extension of the CNN \textit{baseline}, an architecture incorporating a \textit{Bidirectional Long Short-Term Memory} (BiLSTM) layer was developed. This modification allows the model to move beyond the classification of previously known words and recognize the character sequence in the image, making it more suitable for handwritten text recognition tasks.
 
 \newpage
 \subsubsection{CNN BiLSTM}
 
-Posteriormente, visando aumentar a precisão do reconhecimento, foi incorporado um módulo de \textit{Bidirectional Long Short-Term Memory} (BiLSTM) à CNN baseline. Essa arquitetura consiste em uma rede neural recorrente capaz de modelar dependências sequenciais de longo alcance, processando a sequência simultaneamente nos sentidos direto e inverso \cite{shi2016crnn}. Dessa forma, o modelo passa a considerar não apenas o elemento atual, mas também o contexto fornecido pelos caracteres anteriores e posteriores.
+To improve recognition accuracy, a \textit{Bidirectional Long Short-Term Memory} (BiLSTM) module was incorporated into the CNN baseline. This architecture is a recurrent neural network capable of modeling long-range sequential dependencies by processing a sequence in both the forward and backward directions~\cite{shi2016crnn}. The model can therefore consider not only the current element but also the context supplied by preceding and subsequent characters.
 
-A inclusão do BiLSTM justifica-se pelo fato de palavras manuscritas apresentarem uma estrutura sequencial inerente. Em um idioma, determinados caracteres possuem maior probabilidade de ocorrer em conjunto, como a frequente alternância entre consoantes e vogais, além de padrões ortográficos característicos de cada palavra. Ao explorar essas dependências contextuais, o BiLSTM complementa as características visuais extraídas pela CNN, permitindo que a classificação considere tanto a aparência dos caracteres quanto a relação sequencial existente entre eles. Assim, a arquitetura CNN-BiLSTM foi avaliada quanto à sua capacidade de melhorar o reconhecimento de prescrições médicas manuscritas em comparação à CNN baseline.
+The inclusion of the BiLSTM is motivated by the inherent sequential structure of handwritten words. In a language, some characters are more likely to occur together, including common alternations between consonants and vowels and the spelling patterns associated with each word. By exploring these contextual dependencies, the BiLSTM complements the visual features extracted by the CNN, allowing the classification process to consider both character appearance and the sequential relationships among characters. The CNN-BiLSTM architecture was therefore evaluated for its ability to improve handwritten medical prescription recognition relative to the CNN baseline.
 
-Com a incorporação do BiLSTM, manteve-se a abordagem de reconhecimento baseada em um conjunto de classes previamente definidas. Embora a modelagem sequencial tenha proporcionado um melhor aproveitamento do contexto entre os caracteres, a arquitetura continuou limitada à classificação de palavras pertencentes às classes conhecidas durante o treinamento. Dessa forma, o problema de reconhecer palavras inéditas ou compostas por combinações arbitrárias de caracteres permaneceu presente.
+After incorporating the BiLSTM, the architecture produced temporal outputs and was trained with CTC over a character vocabulary. During greedy decoding, consecutive repetitions and the blank symbol are removed to reconstruct the predicted word. Unlike the CNN \textit{baseline}, CNN-BiLSTM is therefore not restricted to a closed set of word classes and can form sequences that were not observed during training, provided that their characters belong to the learned vocabulary.
 
-Para superar essa limitação, foram posteriormente avaliadas arquiteturas baseadas em \textit{Transformers}. Diferentemente da abordagem de classificação por classes, esses modelos realizam o reconhecimento em nível de sequência de caracteres. Assim, tornam-se capazes de reconhecer palavras que não estavam presentes no conjunto de treinamento.
+To broaden the comparison with sequence architectures initialized through large-scale pre-training, Transformer-based models were subsequently evaluated. These models also perform recognition at the character-sequence level and can recognize words that were not present in the training set.
 
 
-\subsubsection{Trocqr}
-\subsubsection{Parseq}
+\subsubsection{TrOCR}
+
+TrOCR (Transformer-based Optical Character Recognition) is an optical character recognition model proposed by Li et al.~\cite{li2023trocr} that uses an encoder-decoder architecture based entirely on Transformers. The model employs a visual Transformer to extract representations from the input image and a textual Transformer to generate the corresponding sequence of characters or tokens, eliminating the need for traditional CNN-, RNN-, and CTC-based architectures. TrOCR can also be pre-trained on large synthetic datasets and subsequently fine-tuned with labeled data, with applications to printed, handwritten, and scene text.
+
+\subsubsection{PARSeq}
+
+PARSeq (Permuted Autoregressive Sequence) is a Transformer-based model developed for text recognition in images, particularly in the context of Scene Text Recognition~\cite{bautista2022parseq}. Unlike conventional autoregressive models, which generate characters only from left to right, PARSeq uses Permutation Language Modeling, allowing the model to learn different prediction orders and explore bidirectional context during recognition. This approach combines autoregressive inference, non-autoregressive inference, and iterative refinement within a single architecture, providing a balance among accuracy, parameter count, and computational cost.
 \subsection{Baselines and Metrics}
 \label{sec:baselines}
 
-Para a realização das comparações entre as arquiteturas, foi inicialmente definida uma matriz de experimentos, responsável por estabelecer os conjuntos de treinamento e de teste utilizados em cada modelo. Essa padronização permitiu conduzir avaliações sistemáticas por meio de métricas consistentes, possibilitando analisar o desempenho de cada arquitetura e compreender os fatores que influenciaram os resultados obtidos. Ao final, os resultados de todos os experimentos foram comparados entre si.
+An experiment matrix was initially defined to establish the training and test sets used for each model. This standardization enabled systematic evaluation with consistent metrics, making it possible to analyze the performance of each architecture and understand the factors that influenced the results. The results from all experiments were then compared.
 
-Com o objetivo de garantir uma comparação justa entre as arquiteturas, foram definidas matrizes de comparação específicas para cada conjunto de experimentos. Essas matrizes consideram as diferenças conceituais entre os modelos, bem como suas particularidades de treinamento, evitando comparações inadequadas entre abordagens distintas. Dessa forma, foi possível avaliar a capacidade de generalização e o desempenho de cada arquitetura em diferentes cenários e quantidades de dados disponíveis para treinamento.
+To support a fair comparison among the architectures, specific comparison matrices were defined for each group of experiments. These matrices consider the conceptual differences among the models and their training particularities, avoiding inappropriate comparisons between distinct approaches. This procedure made it possible to evaluate the generalization capability and performance of each architecture under different scenarios and quantities of training data.
 
-É possivel visualizar todos os experiemntos na Tabela~\ref{tab:matriz-experimentos}.
+All experiments are presented in Table~\ref{tab:matriz-experimentos}.
 \begin{table}[H]
 	\centering
-	\caption{Matriz de experimentos por arquitetura e conjunto de dados.}
+	\caption{Experiment matrix by architecture and dataset.}
 	\label{tab:matriz-experimentos}
 	\begin{tabular}{cllrrr}
 		\toprule
 		\textbf{Exp.} &
-		\textbf{Arquitetura} &
+		\textbf{Architecture} &
 		\textbf{Dataset} &
-		\textbf{Treino} &
-		\textbf{Validação} &
-		\textbf{Teste} \\
+		\textbf{Train} &
+		\textbf{Validation} &
+		\textbf{Test} \\
 		\midrule
 		
 		E1 & CNN baseline & PrescriptionBD & 3120 & 780  & 780  \\
 		E1 & CNN baseline & RxHandBD       & 3905 & 837  & 836  \\
-		E1 & CNN baseline & Combinado      & 7025 & 1617 & 1616 \\
+		E1 & CNN baseline & Combined       & 7025 & 1617 & 1616 \\
 		\midrule
 		
 		E2 & CNN-BiLSTM   & PrescriptionBD & 3120 & 780  & 780  \\
 		E2 & CNN-BiLSTM   & RxHandBD       & 3905 & 837  & 836  \\
-		E2 & CNN-BiLSTM   & Combinado      & 7025 & 1617 & 1616 \\
+		E2 & CNN-BiLSTM   & Combined       & 7025 & 1617 & 1616 \\
 		\midrule
 		
 		E3 & TrOCR        & PrescriptionBD & 3120 & 780  & 780  \\
 		E3 & TrOCR        & RxHandBD       & 3905 & 837  & 836  \\
-		E3 & TrOCR        & Combinado      & 7025 & 1617 & 1616 \\
+		E3 & TrOCR        & Combined       & 7025 & 1617 & 1616 \\
 		\midrule
 		
 		E4 & PARSeq       & PrescriptionBD & 3120 & 780  & 780  \\
 		E4 & PARSeq       & RxHandBD       & 3905 & 837  & 836  \\
-		E4 & PARSeq       & Combinado      & 7025 & 1617 & 1616 \\
+		E4 & PARSeq       & Combined       & 7025 & 1617 & 1616 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-Ao longo de todo o processo de treinamento foram coletadas métricas referentes ao desempenho do modelo em cada época, com o objetivo de compreender a evolução do aprendizado durante o treinamento. Para isso, foram registrados os valores da função de perda (*loss*) nos conjuntos de treinamento e validação, bem como a acurácia obtida em ambos os conjuntos.
+Throughout training, performance metrics were collected at each epoch to characterize the progression of model learning. The loss values on the training and validation sets and the accuracy achieved on both sets were recorded.
 
-Para a avaliação dos modelos, foram utilizadas métricas capazes de analisar diferentes aspectos do desempenho no reconhecimento de texto. A acurácia foi empregada para medir a capacidade do modelo de reconhecer corretamente toda a sequência de caracteres presente em uma imagem. Além disso, foi utilizada a métrica \textit{Character Error Rate} (CER), que quantifica a taxa de erros em nível de caractere, indicando o número de inserções, deleções e substituições necessárias para transformar a predição no texto de referência. Complementarmente, foi utilizada a métrica \textit{Word Error Rate} (WER), que avalia os erros em nível de palavra, medindo a quantidade de palavras reconhecidas incorretamente em relação ao texto esperado.
+The models were evaluated using metrics that capture different aspects of text recognition performance. Accuracy measured whether the model correctly recognized the complete character sequence in an image. Character Error Rate (CER) quantified character-level errors through the number of insertions, deletions, and substitutions required to transform the prediction into the reference text. Word Error Rate (WER) complemented this analysis by measuring word-level errors as the number of incorrectly recognized words relative to the expected text.
 
 \subsection{Implementation Details}
 \label{sec:implementation}
 
-Os experimentos foram implementados em Python utilizando o pacote desenvolvido
-neste projeto, denominado \texttt{med-ocr-research}. O ambiente de execução
-utiliza Python 3.10 ou superior e tem como principal framework de aprendizado
-profundo o PyTorch. Todos os treinamentos foram executados com aceleração CUDA
-em uma GPU NVIDIA GeForce RTX 3050 com 6 GB de memória. A configuração completa
-do ambiente computacional pode ser visualizada na
-Tabela~\ref{tab:hardware}.
+The experiments were implemented in Python using the package developed for this
+project, named \texttt{med-ocr-research}. The execution environment uses Python
+3.10 or later, with PyTorch as the main deep learning framework. All training
+runs were performed with CUDA acceleration on an NVIDIA GeForce RTX 3050 GPU
+with 6 GB of memory. The complete computational environment configuration is
+shown in Table~\ref{tab:hardware}.
 
-As principais dependências utilizadas durante o desenvolvimento são
-apresentadas na Tabela~\ref{tab:software}. Os valores apresentados representam
-as versões mínimas utilizadas no ambiente experimental. Para o TrOCR, os
-arquivos do modelo pré-treinado registram a utilização da biblioteca
-Transformers na versão 5.12.1.
+The main dependencies used during development are presented in
+Table~\ref{tab:software}. The listed values represent the minimum versions used
+in the experimental environment. For TrOCR, the pre-trained model files record
+the use of Transformers version 5.12.1.
 
 \begin{table}[htbp]
 	\centering
-	\caption{Dependências de software utilizadas no ambiente experimental.}
+	\caption{Software dependencies used in the experimental environment.}
 	\label{tab:software}
 	\begin{tabular}{llll}
 		\toprule
-		\textbf{Biblioteca} & \textbf{Versão} &
-		\textbf{Biblioteca} & \textbf{Versão} \\
+		\textbf{Library} & \textbf{Version} &
+		\textbf{Library} & \textbf{Version} \\
 		\midrule
 		Python            & $\geq 3.10$   & PyTorch          & $\geq 2.2$  \\
 		Torchvision       & $\geq 0.17$   & Transformers     & 5.12.1       \\
@@ -503,22 +493,24 @@ Transformers na versão 5.12.1.
 	\end{tabular}
 \end{table}
 
-Durante todos os experimentos foi utilizada a semente aleatória 42 para garantir
-a reprodutibilidade dos resultados. Essa semente foi aplicada aos geradores das
-bibliotecas \texttt{random}, NumPy e PyTorch, incluindo a inicialização da CUDA
-por meio de \texttt{torch.cuda.manual\_seed\_all}. Para a organização dos
-datasets foi preservado o split oficial do PrescriptionBD. Já para o RxHandBD,
-foi realizada uma divisão de 70\% para treinamento, 15\% para validação e 15\%
-para teste, utilizando a semente derivada 757. O dataset combinado foi obtido
-por meio da união dos respectivos subconjuntos dos dois datasets.
+The random seed 42 was used throughout all experiments to support result
+reproducibility. This seed was applied to the generators from the
+\texttt{random}, NumPy, and PyTorch libraries, including CUDA initialization
+through \texttt{torch.cuda.manual\_seed\_all}. The official PrescriptionBD split
+was preserved when organizing the datasets. RxHandBD was divided into 70\% for
+training, 15\% for validation, and 15\% for testing using the derived seed 757.
+The combined dataset was obtained by joining the corresponding subsets from the
+two datasets.
 
-A CNN Baseline e a CNN-BiLSTM foram implementadas computacionalmente neste
-projeto. Para o TrOCR foi utilizado o checkpoint pré-treinado
-\texttt{microsoft/trocr-small-handwritten}. Já para o PARSeq foi utilizada a
-implementação disponibilizada no repositório \texttt{baudm/parseq}, fixada no
-commit \texttt{1902db043c029a7e03a3818c616c06600af574be}. Todo o código-fonte
-desenvolvido, bem como as configurações experimentais e os scripts de avaliação,
-estão disponíveis no repositório do projeto:
+The CNN baseline and CNN-BiLSTM were implemented in this project. TrOCR used the
+pre-trained \nolinkurl{microsoft/trocr-small-handwritten} checkpoint. PARSeq used
+the implementation available in the \nolinkurl{baudm/parseq} repository, fixed at
+the following commit:
+\begin{center}
+	\texttt{1902db043c029a7e03a3818c616c06600af574be}
+\end{center}
+All developed source code, experimental configurations, and evaluation scripts
+are available in the project repository:
 
 \begin{center}
 	\url{https://github.com/SamuelFerrc/Medical-Handwriting-Ocr}
@@ -528,24 +520,25 @@ estão disponíveis no repositório do projeto:
 \section{Results and Discussion}
 \label{sec:results}
 
-Esta seção reúne os resultados das doze avaliações realizadas: quatro famílias
-de modelos, cada uma avaliada nos datasets PrescriptionBD, RxHandBD e no cenário
-combinado. A ordem foi organizada para permitir a discussão em três níveis:
-(i) comparação agregada entre modelos, (ii) efeito do dataset e (iii) análise
-diagnóstica de cada avaliação. As métricas foram recalculadas diretamente a
-partir dos arquivos de predições avaliadas. As tabelas detalhadas permanecem
-disponíveis na pasta de artefatos para consulta, mas não são inseridas no artigo
-principal para manter a seção de resultados concisa.
+This section presents the results from twelve evaluations: four model families,
+each evaluated on PrescriptionBD, RxHandBD, and the combined scenario. The
+results are organized to support discussion at three levels: (i) aggregate
+comparison among models, (ii) dataset effects, and (iii) diagnostic analysis of
+each evaluation. The metrics were recalculated directly from the evaluated
+prediction files. Detailed tables remain available in the artifact folder for
+consultation but are not included in the main article in order to keep the
+results section concise.
 
 \subsection{Overall comparison}
 \label{sec:results-overall}
 
-A comparação agregada por modelo e cenário é apresentada nas Figuras~\ref{fig:comparison-accuracy},
-\ref{fig:comparison-cer} e~\ref{fig:comparison-wer}, que mostram, respectivamente,
-a acurácia de correspondência exata, o CER e o WER para as doze avaliações.
+The aggregate comparison by model and scenario is presented in
+Figures~\ref{fig:comparison-accuracy}, \ref{fig:comparison-cer}, and
+\ref{fig:comparison-wer}, which show exact-match accuracy, CER, and WER,
+respectively, for all twelve evaluations.
 
-Além dos gráficos, a Tabela~\ref{tab:evaluation-summary-all} apresenta as
-métricas agregadas de cada modelo e cenário em formato compacto.
+In addition to the graphs, Table~\ref{tab:evaluation-summary-all} presents the
+aggregate metrics for each model and scenario in a compact format.
 
 \input{tabelas/evaluation_graficos_tabelas/evaluation_summary_all.tex}
 
@@ -570,22 +563,22 @@ métricas agregadas de cada modelo e cenário em formato compacto.
   \label{fig:comparison-wer}
 \end{figure}
 
-Os resultados vistos na Figura~\ref{fig:comparison-accuracy} demonstraram que os modelos apresentaram unanimemente melhor desempenho no conjunto de dados PrescriptionBD. Esse comportamento, entretanto, não foi observado no RxHandBD, no qual a maioria dos modelos obteve desempenho inferior, com exceção da CNN Baseline, que apresentou resultados relativamente mais consistentes.
+The results in Figure~\ref{fig:comparison-accuracy} show that all models achieved their best performance on PrescriptionBD. This pattern was not observed on RxHandBD, where most models performed worse, except for the CNN baseline, which produced relatively more consistent results.
 
-Essa diferença pode ser atribuída principalmente às características visuais de cada conjunto de dados. Conforme ilustrado na Figura~\ref{fig:rxhandbd}, as imagens do RxHandBD apresentam traços mais espessos, borrados e com menor definição, dificultando a extração de características discriminativas tanto pelas CNNs quanto pelos modelos baseados em Transformers. Em contrapartida, a Figura~\ref{fig:prescriptionbd} mostra que o PrescriptionBD possui caracteres com traços mais finos, contínuos e bem definidos, favorecendo a identificação de padrões e a aprendizagem de representações mais robustas pelas redes neurais. Consequentemente, as diferenças na qualidade visual dos conjuntos de dados exerceram influência direta no desempenho dos modelos durante o treinamento e a inferência.
+This difference may be associated primarily with the visual characteristics of each dataset. As illustrated in Figure~\ref{fig:rxhandbd}, RxHandBD images contain thicker, more blurred, and less clearly defined strokes, making it more difficult for both CNNs and Transformer-based models to extract discriminative features. In contrast, Figure~\ref{fig:prescriptionbd} shows that PrescriptionBD contains characters with thinner, more continuous, and better-defined strokes, which may facilitate pattern identification and the learning of more robust representations by the neural networks. The observed visual-quality differences between the datasets are therefore consistent with the differences in model performance during training and inference.
 
-Por sua vez, os experimentos realizados sobre o conjunto de dados combinado apresentaram desempenho intermediário em relação aos dois conjuntos originais. Esse comportamento era esperado, uma vez que o conjunto combinado reúne simultaneamente as características favoráveis do PrescriptionBD e os desafios presentes no RxHandBD. Dessa forma, os modelos foram expostos tanto a exemplos de maior qualidade quanto a amostras com maior complexidade visual, resultando em um desempenho médio entre os dois cenários avaliados.
+The experiments on the combined dataset produced intermediate performance relative to the two original datasets. This behavior was expected because the combined set includes both the favorable characteristics of PrescriptionBD and the challenges present in RxHandBD. The models were exposed to higher-quality examples as well as samples with greater visual complexity, resulting in average performance between the two original scenarios.
 
-Uma característica notável foi que a CNN-BiLSTM apresentou um CER menor no conjunto de dados RxHandBD do que no PrescriptionBD, conforme observado na Figura~\ref{fig:comparison-cer}. Esse resultado indica que, apesar de o RxHandBD representar um conjunto de dados mais desafiador para a maioria dos modelos avaliados, a arquitetura CNN-BiLSTM foi capaz de reconhecer os caracteres individuais com maior precisão nesse cenário específico.
+One notable result was that CNN-BiLSTM achieved a lower CER on RxHandBD than on PrescriptionBD, as shown in Figure~\ref{fig:comparison-cer}. This result indicates that, although RxHandBD was more challenging for most of the evaluated models, CNN-BiLSTM recognized individual characters more accurately in this specific scenario.
 
-Em todos os modelos e conjuntos de dados avaliados, o WER apresentou comportamento consistente com a acurácia geral, conforme ilustrado na Figura~\ref{fig:comparison-wer}. De maneira geral, modelos que obtiveram maiores valores de acurácia também apresentaram menores valores de WER, evidenciando uma relação inversa entre essas métricas e reforçando a consistência dos resultados experimentais.
+Across all evaluated models and datasets, WER behaved consistently with overall accuracy, as illustrated in Figure~\ref{fig:comparison-wer}. In general, models with higher accuracy also had lower WER values, showing the inverse relationship between these metrics and supporting the consistency of the experimental results.
 
 \subsection{Dataset-specific comparison}
 \label{sec:results-dataset}
 
-Para separar o efeito do cenário combinado do efeito da arquitetura, a
-Figura~\ref{fig:comparison-combined-dataset} apresenta visualmente, por dataset,
-a comparação de acurácia, CER e WER.
+To separate the effect of the combined scenario from the effect of the
+architecture, Figure~\ref{fig:comparison-combined-dataset} presents the
+comparison of accuracy, CER, and WER by dataset.
 
 \begin{figure}[H]
   \centering
@@ -594,18 +587,18 @@ a comparação de acurácia, CER e WER.
   \label{fig:comparison-combined-dataset}
 \end{figure}
 
-Para cada modelo de rede neural, foi calculada a diferença entre os resultados representados pelas barras azul e laranja, em relação a acurácia geral. A CNN Baseline foi o único modelo em que a barra laranja apresentou desempenho superior à barra azul, com uma diferença de 7,3 pontos percentuais. Nos demais modelos, a barra azul obteve desempenho superior, apresentando diferenças de 18,2 pontos percentuais para a CNN-BiLSTM, 15,9 pontos percentuais para o TrOCR e 18,4 pontos percentuais para o PARSeq.
+For each neural network model, the difference between the results represented by the blue and orange bars was calculated for overall accuracy. The CNN baseline was the only model for which the orange bar exceeded the blue bar, with a difference of 7.3 percentage points. For the remaining models, the blue bar showed better performance, with differences of 18.2 percentage points for CNN-BiLSTM, 15.9 percentage points for TrOCR, and 18.4 percentage points for PARSeq.
 
 \subsection{Per-evaluation diagnostic views}
 \label{sec:results-diagnostics}
 
-As figuras desta subseção complementam as métricas agregadas. Cada painel de
-predições avaliadas reúne distribuição de erros, relação entre desempenho e
-comprimento da referência e acurácia por faixa de confiança. O painel por
-rótulo mostra a distribuição de desempenho entre palavras, destacando os
-rótulos mais frequentes e os rótulos com menor acurácia. Esses painéis são
-descritivos e devem ser usados para investigar padrões de erro, não como
-substitutos das métricas agregadas.
+The figures in this subsection complement the aggregate metrics. Each evaluated
+prediction panel includes the error distribution, the relationship between
+performance and reference length, and accuracy by confidence range. The
+per-label panel shows the distribution of performance across words, highlighting
+the most frequent labels and those with the lowest accuracy. These panels are
+descriptive and should be used to investigate error patterns rather than as
+substitutes for the aggregate metrics.
 
 \subsubsection{CNN baseline}
 
@@ -810,18 +803,20 @@ substitutos das métricas agregadas.
 \section{Limitations}
 \label{sec:limitations}
 
-Este trabalho apresentou limitações relacionadas à quantidade de dados utilizada e ao tamanho dos \textit{batches} de treinamento, restritos pela capacidade de memória disponível. Essas limitações podem ter introduzido algum viés nos resultados obtidos. Entretanto, todos os modelos foram treinados e avaliados sob as mesmas condições experimentais, utilizando o mesmo ambiente computacional e configurações de treinamento, de forma a garantir a maior equidade possível na comparação entre os métodos.
+This study has limitations related to the amount of available data and the training batch sizes, which were restricted by the available memory capacity. These limitations may have introduced some bias into the results. However, all models were trained and evaluated under the same experimental conditions, using the same computational environment and training configurations, to provide the fairest possible comparison among the methods.
 
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-Os resultados obtidos evidenciam o potencial dos modelos de reconhecimento sequencial para a transcrição de palavras manuscritas em prescrições médicas. Em particular, TrOCR e PARSeq alcançaram os melhores desempenhos entre os métodos avaliados, com vantagens consistentes em relação à CNN baseline nos três cenários experimentais. O PARSeq destacou-se no PrescriptionBD, atingindo $90{,}13\%$ de acurácia, CER de $0{,}0680$ e WER de $0{,}1000$, enquanto o TrOCR apresentou o melhor desempenho global no cenário combinado em acurácia ($80{,}88\%$) e WER ($0{,}2018$). Esses resultados mostram que o uso de modelos pré-treinados, adaptados por \textit{fine-tuning}, constitui uma estratégia eficaz para OCR de escrita médica manuscrita mesmo em um cenário de disponibilidade limitada de dados.
+The results demonstrate the potential of sequence-recognition models for transcribing handwritten words in medical prescriptions. In particular, TrOCR and PARSeq achieved the best performance among the evaluated methods, with consistent advantages over the CNN baseline in all three experimental scenarios. PARSeq performed best on PrescriptionBD, reaching $90.13\%$ accuracy, a CER of $0.0680$, and a WER of $0.1000$, whereas TrOCR achieved the best overall performance in the combined scenario in terms of accuracy ($80.88\%$) and WER ($0.2018$). These results indicate that pre-trained models adapted through \textit{fine-tuning} are an effective strategy for OCR of handwritten medical text, even under limited-data conditions.
 
 \section*{Code and Data Availability}
 
-O código, os dados e os materiais suplementares estão disponíveis em:
-\url{https://github.com/SamuelFerrc/Medical-Handwriting-Ocr}. 
+The code, data, and supplementary materials are available at:
+\begin{center}
+	\url{https://github.com/SamuelFerrc/Medical-Handwriting-Ocr}
+\end{center}
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}

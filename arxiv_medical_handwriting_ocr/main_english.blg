@@ -1,51 +1,51 @@
-This is BibTeX, Version 0.99d
+This is BibTeX, Version 0.99e
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main_english.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
-Warning--I didn't find a database entry for "exemplo2024"
 Warning--empty journal in hubel1962receptive
-You've used 8 entries,
+Warning--can't use both volume and number fields in li2023trocr
+You've used 10 entries,
             2481 wiz_defined-function locations,
-            605 strings with 6398 characters,
-and the built_in function-call counts, 3169 in all, are:
-= -- 260
-> -- 176
-< -- 4
-+ -- 69
-- -- 52
-* -- 238
-:= -- 507
-add.period$ -- 29
-call.type$ -- 8
-change.case$ -- 16
-chr.to.int$ -- 7
-cite$ -- 9
-duplicate$ -- 153
-empty$ -- 287
-format.name$ -- 62
-if$ -- 674
+            617 strings with 6876 characters,
+and the built_in function-call counts, 4258 in all, are:
+= -- 347
+> -- 248
+< -- 7
++ -- 95
+- -- 74
+* -- 326
+:= -- 673
+add.period$ -- 36
+call.type$ -- 10
+change.case$ -- 20
+chr.to.int$ -- 9
+cite$ -- 12
+duplicate$ -- 206
+empty$ -- 372
+format.name$ -- 88
+if$ -- 910
 int.to.chr$ -- 2
-int.to.str$ -- 9
-missing$ -- 5
-newline$ -- 53
-num.names$ -- 24
-pop$ -- 82
+int.to.str$ -- 11
+missing$ -- 7
+newline$ -- 64
+num.names$ -- 30
+pop$ -- 100
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 10
 quote$ -- 0
-skip$ -- 96
+skip$ -- 138
 stack$ -- 0
-substring$ -- 112
-swap$ -- 29
-text.length$ -- 1
+substring$ -- 164
+swap$ -- 49
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 1
-while$ -- 23
+type$ -- 70
+warning$ -- 2
+while$ -- 30
 width$ -- 0
-write$ -- 116
+write$ -- 144
 (There were 2 warnings)
