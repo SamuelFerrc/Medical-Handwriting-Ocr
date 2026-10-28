@@ -1,0 +1,443 @@
+{
+  "run_name": "e2.01_seed42_evaluation",
+  "created_at_utc": "2026-07-08T00:59:59.071373+00:00",
+  "source": "outputs/runs/e2.01_seed42/e2cnn_bilstm_best_checkpoint.pt",
+  "test_csv": "data/splits/scenarios/prescriptionbd/test.csv",
+  "primary_metric": "exact_match_accuracy",
+  "metrics": {
+    "samples": 780,
+    "exact_match_accuracy": 0.6756410256410257,
+    "cer": 0.1868421052631579,
+    "wer": 0.3278481012658228,
+    "correct": 527,
+    "total_char_errors": 923,
+    "total_reference_chars": 4940,
+    "total_word_errors": 259,
+    "total_reference_words": 790
+  },
+  "per_dataset_metrics": [
+    {
+      "dataset": "PrescriptionBD",
+      "samples": 780,
+      "exact_match_accuracy": 0.6756410256410257,
+      "cer": 0.1868421052631579,
+      "wer": 0.3278481012658228,
+      "correct": 527
+    }
+  ],
+  "confidence": {
+    "count": 780,
+    "mean": 0.9821822044176933,
+    "median": 0.9860773384571075,
+    "std": 0.014259473545294608,
+    "min": 0.9064361453056335,
+    "max": 0.9999058842658997
+  },
+  "text_true_length": {
+    "count": 780,
+    "mean": 6.333333333333333,
+    "median": 6.0,
+    "std": 1.355583578244749,
+    "min": 2.0,
+    "max": 11.0
+  },
+  "text_pred_length": {
+    "count": 780,
+    "mean": 6.198717948717949,
+    "median": 6.0,
+    "std": 1.37103681427163,
+    "min": 1.0,
+    "max": 11.0
+  },
+  "char_error_statistics": {
+    "count": 780,
+    "mean": 1.1833333333333333,
+    "median": 0.0,
+    "std": 2.018752894205541,
+    "min": 0.0,
+    "max": 10.0
+  },
+  "word_error_statistics": {
+    "count": 780,
+    "mean": 0.33205128205128204,
+    "median": 0.0,
+    "std": 0.4870090795087884,
+    "min": 0.0,
+    "max": 2.0
+  },
+  "dataset_distribution": [
+    {
+      "label": "PrescriptionBD",
+      "count": 780
+    }
+  ],
+  "label_distribution_top20": [
+    {
+      "label": "aceta",
+      "count": 10
+    },
+    {
+      "label": "ace",
+      "count": 10
+    },
+    {
+      "label": "alatrol",
+      "count": 10
+    },
+    {
+      "label": "amodis",
+      "count": 10
+    },
+    {
+      "label": "atrizin",
+      "count": 10
+    },
+    {
+      "label": "axodin",
+      "count": 10
+    },
+    {
+      "label": "azithrocin",
+      "count": 10
+    },
+    {
+      "label": "azyth",
+      "count": 10
+    },
+    {
+      "label": "az",
+      "count": 10
+    },
+    {
+      "label": "bacaid",
+      "count": 10
+    },
+    {
+      "label": "backtone",
+      "count": 10
+    },
+    {
+      "label": "baclofen",
+      "count": 10
+    },
+    {
+      "label": "baclon",
+      "count": 10
+    },
+    {
+      "label": "bacmax",
+      "count": 10
+    },
+    {
+      "label": "beklo",
+      "count": 10
+    },
+    {
+      "label": "bicozin",
+      "count": 10
+    },
+    {
+      "label": "canazole",
+      "count": 10
+    },
+    {
+      "label": "candinil",
+      "count": 10
+    },
+    {
+      "label": "cetisoft",
+      "count": 10
+    },
+    {
+      "label": "conaz",
+      "count": 10
+    }
+  ],
+  "top_error_pairs": [
+    {
+      "text_true": "ketoral",
+      "text_pred": "ketorol",
+      "count": 3
+    },
+    {
+      "text_true": "azithrocin",
+      "text_pred": "azithrcin",
+      "count": 2
+    },
+    {
+      "text_true": "baclon",
+      "text_pred": "bomadin",
+      "count": 2
+    },
+    {
+      "text_true": "dinafex",
+      "text_pred": "dindex",
+      "count": 2
+    },
+    {
+      "text_true": "fenadin",
+      "text_pred": "fexo",
+      "count": 2
+    },
+    {
+      "text_true": "flexibac",
+      "text_pred": "flexilax",
+      "count": 2
+    },
+    {
+      "text_true": "flugal",
+      "text_pred": "progut",
+      "count": 2
+    },
+    {
+      "text_true": "ketocon",
+      "text_pred": "ketocol",
+      "count": 2
+    },
+    {
+      "text_true": "maxpro",
+      "text_pred": "menain",
+      "count": 2
+    },
+    {
+      "text_true": "montene",
+      "text_pred": "montne",
+      "count": 2
+    },
+    {
+      "text_true": "montex",
+      "text_pred": "motex",
+      "count": 2
+    },
+    {
+      "text_true": "renova",
+      "text_pred": "flamyd",
+      "count": 2
+    },
+    {
+      "text_true": "sergel",
+      "text_pred": "ceral",
+      "count": 2
+    },
+    {
+      "text_true": "aceta",
+      "text_pred": "ackla",
+      "count": 1
+    },
+    {
+      "text_true": "alatrol",
+      "text_pred": "didtril",
+      "count": 1
+    },
+    {
+      "text_true": "alatrol",
+      "text_pred": "disopal",
+      "count": 1
+    },
+    {
+      "text_true": "alatrol",
+      "text_pred": "feal",
+      "count": 1
+    },
+    {
+      "text_true": "alatrol",
+      "text_pred": "telafast",
+      "count": 1
+    },
+    {
+      "text_true": "amodis",
+      "text_pred": "camdes",
+      "count": 1
+    },
+    {
+      "text_true": "atrizin",
+      "text_pred": "athrocin",
+      "count": 1
+    }
+  ],
+  "error_examples": [
+    {
+      "sample_id": "prescriptionbd_test_000006",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "ackla",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000022",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "feal",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000025",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "telafast",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000026",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "disopal",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000030",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "didtril",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000036",
+      "dataset": "PrescriptionBD",
+      "text_true": "amodis",
+      "text_pred": "camdes",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000041",
+      "dataset": "PrescriptionBD",
+      "text_true": "atrizin",
+      "text_pred": "metro",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000045",
+      "dataset": "PrescriptionBD",
+      "text_true": "atrizin",
+      "text_pred": "etrizin",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000046",
+      "dataset": "PrescriptionBD",
+      "text_true": "atrizin",
+      "text_pred": "athrocin",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000054",
+      "dataset": "PrescriptionBD",
+      "text_true": "axodin",
+      "text_pred": "azyain",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000057",
+      "dataset": "PrescriptionBD",
+      "text_true": "axodin",
+      "text_pred": "azodi",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000063",
+      "dataset": "PrescriptionBD",
+      "text_true": "azithrocin",
+      "text_pred": "azithrcin",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000068",
+      "dataset": "PrescriptionBD",
+      "text_true": "azithrocin",
+      "text_pred": "azithocin",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000070",
+      "dataset": "PrescriptionBD",
+      "text_true": "azithrocin",
+      "text_pred": "azithrcin",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000076",
+      "dataset": "PrescriptionBD",
+      "text_true": "azyth",
+      "text_pred": "ozith",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000105",
+      "dataset": "PrescriptionBD",
+      "text_true": "backtone",
+      "text_pred": "baclofen",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000107",
+      "dataset": "PrescriptionBD",
+      "text_true": "backtone",
+      "text_pred": "backtono",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000109",
+      "dataset": "PrescriptionBD",
+      "text_true": "backtone",
+      "text_pred": "bactone",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000116",
+      "dataset": "PrescriptionBD",
+      "text_true": "baclofen",
+      "text_pred": "bacolon",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000124",
+      "dataset": "PrescriptionBD",
+      "text_true": "baclon",
+      "text_pred": "bomadin",
+      "char_errors": 5,
+      "word_errors": 1
+    }
+  ],
+  "arguments": {
+    "predictions_csv": null,
+    "checkpoint": "outputs/runs/e2.01_seed42/e2cnn_bilstm_best_checkpoint.pt",
+    "test_csv": "data/splits/scenarios/prescriptionbd/test.csv",
+    "data_root": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data",
+    "model_kind": "e2cnn-bilstm",
+    "class_map_json": null,
+    "adapter": null,
+    "run_name": "e2.01_seed42_evaluation",
+    "output_dir": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/metrics",
+    "predictions_output_dir": null,
+    "label_column": "text_normalized",
+    "prediction_column": "text_pred",
+    "image_column": "image_path",
+    "sample_id_column": "sample_id",
+    "dataset_column": "dataset",
+    "split_column": "split",
+    "batch_size": 1,
+    "image_height": null,
+    "image_width": null,
+    "device": "auto",
+    "limit": null
+  }
+}

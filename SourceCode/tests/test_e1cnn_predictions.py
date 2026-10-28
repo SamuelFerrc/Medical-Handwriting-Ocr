@@ -17,7 +17,7 @@ if str(SRC_ROOT) not in sys.path:
 from med_ocr_research.models.E1Cnn import E1Cnn
 
 
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e1.03/e1cnn_best_checkpoint.pt"
+DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e1.03_seed42/e1cnn_best_checkpoint.pt"
 DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 

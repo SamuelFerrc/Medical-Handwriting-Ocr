@@ -14,6 +14,7 @@ from med_ocr_research.models.parseq_utils import (
     adapt_parseq_dimensions,
     tokenizer_charset,
     validate_parseq_labels,
+    load_official_parseq,
 )
 from med_ocr_research.training.train_parseq import (
     PARSeqSplitDataset,
@@ -156,3 +157,16 @@ def test_adapt_parseq_dimensions_interpolates_visual_and_text_positions() -> Non
 def test_sanitize_run_name_rejects_empty_names() -> None:
     with pytest.raises(ValueError):
         sanitize_run_name(" / ")
+
+
+def test_scratch_parseq_passes_no_pretrained_to_official_factory(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls = []
+    model = fake_parseq()
+
+    def hub_load(*args, **kwargs):
+        calls.append(kwargs)
+        return model
+
+    monkeypatch.setattr(torch.hub, "load", hub_load)
+    assert load_official_parseq(pretrained=False) is model
+    assert calls[0]["pretrained"] is False

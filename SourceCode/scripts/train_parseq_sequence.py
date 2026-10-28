@@ -8,6 +8,9 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+from med_ocr_research.experiments.seeds import seeded_run_name
+
 TRAIN_SCRIPT = PROJECT_ROOT / "src/med_ocr_research/training/train_parseq.py"
 SCENARIO_RUNS = {
     "prescriptionbd": "e4.01",
@@ -97,7 +100,7 @@ def build_command(args: argparse.Namespace, dataset: str) -> list[str]:
         args.python,
         str(TRAIN_SCRIPT),
         "--run-name",
-        SCENARIO_RUNS[dataset],
+        seeded_run_name(SCENARIO_RUNS[dataset], args.seed),
         "--dataset",
         dataset,
         "--data-root",

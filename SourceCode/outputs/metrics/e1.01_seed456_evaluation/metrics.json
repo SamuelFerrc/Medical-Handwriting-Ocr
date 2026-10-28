@@ -1,0 +1,447 @@
+{
+  "run_name": "e1.01_seed456_evaluation",
+  "protocol_version": "equivalent-v2",
+  "protocol_fingerprint": "2695660f1af77744ee07021ce4e2867ed4a972805f4a395b395faac80b25dfdb",
+  "training_seed": 456,
+  "checkpoint_fingerprint": "a70427160d498340953b8e30ecaba823e93df0d7cbe58ed3e1fafd15b848034f",
+  "created_at_utc": "2026-10-07T01:23:32.965047+00:00",
+  "source": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/runs/e1.01_seed456/e1cnn_best_checkpoint.pt",
+  "test_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/prescriptionbd/test.csv",
+  "primary_metric": "exact_match_accuracy",
+  "metrics": {
+    "samples": 780,
+    "exact_match_accuracy": 0.13076923076923078,
+    "cer": 0.8139676113360323,
+    "wer": 0.8746835443037975,
+    "correct": 102,
+    "total_char_errors": 4021,
+    "total_reference_chars": 4940,
+    "total_word_errors": 691,
+    "total_reference_words": 790
+  },
+  "per_dataset_metrics": [
+    {
+      "dataset": "PrescriptionBD",
+      "samples": 780,
+      "exact_match_accuracy": 0.13076923076923078,
+      "cer": 0.8139676113360323,
+      "wer": 0.8746835443037975,
+      "correct": 102
+    }
+  ],
+  "confidence": {
+    "count": 780,
+    "mean": 0.0802338038260738,
+    "median": 0.05444744974374771,
+    "std": 0.09800311281764348,
+    "min": 0.022374479100108147,
+    "max": 0.995918333530426
+  },
+  "text_true_length": {
+    "count": 780,
+    "mean": 6.333333333333333,
+    "median": 6.0,
+    "std": 1.355583578244749,
+    "min": 2.0,
+    "max": 11.0
+  },
+  "text_pred_length": {
+    "count": 780,
+    "mean": 6.055128205128205,
+    "median": 6.0,
+    "std": 1.623003502207814,
+    "min": 2.0,
+    "max": 11.0
+  },
+  "char_error_statistics": {
+    "count": 780,
+    "mean": 5.1551282051282055,
+    "median": 6.0,
+    "std": 2.3094647751515955,
+    "min": 0.0,
+    "max": 10.0
+  },
+  "word_error_statistics": {
+    "count": 780,
+    "mean": 0.8858974358974359,
+    "median": 1.0,
+    "std": 0.3666285617639707,
+    "min": 0.0,
+    "max": 2.0
+  },
+  "dataset_distribution": [
+    {
+      "label": "PrescriptionBD",
+      "count": 780
+    }
+  ],
+  "label_distribution_top20": [
+    {
+      "label": "aceta",
+      "count": 10
+    },
+    {
+      "label": "ace",
+      "count": 10
+    },
+    {
+      "label": "alatrol",
+      "count": 10
+    },
+    {
+      "label": "amodis",
+      "count": 10
+    },
+    {
+      "label": "atrizin",
+      "count": 10
+    },
+    {
+      "label": "axodin",
+      "count": 10
+    },
+    {
+      "label": "azithrocin",
+      "count": 10
+    },
+    {
+      "label": "azyth",
+      "count": 10
+    },
+    {
+      "label": "az",
+      "count": 10
+    },
+    {
+      "label": "bacaid",
+      "count": 10
+    },
+    {
+      "label": "backtone",
+      "count": 10
+    },
+    {
+      "label": "baclofen",
+      "count": 10
+    },
+    {
+      "label": "baclon",
+      "count": 10
+    },
+    {
+      "label": "bacmax",
+      "count": 10
+    },
+    {
+      "label": "beklo",
+      "count": 10
+    },
+    {
+      "label": "bicozin",
+      "count": 10
+    },
+    {
+      "label": "canazole",
+      "count": 10
+    },
+    {
+      "label": "candinil",
+      "count": 10
+    },
+    {
+      "label": "cetisoft",
+      "count": 10
+    },
+    {
+      "label": "conaz",
+      "count": 10
+    }
+  ],
+  "top_error_pairs": [
+    {
+      "text_true": "ketocon",
+      "text_pred": "lucan-r",
+      "count": 9
+    },
+    {
+      "text_true": "amodis",
+      "text_pred": "bacmax",
+      "count": 8
+    },
+    {
+      "text_true": "disopan",
+      "text_pred": "canazole",
+      "count": 8
+    },
+    {
+      "text_true": "esonix",
+      "text_pred": "ace",
+      "count": 6
+    },
+    {
+      "text_true": "metro",
+      "text_pred": "bacmax",
+      "count": 6
+    },
+    {
+      "text_true": "alatrol",
+      "text_pred": "ketozol",
+      "count": 5
+    },
+    {
+      "text_true": "baclon",
+      "text_pred": "bacmax",
+      "count": 5
+    },
+    {
+      "text_true": "beklo",
+      "text_pred": "ace",
+      "count": 5
+    },
+    {
+      "text_true": "conaz",
+      "text_pred": "bacmax",
+      "count": 5
+    },
+    {
+      "text_true": "leptic",
+      "text_pred": "fexo",
+      "count": 5
+    },
+    {
+      "text_true": "m-kast",
+      "text_pred": "conaz",
+      "count": 5
+    },
+    {
+      "text_true": "napa extend",
+      "text_pred": "dinafex",
+      "count": 5
+    },
+    {
+      "text_true": "odmon",
+      "text_pred": "bacmax",
+      "count": 5
+    },
+    {
+      "text_true": "aceta",
+      "text_pred": "fexo",
+      "count": 4
+    },
+    {
+      "text_true": "axodin",
+      "text_pred": "canazole",
+      "count": 4
+    },
+    {
+      "text_true": "azyth",
+      "text_pred": "ketozol",
+      "count": 4
+    },
+    {
+      "text_true": "bacaid",
+      "text_pred": "dinafex",
+      "count": 4
+    },
+    {
+      "text_true": "backtone",
+      "text_pred": "conaz",
+      "count": 4
+    },
+    {
+      "text_true": "bicozin",
+      "text_pred": "ketocon",
+      "count": 4
+    },
+    {
+      "text_true": "canazole",
+      "text_pred": "trilock",
+      "count": 4
+    }
+  ],
+  "error_examples": [
+    {
+      "sample_id": "prescriptionbd_test_000001",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "fexo",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000002",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "dinafex",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000003",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "dinafex",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000004",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "fexo",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000005",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "ace",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000006",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "fexo",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000007",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "conaz",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000008",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "conaz",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000009",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "fexo",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000010",
+      "dataset": "PrescriptionBD",
+      "text_true": "aceta",
+      "text_pred": "conaz",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000020",
+      "dataset": "PrescriptionBD",
+      "text_true": "ace",
+      "text_pred": "fexo",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000021",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "ketozol",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000022",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "diflu",
+      "char_errors": 7,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000023",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "ketozol",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000024",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "ketozol",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000025",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "canazole",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000026",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "canazole",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000027",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "odmon",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000028",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "ketozol",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "prescriptionbd_test_000029",
+      "dataset": "PrescriptionBD",
+      "text_true": "alatrol",
+      "text_pred": "ketozol",
+      "char_errors": 5,
+      "word_errors": 1
+    }
+  ],
+  "arguments": {
+    "predictions_csv": null,
+    "checkpoint": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/runs/e1.01_seed456/e1cnn_best_checkpoint.pt",
+    "test_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/prescriptionbd/test.csv",
+    "data_root": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data",
+    "model_kind": "e1cnn",
+    "class_map_json": null,
+    "adapter": null,
+    "run_name": "e1.01_seed456_evaluation",
+    "output_dir": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/metrics",
+    "predictions_output_dir": null,
+    "label_column": "text_normalized",
+    "prediction_column": "text_pred",
+    "image_column": "image_path",
+    "sample_id_column": "sample_id",
+    "dataset_column": "dataset",
+    "split_column": "split",
+    "batch_size": 1,
+    "image_height": 64,
+    "image_width": 512,
+    "device": "auto",
+    "limit": null
+  }
+}

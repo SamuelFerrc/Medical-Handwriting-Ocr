@@ -1,0 +1,445 @@
+{
+  "run_name": "e4.02_seed42_evaluation",
+  "protocol_version": "equivalent-v2",
+  "protocol_fingerprint": "6c9916c3950725d41a0f15edf5ec67b8cba20e28bd436efaece4ab5ee25e8814",
+  "training_seed": 42,
+  "checkpoint_fingerprint": "e2c918b5bd6c2b864c6f51346fd764f3c30c0b70904e1069380e8549ba1704a4",
+  "created_at_utc": "2026-10-23T15:11:59.805046+00:00",
+  "source": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/runs/e4.02_seed42/parseq_best",
+  "test_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/rxhandbd/test.csv",
+  "primary_metric": "exact_match_accuracy",
+  "metrics": {
+    "samples": 836,
+    "exact_match_accuracy": 0.3839712918660287,
+    "cer": 0.510444093382482,
+    "wer": 0.6575342465753424,
+    "correct": 321,
+    "total_char_errors": 2908,
+    "total_reference_chars": 5697,
+    "total_word_errors": 624,
+    "total_reference_words": 949
+  },
+  "per_dataset_metrics": [
+    {
+      "dataset": "RxHandBD",
+      "samples": 836,
+      "exact_match_accuracy": 0.3839712918660287,
+      "cer": 0.510444093382482,
+      "wer": 0.6575342465753424,
+      "correct": 321
+    }
+  ],
+  "confidence": {
+    "count": 836,
+    "mean": 0.9093960251962169,
+    "median": 0.995368242263794,
+    "std": 0.18994685619068621,
+    "min": 0.01598414033651352,
+    "max": 0.9999984502792358
+  },
+  "text_true_length": {
+    "count": 836,
+    "mean": 6.814593301435407,
+    "median": 6.0,
+    "std": 2.1438300145410305,
+    "min": 3.0,
+    "max": 16.0
+  },
+  "text_pred_length": {
+    "count": 836,
+    "mean": 6.633971291866029,
+    "median": 6.0,
+    "std": 2.0780221593788704,
+    "min": 3.0,
+    "max": 18.0
+  },
+  "char_error_statistics": {
+    "count": 836,
+    "mean": 3.478468899521531,
+    "median": 3.0,
+    "std": 3.336153351815801,
+    "min": 0.0,
+    "max": 13.0
+  },
+  "word_error_statistics": {
+    "count": 836,
+    "mean": 0.7464114832535885,
+    "median": 1.0,
+    "std": 0.6744120551674742,
+    "min": 0.0,
+    "max": 3.0
+  },
+  "dataset_distribution": [
+    {
+      "label": "RxHandBD",
+      "count": 836
+    }
+  ],
+  "label_distribution_top20": [
+    {
+      "label": "napa",
+      "count": 24
+    },
+    {
+      "label": "diet",
+      "count": 22
+    },
+    {
+      "label": "tablet",
+      "count": 18
+    },
+    {
+      "label": "omeprazole",
+      "count": 15
+    },
+    {
+      "label": "algin",
+      "count": 14
+    },
+    {
+      "label": "dexter",
+      "count": 13
+    },
+    {
+      "label": "rolac",
+      "count": 13
+    },
+    {
+      "label": "voltalin",
+      "count": 13
+    },
+    {
+      "label": "neuro-b",
+      "count": 12
+    },
+    {
+      "label": "injection",
+      "count": 11
+    },
+    {
+      "label": "nexum",
+      "count": 11
+    },
+    {
+      "label": "emistat",
+      "count": 10
+    },
+    {
+      "label": "nexe",
+      "count": 9
+    },
+    {
+      "label": "histacin",
+      "count": 8
+    },
+    {
+      "label": "xinc b",
+      "count": 8
+    },
+    {
+      "label": "ceevit",
+      "count": 7
+    },
+    {
+      "label": "ceftriaxone",
+      "count": 7
+    },
+    {
+      "label": "inj",
+      "count": 6
+    },
+    {
+      "label": "montene",
+      "count": 6
+    },
+    {
+      "label": "syrup",
+      "count": 6
+    }
+  ],
+  "top_error_pairs": [
+    {
+      "text_true": "injection",
+      "text_pred": "tablet",
+      "count": 3
+    },
+    {
+      "text_true": "alcet",
+      "text_pred": "alcef",
+      "count": 2
+    },
+    {
+      "text_true": "anitip",
+      "text_pred": "amitip",
+      "count": 2
+    },
+    {
+      "text_true": "calbo-d",
+      "text_pred": "calcor-d",
+      "count": 2
+    },
+    {
+      "text_true": "calboral",
+      "text_pred": "calboral d",
+      "count": 2
+    },
+    {
+      "text_true": "diet",
+      "text_pred": "emistat",
+      "count": 2
+    },
+    {
+      "text_true": "esprozo",
+      "text_pred": "esprazo",
+      "count": 2
+    },
+    {
+      "text_true": "m-lucas 10",
+      "text_pred": "m-lucas",
+      "count": 2
+    },
+    {
+      "text_true": "napa",
+      "text_pred": "nexe",
+      "count": 2
+    },
+    {
+      "text_true": "neuro-b",
+      "text_pred": "neuro b",
+      "count": 2
+    },
+    {
+      "text_true": "nexpro",
+      "text_pred": "napa",
+      "count": 2
+    },
+    {
+      "text_true": "tab",
+      "text_pred": "tablet",
+      "count": 2
+    },
+    {
+      "text_true": "vorinox",
+      "text_pred": "vorirox",
+      "count": 2
+    },
+    {
+      "text_true": "xinc b",
+      "text_pred": "xyril",
+      "count": 2
+    },
+    {
+      "text_true": "???",
+      "text_pred": "deslor",
+      "count": 1
+    },
+    {
+      "text_true": "aaxius",
+      "text_pred": "pregmos",
+      "count": 1
+    },
+    {
+      "text_true": "ace",
+      "text_pred": "cas",
+      "count": 1
+    },
+    {
+      "text_true": "ace",
+      "text_pred": "seclo",
+      "count": 1
+    },
+    {
+      "text_true": "acliz plus",
+      "text_pred": "calboral",
+      "count": 1
+    },
+    {
+      "text_true": "acliz plus",
+      "text_pred": "gestrenol",
+      "count": 1
+    }
+  ],
+  "error_examples": [
+    {
+      "sample_id": "rxhandbd_000010",
+      "dataset": "RxHandBD",
+      "text_true": "aaxius",
+      "text_pred": "pregmos",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000018",
+      "dataset": "RxHandBD",
+      "text_true": "ace",
+      "text_pred": "cas",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000019",
+      "dataset": "RxHandBD",
+      "text_true": "ace",
+      "text_pred": "seclo",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000027",
+      "dataset": "RxHandBD",
+      "text_true": "acliz plus",
+      "text_pred": "gestrenol",
+      "char_errors": 10,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000029",
+      "dataset": "RxHandBD",
+      "text_true": "acliz plus",
+      "text_pred": "calboral",
+      "char_errors": 8,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000031",
+      "dataset": "RxHandBD",
+      "text_true": "acron",
+      "text_pred": "xinc",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000082",
+      "dataset": "RxHandBD",
+      "text_true": "alanol",
+      "text_pred": "anadol",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000086",
+      "dataset": "RxHandBD",
+      "text_true": "alben",
+      "text_pred": "anadol",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000099",
+      "dataset": "RxHandBD",
+      "text_true": "alcet",
+      "text_pred": "alcef",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000102",
+      "dataset": "RxHandBD",
+      "text_true": "alcet",
+      "text_pred": "alcef",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000107",
+      "dataset": "RxHandBD",
+      "text_true": "alfane",
+      "text_pred": "delfrz",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000125",
+      "dataset": "RxHandBD",
+      "text_true": "algin",
+      "text_pred": "ezytake",
+      "char_errors": 7,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000136",
+      "dataset": "RxHandBD",
+      "text_true": "algin",
+      "text_pred": "maxpro",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000148",
+      "dataset": "RxHandBD",
+      "text_true": "algin",
+      "text_pred": "allcaron",
+      "char_errors": 5,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000175",
+      "dataset": "RxHandBD",
+      "text_true": "algin",
+      "text_pred": "alcet",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000193",
+      "dataset": "RxHandBD",
+      "text_true": "algin plus",
+      "text_pred": "calboral d",
+      "char_errors": 8,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000195",
+      "dataset": "RxHandBD",
+      "text_true": "alix",
+      "text_pred": "esonix",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000197",
+      "dataset": "RxHandBD",
+      "text_true": "allyglot",
+      "text_pred": "calboral",
+      "char_errors": 7,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000198",
+      "dataset": "RxHandBD",
+      "text_true": "almex tab",
+      "text_pred": "artilac",
+      "char_errors": 7,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000199",
+      "dataset": "RxHandBD",
+      "text_true": "alolrol",
+      "text_pred": "avolac",
+      "char_errors": 4,
+      "word_errors": 1
+    }
+  ],
+  "arguments": {
+    "checkpoint": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/runs/e4.02_seed42/parseq_best",
+    "test_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/rxhandbd/test.csv",
+    "data_root": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data",
+    "run_name": "e4.02_seed42_evaluation",
+    "output_dir": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/metrics",
+    "predictions_output_dir": null,
+    "label_column": "text_normalized",
+    "image_column": "image_path",
+    "sample_id_column": "sample_id",
+    "dataset_column": "dataset",
+    "split_column": "split",
+    "batch_size": 1,
+    "image_height": 64,
+    "image_width": 512,
+    "max_generation_length": 64,
+    "num_beams": 1,
+    "device": "auto",
+    "limit": null,
+    "predictions_csv": null
+  }
+}

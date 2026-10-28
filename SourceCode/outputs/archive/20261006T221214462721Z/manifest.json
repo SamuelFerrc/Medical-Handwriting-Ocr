@@ -1,0 +1,142 @@
+{
+  "archived_at_utc": "20261006T221214462721Z",
+  "new_protocol": "equivalent-v2",
+  "artifact_contents": "preserved; original internal paths are historical",
+  "entries": [
+    {
+      "source": "outputs/runs/e1.01_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e1.01_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e1.01_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e1.01_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e1.01_seed123",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e1.01_seed123",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e1.02_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e1.02_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e1.02_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e1.02_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e1.03_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e1.03_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e1.03_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e1.03_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e2.01_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e2.01_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e2.01_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e2.01_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e2.02_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e2.02_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e2.02_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e2.02_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e2.03_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e2.03_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e2.03_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e2.03_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e3.01_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e3.01_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e3.01_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e3.01_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e3.02_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e3.02_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e3.02_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e3.02_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e3.03_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e3.03_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e3.03_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e3.03_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e4.01_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e4.01_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e4.01_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e4.01_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e4.02_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e4.02_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e4.02_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e4.02_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/runs/e4.03_seed42",
+      "archived": "outputs/archive/20261006T221214462721Z/runs/e4.03_seed42",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/metrics/e4.03_seed42_evaluation",
+      "archived": "outputs/archive/20261006T221214462721Z/metrics/e4.03_seed42_evaluation",
+      "reason": "Protocolo legado sem identificacao incompativel com equivalent-v2"
+    },
+    {
+      "source": "outputs/monitor/pipeline.json",
+      "archived": "outputs/archive/20261006T221214462721Z/monitor/pipeline.json",
+      "reason": "Resumo/estado/log anterior a mudanca de protocolo"
+    },
+    {
+      "source": "outputs/monitor/training.log",
+      "archived": "outputs/archive/20261006T221214462721Z/monitor/training.log",
+      "reason": "Resumo/estado/log anterior a mudanca de protocolo"
+    }
+  ]
+}

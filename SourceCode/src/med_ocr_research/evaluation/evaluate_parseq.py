@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -40,7 +41,7 @@ from med_ocr_research.models.parseq_utils import (
 from med_ocr_research.training.train_parseq import build_image_transform
 
 
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e4.03/parseq_best"
+DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e4.03_seed42/parseq_best"
 DEFAULT_SCENARIOS_DIR = PROJECT_ROOT / "data/splits/scenarios"
 DEFAULT_TEST_CSV = DEFAULT_SCENARIOS_DIR / "combined/test.csv"
 DEFAULT_IMAGE_SIZE = (64, 512)
@@ -96,6 +97,8 @@ def infer_test_csv(args: argparse.Namespace, metadata: dict[str, Any]) -> Path:
 def infer_run_name(args: argparse.Namespace, metadata: dict[str, Any]) -> str:
     if args.run_name:
         return sanitize_name(args.run_name)
+    if re.search(r"_seed\d+$", args.checkpoint.parent.name):
+        return sanitize_name(f"{args.checkpoint.parent.name}_evaluation")
     metadata_run_name = metadata.get("run_name")
     if metadata_run_name:
         return sanitize_name(f"{metadata_run_name}_parseq_evaluation")

@@ -22,7 +22,7 @@ from med_ocr_research.models.parseq_utils import (
 )
 
 
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e4.03/parseq_best"
+DEFAULT_CHECKPOINT = PROJECT_ROOT / "outputs/runs/e4.03_seed42/parseq_best"
 DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"
 

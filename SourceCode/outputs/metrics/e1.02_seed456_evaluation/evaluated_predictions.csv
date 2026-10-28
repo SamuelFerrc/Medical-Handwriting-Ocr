@@ -1,0 +1,837 @@
+sample_id,dataset,split,image_path,text_true,text_pred,confidence,exact_match,char_errors,ref_chars,cer_sample,word_errors,ref_words,wer_sample
+rxhandbd_000010,RxHandBD,test,processed/WritingProcessed/rxhandbd_000010.png,aaxius,dexter,0.040187813341617584,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000018,RxHandBD,test,processed/WritingProcessed/rxhandbd_000018.png,ace,tablet,0.3852108120918274,False,4,3,1.3333333333333333,1,1,1.0
+rxhandbd_000019,RxHandBD,test,processed/WritingProcessed/rxhandbd_000019.png,ace,tablet,0.15579688549041748,False,4,3,1.3333333333333333,1,1,1.0
+rxhandbd_000027,RxHandBD,test,processed/WritingProcessed/rxhandbd_000027.png,acliz plus,neuro-b,0.15803372859954834,False,10,10,1.0,2,2,1.0
+rxhandbd_000029,RxHandBD,test,processed/WritingProcessed/rxhandbd_000029.png,acliz plus,calcor-d,0.08452969044446945,False,9,10,0.9,2,2,1.0
+rxhandbd_000031,RxHandBD,test,processed/WritingProcessed/rxhandbd_000031.png,acron,nexe,0.07817588001489639,False,5,5,1.0,1,1,1.0
+rxhandbd_000058,RxHandBD,test,processed/WritingProcessed/rxhandbd_000058.png,alcet,tablet,0.3666379749774933,False,3,5,0.6,1,1,1.0
+rxhandbd_000071,RxHandBD,test,processed/WritingProcessed/rxhandbd_000071.png,alafix,nexe,0.08400902152061462,False,6,6,1.0,1,1,1.0
+rxhandbd_000072,RxHandBD,test,processed/WritingProcessed/rxhandbd_000072.png,alafix,nexe,0.2139383852481842,False,6,6,1.0,1,1,1.0
+rxhandbd_000074,RxHandBD,test,processed/WritingProcessed/rxhandbd_000074.png,alafix,nexe,0.09429877251386642,False,6,6,1.0,1,1,1.0
+rxhandbd_000082,RxHandBD,test,processed/WritingProcessed/rxhandbd_000082.png,alanol,voltalin,0.028690217062830925,False,6,6,1.0,1,1,1.0
+rxhandbd_000086,RxHandBD,test,processed/WritingProcessed/rxhandbd_000086.png,alben,diet,0.07654514908790588,False,4,5,0.8,1,1,1.0
+rxhandbd_000099,RxHandBD,test,processed/WritingProcessed/rxhandbd_000099.png,alcet,tablet,0.48759472370147705,False,3,5,0.6,1,1,1.0
+rxhandbd_000102,RxHandBD,test,processed/WritingProcessed/rxhandbd_000102.png,alcet,tablet,0.5198149085044861,False,3,5,0.6,1,1,1.0
+rxhandbd_000107,RxHandBD,test,processed/WritingProcessed/rxhandbd_000107.png,alfane,dexter,0.1272839605808258,False,6,6,1.0,1,1,1.0
+rxhandbd_000116,RxHandBD,test,processed/WritingProcessed/rxhandbd_000116.png,algin,emistat,0.059784356504678726,False,7,5,1.4,1,1,1.0
+rxhandbd_000121,RxHandBD,test,processed/WritingProcessed/rxhandbd_000121.png,algin,algin,0.02716132253408432,True,0,5,0.0,0,1,0.0
+rxhandbd_000122,RxHandBD,test,processed/WritingProcessed/rxhandbd_000122.png,algin,calcor-d,0.03647811710834503,False,6,5,1.2,1,1,1.0
+rxhandbd_000125,RxHandBD,test,processed/WritingProcessed/rxhandbd_000125.png,algin,dexter,0.08666054904460907,False,6,5,1.2,1,1,1.0
+rxhandbd_000136,RxHandBD,test,processed/WritingProcessed/rxhandbd_000136.png,algin,dexter,0.10841365158557892,False,6,5,1.2,1,1,1.0
+rxhandbd_000148,RxHandBD,test,processed/WritingProcessed/rxhandbd_000148.png,algin,dexter,0.09279882907867432,False,6,5,1.2,1,1,1.0
+rxhandbd_000151,RxHandBD,test,processed/WritingProcessed/rxhandbd_000151.png,algin,voltalin,0.04856650531291962,False,5,5,1.0,1,1,1.0
+rxhandbd_000155,RxHandBD,test,processed/WritingProcessed/rxhandbd_000155.png,algin,voltalin,0.03607979789376259,False,5,5,1.0,1,1,1.0
+rxhandbd_000161,RxHandBD,test,processed/WritingProcessed/rxhandbd_000161.png,algin,voltalin,0.053157128393650055,False,5,5,1.0,1,1,1.0
+rxhandbd_000167,RxHandBD,test,processed/WritingProcessed/rxhandbd_000167.png,algin,voltalin,0.02419469878077507,False,5,5,1.0,1,1,1.0
+rxhandbd_000168,RxHandBD,test,processed/WritingProcessed/rxhandbd_000168.png,algin,nexe,0.033166948705911636,False,5,5,1.0,1,1,1.0
+rxhandbd_000175,RxHandBD,test,processed/WritingProcessed/rxhandbd_000175.png,algin,napa,0.11083335429430008,False,5,5,1.0,1,1,1.0
+rxhandbd_000186,RxHandBD,test,processed/WritingProcessed/rxhandbd_000186.png,algin,napa,0.3301678001880646,False,5,5,1.0,1,1,1.0
+rxhandbd_000192,RxHandBD,test,processed/WritingProcessed/rxhandbd_000192.png,algin,emistat,0.04689992964267731,False,7,5,1.4,1,1,1.0
+rxhandbd_000193,RxHandBD,test,processed/WritingProcessed/rxhandbd_000193.png,algin plus,calcor-d,0.08472973108291626,False,9,10,0.9,2,2,1.0
+rxhandbd_000195,RxHandBD,test,processed/WritingProcessed/rxhandbd_000195.png,alix,injection,0.3946889340877533,False,8,4,2.0,1,1,1.0
+rxhandbd_000197,RxHandBD,test,processed/WritingProcessed/rxhandbd_000197.png,allyglot,neuro-b,0.058718252927064896,False,8,8,1.0,1,1,1.0
+rxhandbd_000198,RxHandBD,test,processed/WritingProcessed/rxhandbd_000198.png,almex tab,voltalin,0.07590199261903763,False,9,9,1.0,2,2,1.0
+rxhandbd_000199,RxHandBD,test,processed/WritingProcessed/rxhandbd_000199.png,alolrol,voltalin,0.03550722822546959,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_000200,RxHandBD,test,processed/WritingProcessed/rxhandbd_000200.png,alos,tablet,0.5087010264396667,False,4,4,1.0,1,1,1.0
+rxhandbd_000210,RxHandBD,test,processed/WritingProcessed/rxhandbd_000210.png,ambroy,neuro,0.06379206478595734,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_000215,RxHandBD,test,processed/WritingProcessed/rxhandbd_000215.png,amikacin,emistat,0.09029360115528107,False,6,8,0.75,1,1,1.0
+rxhandbd_000235,RxHandBD,test,processed/WritingProcessed/rxhandbd_000235.png,amitip,voltalin,0.0768878161907196,False,6,6,1.0,1,1,1.0
+rxhandbd_000237,RxHandBD,test,processed/WritingProcessed/rxhandbd_000237.png,amlip,dexter,0.3883852958679199,False,6,5,1.2,1,1,1.0
+rxhandbd_000242,RxHandBD,test,processed/WritingProcessed/rxhandbd_000242.png,anadol,emistat,0.1092248260974884,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000247,RxHandBD,test,processed/WritingProcessed/rxhandbd_000247.png,anadol,voltalin,0.021998759359121323,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000251,RxHandBD,test,processed/WritingProcessed/rxhandbd_000251.png,anadol,napa,0.1251552551984787,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_000256,RxHandBD,test,processed/WritingProcessed/rxhandbd_000256.png,analac,dexter,0.1114078238606453,False,6,6,1.0,1,1,1.0
+rxhandbd_000266,RxHandBD,test,processed/WritingProcessed/rxhandbd_000266.png,anitip,voltalin,0.033789120614528656,False,6,6,1.0,1,1,1.0
+rxhandbd_000269,RxHandBD,test,processed/WritingProcessed/rxhandbd_000269.png,anitip,voltalin,0.08420277386903763,False,6,6,1.0,1,1,1.0
+rxhandbd_000276,RxHandBD,test,processed/WritingProcessed/rxhandbd_000276.png,anstouit,voltalin,0.05202203616499901,False,6,8,0.75,1,1,1.0
+rxhandbd_000277,RxHandBD,test,processed/WritingProcessed/rxhandbd_000277.png,ansulin,emistat,0.07860684394836426,False,7,7,1.0,1,1,1.0
+rxhandbd_000280,RxHandBD,test,processed/WritingProcessed/rxhandbd_000280.png,insulin r,voltalin,0.11778175830841064,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_000283,RxHandBD,test,processed/WritingProcessed/rxhandbd_000283.png,antazol,voltalin,0.02380015142261982,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_000291,RxHandBD,test,processed/WritingProcessed/rxhandbd_000291.png,amitip,voltalin,0.06550255417823792,False,6,6,1.0,1,1,1.0
+rxhandbd_000299,RxHandBD,test,processed/WritingProcessed/rxhandbd_000299.png,apeclo,nexe,0.04127396643161774,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000302,RxHandBD,test,processed/WritingProcessed/rxhandbd_000302.png,apedra sr,ceftriaxone,0.027703015133738518,False,9,9,1.0,2,2,1.0
+rxhandbd_000303,RxHandBD,test,processed/WritingProcessed/rxhandbd_000303.png,apeelo,voltalin,0.04172946512699127,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000304,RxHandBD,test,processed/WritingProcessed/rxhandbd_000304.png,apeelo,xinc b,0.02052896097302437,False,6,6,1.0,2,1,2.0
+rxhandbd_000307,RxHandBD,test,processed/WritingProcessed/rxhandbd_000307.png,apeelo,voltalin,0.04013865813612938,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000312,RxHandBD,test,processed/WritingProcessed/rxhandbd_000312.png,arth-a max,neuroxen,0.04768581688404083,False,10,10,1.0,2,2,1.0
+rxhandbd_000321,RxHandBD,test,processed/WritingProcessed/rxhandbd_000321.png,arlin,emistat,0.053257815539836884,False,7,5,1.4,1,1,1.0
+rxhandbd_000324,RxHandBD,test,processed/WritingProcessed/rxhandbd_000324.png,arlin,voltalin,0.04387199878692627,False,5,5,1.0,1,1,1.0
+rxhandbd_000336,RxHandBD,test,processed/WritingProcessed/rxhandbd_000336.png,arth,dexter,0.13639391958713531,False,5,4,1.25,1,1,1.0
+rxhandbd_000337,RxHandBD,test,processed/WritingProcessed/rxhandbd_000337.png,arth,dexter,0.30576977133750916,False,5,4,1.25,1,1,1.0
+rxhandbd_000340,RxHandBD,test,processed/WritingProcessed/rxhandbd_000340.png,arth a max,neuroxen,0.09144864976406097,False,10,10,1.0,3,3,1.0
+rxhandbd_000347,RxHandBD,test,processed/WritingProcessed/rxhandbd_000347.png,ascoson,napa,0.23437266051769257,False,7,7,1.0,1,1,1.0
+rxhandbd_000349,RxHandBD,test,processed/WritingProcessed/rxhandbd_000349.png,asthma,omeprazole,0.04193267598748207,False,9,6,1.5,1,1,1.0
+rxhandbd_000357,RxHandBD,test,processed/WritingProcessed/rxhandbd_000357.png,asynta max,neuroxen,0.08086425065994263,False,10,10,1.0,2,2,1.0
+rxhandbd_000361,RxHandBD,test,processed/WritingProcessed/rxhandbd_000361.png,atoz,omeprazole,0.21441160142421722,False,8,4,2.0,1,1,1.0
+rxhandbd_000363,RxHandBD,test,processed/WritingProcessed/rxhandbd_000363.png,atozen,emistat,0.02320324443280697,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000367,RxHandBD,test,processed/WritingProcessed/rxhandbd_000367.png,avloclav,neuro-b,0.03179594874382019,False,8,8,1.0,1,1,1.0
+rxhandbd_000370,RxHandBD,test,processed/WritingProcessed/rxhandbd_000370.png,avolac,neuro,0.12374766916036606,False,6,6,1.0,1,1,1.0
+rxhandbd_000371,RxHandBD,test,processed/WritingProcessed/rxhandbd_000371.png,avolac,napa,0.12518653273582458,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000385,RxHandBD,test,processed/WritingProcessed/rxhandbd_000385.png,axim,napa,0.11849267035722733,False,4,4,1.0,1,1,1.0
+rxhandbd_000387,RxHandBD,test,processed/WritingProcessed/rxhandbd_000387.png,axim cv,voltalin,0.05038635805249214,False,8,7,1.1428571428571428,2,2,1.0
+rxhandbd_000388,RxHandBD,test,processed/WritingProcessed/rxhandbd_000388.png,axim cv,nexe,0.04623069986701012,False,7,7,1.0,2,2,1.0
+rxhandbd_000389,RxHandBD,test,processed/WritingProcessed/rxhandbd_000389.png,aximcy,dexter,0.2801235318183899,False,6,6,1.0,1,1,1.0
+rxhandbd_000394,RxHandBD,test,processed/WritingProcessed/rxhandbd_000394.png,azibact,voltalin,0.03885474428534508,False,7,7,1.0,1,1,1.0
+rxhandbd_000396,RxHandBD,test,processed/WritingProcessed/rxhandbd_000396.png,azinil,voltalin,0.04476068541407585,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000400,RxHandBD,test,processed/WritingProcessed/rxhandbd_000400.png,bactrocin,voltalin,0.07080872356891632,False,6,9,0.6666666666666666,1,1,1.0
+rxhandbd_000417,RxHandBD,test,processed/WritingProcessed/rxhandbd_000417.png,baumax,omeprazole,0.04686565324664116,False,9,6,1.5,1,1,1.0
+rxhandbd_000420,RxHandBD,test,processed/WritingProcessed/rxhandbd_000420.png,becobion,voltalin,0.132255420088768,False,7,8,0.875,1,1,1.0
+rxhandbd_000422,RxHandBD,test,processed/WritingProcessed/rxhandbd_000422.png,becobion,voltalin,0.12668456137180328,False,7,8,0.875,1,1,1.0
+rxhandbd_000423,RxHandBD,test,processed/WritingProcessed/rxhandbd_000423.png,beconal,neuroxen,0.045221228152513504,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_000427,RxHandBD,test,processed/WritingProcessed/rxhandbd_000427.png,beklo,tablet,0.1410055160522461,False,5,5,1.0,1,1,1.0
+rxhandbd_000428,RxHandBD,test,processed/WritingProcessed/rxhandbd_000428.png,beklo,tablet,0.261557936668396,False,5,5,1.0,1,1,1.0
+rxhandbd_000430,RxHandBD,test,processed/WritingProcessed/rxhandbd_000430.png,beklo,nexe,0.10530106723308563,False,4,5,0.8,1,1,1.0
+rxhandbd_000446,RxHandBD,test,processed/WritingProcessed/rxhandbd_000446.png,bexter,dexter,0.4633212387561798,False,1,6,0.16666666666666666,1,1,1.0
+rxhandbd_000453,RxHandBD,test,processed/WritingProcessed/rxhandbd_000453.png,bilan,dexter,0.07466643303632736,False,6,5,1.2,1,1,1.0
+rxhandbd_000459,RxHandBD,test,processed/WritingProcessed/rxhandbd_000459.png,bilau 20,voltalin,0.08098520338535309,False,7,8,0.875,2,2,1.0
+rxhandbd_000473,RxHandBD,test,processed/WritingProcessed/rxhandbd_000473.png,bilaxe,nexe,0.6095209717750549,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_000475,RxHandBD,test,processed/WritingProcessed/rxhandbd_000475.png,bilaxe,nexe,0.04951488971710205,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_000485,RxHandBD,test,processed/WritingProcessed/rxhandbd_000485.png,bilaxe,nexe,0.09235522896051407,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_000489,RxHandBD,test,processed/WritingProcessed/rxhandbd_000489.png,bilfastl,voltalin,0.0561295822262764,False,6,8,0.75,1,1,1.0
+rxhandbd_000499,RxHandBD,test,processed/WritingProcessed/rxhandbd_000499.png,biltin,napa,0.24943339824676514,False,6,6,1.0,1,1,1.0
+rxhandbd_000500,RxHandBD,test,processed/WritingProcessed/rxhandbd_000500.png,biltin,napa,0.2806183695793152,False,6,6,1.0,1,1,1.0
+rxhandbd_000508,RxHandBD,test,processed/WritingProcessed/rxhandbd_000508.png,biscor,dexter,0.06305716931819916,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000520,RxHandBD,test,processed/WritingProcessed/rxhandbd_000520.png,biscor,dexter,0.22566798329353333,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000523,RxHandBD,test,processed/WritingProcessed/rxhandbd_000523.png,bislol,dexter,0.1716814637184143,False,6,6,1.0,1,1,1.0
+rxhandbd_000526,RxHandBD,test,processed/WritingProcessed/rxhandbd_000526.png,bislol,dexter,0.4235371947288513,False,6,6,1.0,1,1,1.0
+rxhandbd_000531,RxHandBD,test,processed/WritingProcessed/rxhandbd_000531.png,bislol,tablet,0.2643550932407379,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000537,RxHandBD,test,processed/WritingProcessed/rxhandbd_000537.png,biscor,dexter,0.2502344250679016,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000559,RxHandBD,test,processed/WritingProcessed/rxhandbd_000559.png,bredicon,calcor-d,0.06940452754497528,False,8,8,1.0,1,1,1.0
+rxhandbd_000564,RxHandBD,test,processed/WritingProcessed/rxhandbd_000564.png,brodil,diet,0.2091561257839203,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000566,RxHandBD,test,processed/WritingProcessed/rxhandbd_000566.png,bromen,neuro-b,0.036959145218133926,False,6,6,1.0,1,1,1.0
+rxhandbd_000568,RxHandBD,test,processed/WritingProcessed/rxhandbd_000568.png,bron gvel,neuro-b,0.052850671112537384,False,9,9,1.0,2,2,1.0
+rxhandbd_000578,RxHandBD,test,processed/WritingProcessed/rxhandbd_000578.png,budicort,emistat,0.07347672432661057,False,6,8,0.75,1,1,1.0
+rxhandbd_000582,RxHandBD,test,processed/WritingProcessed/rxhandbd_000582.png,budicort,voltalin,0.05175941437482834,False,8,8,1.0,1,1,1.0
+rxhandbd_000585,RxHandBD,test,processed/WritingProcessed/rxhandbd_000585.png,cabetool,nexe,0.21004647016525269,False,7,8,0.875,1,1,1.0
+rxhandbd_000587,RxHandBD,test,processed/WritingProcessed/rxhandbd_000587.png,cabretol cr,omeprazole,0.13652728497982025,False,9,11,0.8181818181818182,2,2,1.0
+rxhandbd_000597,RxHandBD,test,processed/WritingProcessed/rxhandbd_000597.png,calbo-d,neuro-b,0.11492626368999481,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_000601,RxHandBD,test,processed/WritingProcessed/rxhandbd_000601.png,calbo-d,calcor-d,0.09138922393321991,False,2,7,0.2857142857142857,1,1,1.0
+rxhandbd_000607,RxHandBD,test,processed/WritingProcessed/rxhandbd_000607.png,calbon,dexter,0.14013485610485077,False,6,6,1.0,1,1,1.0
+rxhandbd_000610,RxHandBD,test,processed/WritingProcessed/rxhandbd_000610.png,calboral,calboral,0.07959085702896118,True,0,8,0.0,0,1,0.0
+rxhandbd_000615,RxHandBD,test,processed/WritingProcessed/rxhandbd_000615.png,calboral,neuro-b,0.23504406213760376,False,7,8,0.875,1,1,1.0
+rxhandbd_000628,RxHandBD,test,processed/WritingProcessed/rxhandbd_000628.png,calboral,neuro-b,0.10718030482530594,False,7,8,0.875,1,1,1.0
+rxhandbd_000629,RxHandBD,test,processed/WritingProcessed/rxhandbd_000629.png,calboral,neuro-b,0.07646293193101883,False,7,8,0.875,1,1,1.0
+rxhandbd_000648,RxHandBD,test,processed/WritingProcessed/rxhandbd_000648.png,calboral d,neuro-b,0.05504205822944641,False,9,10,0.9,2,2,1.0
+rxhandbd_000661,RxHandBD,test,processed/WritingProcessed/rxhandbd_000661.png,calboral dx,dexter,0.04513068124651909,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_000670,RxHandBD,test,processed/WritingProcessed/rxhandbd_000670.png,calboral dx,neuroxen,0.04376000910997391,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_000677,RxHandBD,test,processed/WritingProcessed/rxhandbd_000677.png,calboral-dx,neuro-b,0.18683643639087677,False,9,11,0.8181818181818182,1,1,1.0
+rxhandbd_000680,RxHandBD,test,processed/WritingProcessed/rxhandbd_000680.png,calboral-dx,neuroxen,0.07265997678041458,False,10,11,0.9090909090909091,1,1,1.0
+rxhandbd_000687,RxHandBD,test,processed/WritingProcessed/rxhandbd_000687.png,calcor-d,neuro-b,0.1255030781030655,False,6,8,0.75,1,1,1.0
+rxhandbd_000696,RxHandBD,test,processed/WritingProcessed/rxhandbd_000696.png,calcor-d,neuro-b,0.17768625915050507,False,6,8,0.75,1,1,1.0
+rxhandbd_000701,RxHandBD,test,processed/WritingProcessed/rxhandbd_000701.png,calcor-d,calcor-d,0.117158442735672,True,0,8,0.0,0,1,0.0
+rxhandbd_000720,RxHandBD,test,processed/WritingProcessed/rxhandbd_000720.png,calcor-d,neuro-b,0.210933655500412,False,6,8,0.75,1,1,1.0
+rxhandbd_000722,RxHandBD,test,processed/WritingProcessed/rxhandbd_000722.png,calcor-dx,neuro-b,0.15698789060115814,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_000731,RxHandBD,test,processed/WritingProcessed/rxhandbd_000731.png,canficid,neuroxen,0.035590849816799164,False,8,8,1.0,1,1,1.0
+rxhandbd_000746,RxHandBD,test,processed/WritingProcessed/rxhandbd_000746.png,cap. folzin,calcor-d,0.030790669843554497,False,8,11,0.7272727272727273,2,2,1.0
+rxhandbd_000748,RxHandBD,test,processed/WritingProcessed/rxhandbd_000748.png,cap. maxpro,calboral,0.029665306210517883,False,8,11,0.7272727272727273,2,2,1.0
+rxhandbd_000771,RxHandBD,test,processed/WritingProcessed/rxhandbd_000771.png,capsule,tablet,0.3105188012123108,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_000777,RxHandBD,test,processed/WritingProcessed/rxhandbd_000777.png,capsule,tablet,0.72429358959198,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_000779,RxHandBD,test,processed/WritingProcessed/rxhandbd_000779.png,capsule,tablet,0.5661888122558594,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_000783,RxHandBD,test,processed/WritingProcessed/rxhandbd_000783.png,capsule,tablet,0.25998470187187195,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_000801,RxHandBD,test,processed/WritingProcessed/rxhandbd_000801.png,carva,nexum,0.030015042051672935,False,5,5,1.0,1,1,1.0
+rxhandbd_000813,RxHandBD,test,processed/WritingProcessed/rxhandbd_000813.png,ceevit,nexe,0.07577013969421387,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000815,RxHandBD,test,processed/WritingProcessed/rxhandbd_000815.png,ceevit,dexter,0.062142979353666306,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000820,RxHandBD,test,processed/WritingProcessed/rxhandbd_000820.png,ceevit,emistat,0.044289201498031616,False,6,6,1.0,1,1,1.0
+rxhandbd_000835,RxHandBD,test,processed/WritingProcessed/rxhandbd_000835.png,ceevit,nexe,0.04160434007644653,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000840,RxHandBD,test,processed/WritingProcessed/rxhandbd_000840.png,ceevit,voltalin,0.03411116078495979,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_000842,RxHandBD,test,processed/WritingProcessed/rxhandbd_000842.png,ceevit,napa,0.04640542343258858,False,6,6,1.0,1,1,1.0
+rxhandbd_000861,RxHandBD,test,processed/WritingProcessed/rxhandbd_000861.png,ceevit,nexe,0.11356892436742783,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_000866,RxHandBD,test,processed/WritingProcessed/rxhandbd_000866.png,cefaclav,neuro,0.05900799110531807,False,7,8,0.875,1,1,1.0
+rxhandbd_000871,RxHandBD,test,processed/WritingProcessed/rxhandbd_000871.png,cefaclav,voltalin,0.06349260360002518,False,7,8,0.875,1,1,1.0
+rxhandbd_000887,RxHandBD,test,processed/WritingProcessed/rxhandbd_000887.png,cefotil plus,dexter,0.08309908211231232,False,10,12,0.8333333333333334,2,2,1.0
+rxhandbd_000896,RxHandBD,test,processed/WritingProcessed/rxhandbd_000896.png,ceftazidime,omeprazole,0.14378878474235535,False,8,11,0.7272727272727273,1,1,1.0
+rxhandbd_000898,RxHandBD,test,processed/WritingProcessed/rxhandbd_000898.png,ceftazidime,omeprazole,0.12143626064062119,False,8,11,0.7272727272727273,1,1,1.0
+rxhandbd_000901,RxHandBD,test,processed/WritingProcessed/rxhandbd_000901.png,ceftriaxone,omeprazole,0.1842145025730133,False,7,11,0.6363636363636364,1,1,1.0
+rxhandbd_000904,RxHandBD,test,processed/WritingProcessed/rxhandbd_000904.png,ceftriaxone,omeprazole,0.16358156502246857,False,7,11,0.6363636363636364,1,1,1.0
+rxhandbd_000915,RxHandBD,test,processed/WritingProcessed/rxhandbd_000915.png,ceftriaxone,omeprazole,0.20142027735710144,False,7,11,0.6363636363636364,1,1,1.0
+rxhandbd_000918,RxHandBD,test,processed/WritingProcessed/rxhandbd_000918.png,ceftriaxone,emistat,0.23347818851470947,False,9,11,0.8181818181818182,1,1,1.0
+rxhandbd_000929,RxHandBD,test,processed/WritingProcessed/rxhandbd_000929.png,ceftriaxone,voltalin,0.11939950287342072,False,8,11,0.7272727272727273,1,1,1.0
+rxhandbd_000943,RxHandBD,test,processed/WritingProcessed/rxhandbd_000943.png,ceftriaxone,omeprazole,0.12580420076847076,False,7,11,0.6363636363636364,1,1,1.0
+rxhandbd_000946,RxHandBD,test,processed/WritingProcessed/rxhandbd_000946.png,ceftriaxone,omeprazole,0.0372806042432785,False,7,11,0.6363636363636364,1,1,1.0
+rxhandbd_000958,RxHandBD,test,processed/WritingProcessed/rxhandbd_000958.png,cefuroxime,nexum,0.03644443675875664,False,7,10,0.7,1,1,1.0
+rxhandbd_000964,RxHandBD,test,processed/WritingProcessed/rxhandbd_000964.png,cefuroxime,omeprazole,0.17892993986606598,False,8,10,0.8,1,1,1.0
+rxhandbd_000969,RxHandBD,test,processed/WritingProcessed/rxhandbd_000969.png,cetaclav,voltalin,0.03266375511884689,False,6,8,0.75,1,1,1.0
+rxhandbd_000977,RxHandBD,test,processed/WritingProcessed/rxhandbd_000977.png,cildip,dexter,0.09401156008243561,False,6,6,1.0,1,1,1.0
+rxhandbd_000984,RxHandBD,test,processed/WritingProcessed/rxhandbd_000984.png,cildip,dexter,0.13921263813972473,False,6,6,1.0,1,1,1.0
+rxhandbd_000988,RxHandBD,test,processed/WritingProcessed/rxhandbd_000988.png,cildip,dexter,0.02280914969742298,False,6,6,1.0,1,1,1.0
+rxhandbd_000989,RxHandBD,test,processed/WritingProcessed/rxhandbd_000989.png,cildip 10,dexter,0.05746046453714371,False,8,9,0.8888888888888888,2,2,1.0
+rxhandbd_000997,RxHandBD,test,processed/WritingProcessed/rxhandbd_000997.png,ciponaal,calcor-d,0.03417529910802841,False,7,8,0.875,1,1,1.0
+rxhandbd_001005,RxHandBD,test,processed/WritingProcessed/rxhandbd_001005.png,clarin,texit,0.04142839461565018,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001007,RxHandBD,test,processed/WritingProcessed/rxhandbd_001007.png,clavusef,dexter,0.09477240592241287,False,7,8,0.875,1,1,1.0
+rxhandbd_001008,RxHandBD,test,processed/WritingProcessed/rxhandbd_001008.png,clavusef,dexter,0.11041086912155151,False,7,8,0.875,1,1,1.0
+rxhandbd_001011,RxHandBD,test,processed/WritingProcessed/rxhandbd_001011.png,clavutil,emistat,0.06722976267337799,False,7,8,0.875,1,1,1.0
+rxhandbd_001020,RxHandBD,test,processed/WritingProcessed/rxhandbd_001020.png,clavutil,napa,0.12295413762331009,False,7,8,0.875,1,1,1.0
+rxhandbd_001024,RxHandBD,test,processed/WritingProcessed/rxhandbd_001024.png,clavutil,voltalin,0.057962823659181595,False,7,8,0.875,1,1,1.0
+rxhandbd_001025,RxHandBD,test,processed/WritingProcessed/rxhandbd_001025.png,clavutil,neuro-b,0.06948345899581909,False,8,8,1.0,1,1,1.0
+rxhandbd_001033,RxHandBD,test,processed/WritingProcessed/rxhandbd_001033.png,clindacin,voltalin,0.040534187108278275,False,6,9,0.6666666666666666,1,1,1.0
+rxhandbd_001035,RxHandBD,test,processed/WritingProcessed/rxhandbd_001035.png,clindacin,omeprazole,0.063938669860363,False,9,9,1.0,1,1,1.0
+rxhandbd_001037,RxHandBD,test,processed/WritingProcessed/rxhandbd_001037.png,clindacin,voltalin,0.06236165761947632,False,6,9,0.6666666666666666,1,1,1.0
+rxhandbd_001039,RxHandBD,test,processed/WritingProcessed/rxhandbd_001039.png,clindamycin,omeprazole,0.05940002202987671,False,10,11,0.9090909090909091,1,1,1.0
+rxhandbd_001040,RxHandBD,test,processed/WritingProcessed/rxhandbd_001040.png,clindamycin,omeprazole,0.19865533709526062,False,10,11,0.9090909090909091,1,1,1.0
+rxhandbd_001045,RxHandBD,test,processed/WritingProcessed/rxhandbd_001045.png,clonapex,omeprazole,0.0644577369093895,False,9,8,1.125,1,1,1.0
+rxhandbd_001066,RxHandBD,test,processed/WritingProcessed/rxhandbd_001066.png,collagen-d,neuro-b,0.1246219128370285,False,9,10,0.9,1,1,1.0
+rxhandbd_001075,RxHandBD,test,processed/WritingProcessed/rxhandbd_001075.png,comprid,neuro-b,0.05618820711970329,False,7,7,1.0,1,1,1.0
+rxhandbd_001083,RxHandBD,test,processed/WritingProcessed/rxhandbd_001083.png,coragen-d,emistat,0.04462122544646263,False,9,9,1.0,1,1,1.0
+rxhandbd_001086,RxHandBD,test,processed/WritingProcessed/rxhandbd_001086.png,coral,dexter,0.1485268622636795,False,6,5,1.2,1,1,1.0
+rxhandbd_001098,RxHandBD,test,processed/WritingProcessed/rxhandbd_001098.png,coralgue d,voltalin,0.0450076162815094,False,8,10,0.8,2,2,1.0
+rxhandbd_001099,RxHandBD,test,processed/WritingProcessed/rxhandbd_001099.png,coralgue d,omeprazole,0.0684211477637291,False,9,10,0.9,2,2,1.0
+rxhandbd_001101,RxHandBD,test,processed/WritingProcessed/rxhandbd_001101.png,cortan,tablet,0.12687508761882782,False,6,6,1.0,1,1,1.0
+rxhandbd_001115,RxHandBD,test,processed/WritingProcessed/rxhandbd_001115.png,cotnim,napa,0.1625826060771942,False,6,6,1.0,1,1,1.0
+rxhandbd_001118,RxHandBD,test,processed/WritingProcessed/rxhandbd_001118.png,cotrim,emistat,0.06967180222272873,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_001126,RxHandBD,test,processed/WritingProcessed/rxhandbd_001126.png,cratuftzr,calboral,0.02626839466392994,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_001129,RxHandBD,test,processed/WritingProcessed/rxhandbd_001129.png,cridip 10,m-lucas 10,0.02522127889096737,False,7,9,0.7777777777777778,1,2,0.5
+rxhandbd_001130,RxHandBD,test,processed/WritingProcessed/rxhandbd_001130.png,criptin,emistat,0.11082743108272552,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001144,RxHandBD,test,processed/WritingProcessed/rxhandbd_001144.png,ddr,tablet,0.2809804081916809,False,6,3,2.0,1,1,1.0
+rxhandbd_001172,RxHandBD,test,processed/WritingProcessed/rxhandbd_001172.png,delfmz 30,dexter,0.0736522451043129,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_001189,RxHandBD,test,processed/WritingProcessed/rxhandbd_001189.png,denixil,dexter,0.3981780409812927,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001192,RxHandBD,test,processed/WritingProcessed/rxhandbd_001192.png,denixil,dexter,0.07120843976736069,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001195,RxHandBD,test,processed/WritingProcessed/rxhandbd_001195.png,denoxidov,omeprazole,0.16461260616779327,False,9,9,1.0,1,1,1.0
+rxhandbd_001224,RxHandBD,test,processed/WritingProcessed/rxhandbd_001224.png,devixi,dexter,0.4819830358028412,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_001232,RxHandBD,test,processed/WritingProcessed/rxhandbd_001232.png,devixil,dexter,0.3018069565296173,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001237,RxHandBD,test,processed/WritingProcessed/rxhandbd_001237.png,devixil,dexter,0.4980486333370209,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001238,RxHandBD,test,processed/WritingProcessed/rxhandbd_001238.png,devixil,dexter,0.12590566277503967,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001242,RxHandBD,test,processed/WritingProcessed/rxhandbd_001242.png,devixil 0.5,dexter,0.0195926520973444,False,8,11,0.7272727272727273,2,2,1.0
+rxhandbd_001254,RxHandBD,test,processed/WritingProcessed/rxhandbd_001254.png,dexilend,calcor-d,0.024138428270816803,False,7,8,0.875,1,1,1.0
+rxhandbd_001256,RxHandBD,test,processed/WritingProcessed/rxhandbd_001256.png,dexilend,calcor-d,0.04791384935379028,False,7,8,0.875,1,1,1.0
+rxhandbd_001278,RxHandBD,test,processed/WritingProcessed/rxhandbd_001278.png,dextac,napa,0.07999883592128754,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001287,RxHandBD,test,processed/WritingProcessed/rxhandbd_001287.png,dexter,dexter,0.3060489594936371,True,0,6,0.0,0,1,0.0
+rxhandbd_001293,RxHandBD,test,processed/WritingProcessed/rxhandbd_001293.png,dexter,dexter,0.5635524988174438,True,0,6,0.0,0,1,0.0
+rxhandbd_001305,RxHandBD,test,processed/WritingProcessed/rxhandbd_001305.png,dexter,dexter,0.46756625175476074,True,0,6,0.0,0,1,0.0
+rxhandbd_001312,RxHandBD,test,processed/WritingProcessed/rxhandbd_001312.png,dexter,napa,0.26040080189704895,False,6,6,1.0,1,1,1.0
+rxhandbd_001314,RxHandBD,test,processed/WritingProcessed/rxhandbd_001314.png,dexter,dexter,0.20617501437664032,True,0,6,0.0,0,1,0.0
+rxhandbd_001321,RxHandBD,test,processed/WritingProcessed/rxhandbd_001321.png,dexter,dexter,0.12366127222776413,True,0,6,0.0,0,1,0.0
+rxhandbd_001327,RxHandBD,test,processed/WritingProcessed/rxhandbd_001327.png,dexter,dexter,0.1811603456735611,True,0,6,0.0,0,1,0.0
+rxhandbd_001330,RxHandBD,test,processed/WritingProcessed/rxhandbd_001330.png,dexter,dexter,0.39350610971450806,True,0,6,0.0,0,1,0.0
+rxhandbd_001339,RxHandBD,test,processed/WritingProcessed/rxhandbd_001339.png,dexter,dexter,0.5062848925590515,True,0,6,0.0,0,1,0.0
+rxhandbd_001355,RxHandBD,test,processed/WritingProcessed/rxhandbd_001355.png,dexter,dexter,0.3592315912246704,True,0,6,0.0,0,1,0.0
+rxhandbd_001362,RxHandBD,test,processed/WritingProcessed/rxhandbd_001362.png,dexter,dexter,0.3549244701862335,True,0,6,0.0,0,1,0.0
+rxhandbd_001373,RxHandBD,test,processed/WritingProcessed/rxhandbd_001373.png,dexter,dexter,0.5286012291908264,True,0,6,0.0,0,1,0.0
+rxhandbd_001388,RxHandBD,test,processed/WritingProcessed/rxhandbd_001388.png,dexter 60,neuro-b,0.1481783539056778,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_001394,RxHandBD,test,processed/WritingProcessed/rxhandbd_001394.png,dexter,dexter,0.40959152579307556,True,0,6,0.0,0,1,0.0
+rxhandbd_001402,RxHandBD,test,processed/WritingProcessed/rxhandbd_001402.png,diabetic,nexe,0.16965548694133759,False,7,8,0.875,1,1,1.0
+rxhandbd_001403,RxHandBD,test,processed/WritingProcessed/rxhandbd_001403.png,diabetic,texit,0.024357851594686508,False,6,8,0.75,1,1,1.0
+rxhandbd_001408,RxHandBD,test,processed/WritingProcessed/rxhandbd_001408.png,diabetic,voltalin,0.07513796538114548,False,7,8,0.875,1,1,1.0
+rxhandbd_001412,RxHandBD,test,processed/WritingProcessed/rxhandbd_001412.png,diaryl,diet,0.13773925602436066,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_001415,RxHandBD,test,processed/WritingProcessed/rxhandbd_001415.png,dicaltrol,voltalin,0.08479954302310944,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_001417,RxHandBD,test,processed/WritingProcessed/rxhandbd_001417.png,diet,xinc b,0.06047234684228897,False,5,4,1.25,2,1,2.0
+rxhandbd_001430,RxHandBD,test,processed/WritingProcessed/rxhandbd_001430.png,diet,tablet,0.41540563106536865,False,4,4,1.0,1,1,1.0
+rxhandbd_001431,RxHandBD,test,processed/WritingProcessed/rxhandbd_001431.png,diet,tablet,0.34309178590774536,False,4,4,1.0,1,1,1.0
+rxhandbd_001433,RxHandBD,test,processed/WritingProcessed/rxhandbd_001433.png,diet,diet,0.2837488055229187,True,0,4,0.0,0,1,0.0
+rxhandbd_001434,RxHandBD,test,processed/WritingProcessed/rxhandbd_001434.png,diet,diet,0.29797497391700745,True,0,4,0.0,0,1,0.0
+rxhandbd_001439,RxHandBD,test,processed/WritingProcessed/rxhandbd_001439.png,diet,tablet,0.23356732726097107,False,4,4,1.0,1,1,1.0
+rxhandbd_001452,RxHandBD,test,processed/WritingProcessed/rxhandbd_001452.png,diet,tablet,0.509701132774353,False,4,4,1.0,1,1,1.0
+rxhandbd_001460,RxHandBD,test,processed/WritingProcessed/rxhandbd_001460.png,diet,tablet,0.4544900953769684,False,4,4,1.0,1,1,1.0
+rxhandbd_001461,RxHandBD,test,processed/WritingProcessed/rxhandbd_001461.png,diet,tablet,0.6401024460792542,False,4,4,1.0,1,1,1.0
+rxhandbd_001462,RxHandBD,test,processed/WritingProcessed/rxhandbd_001462.png,diet,tablet,0.4212680459022522,False,4,4,1.0,1,1,1.0
+rxhandbd_001463,RxHandBD,test,processed/WritingProcessed/rxhandbd_001463.png,diet,tablet,0.28295084834098816,False,4,4,1.0,1,1,1.0
+rxhandbd_001467,RxHandBD,test,processed/WritingProcessed/rxhandbd_001467.png,diet,tablet,0.4408296048641205,False,4,4,1.0,1,1,1.0
+rxhandbd_001473,RxHandBD,test,processed/WritingProcessed/rxhandbd_001473.png,diet,tablet,0.32117196917533875,False,4,4,1.0,1,1,1.0
+rxhandbd_001478,RxHandBD,test,processed/WritingProcessed/rxhandbd_001478.png,diet,tablet,0.18406130373477936,False,4,4,1.0,1,1,1.0
+rxhandbd_001480,RxHandBD,test,processed/WritingProcessed/rxhandbd_001480.png,diet,tablet,0.2940720319747925,False,4,4,1.0,1,1,1.0
+rxhandbd_001484,RxHandBD,test,processed/WritingProcessed/rxhandbd_001484.png,diet,algin,0.03128232806921005,False,5,4,1.25,1,1,1.0
+rxhandbd_001487,RxHandBD,test,processed/WritingProcessed/rxhandbd_001487.png,diet,diet,0.04869604483246803,True,0,4,0.0,0,1,0.0
+rxhandbd_001489,RxHandBD,test,processed/WritingProcessed/rxhandbd_001489.png,diet,injection,0.26935532689094543,False,7,4,1.75,1,1,1.0
+rxhandbd_001490,RxHandBD,test,processed/WritingProcessed/rxhandbd_001490.png,diet,diet,0.09831267595291138,True,0,4,0.0,0,1,0.0
+rxhandbd_001491,RxHandBD,test,processed/WritingProcessed/rxhandbd_001491.png,diet,tablet,0.17146353423595428,False,4,4,1.0,1,1,1.0
+rxhandbd_001502,RxHandBD,test,processed/WritingProcessed/rxhandbd_001502.png,diet,diet,0.10538511723279953,True,0,4,0.0,0,1,0.0
+rxhandbd_001509,RxHandBD,test,processed/WritingProcessed/rxhandbd_001509.png,diet,tablet,0.3586062490940094,False,4,4,1.0,1,1,1.0
+rxhandbd_001514,RxHandBD,test,processed/WritingProcessed/rxhandbd_001514.png,dinovo,tablet,0.3975512981414795,False,6,6,1.0,1,1,1.0
+rxhandbd_001515,RxHandBD,test,processed/WritingProcessed/rxhandbd_001515.png,dinovo,nexe,0.038138389587402344,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001527,RxHandBD,test,processed/WritingProcessed/rxhandbd_001527.png,dominos,dexter,0.0566888302564621,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001533,RxHandBD,test,processed/WritingProcessed/rxhandbd_001533.png,don a,dexter,0.1937524378299713,False,5,5,1.0,2,2,1.0
+rxhandbd_001538,RxHandBD,test,processed/WritingProcessed/rxhandbd_001538.png,don a,dexter,0.11644814908504486,False,5,5,1.0,2,2,1.0
+rxhandbd_001540,RxHandBD,test,processed/WritingProcessed/rxhandbd_001540.png,don a,dexter,0.05472690239548683,False,5,5,1.0,2,2,1.0
+rxhandbd_001555,RxHandBD,test,processed/WritingProcessed/rxhandbd_001555.png,don-a,xinc b,0.030971556901931763,False,5,5,1.0,2,1,2.0
+rxhandbd_001557,RxHandBD,test,processed/WritingProcessed/rxhandbd_001557.png,don-a,nexe,0.0566706657409668,False,5,5,1.0,1,1,1.0
+rxhandbd_001559,RxHandBD,test,processed/WritingProcessed/rxhandbd_001559.png,don-a,xinc b,0.02646361105144024,False,5,5,1.0,2,1,2.0
+rxhandbd_001573,RxHandBD,test,processed/WritingProcessed/rxhandbd_001573.png,doximax,voltalin,0.030811943113803864,False,7,7,1.0,1,1,1.0
+rxhandbd_001577,RxHandBD,test,processed/WritingProcessed/rxhandbd_001577.png,doxiva,tablet,0.09501461684703827,False,6,6,1.0,1,1,1.0
+rxhandbd_001592,RxHandBD,test,processed/WritingProcessed/rxhandbd_001592.png,drise,neuro,0.04265511408448219,False,5,5,1.0,1,1,1.0
+rxhandbd_001598,RxHandBD,test,processed/WritingProcessed/rxhandbd_001598.png,drop,napa,0.12493966519832611,False,4,4,1.0,1,1,1.0
+rxhandbd_001611,RxHandBD,test,processed/WritingProcessed/rxhandbd_001611.png,duracef,voltalin,0.05293469876050949,False,7,7,1.0,1,1,1.0
+rxhandbd_001625,RxHandBD,test,processed/WritingProcessed/rxhandbd_001625.png,ecosprin,tablet,0.12813283503055573,False,8,8,1.0,1,1,1.0
+rxhandbd_001635,RxHandBD,test,processed/WritingProcessed/rxhandbd_001635.png,edeloss,diet,0.10044830292463303,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001637,RxHandBD,test,processed/WritingProcessed/rxhandbd_001637.png,efodio,algin,0.01658664457499981,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001639,RxHandBD,test,processed/WritingProcessed/rxhandbd_001639.png,e-gel,tablet,0.251484215259552,False,5,5,1.0,1,1,1.0
+rxhandbd_001640,RxHandBD,test,processed/WritingProcessed/rxhandbd_001640.png,e-gel 200iu,ceftriaxone,0.047367844730615616,False,11,11,1.0,2,2,1.0
+rxhandbd_001653,RxHandBD,test,processed/WritingProcessed/rxhandbd_001653.png,emep,tablet,0.41769102215766907,False,5,4,1.25,1,1,1.0
+rxhandbd_001657,RxHandBD,test,processed/WritingProcessed/rxhandbd_001657.png,emep,napa,0.03049735724925995,False,4,4,1.0,1,1,1.0
+rxhandbd_001661,RxHandBD,test,processed/WritingProcessed/rxhandbd_001661.png,emep,nexe,0.07260172069072723,False,3,4,0.75,1,1,1.0
+rxhandbd_001663,RxHandBD,test,processed/WritingProcessed/rxhandbd_001663.png,emep,nexe,0.10695073008537292,False,3,4,0.75,1,1,1.0
+rxhandbd_001675,RxHandBD,test,processed/WritingProcessed/rxhandbd_001675.png,emistat,emistat,0.0871884673833847,True,0,7,0.0,0,1,0.0
+rxhandbd_001677,RxHandBD,test,processed/WritingProcessed/rxhandbd_001677.png,emistat,emistat,0.1312422901391983,True,0,7,0.0,0,1,0.0
+rxhandbd_001686,RxHandBD,test,processed/WritingProcessed/rxhandbd_001686.png,emistat,napa,0.18962299823760986,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001688,RxHandBD,test,processed/WritingProcessed/rxhandbd_001688.png,emistat,emistat,0.06441809982061386,True,0,7,0.0,0,1,0.0
+rxhandbd_001690,RxHandBD,test,processed/WritingProcessed/rxhandbd_001690.png,emistat,tablet,0.20720520615577698,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001691,RxHandBD,test,processed/WritingProcessed/rxhandbd_001691.png,emistat,emistat,0.05439417436718941,True,0,7,0.0,0,1,0.0
+rxhandbd_001701,RxHandBD,test,processed/WritingProcessed/rxhandbd_001701.png,emistat,emistat,0.15216617286205292,True,0,7,0.0,0,1,0.0
+rxhandbd_001709,RxHandBD,test,processed/WritingProcessed/rxhandbd_001709.png,emistat,texit,0.04796013981103897,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001711,RxHandBD,test,processed/WritingProcessed/rxhandbd_001711.png,emistat,emistat,0.16082413494586945,True,0,7,0.0,0,1,0.0
+rxhandbd_001718,RxHandBD,test,processed/WritingProcessed/rxhandbd_001718.png,emistat,voltalin,0.05427060276269913,False,7,7,1.0,1,1,1.0
+rxhandbd_001737,RxHandBD,test,processed/WritingProcessed/rxhandbd_001737.png,emjard,dexter,0.12116365879774094,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001774,RxHandBD,test,processed/WritingProcessed/rxhandbd_001774.png,escilex,dexter,0.16804051399230957,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001787,RxHandBD,test,processed/WritingProcessed/rxhandbd_001787.png,eslilex,nexe,0.029272621497511864,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001797,RxHandBD,test,processed/WritingProcessed/rxhandbd_001797.png,eslilex 5,dexter,0.039808642119169235,False,8,9,0.8888888888888888,2,2,1.0
+rxhandbd_001823,RxHandBD,test,processed/WritingProcessed/rxhandbd_001823.png,esomand,neuro-b,0.3848886489868164,False,7,7,1.0,1,1,1.0
+rxhandbd_001829,RxHandBD,test,processed/WritingProcessed/rxhandbd_001829.png,esoral,emistat,0.059653133153915405,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001833,RxHandBD,test,processed/WritingProcessed/rxhandbd_001833.png,esotid,texit,0.06902758032083511,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001839,RxHandBD,test,processed/WritingProcessed/rxhandbd_001839.png,esprazo,calboral,0.048374421894550323,False,7,7,1.0,1,1,1.0
+rxhandbd_001843,RxHandBD,test,processed/WritingProcessed/rxhandbd_001843.png,esprazo,neuro,0.06244254112243652,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001847,RxHandBD,test,processed/WritingProcessed/rxhandbd_001847.png,esprazo,dexter,0.051850397139787674,False,7,7,1.0,1,1,1.0
+rxhandbd_001849,RxHandBD,test,processed/WritingProcessed/rxhandbd_001849.png,esprazo,esprazo,0.026018759235739708,True,0,7,0.0,0,1,0.0
+rxhandbd_001850,RxHandBD,test,processed/WritingProcessed/rxhandbd_001850.png,esprazo,neuro-b,0.036405280232429504,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001863,RxHandBD,test,processed/WritingProcessed/rxhandbd_001863.png,esprozo,esprazo,0.03653406724333763,False,1,7,0.14285714285714285,1,1,1.0
+rxhandbd_001864,RxHandBD,test,processed/WritingProcessed/rxhandbd_001864.png,esprozo,calcor-d,0.04442014545202255,False,7,7,1.0,1,1,1.0
+rxhandbd_001868,RxHandBD,test,processed/WritingProcessed/rxhandbd_001868.png,estes,dexter,0.36009305715560913,False,3,5,0.6,1,1,1.0
+rxhandbd_001870,RxHandBD,test,processed/WritingProcessed/rxhandbd_001870.png,estes,dexter,0.3920356035232544,False,3,5,0.6,1,1,1.0
+rxhandbd_001878,RxHandBD,test,processed/WritingProcessed/rxhandbd_001878.png,etorac,napa,0.25889483094215393,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001879,RxHandBD,test,processed/WritingProcessed/rxhandbd_001879.png,etorix,neuroxen,0.02200794778764248,False,6,6,1.0,1,1,1.0
+rxhandbd_001880,RxHandBD,test,processed/WritingProcessed/rxhandbd_001880.png,etorix,algin,0.026113975793123245,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001910,RxHandBD,test,processed/WritingProcessed/rxhandbd_001910.png,ezytake,algin,0.06473058462142944,False,7,7,1.0,1,1,1.0
+rxhandbd_001911,RxHandBD,test,processed/WritingProcessed/rxhandbd_001911.png,f lubre,nexe,0.023634662851691246,False,6,7,0.8571428571428571,2,2,1.0
+rxhandbd_001913,RxHandBD,test,processed/WritingProcessed/rxhandbd_001913.png,famolack,emistat,0.06608311831951141,False,7,8,0.875,1,1,1.0
+rxhandbd_001915,RxHandBD,test,processed/WritingProcessed/rxhandbd_001915.png,faropen,emistat,0.10303177684545517,False,7,7,1.0,1,1,1.0
+rxhandbd_001918,RxHandBD,test,processed/WritingProcessed/rxhandbd_001918.png,fasid plus,neuroxen,0.0817149430513382,False,10,10,1.0,2,2,1.0
+rxhandbd_001920,RxHandBD,test,processed/WritingProcessed/rxhandbd_001920.png,fatisol,diet,0.47652071714401245,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001921,RxHandBD,test,processed/WritingProcessed/rxhandbd_001921.png,febun,emistat,0.040888648480176926,False,7,5,1.4,1,1,1.0
+rxhandbd_001923,RxHandBD,test,processed/WritingProcessed/rxhandbd_001923.png,febustat,omeprazole,0.03143063187599182,False,9,8,1.125,1,1,1.0
+rxhandbd_001929,RxHandBD,test,processed/WritingProcessed/rxhandbd_001929.png,femotol,voltalin,0.03592779114842415,False,7,7,1.0,1,1,1.0
+rxhandbd_001930,RxHandBD,test,processed/WritingProcessed/rxhandbd_001930.png,fenadin,dexter,0.13468992710113525,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001943,RxHandBD,test,processed/WritingProcessed/rxhandbd_001943.png,fenisen,tablet,0.22117190062999725,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001947,RxHandBD,test,processed/WritingProcessed/rxhandbd_001947.png,fenix-v,dexter,0.09355843812227249,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_001958,RxHandBD,test,processed/WritingProcessed/rxhandbd_001958.png,fenix-v,calcor-d,0.035207562148571014,False,7,7,1.0,1,1,1.0
+rxhandbd_001963,RxHandBD,test,processed/WritingProcessed/rxhandbd_001963.png,fenix-v,xinc b,0.02034376934170723,False,6,7,0.8571428571428571,2,1,2.0
+rxhandbd_001965,RxHandBD,test,processed/WritingProcessed/rxhandbd_001965.png,fenix-v,calcor-d,0.03482828289270401,False,7,7,1.0,1,1,1.0
+rxhandbd_001967,RxHandBD,test,processed/WritingProcessed/rxhandbd_001967.png,fensiv,dexter,0.13994744420051575,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_001974,RxHandBD,test,processed/WritingProcessed/rxhandbd_001974.png,ferix-v,neuro-b,0.05343499034643173,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001978,RxHandBD,test,processed/WritingProcessed/rxhandbd_001978.png,ferix-v,neuro-b,0.08338335156440735,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_001990,RxHandBD,test,processed/WritingProcessed/rxhandbd_001990.png,fexofast,napa,0.0862378180027008,False,7,8,0.875,1,1,1.0
+rxhandbd_001995,RxHandBD,test,processed/WritingProcessed/rxhandbd_001995.png,fexit,texit,0.0704018846154213,False,1,5,0.2,1,1,1.0
+rxhandbd_002004,RxHandBD,test,processed/WritingProcessed/rxhandbd_002004.png,fexo,tablet,0.4361206591129303,False,6,4,1.5,1,1,1.0
+rxhandbd_002005,RxHandBD,test,processed/WritingProcessed/rxhandbd_002005.png,fexo,tablet,0.7267287373542786,False,6,4,1.5,1,1,1.0
+rxhandbd_002006,RxHandBD,test,processed/WritingProcessed/rxhandbd_002006.png,fexo,tablet,0.458930641412735,False,6,4,1.5,1,1,1.0
+rxhandbd_002011,RxHandBD,test,processed/WritingProcessed/rxhandbd_002011.png,fexo,tablet,0.18192873895168304,False,6,4,1.5,1,1,1.0
+rxhandbd_002015,RxHandBD,test,processed/WritingProcessed/rxhandbd_002015.png,fexocon,neuro-b,0.1007329672574997,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002043,RxHandBD,test,processed/WritingProcessed/rxhandbd_002043.png,filmet,diet,0.28503525257110596,False,3,6,0.5,1,1,1.0
+rxhandbd_002053,RxHandBD,test,processed/WritingProcessed/rxhandbd_002053.png,filwef gold,neuro-b,0.042876310646533966,False,9,11,0.8181818181818182,2,2,1.0
+rxhandbd_002059,RxHandBD,test,processed/WritingProcessed/rxhandbd_002059.png,finix,nexe,0.13695986568927765,False,4,5,0.8,1,1,1.0
+rxhandbd_002064,RxHandBD,test,processed/WritingProcessed/rxhandbd_002064.png,fixal,nexe,0.22379933297634125,False,4,5,0.8,1,1,1.0
+rxhandbd_002077,RxHandBD,test,processed/WritingProcessed/rxhandbd_002077.png,fixgut,emistat,0.03122020699083805,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_002079,RxHandBD,test,processed/WritingProcessed/rxhandbd_002079.png,fixgut,diet,0.06581274420022964,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002095,RxHandBD,test,processed/WritingProcessed/rxhandbd_002095.png,flamex,neuro,0.05183383449912071,False,6,6,1.0,1,1,1.0
+rxhandbd_002102,RxHandBD,test,processed/WritingProcessed/rxhandbd_002102.png,flamex,emistat,0.04842768609523773,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_002105,RxHandBD,test,processed/WritingProcessed/rxhandbd_002105.png,flamyd,algin,0.017628535628318787,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_002113,RxHandBD,test,processed/WritingProcessed/rxhandbd_002113.png,fleme max,voltalin,0.045217499136924744,False,9,9,1.0,2,2,1.0
+rxhandbd_002115,RxHandBD,test,processed/WritingProcessed/rxhandbd_002115.png,flemex plus,neuro-b,0.25913459062576294,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_002117,RxHandBD,test,processed/WritingProcessed/rxhandbd_002117.png,flenex dew,neuro-b,0.3017462193965912,False,8,10,0.8,2,2,1.0
+rxhandbd_002125,RxHandBD,test,processed/WritingProcessed/rxhandbd_002125.png,fluclox,napa,0.0703902617096901,False,7,7,1.0,1,1,1.0
+rxhandbd_002133,RxHandBD,test,processed/WritingProcessed/rxhandbd_002133.png,fluclox,voltalin,0.04210873320698738,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002147,RxHandBD,test,processed/WritingProcessed/rxhandbd_002147.png,flugal,dexter,0.02722834050655365,False,6,6,1.0,1,1,1.0
+rxhandbd_002151,RxHandBD,test,processed/WritingProcessed/rxhandbd_002151.png,flugal,voltalin,0.028494486585259438,False,6,6,1.0,1,1,1.0
+rxhandbd_002160,RxHandBD,test,processed/WritingProcessed/rxhandbd_002160.png,flugat,neuro-b,0.02676999568939209,False,6,6,1.0,1,1,1.0
+rxhandbd_002179,RxHandBD,test,processed/WritingProcessed/rxhandbd_002179.png,flux,injection,0.2747649550437927,False,9,4,2.25,1,1,1.0
+rxhandbd_002195,RxHandBD,test,processed/WritingProcessed/rxhandbd_002195.png,folzin,dexter,0.17526781558990479,False,6,6,1.0,1,1,1.0
+rxhandbd_002197,RxHandBD,test,processed/WritingProcessed/rxhandbd_002197.png,folzin,neuro,0.07584770023822784,False,6,6,1.0,1,1,1.0
+rxhandbd_002199,RxHandBD,test,processed/WritingProcessed/rxhandbd_002199.png,folzin,algin,0.051759518682956696,False,3,6,0.5,1,1,1.0
+rxhandbd_002202,RxHandBD,test,processed/WritingProcessed/rxhandbd_002202.png,folzin,dexter,0.057962216436862946,False,6,6,1.0,1,1,1.0
+rxhandbd_002211,RxHandBD,test,processed/WritingProcessed/rxhandbd_002211.png,folzin-cl,neuro-b,0.12883500754833221,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002215,RxHandBD,test,processed/WritingProcessed/rxhandbd_002215.png,fossical d,neuro-b,0.07363835722208023,False,10,10,1.0,2,2,1.0
+rxhandbd_002229,RxHandBD,test,processed/WritingProcessed/rxhandbd_002229.png,frulac,neuro-b,0.06015905737876892,False,6,6,1.0,1,1,1.0
+rxhandbd_002232,RxHandBD,test,processed/WritingProcessed/rxhandbd_002232.png,fuclav,napa,0.1585434526205063,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_002238,RxHandBD,test,processed/WritingProcessed/rxhandbd_002238.png,fungidal,calcor-d,0.0590401254594326,False,8,8,1.0,1,1,1.0
+rxhandbd_002246,RxHandBD,test,processed/WritingProcessed/rxhandbd_002246.png,furotil,emistat,0.06426431238651276,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002249,RxHandBD,test,processed/WritingProcessed/rxhandbd_002249.png,fusid,tablet,0.3413143754005432,False,6,5,1.2,1,1,1.0
+rxhandbd_002252,RxHandBD,test,processed/WritingProcessed/rxhandbd_002252.png,fusil plm,m-lucas 10,0.04546116665005684,False,9,9,1.0,2,2,1.0
+rxhandbd_002255,RxHandBD,test,processed/WritingProcessed/rxhandbd_002255.png,fylox,texit,0.06861940026283264,False,5,5,1.0,1,1,1.0
+rxhandbd_002277,RxHandBD,test,processed/WritingProcessed/rxhandbd_002277.png,gavitfep,dexter,0.04543054848909378,False,6,8,0.75,1,1,1.0
+rxhandbd_002282,RxHandBD,test,processed/WritingProcessed/rxhandbd_002282.png,geolan,calcor-d,0.024501213803887367,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_002294,RxHandBD,test,processed/WritingProcessed/rxhandbd_002294.png,gerhinal,calcor-d,0.07166830450296402,False,8,8,1.0,1,1,1.0
+rxhandbd_002299,RxHandBD,test,processed/WritingProcessed/rxhandbd_002299.png,gestirenol,calcor-d,0.025604665279388428,False,9,10,0.9,1,1,1.0
+rxhandbd_002304,RxHandBD,test,processed/WritingProcessed/rxhandbd_002304.png,gestrenol,neuro-b,0.1192772388458252,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002309,RxHandBD,test,processed/WritingProcessed/rxhandbd_002309.png,gestrenol,calcor-d,0.07075998187065125,False,9,9,1.0,1,1,1.0
+rxhandbd_002313,RxHandBD,test,processed/WritingProcessed/rxhandbd_002313.png,gintex,dexter,0.20646096765995026,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002320,RxHandBD,test,processed/WritingProcessed/rxhandbd_002320.png,glasin,voltalin,0.08770108222961426,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002329,RxHandBD,test,processed/WritingProcessed/rxhandbd_002329.png,glysup,emistat,0.07484596967697144,False,6,6,1.0,1,1,1.0
+rxhandbd_002331,RxHandBD,test,processed/WritingProcessed/rxhandbd_002331.png,g-pethidne,omeprazole,0.09505242854356766,False,9,10,0.9,1,1,1.0
+rxhandbd_002335,RxHandBD,test,processed/WritingProcessed/rxhandbd_002335.png,greenox,dexter,0.04442921280860901,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002337,RxHandBD,test,processed/WritingProcessed/rxhandbd_002337.png,gtn,dexter,0.06304121017456055,False,5,3,1.6666666666666667,1,1,1.0
+rxhandbd_002341,RxHandBD,test,processed/WritingProcessed/rxhandbd_002341.png,hallornl dx,neuro-b,0.09560390561819077,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_002357,RxHandBD,test,processed/WritingProcessed/rxhandbd_002357.png,high,diet,0.0924980640411377,False,3,4,0.75,1,1,1.0
+rxhandbd_002365,RxHandBD,test,processed/WritingProcessed/rxhandbd_002365.png,high,diet,0.0910247340798378,False,3,4,0.75,1,1,1.0
+rxhandbd_002368,RxHandBD,test,processed/WritingProcessed/rxhandbd_002368.png,histacin,voltalin,0.14658035337924957,False,4,8,0.5,1,1,1.0
+rxhandbd_002370,RxHandBD,test,processed/WritingProcessed/rxhandbd_002370.png,histacin,emistat,0.14239762723445892,False,5,8,0.625,1,1,1.0
+rxhandbd_002375,RxHandBD,test,processed/WritingProcessed/rxhandbd_002375.png,histacin,emistat,0.08576200157403946,False,5,8,0.625,1,1,1.0
+rxhandbd_002381,RxHandBD,test,processed/WritingProcessed/rxhandbd_002381.png,histacin,emistat,0.0735345259308815,False,5,8,0.625,1,1,1.0
+rxhandbd_002382,RxHandBD,test,processed/WritingProcessed/rxhandbd_002382.png,histacin,emistat,0.15402954816818237,False,5,8,0.625,1,1,1.0
+rxhandbd_002398,RxHandBD,test,processed/WritingProcessed/rxhandbd_002398.png,histacin,diet,0.3366219997406006,False,6,8,0.75,1,1,1.0
+rxhandbd_002399,RxHandBD,test,processed/WritingProcessed/rxhandbd_002399.png,histacin,emistat,0.07925646752119064,False,5,8,0.625,1,1,1.0
+rxhandbd_002401,RxHandBD,test,processed/WritingProcessed/rxhandbd_002401.png,histacin,voltalin,0.056958530098199844,False,4,8,0.5,1,1,1.0
+rxhandbd_002404,RxHandBD,test,processed/WritingProcessed/rxhandbd_002404.png,histal,voltalin,0.08123264461755753,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_002406,RxHandBD,test,processed/WritingProcessed/rxhandbd_002406.png,histal,diet,0.11594818532466888,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002414,RxHandBD,test,processed/WritingProcessed/rxhandbd_002414.png,histat,diet,0.3499998152256012,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002417,RxHandBD,test,processed/WritingProcessed/rxhandbd_002417.png,hpr ds,nexe,0.07441610842943192,False,6,6,1.0,2,2,1.0
+rxhandbd_002425,RxHandBD,test,processed/WritingProcessed/rxhandbd_002425.png,ibuprofen,omeprazole,0.21083471179008484,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002427,RxHandBD,test,processed/WritingProcessed/rxhandbd_002427.png,imipenem,voltalin,0.24565841257572174,False,8,8,1.0,1,1,1.0
+rxhandbd_002449,RxHandBD,test,processed/WritingProcessed/rxhandbd_002449.png,indooref,omeprazole,0.06511136889457703,False,9,8,1.125,1,1,1.0
+rxhandbd_002457,RxHandBD,test,processed/WritingProcessed/rxhandbd_002457.png,inj,injection,0.27484115958213806,False,6,3,2.0,1,1,1.0
+rxhandbd_002460,RxHandBD,test,processed/WritingProcessed/rxhandbd_002460.png,inj,injection,0.36699748039245605,False,6,3,2.0,1,1,1.0
+rxhandbd_002462,RxHandBD,test,processed/WritingProcessed/rxhandbd_002462.png,inj,injection,0.22851604223251343,False,6,3,2.0,1,1,1.0
+rxhandbd_002463,RxHandBD,test,processed/WritingProcessed/rxhandbd_002463.png,inj,injection,0.23398302495479584,False,6,3,2.0,1,1,1.0
+rxhandbd_002467,RxHandBD,test,processed/WritingProcessed/rxhandbd_002467.png,inj,injection,0.3841249346733093,False,6,3,2.0,1,1,1.0
+rxhandbd_002470,RxHandBD,test,processed/WritingProcessed/rxhandbd_002470.png,inj,injection,0.37334179878234863,False,6,3,2.0,1,1,1.0
+rxhandbd_002477,RxHandBD,test,processed/WritingProcessed/rxhandbd_002477.png,injection,tablet,0.8644663691520691,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002479,RxHandBD,test,processed/WritingProcessed/rxhandbd_002479.png,injection,tablet,0.5698127150535583,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002482,RxHandBD,test,processed/WritingProcessed/rxhandbd_002482.png,injection,tablet,0.4905756413936615,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002489,RxHandBD,test,processed/WritingProcessed/rxhandbd_002489.png,injection,tablet,0.4204564690589905,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002511,RxHandBD,test,processed/WritingProcessed/rxhandbd_002511.png,injection,tablet,0.3679395318031311,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002513,RxHandBD,test,processed/WritingProcessed/rxhandbd_002513.png,injection,tablet,0.2826893925666809,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002517,RxHandBD,test,processed/WritingProcessed/rxhandbd_002517.png,injection,tablet,0.4698326289653778,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002520,RxHandBD,test,processed/WritingProcessed/rxhandbd_002520.png,injection,tablet,0.29827460646629333,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002521,RxHandBD,test,processed/WritingProcessed/rxhandbd_002521.png,injection,tablet,0.3162953555583954,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002530,RxHandBD,test,processed/WritingProcessed/rxhandbd_002530.png,injection,tablet,0.5350479483604431,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002552,RxHandBD,test,processed/WritingProcessed/rxhandbd_002552.png,injection,tablet,0.46226945519447327,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002554,RxHandBD,test,processed/WritingProcessed/rxhandbd_002554.png,inxo-a,xinc b,0.02821161225438118,False,5,6,0.8333333333333334,2,1,2.0
+rxhandbd_002574,RxHandBD,test,processed/WritingProcessed/rxhandbd_002574.png,k2cal,napa,0.08184193074703217,False,4,5,0.8,1,1,1.0
+rxhandbd_002575,RxHandBD,test,processed/WritingProcessed/rxhandbd_002575.png,k2cal,napa,0.23441003262996674,False,4,5,0.8,1,1,1.0
+rxhandbd_002577,RxHandBD,test,processed/WritingProcessed/rxhandbd_002577.png,kacin,neuro-b,0.030594248324632645,False,7,5,1.4,1,1,1.0
+rxhandbd_002583,RxHandBD,test,processed/WritingProcessed/rxhandbd_002583.png,kacin,tablet,0.1564372479915619,False,5,5,1.0,1,1,1.0
+rxhandbd_002591,RxHandBD,test,processed/WritingProcessed/rxhandbd_002591.png,keto,xinc b,0.029951969161629677,False,6,4,1.5,2,1,2.0
+rxhandbd_002595,RxHandBD,test,processed/WritingProcessed/rxhandbd_002595.png,ketorolac,emistat,0.05392146483063698,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002600,RxHandBD,test,processed/WritingProcessed/rxhandbd_002600.png,ketorolac,emistat,0.062276702374219894,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002603,RxHandBD,test,processed/WritingProcessed/rxhandbd_002603.png,ketorolac,voltalin,0.05409738048911095,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002610,RxHandBD,test,processed/WritingProcessed/rxhandbd_002610.png,kinate,xinc b,0.01780707761645317,False,4,6,0.6666666666666666,2,1,2.0
+rxhandbd_002612,RxHandBD,test,processed/WritingProcessed/rxhandbd_002612.png,kinate,voltalin,0.029535535722970963,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_002614,RxHandBD,test,processed/WritingProcessed/rxhandbd_002614.png,kinate,nexe,0.038132697343826294,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002615,RxHandBD,test,processed/WritingProcessed/rxhandbd_002615.png,kinate,napa,0.05275161936879158,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_002617,RxHandBD,test,processed/WritingProcessed/rxhandbd_002617.png,kinate,voltalin,0.04566715657711029,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_002622,RxHandBD,test,processed/WritingProcessed/rxhandbd_002622.png,knee joints,omeprazole,0.07090650498867035,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_002627,RxHandBD,test,processed/WritingProcessed/rxhandbd_002627.png,lacto,nexe,0.05210760980844498,False,5,5,1.0,1,1,1.0
+rxhandbd_002640,RxHandBD,test,processed/WritingProcessed/rxhandbd_002640.png,lactomore,neuro-b,0.14403806626796722,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_002647,RxHandBD,test,processed/WritingProcessed/rxhandbd_002647.png,lanso max,ceftriaxone,0.02912234514951706,False,10,9,1.1111111111111112,2,2,1.0
+rxhandbd_002651,RxHandBD,test,processed/WritingProcessed/rxhandbd_002651.png,lasix,napa,0.09411556273698807,False,4,5,0.8,1,1,1.0
+rxhandbd_002657,RxHandBD,test,processed/WritingProcessed/rxhandbd_002657.png,lbp following,neuro-b,0.05762816220521927,False,12,13,0.9230769230769231,2,2,1.0
+rxhandbd_002658,RxHandBD,test,processed/WritingProcessed/rxhandbd_002658.png,learxir,voltalin,0.030467689037322998,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002669,RxHandBD,test,processed/WritingProcessed/rxhandbd_002669.png,lelox,nexe,0.10988985002040863,False,4,5,0.8,1,1,1.0
+rxhandbd_002675,RxHandBD,test,processed/WritingProcessed/rxhandbd_002675.png,levofloxacin,omeprazole,0.3233490288257599,False,11,12,0.9166666666666666,1,1,1.0
+rxhandbd_002676,RxHandBD,test,processed/WritingProcessed/rxhandbd_002676.png,levothyroxine,omeprazole,0.24800041317939758,False,10,13,0.7692307692307693,1,1,1.0
+rxhandbd_002680,RxHandBD,test,processed/WritingProcessed/rxhandbd_002680.png,liberts,emistat,0.04296812042593956,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002684,RxHandBD,test,processed/WritingProcessed/rxhandbd_002684.png,libidex,dexter,0.04545461758971214,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_002688,RxHandBD,test,processed/WritingProcessed/rxhandbd_002688.png,lifanta,dexter,0.1545468121767044,False,7,7,1.0,1,1,1.0
+rxhandbd_002692,RxHandBD,test,processed/WritingProcessed/rxhandbd_002692.png,limbix,emistat,0.056026916950941086,False,6,6,1.0,1,1,1.0
+rxhandbd_002705,RxHandBD,test,processed/WritingProcessed/rxhandbd_002705.png,lindac,napa,0.031179120764136314,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_002709,RxHandBD,test,processed/WritingProcessed/rxhandbd_002709.png,liprolin,calcor-d,0.035668183118104935,False,7,8,0.875,1,1,1.0
+rxhandbd_002712,RxHandBD,test,processed/WritingProcessed/rxhandbd_002712.png,liquid,voltalin,0.06005702167749405,False,6,6,1.0,1,1,1.0
+rxhandbd_002716,RxHandBD,test,processed/WritingProcessed/rxhandbd_002716.png,lnfilax,dexter,0.040853045880794525,False,7,7,1.0,1,1,1.0
+rxhandbd_002722,RxHandBD,test,processed/WritingProcessed/rxhandbd_002722.png,losectil,voltalin,0.04691165313124657,False,6,8,0.75,1,1,1.0
+rxhandbd_002726,RxHandBD,test,processed/WritingProcessed/rxhandbd_002726.png,loxodol,algin,0.02467038854956627,False,7,7,1.0,1,1,1.0
+rxhandbd_002729,RxHandBD,test,processed/WritingProcessed/rxhandbd_002729.png,lubilax,neuroxen,0.106532983481884,False,7,7,1.0,1,1,1.0
+rxhandbd_002742,RxHandBD,test,processed/WritingProcessed/rxhandbd_002742.png,lwfilex 24,calboral,0.037095118314027786,False,9,10,0.9,2,2,1.0
+rxhandbd_002758,RxHandBD,test,processed/WritingProcessed/rxhandbd_002758.png,maxdol,neuro-b,0.2954186797142029,False,6,6,1.0,1,1,1.0
+rxhandbd_002771,RxHandBD,test,processed/WritingProcessed/rxhandbd_002771.png,maxima,xinc b,0.037019032984972,False,6,6,1.0,2,1,2.0
+rxhandbd_002774,RxHandBD,test,processed/WritingProcessed/rxhandbd_002774.png,maxpro,dexter,0.06918714940547943,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_002778,RxHandBD,test,processed/WritingProcessed/rxhandbd_002778.png,maxpro,neuro-b,0.09906164556741714,False,6,6,1.0,1,1,1.0
+rxhandbd_002798,RxHandBD,test,processed/WritingProcessed/rxhandbd_002798.png,maxuline-r,omeprazole,0.0630488246679306,False,10,10,1.0,1,1,1.0
+rxhandbd_002803,RxHandBD,test,processed/WritingProcessed/rxhandbd_002803.png,medi plus,neuro-b,0.31472522020339966,False,8,9,0.8888888888888888,2,2,1.0
+rxhandbd_002806,RxHandBD,test,processed/WritingProcessed/rxhandbd_002806.png,mefanide,emistat,0.09734145551919937,False,7,8,0.875,1,1,1.0
+rxhandbd_002812,RxHandBD,test,processed/WritingProcessed/rxhandbd_002812.png,melpred,voltalin,0.04289405420422554,False,7,7,1.0,1,1,1.0
+rxhandbd_002850,RxHandBD,test,processed/WritingProcessed/rxhandbd_002850.png,meropenem,voltalin,0.08323084563016891,False,9,9,1.0,1,1,1.0
+rxhandbd_002853,RxHandBD,test,processed/WritingProcessed/rxhandbd_002853.png,meropenem,omeprazole,0.10848018527030945,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002862,RxHandBD,test,processed/WritingProcessed/rxhandbd_002862.png,metaconil,voltalin,0.08922847360372543,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002868,RxHandBD,test,processed/WritingProcessed/rxhandbd_002868.png,methomol,dexter,0.17590956389904022,False,7,8,0.875,1,1,1.0
+rxhandbd_002870,RxHandBD,test,processed/WritingProcessed/rxhandbd_002870.png,metro,diet,0.26624229550361633,False,4,5,0.8,1,1,1.0
+rxhandbd_002872,RxHandBD,test,processed/WritingProcessed/rxhandbd_002872.png,metro,diet,0.2706940770149231,False,4,5,0.8,1,1,1.0
+rxhandbd_002892,RxHandBD,test,processed/WritingProcessed/rxhandbd_002892.png,metronidazole,omeprazole,0.22000448405742645,False,6,13,0.46153846153846156,1,1,1.0
+rxhandbd_002897,RxHandBD,test,processed/WritingProcessed/rxhandbd_002897.png,micoral gel,omeprazole,0.07312653213739395,False,8,11,0.7272727272727273,2,2,1.0
+rxhandbd_002900,RxHandBD,test,processed/WritingProcessed/rxhandbd_002900.png,micoral gel,neuro-b,0.2934747636318207,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_002901,RxHandBD,test,processed/WritingProcessed/rxhandbd_002901.png,macrobac,neuro-b,0.16700460016727448,False,6,8,0.75,1,1,1.0
+rxhandbd_002911,RxHandBD,test,processed/WritingProcessed/rxhandbd_002911.png,microgest,neuro-b,0.1520238220691681,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002916,RxHandBD,test,processed/WritingProcessed/rxhandbd_002916.png,microgurt,neuro-b,0.08537928760051727,False,7,9,0.7777777777777778,1,1,1.0
+rxhandbd_002918,RxHandBD,test,processed/WritingProcessed/rxhandbd_002918.png,mig,dexter,0.4828115403652191,False,6,3,2.0,1,1,1.0
+rxhandbd_002923,RxHandBD,test,processed/WritingProcessed/rxhandbd_002923.png,mig,dexter,0.10884372889995575,False,6,3,2.0,1,1,1.0
+rxhandbd_002930,RxHandBD,test,processed/WritingProcessed/rxhandbd_002930.png,miraba,voltalin,0.102680504322052,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_002935,RxHandBD,test,processed/WritingProcessed/rxhandbd_002935.png,mixit,xinc b,0.026204928755760193,False,5,5,1.0,2,1,2.0
+rxhandbd_002936,RxHandBD,test,processed/WritingProcessed/rxhandbd_002936.png,mixit,voltalin,0.080681711435318,False,7,5,1.4,1,1,1.0
+rxhandbd_002941,RxHandBD,test,processed/WritingProcessed/rxhandbd_002941.png,m-kast,dexter,0.08792635053396225,False,6,6,1.0,1,1,1.0
+rxhandbd_002949,RxHandBD,test,processed/WritingProcessed/rxhandbd_002949.png,m-lucas,neuroxen,0.04825675114989281,False,8,7,1.1428571428571428,1,1,1.0
+rxhandbd_002956,RxHandBD,test,processed/WritingProcessed/rxhandbd_002956.png,m-lucas,dexter,0.25940316915512085,False,7,7,1.0,1,1,1.0
+rxhandbd_002964,RxHandBD,test,processed/WritingProcessed/rxhandbd_002964.png,m-lucas,dexter,0.05161304399371147,False,7,7,1.0,1,1,1.0
+rxhandbd_002974,RxHandBD,test,processed/WritingProcessed/rxhandbd_002974.png,m-lucas 10,neuro-b,0.050650980323553085,False,9,10,0.9,2,2,1.0
+rxhandbd_002979,RxHandBD,test,processed/WritingProcessed/rxhandbd_002979.png,m-lucas 10,neuroxen,0.051706910133361816,False,9,10,0.9,2,2,1.0
+rxhandbd_002981,RxHandBD,test,processed/WritingProcessed/rxhandbd_002981.png,m-lucas 10,neuro-b,0.0396871492266655,False,9,10,0.9,2,2,1.0
+rxhandbd_002983,RxHandBD,test,processed/WritingProcessed/rxhandbd_002983.png,m-lucas 10,neuro-b,0.03706282749772072,False,9,10,0.9,2,2,1.0
+rxhandbd_002984,RxHandBD,test,processed/WritingProcessed/rxhandbd_002984.png,m-lucas 10,neuroxen,0.04292001202702522,False,9,10,0.9,2,2,1.0
+rxhandbd_002995,RxHandBD,test,processed/WritingProcessed/rxhandbd_002995.png,monas,napa,0.350559264421463,False,4,5,0.8,1,1,1.0
+rxhandbd_003009,RxHandBD,test,processed/WritingProcessed/rxhandbd_003009.png,monfast,voltalin,0.12185472249984741,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_003019,RxHandBD,test,processed/WritingProcessed/rxhandbd_003019.png,montair,voltalin,0.04715626686811447,False,4,7,0.5714285714285714,1,1,1.0
+rxhandbd_003039,RxHandBD,test,processed/WritingProcessed/rxhandbd_003039.png,montene,neuro-b,0.10371439903974533,False,7,7,1.0,1,1,1.0
+rxhandbd_003043,RxHandBD,test,processed/WritingProcessed/rxhandbd_003043.png,montene,neuroxen,0.03352778032422066,False,7,7,1.0,1,1,1.0
+rxhandbd_003048,RxHandBD,test,processed/WritingProcessed/rxhandbd_003048.png,montene,neuro-b,0.045886460691690445,False,7,7,1.0,1,1,1.0
+rxhandbd_003049,RxHandBD,test,processed/WritingProcessed/rxhandbd_003049.png,montene,neuro-b,0.03797450289130211,False,7,7,1.0,1,1,1.0
+rxhandbd_003052,RxHandBD,test,processed/WritingProcessed/rxhandbd_003052.png,montene,neuro-b,0.09366142749786377,False,7,7,1.0,1,1,1.0
+rxhandbd_003056,RxHandBD,test,processed/WritingProcessed/rxhandbd_003056.png,montene,voltalin,0.14241988956928253,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_003058,RxHandBD,test,processed/WritingProcessed/rxhandbd_003058.png,montinex,voltalin,0.0966188907623291,False,6,8,0.75,1,1,1.0
+rxhandbd_003061,RxHandBD,test,processed/WritingProcessed/rxhandbd_003061.png,motigut,ceftriaxone,0.029535967856645584,False,9,7,1.2857142857142858,1,1,1.0
+rxhandbd_003091,RxHandBD,test,processed/WritingProcessed/rxhandbd_003091.png,myolax,voltalin,0.135618656873703,False,6,6,1.0,1,1,1.0
+rxhandbd_003093,RxHandBD,test,processed/WritingProcessed/rxhandbd_003093.png,myolax,napa,0.1599198281764984,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_003095,RxHandBD,test,processed/WritingProcessed/rxhandbd_003095.png,myotax,voltalin,0.04651385173201561,False,6,6,1.0,1,1,1.0
+rxhandbd_003097,RxHandBD,test,processed/WritingProcessed/rxhandbd_003097.png,nabu pain,neuro-b,0.0409097857773304,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_003098,RxHandBD,test,processed/WritingProcessed/rxhandbd_003098.png,nabumef,neuroxen,0.04566938430070877,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_003124,RxHandBD,test,processed/WritingProcessed/rxhandbd_003124.png,nalbun 2,omeprazole,0.03994900360703468,False,10,8,1.25,2,2,1.0
+rxhandbd_003127,RxHandBD,test,processed/WritingProcessed/rxhandbd_003127.png,nalbun 2,calcor-d,0.06616980582475662,False,6,8,0.75,2,2,1.0
+rxhandbd_003135,RxHandBD,test,processed/WritingProcessed/rxhandbd_003135.png,nalbun 2,neuro-b,0.06985022872686386,False,7,8,0.875,2,2,1.0
+rxhandbd_003139,RxHandBD,test,processed/WritingProcessed/rxhandbd_003139.png,nalbun-1,neuro-b,0.0712602362036705,False,6,8,0.75,1,1,1.0
+rxhandbd_003140,RxHandBD,test,processed/WritingProcessed/rxhandbd_003140.png,nalbun-1,voltalin,0.06275413185358047,False,7,8,0.875,1,1,1.0
+rxhandbd_003142,RxHandBD,test,processed/WritingProcessed/rxhandbd_003142.png,nalbun-2,calcor-d,0.06260502338409424,False,5,8,0.625,1,1,1.0
+rxhandbd_003143,RxHandBD,test,processed/WritingProcessed/rxhandbd_003143.png,nalbun-2.1,neuro-b,0.04644124209880829,False,8,10,0.8,1,1,1.0
+rxhandbd_003156,RxHandBD,test,processed/WritingProcessed/rxhandbd_003156.png,napa,napa,0.20540176331996918,True,0,4,0.0,0,1,0.0
+rxhandbd_003164,RxHandBD,test,processed/WritingProcessed/rxhandbd_003164.png,napa,nexe,0.08363915979862213,False,3,4,0.75,1,1,1.0
+rxhandbd_003165,RxHandBD,test,processed/WritingProcessed/rxhandbd_003165.png,napa,nexe,0.09184043109416962,False,3,4,0.75,1,1,1.0
+rxhandbd_003171,RxHandBD,test,processed/WritingProcessed/rxhandbd_003171.png,napa,nexe,0.17539839446544647,False,3,4,0.75,1,1,1.0
+rxhandbd_003173,RxHandBD,test,processed/WritingProcessed/rxhandbd_003173.png,napa,algin,0.05002879723906517,False,5,4,1.25,1,1,1.0
+rxhandbd_003183,RxHandBD,test,processed/WritingProcessed/rxhandbd_003183.png,napa,tablet,0.289225310087204,False,5,4,1.25,1,1,1.0
+rxhandbd_003184,RxHandBD,test,processed/WritingProcessed/rxhandbd_003184.png,napa,nexe,0.06763606518507004,False,3,4,0.75,1,1,1.0
+rxhandbd_003201,RxHandBD,test,processed/WritingProcessed/rxhandbd_003201.png,napa,tablet,0.56739741563797,False,5,4,1.25,1,1,1.0
+rxhandbd_003204,RxHandBD,test,processed/WritingProcessed/rxhandbd_003204.png,napa,napa,0.41081318259239197,True,0,4,0.0,0,1,0.0
+rxhandbd_003214,RxHandBD,test,processed/WritingProcessed/rxhandbd_003214.png,napa,tablet,0.6390537619590759,False,5,4,1.25,1,1,1.0
+rxhandbd_003216,RxHandBD,test,processed/WritingProcessed/rxhandbd_003216.png,napa,tablet,0.4865209460258484,False,5,4,1.25,1,1,1.0
+rxhandbd_003233,RxHandBD,test,processed/WritingProcessed/rxhandbd_003233.png,napa,napa,0.2868919372558594,True,0,4,0.0,0,1,0.0
+rxhandbd_003234,RxHandBD,test,processed/WritingProcessed/rxhandbd_003234.png,napa,napa,0.2534487843513489,True,0,4,0.0,0,1,0.0
+rxhandbd_003243,RxHandBD,test,processed/WritingProcessed/rxhandbd_003243.png,napa,napa,0.15479055047035217,True,0,4,0.0,0,1,0.0
+rxhandbd_003248,RxHandBD,test,processed/WritingProcessed/rxhandbd_003248.png,napa,nexe,0.16759739816188812,False,3,4,0.75,1,1,1.0
+rxhandbd_003250,RxHandBD,test,processed/WritingProcessed/rxhandbd_003250.png,napa,napa,0.18643535673618317,True,0,4,0.0,0,1,0.0
+rxhandbd_003261,RxHandBD,test,processed/WritingProcessed/rxhandbd_003261.png,napa,napa,0.14209112524986267,True,0,4,0.0,0,1,0.0
+rxhandbd_003271,RxHandBD,test,processed/WritingProcessed/rxhandbd_003271.png,napa,napa,0.5197896361351013,True,0,4,0.0,0,1,0.0
+rxhandbd_003272,RxHandBD,test,processed/WritingProcessed/rxhandbd_003272.png,napa,napa,0.19643279910087585,True,0,4,0.0,0,1,0.0
+rxhandbd_003275,RxHandBD,test,processed/WritingProcessed/rxhandbd_003275.png,napa,napa,0.12424015998840332,True,0,4,0.0,0,1,0.0
+rxhandbd_003281,RxHandBD,test,processed/WritingProcessed/rxhandbd_003281.png,napa,tablet,0.3181803226470947,False,5,4,1.25,1,1,1.0
+rxhandbd_003294,RxHandBD,test,processed/WritingProcessed/rxhandbd_003294.png,napa,napa,0.28462105989456177,True,0,4,0.0,0,1,0.0
+rxhandbd_003298,RxHandBD,test,processed/WritingProcessed/rxhandbd_003298.png,napa,nexe,0.07355985045433044,False,3,4,0.75,1,1,1.0
+rxhandbd_003299,RxHandBD,test,processed/WritingProcessed/rxhandbd_003299.png,napa,napa,0.37909698486328125,True,0,4,0.0,0,1,0.0
+rxhandbd_003310,RxHandBD,test,processed/WritingProcessed/rxhandbd_003310.png,napa one,omeprazole,0.05756542086601257,False,6,8,0.75,2,2,1.0
+rxhandbd_003315,RxHandBD,test,processed/WritingProcessed/rxhandbd_003315.png,napa one,omeprazole,0.08602555096149445,False,6,8,0.75,2,2,1.0
+rxhandbd_003324,RxHandBD,test,processed/WritingProcessed/rxhandbd_003324.png,naporx,voltalin,0.037220269441604614,False,8,6,1.3333333333333333,1,1,1.0
+rxhandbd_003347,RxHandBD,test,processed/WritingProcessed/rxhandbd_003347.png,naprox plus,neuro-b,0.18621934950351715,False,8,11,0.7272727272727273,2,2,1.0
+rxhandbd_003354,RxHandBD,test,processed/WritingProcessed/rxhandbd_003354.png,nasal,napa,0.2445843666791916,False,2,5,0.4,1,1,1.0
+rxhandbd_003356,RxHandBD,test,processed/WritingProcessed/rxhandbd_003356.png,nasal,napa,0.12205424904823303,False,2,5,0.4,1,1,1.0
+rxhandbd_003361,RxHandBD,test,processed/WritingProcessed/rxhandbd_003361.png,natumef,neuroxen,0.08842942863702774,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_003368,RxHandBD,test,processed/WritingProcessed/rxhandbd_003368.png,nebulization,omeprazole,0.3487129509449005,False,11,12,0.9166666666666666,1,1,1.0
+rxhandbd_003372,RxHandBD,test,processed/WritingProcessed/rxhandbd_003372.png,nebulization,omeprazole,0.29723015427589417,False,11,12,0.9166666666666666,1,1,1.0
+rxhandbd_003374,RxHandBD,test,processed/WritingProcessed/rxhandbd_003374.png,nebulization,omeprazole,0.0989718958735466,False,11,12,0.9166666666666666,1,1,1.0
+rxhandbd_003375,RxHandBD,test,processed/WritingProcessed/rxhandbd_003375.png,nebulization,omeprazole,0.24270236492156982,False,11,12,0.9166666666666666,1,1,1.0
+rxhandbd_003387,RxHandBD,test,processed/WritingProcessed/rxhandbd_003387.png,nervion,neuro-b,0.3732255697250366,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_003390,RxHandBD,test,processed/WritingProcessed/rxhandbd_003390.png,nervion,voltalin,0.025294821709394455,False,7,7,1.0,1,1,1.0
+rxhandbd_003392,RxHandBD,test,processed/WritingProcessed/rxhandbd_003392.png,nervion,voltalin,0.09685653448104858,False,7,7,1.0,1,1,1.0
+rxhandbd_003410,RxHandBD,test,processed/WritingProcessed/rxhandbd_003410.png,neuro,neuro,0.10777442902326584,True,0,5,0.0,0,1,0.0
+rxhandbd_003427,RxHandBD,test,processed/WritingProcessed/rxhandbd_003427.png,neuro b,neuro,0.11217384785413742,False,2,7,0.2857142857142857,1,2,0.5
+rxhandbd_003436,RxHandBD,test,processed/WritingProcessed/rxhandbd_003436.png,neuro-b,neuro-b,0.2042735368013382,True,0,7,0.0,0,1,0.0
+rxhandbd_003442,RxHandBD,test,processed/WritingProcessed/rxhandbd_003442.png,neuro-b,neuro-b,0.18403169512748718,True,0,7,0.0,0,1,0.0
+rxhandbd_003446,RxHandBD,test,processed/WritingProcessed/rxhandbd_003446.png,neuro-b,neuro-b,0.18683511018753052,True,0,7,0.0,0,1,0.0
+rxhandbd_003447,RxHandBD,test,processed/WritingProcessed/rxhandbd_003447.png,neuro-b,voltalin,0.026940029114484787,False,8,7,1.1428571428571428,1,1,1.0
+rxhandbd_003463,RxHandBD,test,processed/WritingProcessed/rxhandbd_003463.png,neuro-b,neuro-b,0.10640136897563934,True,0,7,0.0,0,1,0.0
+rxhandbd_003465,RxHandBD,test,processed/WritingProcessed/rxhandbd_003465.png,neuro-b,neuro-b,0.1892256885766983,True,0,7,0.0,0,1,0.0
+rxhandbd_003466,RxHandBD,test,processed/WritingProcessed/rxhandbd_003466.png,neuro-b,neuro-b,0.1438227742910385,True,0,7,0.0,0,1,0.0
+rxhandbd_003467,RxHandBD,test,processed/WritingProcessed/rxhandbd_003467.png,neuro-b,neuro-b,0.12117886543273926,True,0,7,0.0,0,1,0.0
+rxhandbd_003470,RxHandBD,test,processed/WritingProcessed/rxhandbd_003470.png,neuro-b,neuro-b,0.3342892825603485,True,0,7,0.0,0,1,0.0
+rxhandbd_003471,RxHandBD,test,processed/WritingProcessed/rxhandbd_003471.png,neuro-b,neuro-b,0.0818009153008461,True,0,7,0.0,0,1,0.0
+rxhandbd_003481,RxHandBD,test,processed/WritingProcessed/rxhandbd_003481.png,neuro-b,neuro-b,0.05321645736694336,True,0,7,0.0,0,1,0.0
+rxhandbd_003494,RxHandBD,test,processed/WritingProcessed/rxhandbd_003494.png,neuro-b,neuro-b,0.1857585906982422,True,0,7,0.0,0,1,0.0
+rxhandbd_003510,RxHandBD,test,processed/WritingProcessed/rxhandbd_003510.png,neurolin,neuro-b,0.04002651944756508,False,3,8,0.375,1,1,1.0
+rxhandbd_003512,RxHandBD,test,processed/WritingProcessed/rxhandbd_003512.png,neurolin,dexter,0.05393006280064583,False,7,8,0.875,1,1,1.0
+rxhandbd_003519,RxHandBD,test,processed/WritingProcessed/rxhandbd_003519.png,neuroxen,calboral,0.05061083659529686,False,7,8,0.875,1,1,1.0
+rxhandbd_003520,RxHandBD,test,processed/WritingProcessed/rxhandbd_003520.png,neuroxen,neuroxen,0.18782703578472137,True,0,8,0.0,0,1,0.0
+rxhandbd_003530,RxHandBD,test,processed/WritingProcessed/rxhandbd_003530.png,neuroxen,neuroxen,0.14339901506900787,True,0,8,0.0,0,1,0.0
+rxhandbd_003542,RxHandBD,test,processed/WritingProcessed/rxhandbd_003542.png,neuroxen,neuroxen,0.28694379329681396,True,0,8,0.0,0,1,0.0
+rxhandbd_003544,RxHandBD,test,processed/WritingProcessed/rxhandbd_003544.png,neuroxen,neuroxen,0.10086425393819809,True,0,8,0.0,0,1,0.0
+rxhandbd_003577,RxHandBD,test,processed/WritingProcessed/rxhandbd_003577.png,nexe,tablet,0.607820451259613,False,5,4,1.25,1,1,1.0
+rxhandbd_003584,RxHandBD,test,processed/WritingProcessed/rxhandbd_003584.png,nexe,nexe,0.17335452139377594,True,0,4,0.0,0,1,0.0
+rxhandbd_003594,RxHandBD,test,processed/WritingProcessed/rxhandbd_003594.png,nexe,napa,0.10116764903068542,False,3,4,0.75,1,1,1.0
+rxhandbd_003610,RxHandBD,test,processed/WritingProcessed/rxhandbd_003610.png,nexe,napa,0.191542387008667,False,3,4,0.75,1,1,1.0
+rxhandbd_003617,RxHandBD,test,processed/WritingProcessed/rxhandbd_003617.png,nexe,nexe,0.3175308108329773,True,0,4,0.0,0,1,0.0
+rxhandbd_003630,RxHandBD,test,processed/WritingProcessed/rxhandbd_003630.png,nexe,nexe,0.209026038646698,True,0,4,0.0,0,1,0.0
+rxhandbd_003655,RxHandBD,test,processed/WritingProcessed/rxhandbd_003655.png,nexe,nexe,0.5560568571090698,True,0,4,0.0,0,1,0.0
+rxhandbd_003659,RxHandBD,test,processed/WritingProcessed/rxhandbd_003659.png,nexe,nexe,0.45023736357688904,True,0,4,0.0,0,1,0.0
+rxhandbd_003669,RxHandBD,test,processed/WritingProcessed/rxhandbd_003669.png,nexe,nexe,0.41374602913856506,True,0,4,0.0,0,1,0.0
+rxhandbd_003677,RxHandBD,test,processed/WritingProcessed/rxhandbd_003677.png,nexe mups,neuro-b,0.31120458245277405,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_003678,RxHandBD,test,processed/WritingProcessed/rxhandbd_003678.png,nexe mups,omeprazole,0.1545581966638565,False,9,9,1.0,2,2,1.0
+rxhandbd_003697,RxHandBD,test,processed/WritingProcessed/rxhandbd_003697.png,nexe mups,voltalin,0.10541143268346786,False,9,9,1.0,2,2,1.0
+rxhandbd_003702,RxHandBD,test,processed/WritingProcessed/rxhandbd_003702.png,nexe mups,neuro-b,0.10936059057712555,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_003704,RxHandBD,test,processed/WritingProcessed/rxhandbd_003704.png,nexe mups,omeprazole,0.07026416063308716,False,9,9,1.0,2,2,1.0
+rxhandbd_003723,RxHandBD,test,processed/WritingProcessed/rxhandbd_003723.png,nexpro,emistat,0.037685226649045944,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_003724,RxHandBD,test,processed/WritingProcessed/rxhandbd_003724.png,nexpro,voltalin,0.0585092231631279,False,8,6,1.3333333333333333,1,1,1.0
+rxhandbd_003726,RxHandBD,test,processed/WritingProcessed/rxhandbd_003726.png,nexpro,napa,0.10545417666435242,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_003728,RxHandBD,test,processed/WritingProcessed/rxhandbd_003728.png,nexum,calcor-d,0.05354668200016022,False,8,5,1.6,1,1,1.0
+rxhandbd_003735,RxHandBD,test,processed/WritingProcessed/rxhandbd_003735.png,nexum,neuro-b,0.07562427967786789,False,5,5,1.0,1,1,1.0
+rxhandbd_003744,RxHandBD,test,processed/WritingProcessed/rxhandbd_003744.png,nexum,dexter,0.23286981880664825,False,4,5,0.8,1,1,1.0
+rxhandbd_003745,RxHandBD,test,processed/WritingProcessed/rxhandbd_003745.png,nexum,nexe,0.059349652379751205,False,2,5,0.4,1,1,1.0
+rxhandbd_003749,RxHandBD,test,processed/WritingProcessed/rxhandbd_003749.png,nexum,neuroxen,0.04626668617129326,False,5,5,1.0,1,1,1.0
+rxhandbd_003753,RxHandBD,test,processed/WritingProcessed/rxhandbd_003753.png,nexum,neuro-b,0.058112673461437225,False,5,5,1.0,1,1,1.0
+rxhandbd_003757,RxHandBD,test,processed/WritingProcessed/rxhandbd_003757.png,nexum,neuro-b,0.12156650424003601,False,5,5,1.0,1,1,1.0
+rxhandbd_003759,RxHandBD,test,processed/WritingProcessed/rxhandbd_003759.png,nexum,neuro-b,0.06769528239965439,False,5,5,1.0,1,1,1.0
+rxhandbd_003761,RxHandBD,test,processed/WritingProcessed/rxhandbd_003761.png,nexum,voltalin,0.028591515496373177,False,8,5,1.6,1,1,1.0
+rxhandbd_003774,RxHandBD,test,processed/WritingProcessed/rxhandbd_003774.png,nexum mups,calboral,0.05753110721707344,False,10,10,1.0,2,2,1.0
+rxhandbd_003776,RxHandBD,test,processed/WritingProcessed/rxhandbd_003776.png,nexum mups,neuroxen,0.24789959192276,False,7,10,0.7,2,2,1.0
+rxhandbd_003785,RxHandBD,test,processed/WritingProcessed/rxhandbd_003785.png,nexum-mups,omeprazole,0.17183446884155273,False,10,10,1.0,1,1,1.0
+rxhandbd_003787,RxHandBD,test,processed/WritingProcessed/rxhandbd_003787.png,nexum,dexter,0.24283505976200104,False,4,5,0.8,1,1,1.0
+rxhandbd_003788,RxHandBD,test,processed/WritingProcessed/rxhandbd_003788.png,nexum,dexter,0.3055592179298401,False,4,5,0.8,1,1,1.0
+rxhandbd_003793,RxHandBD,test,processed/WritingProcessed/rxhandbd_003793.png,nimens,emistat,0.02105782926082611,False,6,6,1.0,1,1,1.0
+rxhandbd_003809,RxHandBD,test,processed/WritingProcessed/rxhandbd_003809.png,n-max so,voltalin,0.09434939175844193,False,8,8,1.0,2,2,1.0
+rxhandbd_003850,RxHandBD,test,processed/WritingProcessed/rxhandbd_003850.png,normal,napa,0.09935944527387619,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_003863,RxHandBD,test,processed/WritingProcessed/rxhandbd_003863.png,normens,neuro-b,0.06252650916576385,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_003866,RxHandBD,test,processed/WritingProcessed/rxhandbd_003866.png,normens,omeprazole,0.1652265340089798,False,9,7,1.2857142857142858,1,1,1.0
+rxhandbd_003867,RxHandBD,test,processed/WritingProcessed/rxhandbd_003867.png,norsol,voltalin,0.04947011545300484,False,6,6,1.0,1,1,1.0
+rxhandbd_003873,RxHandBD,test,processed/WritingProcessed/rxhandbd_003873.png,novelin lite,neuro-b,0.11218176782131195,False,10,12,0.8333333333333334,2,2,1.0
+rxhandbd_003874,RxHandBD,test,processed/WritingProcessed/rxhandbd_003874.png,novelon lite,neuro-b,0.07415295392274857,False,10,12,0.8333333333333334,2,2,1.0
+rxhandbd_003880,RxHandBD,test,processed/WritingProcessed/rxhandbd_003880.png,novotril,voltalin,0.16762948036193848,False,6,8,0.75,1,1,1.0
+rxhandbd_003883,RxHandBD,test,processed/WritingProcessed/rxhandbd_003883.png,nufrifil cold,neuroxen,0.097199447453022,False,11,13,0.8461538461538461,2,2,1.0
+rxhandbd_003885,RxHandBD,test,processed/WritingProcessed/rxhandbd_003885.png,nufw,dexter,0.16809670627117157,False,6,4,1.5,1,1,1.0
+rxhandbd_003888,RxHandBD,test,processed/WritingProcessed/rxhandbd_003888.png,nufw,dexter,0.2857615351676941,False,6,4,1.5,1,1,1.0
+rxhandbd_003892,RxHandBD,test,processed/WritingProcessed/rxhandbd_003892.png,nufw,dexter,0.03877143934369087,False,6,4,1.5,1,1,1.0
+rxhandbd_003895,RxHandBD,test,processed/WritingProcessed/rxhandbd_003895.png,nuloc,nexe,0.3963703215122223,False,4,5,0.8,1,1,1.0
+rxhandbd_003897,RxHandBD,test,processed/WritingProcessed/rxhandbd_003897.png,nurnal,napa,0.16427427530288696,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_003904,RxHandBD,test,processed/WritingProcessed/rxhandbd_003904.png,nystat,dexter,0.3084632158279419,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_003906,RxHandBD,test,processed/WritingProcessed/rxhandbd_003906.png,o2 inhalation,omeprazole,0.1357501894235611,False,11,13,0.8461538461538461,2,2,1.0
+rxhandbd_003912,RxHandBD,test,processed/WritingProcessed/rxhandbd_003912.png,ocef,nexe,0.05214925855398178,False,4,4,1.0,1,1,1.0
+rxhandbd_003915,RxHandBD,test,processed/WritingProcessed/rxhandbd_003915.png,ocof,tablet,0.5837716460227966,False,6,4,1.5,1,1,1.0
+rxhandbd_003925,RxHandBD,test,processed/WritingProcessed/rxhandbd_003925.png,ointment,voltalin,0.14844772219657898,False,7,8,0.875,1,1,1.0
+rxhandbd_003940,RxHandBD,test,processed/WritingProcessed/rxhandbd_003940.png,omep,napa,0.11549413949251175,False,4,4,1.0,1,1,1.0
+rxhandbd_003946,RxHandBD,test,processed/WritingProcessed/rxhandbd_003946.png,omep,nexe,0.055477745831012726,False,4,4,1.0,1,1,1.0
+rxhandbd_003951,RxHandBD,test,processed/WritingProcessed/rxhandbd_003951.png,omep,nexe,0.052077941596508026,False,4,4,1.0,1,1,1.0
+rxhandbd_003953,RxHandBD,test,processed/WritingProcessed/rxhandbd_003953.png,omeprazole,omeprazole,0.23846453428268433,True,0,10,0.0,0,1,0.0
+rxhandbd_003954,RxHandBD,test,processed/WritingProcessed/rxhandbd_003954.png,omeprazole,omeprazole,0.2348303198814392,True,0,10,0.0,0,1,0.0
+rxhandbd_003964,RxHandBD,test,processed/WritingProcessed/rxhandbd_003964.png,omeprazole,omeprazole,0.15891210734844208,True,0,10,0.0,0,1,0.0
+rxhandbd_003982,RxHandBD,test,processed/WritingProcessed/rxhandbd_003982.png,omeprazole,omeprazole,0.34393560886383057,True,0,10,0.0,0,1,0.0
+rxhandbd_003985,RxHandBD,test,processed/WritingProcessed/rxhandbd_003985.png,omeprazole,tablet,0.23527933657169342,False,8,10,0.8,1,1,1.0
+rxhandbd_004007,RxHandBD,test,processed/WritingProcessed/rxhandbd_004007.png,omeprazole,omeprazole,0.3694261312484741,True,0,10,0.0,0,1,0.0
+rxhandbd_004008,RxHandBD,test,processed/WritingProcessed/rxhandbd_004008.png,omeprazole,omeprazole,0.09104122221469879,True,0,10,0.0,0,1,0.0
+rxhandbd_004009,RxHandBD,test,processed/WritingProcessed/rxhandbd_004009.png,omeprazole,omeprazole,0.18512189388275146,True,0,10,0.0,0,1,0.0
+rxhandbd_004011,RxHandBD,test,processed/WritingProcessed/rxhandbd_004011.png,omeprazole,omeprazole,0.2654838263988495,True,0,10,0.0,0,1,0.0
+rxhandbd_004019,RxHandBD,test,processed/WritingProcessed/rxhandbd_004019.png,omeprazole,omeprazole,0.164819598197937,True,0,10,0.0,0,1,0.0
+rxhandbd_004024,RxHandBD,test,processed/WritingProcessed/rxhandbd_004024.png,omeprazole,omeprazole,0.14169248938560486,True,0,10,0.0,0,1,0.0
+rxhandbd_004029,RxHandBD,test,processed/WritingProcessed/rxhandbd_004029.png,omeprazole,esmax,0.12797518074512482,False,8,10,0.8,1,1,1.0
+rxhandbd_004039,RxHandBD,test,processed/WritingProcessed/rxhandbd_004039.png,omeprazole,omeprazole,0.0783315896987915,True,0,10,0.0,0,1,0.0
+rxhandbd_004045,RxHandBD,test,processed/WritingProcessed/rxhandbd_004045.png,omeprazole,omeprazole,0.14309756457805634,True,0,10,0.0,0,1,0.0
+rxhandbd_004053,RxHandBD,test,processed/WritingProcessed/rxhandbd_004053.png,omeprazole,omeprazole,0.12933285534381866,True,0,10,0.0,0,1,0.0
+rxhandbd_004060,RxHandBD,test,processed/WritingProcessed/rxhandbd_004060.png,omidon,neuro-b,0.12881575524806976,False,6,6,1.0,1,1,1.0
+rxhandbd_004061,RxHandBD,test,processed/WritingProcessed/rxhandbd_004061.png,omidon,xinc b,0.022933710366487503,False,6,6,1.0,2,1,2.0
+rxhandbd_004065,RxHandBD,test,processed/WritingProcessed/rxhandbd_004065.png,omidon,neuro-b,0.06362805515527725,False,6,6,1.0,1,1,1.0
+rxhandbd_004068,RxHandBD,test,processed/WritingProcessed/rxhandbd_004068.png,omidon,voltalin,0.049820028245449066,False,6,6,1.0,1,1,1.0
+rxhandbd_004074,RxHandBD,test,processed/WritingProcessed/rxhandbd_004074.png,omidon,voltalin,0.0633101612329483,False,6,6,1.0,1,1,1.0
+rxhandbd_004087,RxHandBD,test,processed/WritingProcessed/rxhandbd_004087.png,oricef,emistat,0.05656600371003151,False,6,6,1.0,1,1,1.0
+rxhandbd_004096,RxHandBD,test,processed/WritingProcessed/rxhandbd_004096.png,ostalal cex,neuro-b,0.04691629484295845,False,11,11,1.0,2,2,1.0
+rxhandbd_004097,RxHandBD,test,processed/WritingProcessed/rxhandbd_004097.png,ostocal,dexter,0.03618881106376648,False,7,7,1.0,1,1,1.0
+rxhandbd_004098,RxHandBD,test,processed/WritingProcessed/rxhandbd_004098.png,ostocal,nexe,0.0644674077630043,False,7,7,1.0,1,1,1.0
+rxhandbd_004112,RxHandBD,test,processed/WritingProcessed/rxhandbd_004112.png,p/c,tablet,0.15246796607971191,False,6,3,2.0,1,1,1.0
+rxhandbd_004113,RxHandBD,test,processed/WritingProcessed/rxhandbd_004113.png,p/c,tablet,0.1406216323375702,False,6,3,2.0,1,1,1.0
+rxhandbd_004122,RxHandBD,test,processed/WritingProcessed/rxhandbd_004122.png,paloxi,napa,0.03968881443142891,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004140,RxHandBD,test,processed/WritingProcessed/rxhandbd_004140.png,pantonix,voltalin,0.09345635771751404,False,6,8,0.75,1,1,1.0
+rxhandbd_004141,RxHandBD,test,processed/WritingProcessed/rxhandbd_004141.png,pantonix,voltalin,0.03668372705578804,False,6,8,0.75,1,1,1.0
+rxhandbd_004148,RxHandBD,test,processed/WritingProcessed/rxhandbd_004148.png,paracetamol,omeprazole,0.35743507742881775,False,9,11,0.8181818181818182,1,1,1.0
+rxhandbd_004149,RxHandBD,test,processed/WritingProcessed/rxhandbd_004149.png,paracetamol,omeprazole,0.2857606112957001,False,9,11,0.8181818181818182,1,1,1.0
+rxhandbd_004166,RxHandBD,test,processed/WritingProcessed/rxhandbd_004166.png,phenocid,dexter,0.06086541712284088,False,7,8,0.875,1,1,1.0
+rxhandbd_004167,RxHandBD,test,processed/WritingProcessed/rxhandbd_004167.png,phylopen,voltalin,0.04008918255567551,False,7,8,0.875,1,1,1.0
+rxhandbd_004172,RxHandBD,test,processed/WritingProcessed/rxhandbd_004172.png,phylopen,voltalin,0.05018673464655876,False,7,8,0.875,1,1,1.0
+rxhandbd_004173,RxHandBD,test,processed/WritingProcessed/rxhandbd_004173.png,phylopen,voltalin,0.03072812780737877,False,7,8,0.875,1,1,1.0
+rxhandbd_004182,RxHandBD,test,processed/WritingProcessed/rxhandbd_004182.png,ponsal,nexe,0.2350582331418991,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004190,RxHandBD,test,processed/WritingProcessed/rxhandbd_004190.png,povital,emistat,0.0639033243060112,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_004197,RxHandBD,test,processed/WritingProcessed/rxhandbd_004197.png,pregan,voltalin,0.04265828803181648,False,6,6,1.0,1,1,1.0
+rxhandbd_004204,RxHandBD,test,processed/WritingProcessed/rxhandbd_004204.png,prestel,diet,0.060708630830049515,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_004205,RxHandBD,test,processed/WritingProcessed/rxhandbd_004205.png,prestel,emistat,0.03846438601613045,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_004206,RxHandBD,test,processed/WritingProcessed/rxhandbd_004206.png,prestel,diet,0.21717305481433868,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_004211,RxHandBD,test,processed/WritingProcessed/rxhandbd_004211.png,prindof,neuro-b,0.19593611359596252,False,7,7,1.0,1,1,1.0
+rxhandbd_004234,RxHandBD,test,processed/WritingProcessed/rxhandbd_004234.png,pronex,omeprazole,0.02158883586525917,False,7,6,1.1666666666666667,1,1,1.0
+rxhandbd_004249,RxHandBD,test,processed/WritingProcessed/rxhandbd_004249.png,protein,xinc b,0.021957600489258766,False,7,7,1.0,2,1,2.0
+rxhandbd_004253,RxHandBD,test,processed/WritingProcessed/rxhandbd_004253.png,protio,dexter,0.07997255772352219,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004255,RxHandBD,test,processed/WritingProcessed/rxhandbd_004255.png,protio,dexter,0.030056236311793327,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004257,RxHandBD,test,processed/WritingProcessed/rxhandbd_004257.png,purifen,algin,0.03114902973175049,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_004274,RxHandBD,test,processed/WritingProcessed/rxhandbd_004274.png,raditil,voltalin,0.10197940468788147,False,7,7,1.0,1,1,1.0
+rxhandbd_004276,RxHandBD,test,processed/WritingProcessed/rxhandbd_004276.png,raditil,emistat,0.06698890775442123,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_004291,RxHandBD,test,processed/WritingProcessed/rxhandbd_004291.png,ratinol,voltalin,0.0742129385471344,False,7,7,1.0,1,1,1.0
+rxhandbd_004299,RxHandBD,test,processed/WritingProcessed/rxhandbd_004299.png,rbc,tablet,0.24080318212509155,False,5,3,1.6666666666666667,1,1,1.0
+rxhandbd_004302,RxHandBD,test,processed/WritingProcessed/rxhandbd_004302.png,rbs,napa,0.3811740279197693,False,4,3,1.3333333333333333,1,1,1.0
+rxhandbd_004304,RxHandBD,test,processed/WritingProcessed/rxhandbd_004304.png,rebe,dexter,0.08066965639591217,False,4,4,1.0,1,1,1.0
+rxhandbd_004307,RxHandBD,test,processed/WritingProcessed/rxhandbd_004307.png,rechnol,voltalin,0.041894860565662384,False,8,7,1.1428571428571428,1,1,1.0
+rxhandbd_004323,RxHandBD,test,processed/WritingProcessed/rxhandbd_004323.png,relenten,neuroxen,0.061441823840141296,False,5,8,0.625,1,1,1.0
+rxhandbd_004333,RxHandBD,test,processed/WritingProcessed/rxhandbd_004333.png,remmo,voltalin,0.1411532461643219,False,8,5,1.6,1,1,1.0
+rxhandbd_004337,RxHandBD,test,processed/WritingProcessed/rxhandbd_004337.png,renova,nexe,0.1926117092370987,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004340,RxHandBD,test,processed/WritingProcessed/rxhandbd_004340.png,renova,napa,0.48302069306373596,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_004352,RxHandBD,test,processed/WritingProcessed/rxhandbd_004352.png,reset,tablet,0.07236509770154953,False,4,5,0.8,1,1,1.0
+rxhandbd_004362,RxHandBD,test,processed/WritingProcessed/rxhandbd_004362.png,revesf,nexe,0.1125960573554039,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_004364,RxHandBD,test,processed/WritingProcessed/rxhandbd_004364.png,revocit,dexter,0.07355218380689621,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_004377,RxHandBD,test,processed/WritingProcessed/rxhandbd_004377.png,rifagut,diet,0.11388008296489716,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_004383,RxHandBD,test,processed/WritingProcessed/rxhandbd_004383.png,rivo,nexe,0.32405900955200195,False,4,4,1.0,1,1,1.0
+rxhandbd_004384,RxHandBD,test,processed/WritingProcessed/rxhandbd_004384.png,rivo,nexe,0.08769319206476212,False,4,4,1.0,1,1,1.0
+rxhandbd_004389,RxHandBD,test,processed/WritingProcessed/rxhandbd_004389.png,rivotril,voltalin,0.11138357222080231,False,6,8,0.75,1,1,1.0
+rxhandbd_004390,RxHandBD,test,processed/WritingProcessed/rxhandbd_004390.png,rivotril,calboral,0.03099791146814823,False,6,8,0.75,1,1,1.0
+rxhandbd_004394,RxHandBD,test,processed/WritingProcessed/rxhandbd_004394.png,rivotril,voltalin,0.13676805794239044,False,6,8,0.75,1,1,1.0
+rxhandbd_004409,RxHandBD,test,processed/WritingProcessed/rxhandbd_004409.png,rodiflex,calcor-d,0.025315342471003532,False,8,8,1.0,1,1,1.0
+rxhandbd_004418,RxHandBD,test,processed/WritingProcessed/rxhandbd_004418.png,rolac,nexe,0.06633877754211426,False,5,5,1.0,1,1,1.0
+rxhandbd_004419,RxHandBD,test,processed/WritingProcessed/rxhandbd_004419.png,rolac,nexe,0.26254817843437195,False,5,5,1.0,1,1,1.0
+rxhandbd_004422,RxHandBD,test,processed/WritingProcessed/rxhandbd_004422.png,rolac,neuro,0.03853359818458557,False,5,5,1.0,1,1,1.0
+rxhandbd_004424,RxHandBD,test,processed/WritingProcessed/rxhandbd_004424.png,rolac,nexe,0.07798346877098083,False,5,5,1.0,1,1,1.0
+rxhandbd_004425,RxHandBD,test,processed/WritingProcessed/rxhandbd_004425.png,rolac,neuro-b,0.06592263281345367,False,6,5,1.2,1,1,1.0
+rxhandbd_004428,RxHandBD,test,processed/WritingProcessed/rxhandbd_004428.png,rolac,nexe,0.3017963469028473,False,5,5,1.0,1,1,1.0
+rxhandbd_004430,RxHandBD,test,processed/WritingProcessed/rxhandbd_004430.png,rolac,tablet,0.3620936870574951,False,5,5,1.0,1,1,1.0
+rxhandbd_004432,RxHandBD,test,processed/WritingProcessed/rxhandbd_004432.png,rolac,tablet,0.16868090629577637,False,5,5,1.0,1,1,1.0
+rxhandbd_004450,RxHandBD,test,processed/WritingProcessed/rxhandbd_004450.png,rolac,tablet,0.3970276117324829,False,5,5,1.0,1,1,1.0
+rxhandbd_004451,RxHandBD,test,processed/WritingProcessed/rxhandbd_004451.png,rolac,tablet,0.20202647149562836,False,5,5,1.0,1,1,1.0
+rxhandbd_004452,RxHandBD,test,processed/WritingProcessed/rxhandbd_004452.png,rolac,tablet,0.2973037660121918,False,5,5,1.0,1,1,1.0
+rxhandbd_004456,RxHandBD,test,processed/WritingProcessed/rxhandbd_004456.png,rolac,diet,0.1091499924659729,False,5,5,1.0,1,1,1.0
+rxhandbd_004459,RxHandBD,test,processed/WritingProcessed/rxhandbd_004459.png,rolac,napa,0.31343185901641846,False,4,5,0.8,1,1,1.0
+rxhandbd_004470,RxHandBD,test,processed/WritingProcessed/rxhandbd_004470.png,rosetn,napa,0.04462559521198273,False,6,6,1.0,1,1,1.0
+rxhandbd_004495,RxHandBD,test,processed/WritingProcessed/rxhandbd_004495.png,rotalac,nexum,0.01705244928598404,False,7,7,1.0,1,1,1.0
+rxhandbd_004503,RxHandBD,test,processed/WritingProcessed/rxhandbd_004503.png,roxadex,neuro-b,0.22150549292564392,False,7,7,1.0,1,1,1.0
+rxhandbd_004509,RxHandBD,test,processed/WritingProcessed/rxhandbd_004509.png,rtv,tablet,0.4418431520462036,False,6,3,2.0,1,1,1.0
+rxhandbd_004512,RxHandBD,test,processed/WritingProcessed/rxhandbd_004512.png,rudi 120,dexter,0.11961815506219864,False,7,8,0.875,2,2,1.0
+rxhandbd_004513,RxHandBD,test,processed/WritingProcessed/rxhandbd_004513.png,ruotinl,napa,0.061739515513181686,False,7,7,1.0,1,1,1.0
+rxhandbd_004526,RxHandBD,test,processed/WritingProcessed/rxhandbd_004526.png,sandin,nexe,0.022111540660262108,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004534,RxHandBD,test,processed/WritingProcessed/rxhandbd_004534.png,seclo,dexter,0.3227371573448181,False,5,5,1.0,1,1,1.0
+rxhandbd_004555,RxHandBD,test,processed/WritingProcessed/rxhandbd_004555.png,sekorin,voltalin,0.02310798689723015,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_004563,RxHandBD,test,processed/WritingProcessed/rxhandbd_004563.png,sergel,dexter,0.07056096196174622,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_004566,RxHandBD,test,processed/WritingProcessed/rxhandbd_004566.png,sergel,nexe,0.061966147273778915,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_004568,RxHandBD,test,processed/WritingProcessed/rxhandbd_004568.png,sergel,napa,0.07989536225795746,False,6,6,1.0,1,1,1.0
+rxhandbd_004572,RxHandBD,test,processed/WritingProcessed/rxhandbd_004572.png,setra,dexter,0.23524555563926697,False,4,5,0.8,1,1,1.0
+rxhandbd_004576,RxHandBD,test,processed/WritingProcessed/rxhandbd_004576.png,sidobac,emistat,0.08429894596338272,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_004578,RxHandBD,test,processed/WritingProcessed/rxhandbd_004578.png,sodibar,emistat,0.03659224137663841,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_004591,RxHandBD,test,processed/WritingProcessed/rxhandbd_004591.png,sperm core,neuroxen,0.04189874231815338,False,8,10,0.8,2,2,1.0
+rxhandbd_004613,RxHandBD,test,processed/WritingProcessed/rxhandbd_004613.png,supp,tablet,0.2589682936668396,False,6,4,1.5,1,1,1.0
+rxhandbd_004621,RxHandBD,test,processed/WritingProcessed/rxhandbd_004621.png,supp,nexe,0.13812115788459778,False,4,4,1.0,1,1,1.0
+rxhandbd_004625,RxHandBD,test,processed/WritingProcessed/rxhandbd_004625.png,suppository,tablet,0.13966111838817596,False,10,11,0.9090909090909091,1,1,1.0
+rxhandbd_004628,RxHandBD,test,processed/WritingProcessed/rxhandbd_004628.png,suzyme,dexter,0.13602513074874878,False,6,6,1.0,1,1,1.0
+rxhandbd_004633,RxHandBD,test,processed/WritingProcessed/rxhandbd_004633.png,synogen,voltalin,0.04502350836992264,False,7,7,1.0,1,1,1.0
+rxhandbd_004641,RxHandBD,test,processed/WritingProcessed/rxhandbd_004641.png,syp deslor,neuro-b,0.04321575537323952,False,9,10,0.9,2,2,1.0
+rxhandbd_004643,RxHandBD,test,processed/WritingProcessed/rxhandbd_004643.png,syp. urisef,calboral,0.04140489548444748,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_004649,RxHandBD,test,processed/WritingProcessed/rxhandbd_004649.png,syrup,tablet,0.46836379170417786,False,6,5,1.2,1,1,1.0
+rxhandbd_004650,RxHandBD,test,processed/WritingProcessed/rxhandbd_004650.png,syrup,napa,0.0967680886387825,False,5,5,1.0,1,1,1.0
+rxhandbd_004658,RxHandBD,test,processed/WritingProcessed/rxhandbd_004658.png,syrup,tablet,0.16974130272865295,False,6,5,1.2,1,1,1.0
+rxhandbd_004665,RxHandBD,test,processed/WritingProcessed/rxhandbd_004665.png,syrup,tablet,0.3900851905345917,False,6,5,1.2,1,1,1.0
+rxhandbd_004671,RxHandBD,test,processed/WritingProcessed/rxhandbd_004671.png,syrup,tablet,0.4425943195819855,False,6,5,1.2,1,1,1.0
+rxhandbd_004672,RxHandBD,test,processed/WritingProcessed/rxhandbd_004672.png,syrup,tablet,0.48899081349372864,False,6,5,1.2,1,1,1.0
+rxhandbd_004679,RxHandBD,test,processed/WritingProcessed/rxhandbd_004679.png,tab,tablet,0.420186311006546,False,3,3,1.0,1,1,1.0
+rxhandbd_004683,RxHandBD,test,processed/WritingProcessed/rxhandbd_004683.png,tab,tablet,0.5415513515472412,False,3,3,1.0,1,1,1.0
+rxhandbd_004688,RxHandBD,test,processed/WritingProcessed/rxhandbd_004688.png,tab,tablet,0.5553660988807678,False,3,3,1.0,1,1,1.0
+rxhandbd_004704,RxHandBD,test,processed/WritingProcessed/rxhandbd_004704.png,tab,tablet,0.20953738689422607,False,3,3,1.0,1,1,1.0
+rxhandbd_004705,RxHandBD,test,processed/WritingProcessed/rxhandbd_004705.png,tab,tablet,0.23793278634548187,False,3,3,1.0,1,1,1.0
+rxhandbd_004716,RxHandBD,test,processed/WritingProcessed/rxhandbd_004716.png,tab. amitip 10,neuro-b,0.14078426361083984,False,14,14,1.0,3,3,1.0
+rxhandbd_004726,RxHandBD,test,processed/WritingProcessed/rxhandbd_004726.png,tab. calboral-dx,neuro-b,0.23975682258605957,False,14,16,0.875,2,2,1.0
+rxhandbd_004735,RxHandBD,test,processed/WritingProcessed/rxhandbd_004735.png,tab. epitra,neuro-b,0.08660594373941422,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_004741,RxHandBD,test,processed/WritingProcessed/rxhandbd_004741.png,tab. geofoenil,neuro-b,0.1527758687734604,False,12,14,0.8571428571428571,2,2,1.0
+rxhandbd_004744,RxHandBD,test,processed/WritingProcessed/rxhandbd_004744.png,tab. menoral,omeprazole,0.025409415364265442,False,10,12,0.8333333333333334,2,2,1.0
+rxhandbd_004762,RxHandBD,test,processed/WritingProcessed/rxhandbd_004762.png,tab.calboral,neuro-b,0.07434115558862686,False,11,12,0.9166666666666666,1,1,1.0
+rxhandbd_004783,RxHandBD,test,processed/WritingProcessed/rxhandbd_004783.png,tablet,tablet,0.4381968379020691,True,0,6,0.0,0,1,0.0
+rxhandbd_004785,RxHandBD,test,processed/WritingProcessed/rxhandbd_004785.png,tablet,tablet,0.6445496082305908,True,0,6,0.0,0,1,0.0
+rxhandbd_004792,RxHandBD,test,processed/WritingProcessed/rxhandbd_004792.png,tablet,tablet,0.6203373074531555,True,0,6,0.0,0,1,0.0
+rxhandbd_004795,RxHandBD,test,processed/WritingProcessed/rxhandbd_004795.png,tablet,tablet,0.3783259689807892,True,0,6,0.0,0,1,0.0
+rxhandbd_004800,RxHandBD,test,processed/WritingProcessed/rxhandbd_004800.png,tablet,tablet,0.5412790775299072,True,0,6,0.0,0,1,0.0
+rxhandbd_004808,RxHandBD,test,processed/WritingProcessed/rxhandbd_004808.png,tablet,napa,0.2158314287662506,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_004817,RxHandBD,test,processed/WritingProcessed/rxhandbd_004817.png,tablet,tablet,0.587017834186554,True,0,6,0.0,0,1,0.0
+rxhandbd_004818,RxHandBD,test,processed/WritingProcessed/rxhandbd_004818.png,tablet,tablet,0.5190426707267761,True,0,6,0.0,0,1,0.0
+rxhandbd_004819,RxHandBD,test,processed/WritingProcessed/rxhandbd_004819.png,tablet,tablet,0.45051300525665283,True,0,6,0.0,0,1,0.0
+rxhandbd_004820,RxHandBD,test,processed/WritingProcessed/rxhandbd_004820.png,tablet,tablet,0.6149172782897949,True,0,6,0.0,0,1,0.0
+rxhandbd_004825,RxHandBD,test,processed/WritingProcessed/rxhandbd_004825.png,tablet,tablet,0.5981624722480774,True,0,6,0.0,0,1,0.0
+rxhandbd_004848,RxHandBD,test,processed/WritingProcessed/rxhandbd_004848.png,tablet,tablet,0.664572536945343,True,0,6,0.0,0,1,0.0
+rxhandbd_004854,RxHandBD,test,processed/WritingProcessed/rxhandbd_004854.png,tablet,tablet,0.42878836393356323,True,0,6,0.0,0,1,0.0
+rxhandbd_004856,RxHandBD,test,processed/WritingProcessed/rxhandbd_004856.png,tablet,tablet,0.5391733646392822,True,0,6,0.0,0,1,0.0
+rxhandbd_004886,RxHandBD,test,processed/WritingProcessed/rxhandbd_004886.png,tablet,tablet,0.5521541237831116,True,0,6,0.0,0,1,0.0
+rxhandbd_004888,RxHandBD,test,processed/WritingProcessed/rxhandbd_004888.png,tablet,tablet,0.3729911148548126,True,0,6,0.0,0,1,0.0
+rxhandbd_004897,RxHandBD,test,processed/WritingProcessed/rxhandbd_004897.png,tablet,tablet,0.259018212556839,True,0,6,0.0,0,1,0.0
+rxhandbd_004906,RxHandBD,test,processed/WritingProcessed/rxhandbd_004906.png,tablet,tablet,0.4386472702026367,True,0,6,0.0,0,1,0.0
+rxhandbd_004914,RxHandBD,test,processed/WritingProcessed/rxhandbd_004914.png,tal,tablet,0.19100479781627655,False,3,3,1.0,1,1,1.0
+rxhandbd_004918,RxHandBD,test,processed/WritingProcessed/rxhandbd_004918.png,tazid,diet,0.05608835071325302,False,5,5,1.0,1,1,1.0
+rxhandbd_004919,RxHandBD,test,processed/WritingProcessed/rxhandbd_004919.png,tb. altaxc,neuro-b,0.026891175657510757,False,10,10,1.0,2,2,1.0
+rxhandbd_004923,RxHandBD,test,processed/WritingProcessed/rxhandbd_004923.png,tb. mccol,xinc b,0.0171801820397377,False,8,9,0.8888888888888888,2,2,1.0
+rxhandbd_004925,RxHandBD,test,processed/WritingProcessed/rxhandbd_004925.png,tb. torax,calboral,0.01590103842318058,False,6,9,0.6666666666666666,2,2,1.0
+rxhandbd_004940,RxHandBD,test,processed/WritingProcessed/rxhandbd_004940.png,telmidip,napa,0.08592531830072403,False,8,8,1.0,1,1,1.0
+rxhandbd_004947,RxHandBD,test,processed/WritingProcessed/rxhandbd_004947.png,temlonil,neuroxen,0.06240053102374077,False,6,8,0.75,1,1,1.0
+rxhandbd_004956,RxHandBD,test,processed/WritingProcessed/rxhandbd_004956.png,tersilla-sr,calcor-d,0.022233564406633377,False,10,11,0.9090909090909091,1,1,1.0
+rxhandbd_004961,RxHandBD,test,processed/WritingProcessed/rxhandbd_004961.png,texit,texit,0.09677379578351974,True,0,5,0.0,0,1,0.0
+rxhandbd_004970,RxHandBD,test,processed/WritingProcessed/rxhandbd_004970.png,texit,nexe,0.12047165632247925,False,3,5,0.6,1,1,1.0
+rxhandbd_004976,RxHandBD,test,processed/WritingProcessed/rxhandbd_004976.png,texit,tablet,0.45128336548805237,False,4,5,0.8,1,1,1.0
+rxhandbd_004978,RxHandBD,test,processed/WritingProcessed/rxhandbd_004978.png,texit,diet,0.18964388966560364,False,4,5,0.8,1,1,1.0
+rxhandbd_005002,RxHandBD,test,processed/WritingProcessed/rxhandbd_005002.png,thyrox,algin,0.018165424466133118,False,6,6,1.0,1,1,1.0
+rxhandbd_005012,RxHandBD,test,processed/WritingProcessed/rxhandbd_005012.png,tiginor,voltalin,0.06956606358289719,False,7,7,1.0,1,1,1.0
+rxhandbd_005027,RxHandBD,test,processed/WritingProcessed/rxhandbd_005027.png,todol,xinc b,0.024146465584635735,False,6,5,1.2,2,1,2.0
+rxhandbd_005032,RxHandBD,test,processed/WritingProcessed/rxhandbd_005032.png,tofen,nexe,0.045439913868904114,False,4,5,0.8,1,1,1.0
+rxhandbd_005037,RxHandBD,test,processed/WritingProcessed/rxhandbd_005037.png,tofen,tablet,0.15311191976070404,False,4,5,0.8,1,1,1.0
+rxhandbd_005038,RxHandBD,test,processed/WritingProcessed/rxhandbd_005038.png,tojenta,texit,0.12436862289905548,False,5,7,0.7142857142857143,1,1,1.0
+rxhandbd_005046,RxHandBD,test,processed/WritingProcessed/rxhandbd_005046.png,topmate,emistat,0.11108220368623734,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005055,RxHandBD,test,processed/WritingProcessed/rxhandbd_005055.png,torax,dexter,0.027935655787587166,False,6,5,1.2,1,1,1.0
+rxhandbd_005063,RxHandBD,test,processed/WritingProcessed/rxhandbd_005063.png,torax,dexter,0.0710565447807312,False,6,5,1.2,1,1,1.0
+rxhandbd_005068,RxHandBD,test,processed/WritingProcessed/rxhandbd_005068.png,torax,nexe,0.10739351809024811,False,5,5,1.0,1,1,1.0
+rxhandbd_005081,RxHandBD,test,processed/WritingProcessed/rxhandbd_005081.png,torax,nexe,0.1818280965089798,False,5,5,1.0,1,1,1.0
+rxhandbd_005083,RxHandBD,test,processed/WritingProcessed/rxhandbd_005083.png,torax,napa,0.2783556878566742,False,4,5,0.8,1,1,1.0
+rxhandbd_005084,RxHandBD,test,processed/WritingProcessed/rxhandbd_005084.png,torex,nexe,0.23345084488391876,False,4,5,0.8,1,1,1.0
+rxhandbd_005090,RxHandBD,test,processed/WritingProcessed/rxhandbd_005090.png,toxit,texit,0.07809186726808548,False,1,5,0.2,1,1,1.0
+rxhandbd_005096,RxHandBD,test,processed/WritingProcessed/rxhandbd_005096.png,traxyl,napa,0.19375412166118622,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_005102,RxHandBD,test,processed/WritingProcessed/rxhandbd_005102.png,trd coutine,voltalin,0.07025982439517975,False,9,11,0.8181818181818182,2,2,1.0
+rxhandbd_005105,RxHandBD,test,processed/WritingProcessed/rxhandbd_005105.png,trerox,voltalin,0.10281864553689957,False,8,6,1.3333333333333333,1,1,1.0
+rxhandbd_005118,RxHandBD,test,processed/WritingProcessed/rxhandbd_005118.png,trilock 10,voltalin,0.04310326650738716,False,9,10,0.9,2,2,1.0
+rxhandbd_005122,RxHandBD,test,processed/WritingProcessed/rxhandbd_005122.png,trizon,texit,0.044286902993917465,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_005123,RxHandBD,test,processed/WritingProcessed/rxhandbd_005123.png,trocar sr,napa,0.03878767043352127,False,8,9,0.8888888888888888,2,2,1.0
+rxhandbd_005128,RxHandBD,test,processed/WritingProcessed/rxhandbd_005128.png,trypt,emistat,0.0796506255865097,False,6,5,1.2,1,1,1.0
+rxhandbd_005136,RxHandBD,test,processed/WritingProcessed/rxhandbd_005136.png,tryptin,emistat,0.13269077241420746,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005144,RxHandBD,test,processed/WritingProcessed/rxhandbd_005144.png,turboclav,voltalin,0.12245189398527145,False,8,9,0.8888888888888888,1,1,1.0
+rxhandbd_005151,RxHandBD,test,processed/WritingProcessed/rxhandbd_005151.png,tyclav,dexter,0.3729317784309387,False,6,6,1.0,1,1,1.0
+rxhandbd_005156,RxHandBD,test,processed/WritingProcessed/rxhandbd_005156.png,ucrafate,calcor-d,0.0626983642578125,False,8,8,1.0,1,1,1.0
+rxhandbd_005157,RxHandBD,test,processed/WritingProcessed/rxhandbd_005157.png,uful dx,calcor-d,0.019217392429709435,False,8,7,1.1428571428571428,2,2,1.0
+rxhandbd_005159,RxHandBD,test,processed/WritingProcessed/rxhandbd_005159.png,uliv,dexter,0.038322314620018005,False,6,4,1.5,1,1,1.0
+rxhandbd_005164,RxHandBD,test,processed/WritingProcessed/rxhandbd_005164.png,uliv 150,neuroxen,0.02872932143509388,False,8,8,1.0,2,2,1.0
+rxhandbd_005166,RxHandBD,test,processed/WritingProcessed/rxhandbd_005166.png,ultrox,neuro-b,0.03666098043322563,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_005173,RxHandBD,test,processed/WritingProcessed/rxhandbd_005173.png,ursocol,nexe,0.05899318307638168,False,7,7,1.0,1,1,1.0
+rxhandbd_005175,RxHandBD,test,processed/WritingProcessed/rxhandbd_005175.png,utifos,texit,0.0959053635597229,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_005187,RxHandBD,test,processed/WritingProcessed/rxhandbd_005187.png,vancomycin,omeprazole,0.10475455969572067,False,10,10,1.0,1,1,1.0
+rxhandbd_005197,RxHandBD,test,processed/WritingProcessed/rxhandbd_005197.png,vasco,tablet,0.17435337603092194,False,5,5,1.0,1,1,1.0
+rxhandbd_005203,RxHandBD,test,processed/WritingProcessed/rxhandbd_005203.png,vaxitet,dexter,0.19828970730304718,False,4,7,0.5714285714285714,1,1,1.0
+rxhandbd_005220,RxHandBD,test,processed/WritingProcessed/rxhandbd_005220.png,viglimef,dexter,0.12057048082351685,False,7,8,0.875,1,1,1.0
+rxhandbd_005227,RxHandBD,test,processed/WritingProcessed/rxhandbd_005227.png,vigorex,dexter,0.13897377252578735,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005239,RxHandBD,test,processed/WritingProcessed/rxhandbd_005239.png,vineet,nexe,0.16385139524936676,False,4,6,0.6666666666666666,1,1,1.0
+rxhandbd_005247,RxHandBD,test,processed/WritingProcessed/rxhandbd_005247.png,visnon,voltalin,0.0375249907374382,False,6,6,1.0,1,1,1.0
+rxhandbd_005250,RxHandBD,test,processed/WritingProcessed/rxhandbd_005250.png,vofifew qel,neuroxen,0.12913954257965088,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_005266,RxHandBD,test,processed/WritingProcessed/rxhandbd_005266.png,voltalin,voltalin,0.04578375443816185,True,0,8,0.0,0,1,0.0
+rxhandbd_005268,RxHandBD,test,processed/WritingProcessed/rxhandbd_005268.png,voltalin,voltalin,0.07998717576265335,True,0,8,0.0,0,1,0.0
+rxhandbd_005274,RxHandBD,test,processed/WritingProcessed/rxhandbd_005274.png,voltalin,napa,0.0523238442838192,False,7,8,0.875,1,1,1.0
+rxhandbd_005278,RxHandBD,test,processed/WritingProcessed/rxhandbd_005278.png,voltalin,voltalin,0.11610090732574463,True,0,8,0.0,0,1,0.0
+rxhandbd_005281,RxHandBD,test,processed/WritingProcessed/rxhandbd_005281.png,voltalin,voltalin,0.0672793760895729,True,0,8,0.0,0,1,0.0
+rxhandbd_005290,RxHandBD,test,processed/WritingProcessed/rxhandbd_005290.png,voltalin,napa,0.2438708245754242,False,7,8,0.875,1,1,1.0
+rxhandbd_005298,RxHandBD,test,processed/WritingProcessed/rxhandbd_005298.png,voltalin,diet,0.09273148328065872,False,7,8,0.875,1,1,1.0
+rxhandbd_005301,RxHandBD,test,processed/WritingProcessed/rxhandbd_005301.png,voltalin,tablet,0.10733885318040848,False,6,8,0.75,1,1,1.0
+rxhandbd_005318,RxHandBD,test,processed/WritingProcessed/rxhandbd_005318.png,voltalin,voltalin,0.11303021758794785,True,0,8,0.0,0,1,0.0
+rxhandbd_005326,RxHandBD,test,processed/WritingProcessed/rxhandbd_005326.png,voltalin,voltalin,0.1918402910232544,True,0,8,0.0,0,1,0.0
+rxhandbd_005328,RxHandBD,test,processed/WritingProcessed/rxhandbd_005328.png,voltalin,voltalin,0.12925498187541962,True,0,8,0.0,0,1,0.0
+rxhandbd_005330,RxHandBD,test,processed/WritingProcessed/rxhandbd_005330.png,voltalin,voltalin,0.02783147618174553,True,0,8,0.0,0,1,0.0
+rxhandbd_005337,RxHandBD,test,processed/WritingProcessed/rxhandbd_005337.png,voltalin,voltalin,0.3234105408191681,True,0,8,0.0,0,1,0.0
+rxhandbd_005339,RxHandBD,test,processed/WritingProcessed/rxhandbd_005339.png,voltalin -d,neuro-b,0.23722100257873535,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_005351,RxHandBD,test,processed/WritingProcessed/rxhandbd_005351.png,vonocab,voltalin,0.0431952029466629,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005355,RxHandBD,test,processed/WritingProcessed/rxhandbd_005355.png,vonocab,neuro-b,0.036267898976802826,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005361,RxHandBD,test,processed/WritingProcessed/rxhandbd_005361.png,vonocab,voltalin,0.06713276356458664,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005364,RxHandBD,test,processed/WritingProcessed/rxhandbd_005364.png,vorinox,dexter,0.054262924939394,False,7,7,1.0,1,1,1.0
+rxhandbd_005365,RxHandBD,test,processed/WritingProcessed/rxhandbd_005365.png,vorinox,dexter,0.08205118030309677,False,7,7,1.0,1,1,1.0
+rxhandbd_005373,RxHandBD,test,processed/WritingProcessed/rxhandbd_005373.png,v-plex,nexe,0.044185709208250046,False,5,6,0.8333333333333334,1,1,1.0
+rxhandbd_005382,RxHandBD,test,processed/WritingProcessed/rxhandbd_005382.png,windel plus,omeprazole,0.07680400460958481,False,10,11,0.9090909090909091,2,2,1.0
+rxhandbd_005401,RxHandBD,test,processed/WritingProcessed/rxhandbd_005401.png,x-fen,nexe,0.043564751744270325,False,4,5,0.8,1,1,1.0
+rxhandbd_005402,RxHandBD,test,processed/WritingProcessed/rxhandbd_005402.png,xinc,tablet,0.1687626838684082,False,6,4,1.5,1,1,1.0
+rxhandbd_005411,RxHandBD,test,processed/WritingProcessed/rxhandbd_005411.png,xinc,tablet,0.2623896896839142,False,6,4,1.5,1,1,1.0
+rxhandbd_005417,RxHandBD,test,processed/WritingProcessed/rxhandbd_005417.png,xinc b,dexter,0.08528453856706619,False,6,6,1.0,2,2,1.0
+rxhandbd_005419,RxHandBD,test,processed/WritingProcessed/rxhandbd_005419.png,xinc b,xinc b,0.03074830211699009,True,0,6,0.0,0,2,0.0
+rxhandbd_005420,RxHandBD,test,processed/WritingProcessed/rxhandbd_005420.png,xinc b,dexter,0.038109537214040756,False,6,6,1.0,2,2,1.0
+rxhandbd_005422,RxHandBD,test,processed/WritingProcessed/rxhandbd_005422.png,xinc b,dexter,0.10585533082485199,False,6,6,1.0,2,2,1.0
+rxhandbd_005429,RxHandBD,test,processed/WritingProcessed/rxhandbd_005429.png,xinc b,injection,0.28359487652778625,False,7,6,1.1666666666666667,2,2,1.0
+rxhandbd_005439,RxHandBD,test,processed/WritingProcessed/rxhandbd_005439.png,xinc b,voltalin,0.08876357972621918,False,8,6,1.3333333333333333,2,2,1.0
+rxhandbd_005440,RxHandBD,test,processed/WritingProcessed/rxhandbd_005440.png,xinc b,xinc b,0.03835460543632507,True,0,6,0.0,0,2,0.0
+rxhandbd_005465,RxHandBD,test,processed/WritingProcessed/rxhandbd_005465.png,xinc b,nexe,0.1410721242427826,False,5,6,0.8333333333333334,2,2,1.0
+rxhandbd_005476,RxHandBD,test,processed/WritingProcessed/rxhandbd_005476.png,xolpro,xinc b,0.025921734049916267,False,5,6,0.8333333333333334,2,1,2.0
+rxhandbd_005479,RxHandBD,test,processed/WritingProcessed/rxhandbd_005479.png,x-ray c/s,neuro-b,0.04673910140991211,False,9,9,1.0,2,2,1.0
+rxhandbd_005505,RxHandBD,test,processed/WritingProcessed/rxhandbd_005505.png,xyrl 10,dexter,0.04667595028877258,False,7,7,1.0,2,2,1.0
+rxhandbd_005510,RxHandBD,test,processed/WritingProcessed/rxhandbd_005510.png,zesup,nexe,0.11002815514802933,False,4,5,0.8,1,1,1.0
+rxhandbd_005521,RxHandBD,test,processed/WritingProcessed/rxhandbd_005521.png,zimax,nexe,0.08673390746116638,False,5,5,1.0,1,1,1.0
+rxhandbd_005529,RxHandBD,test,processed/WritingProcessed/rxhandbd_005529.png,zimax,nexe,0.11541540920734406,False,5,5,1.0,1,1,1.0
+rxhandbd_005530,RxHandBD,test,processed/WritingProcessed/rxhandbd_005530.png,zimax,emistat,0.037010274827480316,False,5,5,1.0,1,1,1.0
+rxhandbd_005535,RxHandBD,test,processed/WritingProcessed/rxhandbd_005535.png,zithrox,dexter,0.11997874826192856,False,6,7,0.8571428571428571,1,1,1.0
+rxhandbd_005540,RxHandBD,test,processed/WritingProcessed/rxhandbd_005540.png,zo.mups 20,omeprazole,0.043725237250328064,False,9,10,0.9,2,2,1.0
+rxhandbd_005542,RxHandBD,test,processed/WritingProcessed/rxhandbd_005542.png,zo.mups 20,napa,0.17146196961402893,False,9,10,0.9,2,2,1.0
+rxhandbd_005547,RxHandBD,test,processed/WritingProcessed/rxhandbd_005547.png,zolhivm 5,voltalin,0.02441050484776497,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_005560,RxHandBD,test,processed/WritingProcessed/rxhandbd_005560.png,zymat pro,omeprazole,0.06289374828338623,False,9,9,1.0,2,2,1.0
+rxhandbd_005561,RxHandBD,test,processed/WritingProcessed/rxhandbd_005561.png,zymef,neuroxen,0.05241489037871361,False,7,5,1.4,1,1,1.0
+rxhandbd_005565,RxHandBD,test,processed/WritingProcessed/rxhandbd_005565.png,zymef pro,neuroxen,0.061492789536714554,False,9,9,1.0,2,2,1.0
+rxhandbd_005572,RxHandBD,test,processed/WritingProcessed/rxhandbd_005572.png,zymet pro,dexter,0.17930275201797485,False,7,9,0.7777777777777778,2,2,1.0
+rxhandbd_005578,RxHandBD,test,processed/WritingProcessed/rxhandbd_005578.png,???,voltalin,0.036363836377859116,False,8,3,2.6666666666666665,1,1,1.0

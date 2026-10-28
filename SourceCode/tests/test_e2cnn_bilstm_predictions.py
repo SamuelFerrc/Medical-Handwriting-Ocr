@@ -18,7 +18,7 @@ from med_ocr_research.models.E2CnnBiLSTM import E2CnnBiLSTM
 
 
 DEFAULT_CHECKPOINT = (
-    PROJECT_ROOT / "outputs/runs/e2.02/e2cnn_bilstm_best_checkpoint.pt"
+    PROJECT_ROOT / "outputs/runs/e2.02_seed42/e2cnn_bilstm_best_checkpoint.pt"
 )
 DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
 DEFAULT_DATA_ROOT = PROJECT_ROOT / "data"

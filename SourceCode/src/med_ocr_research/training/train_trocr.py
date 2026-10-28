@@ -28,6 +28,7 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 from med_ocr_research.evaluation.metrics import aggregate_metrics
+from med_ocr_research.experiments.seeds import ensure_new_run, seeded_run_name
 from med_ocr_research.training.augmentation import build_handwriting_train_transform
 
 
@@ -43,7 +44,7 @@ SUPPORTED_DATASETS = ("prescriptionbd", "rxhandbd", "combined")
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Faz fine-tuning do TrOCR em um split selecionavel. Use --dataset "
+            "Treina o TrOCR em um split selecionavel. Use --dataset "
             "para os cenarios prontos ou --train-csv/--val-csv para outro dataset."
         )
     )
@@ -89,9 +90,12 @@ def parse_args() -> argparse.Namespace:
             "--checkpoint."
         ),
     )
+    parser.add_argument("--pretrained", dest="pretrained", action="store_true")
+    parser.add_argument("--no-pretrained", dest="pretrained", action="store_false")
+    parser.set_defaults(pretrained=False)
     parser.add_argument("--label-column", default="text_normalized")
     parser.add_argument("--image-column", default="image_path")
-    parser.add_argument("--epochs", type=int, default=50)
+    parser.add_argument("--epochs", type=int, default=200)
     parser.add_argument(
         "--batch-size",
         type=int,
@@ -141,11 +145,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--augmentation-strength",
         choices=("light", "medium", "strong"),
-        default="medium",
+        default="strong",
     )
     parser.add_argument("--limit-train-samples", type=int, default=None)
     parser.add_argument("--limit-val-samples", type=int, default=None)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--protocol-version", default="custom")
+    parser.add_argument("--protocol-fingerprint", default="")
     return parser.parse_args()
 
 
@@ -256,7 +262,17 @@ def load_trocr_components(args: argparse.Namespace) -> tuple[Any, Any]:
                 feature_extractor=image_processor,
                 tokenizer=tokenizer,
             )
-    model = VisionEncoderDecoderModel.from_pretrained(args.checkpoint)
+    if getattr(args, "pretrained", False):
+        model = VisionEncoderDecoderModel.from_pretrained(args.checkpoint)
+    else:
+        from transformers import VisionEncoderDecoderConfig
+
+        # Only architecture/tokenizer configuration comes from the checkpoint.
+        # The constructor creates encoder and decoder from config, with random
+        # weights; it never invokes a pretrained model loader.
+        model = VisionEncoderDecoderModel(
+            config=VisionEncoderDecoderConfig.from_pretrained(args.checkpoint)
+        )
     configure_generation(model, processor, args)
     return processor, model
 
@@ -361,6 +377,21 @@ class TrOCRSplitDataset(Dataset):
             raise ValueError(f"Nenhuma amostra encontrada em {csv_path}")
 
         self.rows = rows.reset_index(drop=True)
+        # Truncating a target silently would train/validate against a different
+        # reference. Check every label before the first optimization step.
+        for row_index, text in enumerate(self.rows[label_column]):
+            token_ids = processor.tokenizer(
+                text,
+                padding=False,
+                max_length=max_target_length,
+                truncation=False,
+            ).input_ids
+            if len(token_ids) > max_target_length:
+                raise ValueError(
+                    f"Rotulo da linha {row_index} em {csv_path} possui "
+                    f"{len(token_ids)} tokens e excede --max-target-length "
+                    f"{max_target_length}; aumente o limite sem truncar referencias."
+                )
 
     def __len__(self) -> int:
         return len(self.rows)
@@ -384,7 +415,7 @@ class TrOCRSplitDataset(Dataset):
             text,
             padding="max_length",
             max_length=self.max_target_length,
-            truncation=True,
+            truncation=False,
         )
         labels = [
             token_id
@@ -460,6 +491,38 @@ def save_character_distribution_csv(
     pd.DataFrame(rows).to_csv(output_path, index=False)
 
 
+def training_protocol_metadata(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        "protocol_version": args.protocol_version,
+        "protocol_fingerprint": args.protocol_fingerprint,
+        "seed": args.seed,
+        "pretrained": args.pretrained,
+        "initialization": "pretrained" if args.pretrained else "random",
+        "effective_batch_size": args.batch_size * args.gradient_accumulation_steps,
+        "optimizer": "AdamW",
+        "scheduler": "linear_warmup",
+        "checkpoint_selection": "min_val_cer_then_max_val_accuracy",
+    }
+
+
+def trocr_processor_metadata(processor: Any, image_size: tuple[int, int]) -> dict[str, Any]:
+    # The processor may resize again (e.g. 64x512 PIL -> 384x384 DeiT input).
+    # Probe a synthetic image without augmentation to record actual tensor size
+    # without consuming the training RNG or reading a training sample.
+    pixels = processor(
+        images=Image.new("RGB", (image_size[1], image_size[0]), "white"),
+        return_tensors="pt",
+    ).pixel_values
+    return {
+        "encoder_input_channels": int(pixels.shape[-3]),
+        "encoder_input_height": int(pixels.shape[-2]),
+        "encoder_input_width": int(pixels.shape[-1]),
+        "image_preprocessing": "RGB_PIL_resize_then_native_processor",
+        "tokenizer_source": "checkpoint_vocabulary_and_tokenization_rules",
+        "tokenizer_class": type(processor.tokenizer).__name__,
+    }
+
+
 def save_run_config_csv(
     args: argparse.Namespace,
     output_dir: Path,
@@ -476,6 +539,8 @@ def save_run_config_csv(
         [
             {
                 "run_name": args.run_name,
+                **training_protocol_metadata(args),
+                **trocr_processor_metadata(processor, (args.image_height, args.image_width)),
                 "model_kind": "trocr",
                 "checkpoint": args.checkpoint,
                 "processor_checkpoint": args.processor_checkpoint or args.checkpoint,
@@ -502,7 +567,6 @@ def save_run_config_csv(
                 "fp16": args.fp16,
                 "gradient_checkpointing": args.gradient_checkpointing,
                 "freeze_encoder": args.freeze_encoder,
-                "seed": args.seed,
                 "device": str(device),
                 "cuda_available": torch.cuda.is_available(),
                 "cuda_device_name": (
@@ -534,9 +598,19 @@ def optimizer_step(
     scheduler: Any,
     scaler: torch.cuda.amp.GradScaler,
     args: argparse.Namespace,
+    accumulated_samples: int | None = None,
 ) -> None:
-    if args.max_grad_norm and args.max_grad_norm > 0:
+    if accumulated_samples is not None and accumulated_samples < 1:
+        raise ValueError("A janela de acumulacao precisa conter amostras.")
+    if accumulated_samples is not None or (args.max_grad_norm and args.max_grad_norm > 0):
         scaler.unscale_(optimizer)
+    if accumulated_samples is not None:
+        # Microbatches contribute their sample-weighted loss sum. Normalize by
+        # the actual window size, including an incomplete final microbatch/window.
+        for parameter in model.parameters():
+            if parameter.grad is not None:
+                parameter.grad.div_(accumulated_samples)
+    if args.max_grad_norm and args.max_grad_norm > 0:
         torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
     scale_before_step = scaler.get_scale()
     scaler.step(optimizer)
@@ -566,6 +640,7 @@ def train_one_epoch(
     optimizer.zero_grad(set_to_none=True)
     total_loss = 0.0
     total_samples = 0
+    accumulated_samples = 0
     use_amp = bool(args.fp16 and device.type == "cuda")
     progress = tqdm(dataloader, desc="Treino", leave=False)
 
@@ -581,9 +656,10 @@ def train_one_epoch(
 
         with autocast_context:
             outputs = model(pixel_values=pixel_values, labels=labels)
-            loss = outputs.loss / args.gradient_accumulation_steps
+            loss = outputs.loss
 
-        scaler.scale(loss).backward()
+        scaler.scale(loss * batch_size).backward()
+        accumulated_samples += batch_size
         should_step = (
             batch_index % args.gradient_accumulation_steps == 0
             or batch_index == len(dataloader)
@@ -595,9 +671,11 @@ def train_one_epoch(
                 scheduler=scheduler,
                 scaler=scaler,
                 args=args,
+                accumulated_samples=accumulated_samples,
             )
+            accumulated_samples = 0
 
-        loss_value = float(loss.detach().item()) * args.gradient_accumulation_steps
+        loss_value = float(loss.detach().item())
         total_loss += loss_value * batch_size
         total_samples += batch_size
         progress.set_postfix(loss=f"{loss_value:.4f}")
@@ -620,7 +698,7 @@ def evaluate(
     prediction_rows: list[dict[str, Any]] = []
 
     with torch.no_grad():
-        for batch_index, batch in enumerate(tqdm(dataloader, desc="Validacao", leave=False)):
+        for batch in tqdm(dataloader, desc="Validacao", leave=False):
             pixel_values = batch["pixel_values"].to(device)
             labels = batch["labels"].to(device)
             outputs = model(pixel_values=pixel_values, labels=labels)
@@ -641,7 +719,7 @@ def evaluate(
             references.extend(batch_references)
             predictions.extend(batch_predictions)
 
-            start_index = batch_index * args.batch_size
+            start_index = total_samples - batch_size
             for offset, (reference, prediction) in enumerate(
                 zip(batch_references, batch_predictions)
             ):
@@ -719,14 +797,18 @@ def main() -> None:
     )
     if args.run_name is None:
         args.run_name = default_run_name(args.dataset, args.checkpoint)
-    args.run_name = sanitize_run_name(args.run_name)
+    args.run_name = seeded_run_name(sanitize_run_name(args.run_name), args.seed)
 
     seed_everything(args.seed)
     device = choose_device()
     output_dir = resolve_output_dir(args.run_name, args.output_dir)
+    ensure_new_run(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     processor, model = load_trocr_components(args)
+    input_metadata = trocr_processor_metadata(
+        processor, (args.image_height, args.image_width)
+    )
     freeze_encoder_if_requested(model, args.freeze_encoder)
     enable_gradient_checkpointing_if_requested(model, args.gradient_checkpointing)
     model.to(device)
@@ -766,6 +848,7 @@ def main() -> None:
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
         collate_fn=trocr_collate,
+        generator=torch.Generator().manual_seed(args.seed),
     )
     val_dataloader = DataLoader(
         val_dataset,
@@ -774,6 +857,7 @@ def main() -> None:
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
         collate_fn=trocr_collate,
+        generator=torch.Generator().manual_seed(args.seed),
     )
 
     optimizer = torch.optim.AdamW(
@@ -817,6 +901,11 @@ def main() -> None:
 
     print(f"Nome da execucao: {args.run_name}")
     print(f"Modelo base: {args.checkpoint}")
+    print(f"Inicializacao dos pesos: {'pre-treinada' if args.pretrained else 'aleatoria'}")
+    print(
+        f"Imagem PIL: {args.image_height}x{args.image_width}; entrada do encoder: "
+        f"{input_metadata['encoder_input_height']}x{input_metadata['encoder_input_width']}"
+    )
     print(f"Dataset: {args.dataset}")
     print(f"Pasta da execucao: {output_dir}")
     print(f"Dispositivo: {device}")
@@ -880,6 +969,8 @@ def main() -> None:
             best_predictions = val_predictions.copy()
             metadata = {
                 "run_name": args.run_name,
+                **training_protocol_metadata(args),
+                **input_metadata,
                 "model_kind": "trocr",
                 "checkpoint": args.checkpoint,
                 "dataset": args.dataset,
@@ -913,6 +1004,7 @@ def main() -> None:
                 "val_accuracy": val_accuracy,
                 "val_cer": val_cer,
                 "val_wer": val_wer,
+                "val_samples": int(val_metrics["samples"]),
                 "learning_rate": scheduler.get_last_lr()[0],
                 "is_best_epoch": is_best_epoch,
                 "best_epoch_so_far": best_epoch,
@@ -925,6 +1017,8 @@ def main() -> None:
 
     final_metadata = {
         "run_name": args.run_name,
+        **training_protocol_metadata(args),
+        **input_metadata,
         "model_kind": "trocr",
         "checkpoint": args.checkpoint,
         "dataset": args.dataset,
@@ -951,6 +1045,8 @@ def main() -> None:
             [
                 {
                     "run_name": args.run_name,
+                    **training_protocol_metadata(args),
+                    **input_metadata,
                     "output_dir": str(output_dir),
                     "epochs_completed": len(history_rows),
                     "best_epoch": best_epoch,

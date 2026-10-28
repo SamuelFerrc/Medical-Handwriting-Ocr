@@ -4,6 +4,7 @@ import argparse
 import importlib
 import json
 import math
+import re
 import statistics
 import sys
 from dataclasses import asdict
@@ -26,6 +27,7 @@ from med_ocr_research.evaluation.metrics import (  # noqa: E402
     levenshtein_distance,
     sequence_edit_distance,
 )
+from med_ocr_research.evaluation.provenance import training_provenance  # noqa: E402
 
 
 DEFAULT_TEST_CSV = PROJECT_ROOT / "data/splits/scenarios/combined/test.csv"
@@ -113,6 +115,8 @@ def infer_run_name(args: argparse.Namespace) -> str:
     source = args.predictions_csv or args.checkpoint
     if source is None:
         return "evaluation"
+    if args.checkpoint and re.search(r"_seed\d+$", source.parent.name):
+        return sanitize_name(f"{source.parent.name}_evaluation")
     return sanitize_name(source.stem)
 
 
@@ -489,6 +493,7 @@ def build_summary(
     errors = predictions[~predictions["exact_match"]]
     return {
         "run_name": run_name,
+        **training_provenance(args.checkpoint if not args.predictions_csv else None),
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": str(args.predictions_csv or args.checkpoint),
         "test_csv": str(args.test_csv) if args.checkpoint else None,

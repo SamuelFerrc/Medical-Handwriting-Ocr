@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 .coverage
 htmlcov/
+outputs/monitor/
 
 !data/raw/.gitkeep
 !data/processed/.gitkeep

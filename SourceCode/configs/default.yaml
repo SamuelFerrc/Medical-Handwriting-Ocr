@@ -13,7 +13,14 @@ paths:
   runs_dir: outputs/runs
 
 reproducibility:
+  # Seed da divisao dos dados; os mesmos splits sao usados em todos os treinos.
   seed: 42
+  baseline_seed: 42
+  training_seeds: [42, 123, 456]
+
+monitoring:
+  host: 127.0.0.1
+  port: 8765
 
 text_normalization:
   lowercase: true
@@ -39,17 +46,48 @@ preprocessing:
   preserve_aspect_ratio: true
 
 training:
+  protocol_version: equivalent-v2
   optimizer: AdamW
   learning_rate: 0.0001
   weight_decay: 0.01
-  batch_size: 16
-  max_epochs: 50
-  early_stopping_metric: val_cer
-  early_stopping_mode: min
-  patience: 8
+  batch_size: 2
+  gradient_accumulation_steps: 8
+  effective_batch_size: 16
+  max_epochs: 200
+  scheduler: linear_warmup
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  fp16: true
+  num_workers: 2
+  augmentation_enabled: true
+  augmentation_strength: strong
+  label_column: text_normalized
+  image_column: image_path
+  image_height: 64
+  image_width: 512
+  validation_population: full
   checkpoint_metric: val_cer
+  checkpoint_tiebreak: val_accuracy
+  pretrained_transformers: false
+  # Os modelos conservam suas arquiteturas, losses e normalizacoes nativas.
+  trocr:
+    checkpoint: microsoft/trocr-small-handwritten
+    processor_checkpoint: microsoft/trocr-small-handwritten
+  parseq:
+    model_name: parseq
+    hub_repo: baudm/parseq:1902db043c029a7e03a3818c616c06600af574be
+    extra_characters: " "
+  sequence:
+    max_target_length: 64
+    max_generation_length: 64
+    num_beams: 1
+    gradient_checkpointing: true
+    freeze_encoder: false
 
 evaluation:
+  # Mediana de cada metrica entre as seeds, separadamente por modelo/cenario.
+  seed_aggregation: median
+  require_all_seeds: true
   metrics:
     - accuracy
     - cer

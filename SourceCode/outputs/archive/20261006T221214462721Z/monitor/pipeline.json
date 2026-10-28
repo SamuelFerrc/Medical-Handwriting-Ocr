@@ -1,0 +1,22 @@
+{
+  "status": "stopped",
+  "phase": "training",
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "process": {
+    "pid": 10426,
+    "start_ticks": "331140",
+    "boot_id": "c2491bbf-d54d-4fa4-8753-f9cf8ac8fc3f"
+  },
+  "started_at": "2026-10-06T21:55:23.995977+00:00",
+  "current_run": "e1.01_seed123",
+  "finished_steps": 0,
+  "total_steps": 48,
+  "updated_at": "2026-10-06T21:59:27.695297+00:00",
+  "error": "Treinamento interrompido por SIGTERM.",
+  "exit_code": null,
+  "finished_at": "2026-10-06T21:59:27.695268+00:00"
+}

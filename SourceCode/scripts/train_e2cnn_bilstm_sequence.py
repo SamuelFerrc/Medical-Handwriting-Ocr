@@ -8,6 +8,9 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+from med_ocr_research.experiments.seeds import seeded_run_name
+
 TRAIN_SCRIPT = PROJECT_ROOT / "src/med_ocr_research/training/train_e2cnn_bilstm.py"
 SCENARIO_RUNS = (
     ("e2.01", "prescriptionbd"),
@@ -24,6 +27,7 @@ def parse_args() -> tuple[argparse.Namespace, list[str]]:
         )
     )
     parser.add_argument("--epochs", type=int, default=200)
+    parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--learning-rate", type=float, default=0.0001)
     parser.add_argument("--weight-decay", type=float, default=0.01)
@@ -65,7 +69,9 @@ def build_command(args: argparse.Namespace, run_name: str, scenario: str) -> lis
         args.python,
         str(TRAIN_SCRIPT),
         "--run-name",
-        run_name,
+        seeded_run_name(run_name, args.seed),
+        "--seed",
+        str(args.seed),
         "--train-csv",
         str(train_csv),
         "--val-csv",

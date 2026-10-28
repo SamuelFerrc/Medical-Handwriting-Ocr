@@ -1,60 +1,72 @@
 experiments:
   - id: E01
+    run_name: e1.02
     model: cnn
     train_dataset: RxHandBD
     test_dataset: RxHandBD
     scenario: in_domain_rxhandbd
   - id: E02
+    run_name: e1.01
     model: cnn
     train_dataset: PrescriptionBD
     test_dataset: PrescriptionBD
     scenario: in_domain_prescriptionbd
   - id: E03
+    run_name: e1.03
     model: cnn
     train_dataset: combined
     test_dataset: combined
     scenario: combined
   - id: E04
+    run_name: e2.02
     model: crnn
     train_dataset: RxHandBD
     test_dataset: RxHandBD
     scenario: in_domain_rxhandbd
   - id: E05
+    run_name: e2.01
     model: crnn
     train_dataset: PrescriptionBD
     test_dataset: PrescriptionBD
     scenario: in_domain_prescriptionbd
   - id: E06
+    run_name: e2.03
     model: crnn
     train_dataset: combined
     test_dataset: combined
     scenario: combined
   - id: E07
+    run_name: e3.02
     model: trocr
     train_dataset: RxHandBD
     test_dataset: RxHandBD
     scenario: in_domain_rxhandbd
   - id: E08
+    run_name: e3.01
     model: trocr
     train_dataset: PrescriptionBD
     test_dataset: PrescriptionBD
     scenario: in_domain_prescriptionbd
   - id: E09
+    run_name: e3.03
     model: trocr
     train_dataset: combined
     test_dataset: combined
     scenario: combined
   - id: E10
+    run_name: e4.02
     model: parseq
     train_dataset: RxHandBD
     test_dataset: RxHandBD
     scenario: in_domain_rxhandbd
   - id: E11
+    run_name: e4.01
     model: parseq
     train_dataset: PrescriptionBD
     test_dataset: PrescriptionBD
     scenario: in_domain_prescriptionbd
   - id: E12
+    run_name: e4.03
     model: parseq
     train_dataset: combined
     test_dataset: combined

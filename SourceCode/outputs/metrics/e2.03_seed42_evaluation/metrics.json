@@ -1,0 +1,459 @@
+{
+  "run_name": "e2.03_seed42_evaluation",
+  "protocol_version": "equivalent-v2",
+  "protocol_fingerprint": "dd43263c47ad162e5016f68a6c7abdac5f716660e879bdb9225eb715627ac4f2",
+  "training_seed": 42,
+  "checkpoint_fingerprint": "786ec806122a90c37c82d6b3909ec76ee3a950cba5cef1bedb506f2229dd35e9",
+  "created_at_utc": "2026-10-08T20:46:43.489529+00:00",
+  "source": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/runs/e2.03_seed42/e2cnn_bilstm_best_checkpoint.pt",
+  "test_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/combined/test.csv",
+  "primary_metric": "exact_match_accuracy",
+  "metrics": {
+    "samples": 1616,
+    "exact_match_accuracy": 0.5129950495049505,
+    "cer": 0.24442982043809344,
+    "wer": 0.5025876940770557,
+    "correct": 829,
+    "total_char_errors": 2600,
+    "total_reference_chars": 10637,
+    "total_word_errors": 874,
+    "total_reference_words": 1739
+  },
+  "per_dataset_metrics": [
+    {
+      "dataset": "PrescriptionBD",
+      "samples": 780,
+      "exact_match_accuracy": 0.6538461538461539,
+      "cer": 0.2125506072874494,
+      "wer": 0.3493670886075949,
+      "correct": 510
+    },
+    {
+      "dataset": "RxHandBD",
+      "samples": 836,
+      "exact_match_accuracy": 0.3815789473684211,
+      "cer": 0.27207302088818675,
+      "wer": 0.6301369863013698,
+      "correct": 319
+    }
+  ],
+  "confidence": {
+    "count": 1616,
+    "mean": 0.9786396956827381,
+    "median": 0.9850544929504395,
+    "std": 0.022113201777960757,
+    "min": 0.8454451560974121,
+    "max": 0.9999598264694214
+  },
+  "text_true_length": {
+    "count": 1616,
+    "mean": 6.58230198019802,
+    "median": 6.0,
+    "std": 1.8227545926008701,
+    "min": 2.0,
+    "max": 16.0
+  },
+  "text_pred_length": {
+    "count": 1616,
+    "mean": 6.1986386138613865,
+    "median": 6.0,
+    "std": 1.5774629110494778,
+    "min": 1.0,
+    "max": 12.0
+  },
+  "char_error_statistics": {
+    "count": 1616,
+    "mean": 1.608910891089109,
+    "median": 0.0,
+    "std": 2.1460924200108247,
+    "min": 0.0,
+    "max": 11.0
+  },
+  "word_error_statistics": {
+    "count": 1616,
+    "mean": 0.5408415841584159,
+    "median": 0.0,
+    "std": 0.5966617402935802,
+    "min": 0.0,
+    "max": 2.0
+  },
+  "dataset_distribution": [
+    {
+      "label": "RxHandBD",
+      "count": 836
+    },
+    {
+      "label": "PrescriptionBD",
+      "count": 780
+    }
+  ],
+  "label_distribution_top20": [
+    {
+      "label": "napa",
+      "count": 34
+    },
+    {
+      "label": "diet",
+      "count": 22
+    },
+    {
+      "label": "nexum",
+      "count": 21
+    },
+    {
+      "label": "tablet",
+      "count": 18
+    },
+    {
+      "label": "montene",
+      "count": 16
+    },
+    {
+      "label": "omeprazole",
+      "count": 15
+    },
+    {
+      "label": "algin",
+      "count": 14
+    },
+    {
+      "label": "fexo",
+      "count": 14
+    },
+    {
+      "label": "beklo",
+      "count": 13
+    },
+    {
+      "label": "dexter",
+      "count": 13
+    },
+    {
+      "label": "rivotril",
+      "count": 13
+    },
+    {
+      "label": "rolac",
+      "count": 13
+    },
+    {
+      "label": "sergel",
+      "count": 13
+    },
+    {
+      "label": "voltalin",
+      "count": 13
+    },
+    {
+      "label": "ace",
+      "count": 12
+    },
+    {
+      "label": "denixil",
+      "count": 12
+    },
+    {
+      "label": "flugal",
+      "count": 12
+    },
+    {
+      "label": "maxpro",
+      "count": 12
+    },
+    {
+      "label": "metro",
+      "count": 12
+    },
+    {
+      "label": "neuro-b",
+      "count": 12
+    }
+  ],
+  "top_error_pairs": [
+    {
+      "text_true": "fexofast",
+      "text_pred": "fexfast",
+      "count": 9
+    },
+    {
+      "text_true": "injection",
+      "text_pred": "injecion",
+      "count": 8
+    },
+    {
+      "text_true": "ceevit",
+      "text_pred": "cevit",
+      "count": 5
+    },
+    {
+      "text_true": "backtone",
+      "text_pred": "bactone",
+      "count": 3
+    },
+    {
+      "text_true": "ceftriaxone",
+      "text_pred": "ceftiaxone",
+      "count": 3
+    },
+    {
+      "text_true": "omeprazole",
+      "text_pred": "omerazole",
+      "count": 3
+    },
+    {
+      "text_true": "omidon",
+      "text_pred": "omdon",
+      "count": 3
+    },
+    {
+      "text_true": "provair",
+      "text_pred": "provoair",
+      "count": 3
+    },
+    {
+      "text_true": "rivotril",
+      "text_pred": "rivtril",
+      "count": 3
+    },
+    {
+      "text_true": "syrup",
+      "text_pred": "syrp",
+      "count": 3
+    },
+    {
+      "text_true": "tab",
+      "text_pred": "tablet",
+      "count": 3
+    },
+    {
+      "text_true": "alafix",
+      "text_pred": "alfix",
+      "count": 2
+    },
+    {
+      "text_true": "alatrol",
+      "text_pred": "altrol",
+      "count": 2
+    },
+    {
+      "text_true": "anitip",
+      "text_pred": "amitip",
+      "count": 2
+    },
+    {
+      "text_true": "apeelo",
+      "text_pred": "apeclo",
+      "count": 2
+    },
+    {
+      "text_true": "baclon",
+      "text_pred": "bancin",
+      "count": 2
+    },
+    {
+      "text_true": "beklo",
+      "text_pred": "ace",
+      "count": 2
+    },
+    {
+      "text_true": "denixil",
+      "text_pred": "devixil",
+      "count": 2
+    },
+    {
+      "text_true": "diet",
+      "text_pred": "die",
+      "count": 2
+    },
+    {
+      "text_true": "dinafex",
+      "text_pred": "dinader",
+      "count": 2
+    }
+  ],
+  "error_examples": [
+    {
+      "sample_id": "rxhandbd_000010",
+      "dataset": "RxHandBD",
+      "text_true": "aaxius",
+      "text_pred": "anu",
+      "char_errors": 4,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000018",
+      "dataset": "RxHandBD",
+      "text_true": "ace",
+      "text_pred": "ab",
+      "char_errors": 2,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000019",
+      "dataset": "RxHandBD",
+      "text_true": "ace",
+      "text_pred": "dic",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000027",
+      "dataset": "RxHandBD",
+      "text_true": "acliz plus",
+      "text_pred": "al plus",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000029",
+      "dataset": "RxHandBD",
+      "text_true": "acliz plus",
+      "text_pred": "acgla",
+      "char_errors": 7,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000031",
+      "dataset": "RxHandBD",
+      "text_true": "acron",
+      "text_pred": "deton",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000072",
+      "dataset": "RxHandBD",
+      "text_true": "alafix",
+      "text_pred": "alfix",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000074",
+      "dataset": "RxHandBD",
+      "text_true": "alafix",
+      "text_pred": "alfix",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000082",
+      "dataset": "RxHandBD",
+      "text_true": "alanol",
+      "text_pred": "alogil",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000086",
+      "dataset": "RxHandBD",
+      "text_true": "alben",
+      "text_pred": "allen",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000107",
+      "dataset": "RxHandBD",
+      "text_true": "alfane",
+      "text_pred": "g-oorex",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000136",
+      "dataset": "RxHandBD",
+      "text_true": "algin",
+      "text_pred": "alzin",
+      "char_errors": 1,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000193",
+      "dataset": "RxHandBD",
+      "text_true": "algin plus",
+      "text_pred": "alplus",
+      "char_errors": 4,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000195",
+      "dataset": "RxHandBD",
+      "text_true": "alix",
+      "text_pred": "afe",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000197",
+      "dataset": "RxHandBD",
+      "text_true": "allyglot",
+      "text_pred": "tilgal",
+      "char_errors": 6,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000198",
+      "dataset": "RxHandBD",
+      "text_true": "almex tab",
+      "text_pred": "amital",
+      "char_errors": 5,
+      "word_errors": 2
+    },
+    {
+      "sample_id": "rxhandbd_000199",
+      "dataset": "RxHandBD",
+      "text_true": "alolrol",
+      "text_pred": "alohil",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000200",
+      "dataset": "RxHandBD",
+      "text_true": "alos",
+      "text_pred": "ace",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000210",
+      "dataset": "RxHandBD",
+      "text_true": "ambroy",
+      "text_pred": "amrin",
+      "char_errors": 3,
+      "word_errors": 1
+    },
+    {
+      "sample_id": "rxhandbd_000215",
+      "dataset": "RxHandBD",
+      "text_true": "amikacin",
+      "text_pred": "amitacin",
+      "char_errors": 1,
+      "word_errors": 1
+    }
+  ],
+  "arguments": {
+    "predictions_csv": null,
+    "checkpoint": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/runs/e2.03_seed42/e2cnn_bilstm_best_checkpoint.pt",
+    "test_csv": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data/splits/scenarios/combined/test.csv",
+    "data_root": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/data",
+    "model_kind": "e2cnn-bilstm",
+    "class_map_json": null,
+    "adapter": null,
+    "run_name": "e2.03_seed42_evaluation",
+    "output_dir": "/home/samlinux/Medical-Handwriting-Ocr/SourceCode/outputs/metrics",
+    "predictions_output_dir": null,
+    "label_column": "text_normalized",
+    "prediction_column": "text_pred",
+    "image_column": "image_path",
+    "sample_id_column": "sample_id",
+    "dataset_column": "dataset",
+    "split_column": "split",
+    "batch_size": 1,
+    "image_height": 64,
+    "image_width": 512,
+    "device": "auto",
+    "limit": null
+  }
+}

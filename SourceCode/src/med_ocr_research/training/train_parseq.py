@@ -25,6 +25,7 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 from med_ocr_research.evaluation.metrics import aggregate_metrics
+from med_ocr_research.experiments.seeds import ensure_new_run, seeded_run_name
 from med_ocr_research.models.parseq_utils import (
     DEFAULT_PARSEQ_HUB_REPO,
     DEFAULT_PARSEQ_MODEL,
@@ -54,6 +55,7 @@ from med_ocr_research.training.train_trocr import (
     save_character_distribution_csv,
     save_text_distribution_csv,
     seed_everything,
+    training_protocol_metadata,
 )
 
 
@@ -67,7 +69,7 @@ SUPPORTED_DATASETS = ("prescriptionbd", "rxhandbd", "combined")
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Faz fine-tuning do PARSeq oficial nos mesmos splits e com os mesmos "
+            "Treina o PARSeq oficial nos mesmos splits e com os mesmos "
             "artefatos usados pelo TrOCR."
         )
     )
@@ -86,7 +88,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--hub-repo", default=DEFAULT_PARSEQ_HUB_REPO)
     parser.add_argument("--pretrained", dest="pretrained", action="store_true")
     parser.add_argument("--no-pretrained", dest="pretrained", action="store_false")
-    parser.set_defaults(pretrained=True)
+    parser.set_defaults(pretrained=False)
     parser.add_argument(
         "--extra-characters",
         default=" ",
@@ -95,7 +97,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--label-column", default="text_normalized")
     parser.add_argument("--image-column", default="image_path")
     parser.add_argument("--epochs", type=int, default=200)
-    parser.add_argument("--batch-size", type=int, default=16)
+    parser.add_argument("--batch-size", type=int, default=2)
     parser.add_argument("--learning-rate", type=float, default=1e-4)
     parser.add_argument("--weight-decay", type=float, default=1e-2)
     parser.add_argument("--num-workers", type=int, default=2)
@@ -109,7 +111,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--image-height", type=int, default=64)
     parser.add_argument("--image-width", type=int, default=512)
-    parser.add_argument("--gradient-accumulation-steps", type=int, default=16)
+    parser.add_argument("--gradient-accumulation-steps", type=int, default=8)
     parser.add_argument("--warmup-ratio", type=float, default=0.1)
     parser.add_argument("--max-grad-norm", type=float, default=1.0)
     parser.add_argument("--fp16", dest="fp16", action="store_true")
@@ -136,6 +138,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit-train-samples", type=int, default=None)
     parser.add_argument("--limit-val-samples", type=int, default=None)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--protocol-version", default="custom")
+    parser.add_argument("--protocol-fingerprint", default="")
     return parser.parse_args()
 
 
@@ -245,10 +249,15 @@ def save_run_config_csv(
         [
             {
                 "run_name": args.run_name,
+                **training_protocol_metadata(args),
+                "encoder_input_channels": 3,
+                "encoder_input_height": args.image_height,
+                "encoder_input_width": args.image_width,
+                "image_preprocessing": "RGB_PIL_resize_tensor_normalize_0.5_0.5",
+                "tokenizer_source": "fixed_architecture_character_vocabulary",
                 "model_kind": "parseq",
                 "model_name": args.model_name,
                 "hub_repo": args.hub_repo,
-                "pretrained": args.pretrained,
                 "dataset": args.dataset,
                 "output_dir": str(output_dir),
                 "train_csv": str(train_csv),
@@ -258,9 +267,6 @@ def save_run_config_csv(
                 "image_column": args.image_column,
                 "epochs": args.epochs,
                 "batch_size": args.batch_size,
-                "effective_batch_size": (
-                    args.batch_size * args.gradient_accumulation_steps
-                ),
                 "learning_rate": args.learning_rate,
                 "weight_decay": args.weight_decay,
                 "num_workers": args.num_workers,
@@ -275,7 +281,6 @@ def save_run_config_csv(
                 "fp16": args.fp16,
                 "gradient_checkpointing": args.gradient_checkpointing,
                 "freeze_encoder": args.freeze_encoder,
-                "seed": args.seed,
                 "device": str(device),
                 "cuda_available": torch.cuda.is_available(),
                 "cuda_device_name": (
@@ -307,11 +312,13 @@ def train_one_epoch(
     optimizer.zero_grad(set_to_none=True)
     total_loss = 0.0
     total_samples = 0
+    accumulated_samples = 0
     use_amp = bool(args.fp16 and device.type == "cuda")
     progress = tqdm(dataloader, desc="Treino", leave=False)
 
     for batch_index, batch in enumerate(progress, start=1):
         images = batch["images"].to(device)
+        batch_size = images.size(0)
         texts = batch["texts"]
         autocast_context = (
             torch.autocast(device_type="cuda", dtype=torch.float16)
@@ -320,17 +327,20 @@ def train_one_epoch(
         )
         with autocast_context:
             batch_loss = parseq_permutation_loss(model, images, texts)
-            loss = batch_loss / args.gradient_accumulation_steps
-        scaler.scale(loss).backward()
+        scaler.scale(batch_loss * batch_size).backward()
+        accumulated_samples += batch_size
 
         should_step = (
             batch_index % args.gradient_accumulation_steps == 0
             or batch_index == len(dataloader)
         )
         if should_step:
-            optimizer_step(model, optimizer, scheduler, scaler, args)
+            optimizer_step(
+                model, optimizer, scheduler, scaler, args,
+                accumulated_samples=accumulated_samples,
+            )
+            accumulated_samples = 0
 
-        batch_size = images.size(0)
         loss_value = float(batch_loss.detach().item())
         total_loss += loss_value * batch_size
         total_samples += batch_size
@@ -421,11 +431,12 @@ def main() -> None:
     )
     if args.run_name is None:
         args.run_name = default_run_name(args.dataset, args.model_name)
-    args.run_name = sanitize_run_name(args.run_name)
+    args.run_name = seeded_run_name(sanitize_run_name(args.run_name), args.seed)
 
     seed_everything(args.seed)
     device = choose_device()
     output_dir = resolve_output_dir(args.run_name, args.output_dir)
+    ensure_new_run(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     model = load_official_parseq(
@@ -489,6 +500,7 @@ def main() -> None:
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
         collate_fn=parseq_collate,
+        generator=torch.Generator().manual_seed(args.seed),
     )
     val_dataloader = DataLoader(
         val_dataset,
@@ -497,6 +509,7 @@ def main() -> None:
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
         collate_fn=parseq_collate,
+        generator=torch.Generator().manual_seed(args.seed),
     )
     optimizer = torch.optim.AdamW(
         [parameter for parameter in model.parameters() if parameter.requires_grad],
@@ -535,6 +548,7 @@ def main() -> None:
 
     print(f"Nome da execucao: {args.run_name}")
     print(f"Modelo oficial: {args.hub_repo}/{args.model_name}")
+    print(f"Inicializacao dos pesos: {'pre-treinada' if args.pretrained else 'aleatoria'}")
     print(f"Dataset: {args.dataset}")
     print(f"Pasta da execucao: {output_dir}")
     print(f"Dispositivo: {device}")
@@ -554,10 +568,15 @@ def main() -> None:
     def metadata(**extra: Any) -> dict[str, Any]:
         base = {
             "run_name": args.run_name,
+            **training_protocol_metadata(args),
+            "encoder_input_channels": 3,
+            "encoder_input_height": args.image_height,
+            "encoder_input_width": args.image_width,
+            "image_preprocessing": "RGB_PIL_resize_tensor_normalize_0.5_0.5",
+            "tokenizer_source": "fixed_architecture_character_vocabulary",
             "model_kind": "parseq",
             "model_name": args.model_name,
             "hub_repo": args.hub_repo,
-            "pretrained": args.pretrained,
             "dataset": args.dataset,
             "train_csv": str(train_csv),
             "val_csv": str(val_csv),
@@ -622,6 +641,7 @@ def main() -> None:
                 "val_accuracy": val_accuracy,
                 "val_cer": val_cer,
                 "val_wer": val_wer,
+                "val_samples": int(val_metrics["samples"]),
                 "learning_rate": scheduler.get_last_lr()[0],
                 "is_best_epoch": is_best_epoch,
                 "best_epoch_so_far": best_epoch,
@@ -649,6 +669,7 @@ def main() -> None:
         [
             {
                 "run_name": args.run_name,
+                **training_protocol_metadata(args),
                 "output_dir": str(output_dir),
                 "epochs_completed": len(history_rows),
                 "best_epoch": best_epoch,

@@ -1,0 +1,1618 @@
+row_index,text_true,text_pred
+0,5% dns,nexe
+1,abasaglar,abasaglar
+2,acliz plus,dophyllinc
+3,actrapid,actrapid
+4,actrapid,actrapid
+5,actrapid,actrapid
+6,aeropen,barbit
+7,alafix,alafix
+8,alafix,xinc b
+9,alatrof,alatrol
+10,alcet,alcet
+11,alcet,alcet
+12,alcet,filmet
+13,alfane,m-lucas
+14,alfane,m-lucas
+15,algend,geotoenol
+16,algin,algin
+17,algin,povifep
+18,algin,m-lucas 10
+19,algin,scryel
+20,algin,biscor
+21,algin,algin
+22,algin,algin
+23,algin,emep
+24,algin,algin
+25,ambrox,maxpro
+26,ambrox,meropenem
+27,ambrox,aropen
+28,amikacin,histacin
+29,amitip,amitip
+30,amitip,amitip
+31,anadol,prestel
+32,anadol,apeclo
+33,anadol,nalbun 2
+34,anlin,algin
+35,amitip,amitip
+36,apeelo,a-flux
+37,apeelo,algin
+38,apuldon,clonapex
+39,arlin,supp
+40,aropen,napa
+41,arth,rosu
+42,arth a max,arth a max
+43,ascoson,algin
+44,asynta,algin
+45,avolac,rolac
+46,avolu,napa
+47,axon,supp
+48,baemax,barmax
+49,barbit,calboral
+50,barbit,calcor-d
+51,beklo,rupa
+52,beklo,ceevit
+53,bilan,nexe
+54,bilaxe,voltalin
+55,bilaxe,algin
+56,bilaxe,bilaxe
+57,bilaxe,rolac
+58,bilaxe,bilaxe
+59,bilaxe,ceevit
+60,bildent,biscor
+61,biltant,montelon
+62,biltin 20,voltalin
+63,biscor,biscor
+64,biscor,biscor
+65,biscor max,bisoren 5
+66,bislol,zollium
+67,bislol,bislol
+68,bisnen2.5,calboral dx
+69,bisoren,napa
+70,bisoren,dexter
+71,bron wash,bron wasfi
+72,budicort,cabergol
+73,calamine,calboral
+74,calbo,flugal
+75,calbo-d,calboral
+76,calbo-d,dekalin
+77,calbo-d,calbo-d
+78,calbo-d,calcor-d
+79,calboral,calboral
+80,calboral,calboral d
+81,calboral,calboral
+82,calboral,calboral
+83,calboral,calboral
+84,calboral,calboral
+85,calboral,relentus
+86,calboral d,calboral d
+87,calboral dx,calboral dx
+88,calboral-d,calboral d
+89,calboral-dx,dekalin
+90,calcor,calboral
+91,calcor-d,calcor-d
+92,calcor-d,calcor-d
+93,calcor-d,calcor-d
+94,calcor-d,calcor-d
+95,cap. esonex,tab. clacido
+96,capsule,capsule
+97,capsule,tablet
+98,capsule,cap
+99,capsule,capsule
+100,capsule,capsule
+101,capsule,tablet
+102,capsule,supp
+103,carulcal d,corulcal-d
+104,ceevit,esohil
+105,ceevit,beklo
+106,ceevit,ceevit
+107,ceevit,ceevit
+108,ceevit,ceevit
+109,ceevit,supp
+110,ceevit,torat
+111,ceevit,esotid
+112,ceevit,ceevit
+113,ceevit,radifil
+114,ceevit,ceevit
+115,cefaclav,cetaclav
+116,cefixime,cefixime
+117,cefofi plus sw,zymef-pro
+118,ceftazidime,cefuroxime
+119,ceftriaxone,ceftriaxone
+120,ceftriaxone,omeprazole
+121,ceftriaxone,trd coutine
+122,ceftriaxone,omeprazole
+123,ceftriaxone,vancomycin
+124,ceftriaxone,ceftriaxone
+125,ceftriaxone,meropenem
+126,ceftriaxone,ceftriaxone
+127,cefuroximee,meropenem
+128,cewfilid,calboral
+129,cidex,esahil
+130,cidex,rolac
+131,cildip,cildip
+132,cinaron plus,ceftriaxone
+133,clacef,ac pr
+134,clavutil,clavutil
+135,clavutil,calboral
+136,clofenal,flugal
+137,clonapex,nexe
+138,clonapex,renova
+139,conit xr,conit-xr
+140,coragen-d,brezofil
+141,coral cal,decoral
+142,coralcalry,ralripus
+143,coraleal,coralcal
+144,coralex dx,kalorl dx
+145,cortan,tablet
+146,cortan,avolac
+147,cortan,ambrox
+148,cowficid,calboral d
+149,coxe,rasiflep
+150,cyclorox,ncotion
+151,d cap,lecor
+152,d-cop,d-cop
+153,delfmz,biscor 5
+154,delfmz,delfrz
+155,delfnj,zymet
+156,delfrnz,delfrz
+157,denixil,eslilex 5
+158,derolon,derolon
+159,desolon,desolon
+160,devixil,dexter
+161,devixil,devixil
+162,devixil,dexter
+163,devixil,nexe
+164,dexa,dexa
+165,dexter,dexter
+166,dexila,bilaxe
+167,dexnaaf,dexnaat
+168,dexnaaf,dexter 60
+169,dexnaaf,clonapex
+170,dexnaaf,dexnaaf
+171,dexter,dexter
+172,dexter,dexter
+173,dexter,dexter
+174,dexter,dexter
+175,dexter,dexter
+176,dexter,desolon
+177,dexter,dexter
+178,dexter,dexter
+179,dexter,dexter
+180,dexter,dexter
+181,dexter 60,dexter 60
+182,diabetic,diabetic
+183,diaryl,prestel
+184,diet,top
+185,diet,diet
+186,diet,diet
+187,diet,tablet
+188,diet,diet
+189,diet,flux
+190,diet,tablet
+191,diet,diet
+192,diet,injection
+193,diet,tablet
+194,diet,capsule
+195,diet,diet
+196,diet,inj
+197,diet,tablet
+198,dimex,dia-k
+199,disopan,diabetic
+200,dmiden,bilozin
+201,domin,nexe
+202,domin,texit
+203,don a,don a
+204,don a,don a
+205,don a,don a
+206,don-a,don-a
+207,dophyllin,dophylin
+208,doxicap,monfast
+209,doxoven,doxoven
+210,doxoven,doxoven
+211,drop,tablet
+212,drop,drop
+213,drop,omep
+214,dueblock 5,napa one
+215,dulox,rolac
+216,ecosprin,ecosprin
+217,elodep 5,rifagut
+218,elodep 5,rolac
+219,emazid,delfrz
+220,emep,alcet
+221,emistat,emistat
+222,emistat,tryptin
+223,emistat,emistat
+224,emistat,emistat
+225,emistat,hemofix
+226,emistat,flamex
+227,emistat,windel plus
+228,emistat,protein
+229,emistat,emistat
+230,emi-xit,flugal
+231,emjard,enjard
+232,empofi,endurex
+233,epitra,nexe mups
+234,epitra,maxpro
+235,escilex,escilex
+236,escilex,arth
+237,eslilex,dexter
+238,eslilex 5,biscor 5
+239,esmax,esmax
+240,esmax,telfast
+241,esohil,esohil
+242,esohil,esohil
+243,esomax,esmax
+244,esotid,texit
+245,esover,esmax
+246,esprazo,esprazo
+247,esprazo,esprazo
+248,esprazo,neuro
+249,estes,estes
+250,estes,escilex
+251,estes 300,calboral
+252,etorix,esotil
+253,etorix,esohil
+254,etorix,dopecgut
+255,etorix,voltalin
+256,fasopen,toradolin
+257,febustat,loba-g
+258,fenadin,vaptam
+259,fenafir,fenafir
+260,fenix,scryel
+261,fenix-v,ferix-v
+262,fenix-v,fenix-v
+263,ferix-v,fenix-v
+264,ferix-v,fenix-v
+265,feufiv,calboral
+266,fexo,tab
+267,fexofast,fenadin
+268,fexofenadinee,omeprazole
+269,fexofast,pama serg
+270,filmet,filmet
+271,filmet,filmet
+272,filofer,fexit
+273,fimoxyclav,linux plus
+274,finix,texit
+275,finix,tendonil
+276,fixcef,texit
+277,fixgut,lactomore
+278,fixgut,ratinol
+279,flacol,metro
+280,flamex,solupred
+281,flamex,emep
+282,flamyd,fixgut
+283,flamyd,fixgut
+284,flayd,texit
+285,flexinor,pelverin
+286,fluclox,coralcal
+287,fluclox,v-plex
+288,fluclox,fluelox
+289,fluclox,traxyl
+290,flucloxacillin,ceftriaxone
+291,flucloxacillin,flucloxacillin
+292,flucloxin,m-lucas 10
+293,flugal,v-cal-2
+294,flugal,flugal
+295,flugal,fluclox
+296,flugal,flugal
+297,flux,fexo
+298,flux,tablet
+299,flux,diet
+300,folzin,folzin
+301,folzin,folzin
+302,folzin-cl,flugal
+303,folzin-cl,fenix-v
+304,fougest,lubilex
+305,frenxit,arlin
+306,furocef,calcor-d
+307,furocef,calcor-d
+308,fylox,fylox
+309,gavisus,gavisus
+310,gestrenol,aristovit
+311,gestrenol,tab. neuro
+312,gintabac,corulcal-d
+313,gintex,gintex
+314,glanine,plagnin
+315,glarine,bislol
+316,glymed,bisoren 5
+317,glymfa,glymfa
+318,greemox,bisoren
+319,heranor,hepanor
+320,high,emep
+321,high,diet
+322,high,diet
+323,histacin,anadol
+324,histacin,biltin
+325,histacin,emistat
+326,histacin,emistat
+327,histacin,diabetic
+328,histacin,voltalin
+329,histacin,ecosprin
+330,histacin,actrapid
+331,histacin,emistat
+332,histacin,raditil
+333,histal,bilaxe
+334,histol,histat
+335,indever,calboral
+336,indever,solupred
+337,indiver,probio
+338,indo,indo
+339,inj,inj
+340,inj,inj
+341,injection,injection
+342,injection,diet
+343,injection,tablet
+344,injection,xinc
+345,injection,diet
+346,injection,injection
+347,injection,tablet
+348,injection,diet
+349,injection,tablet
+350,injection,diet
+351,injection,torax
+352,injection,syrup
+353,injection,diet
+354,itokine,itokine
+355,itokine,itokine
+356,itokine,itokine
+357,kacin,cef-3
+358,kallonl dx,calboral
+359,ketorolac,ketorolac
+360,ketorolac,actrapid
+361,ketorolac,ceftriaxone
+362,ketorolac,roxadex
+363,lacfu,indo
+364,lacto,esotid
+365,lactomore,lactomore
+366,lactomore,lactomore
+367,lactomore,lactomore
+368,lasix,napa
+369,lecor,montelon
+370,lecor,lecor
+371,levofloxacin,ceftriaxone
+372,libidex,cildip
+373,linatab,histacin
+374,linax plus,clavutil
+375,lindac,lindac
+376,liquid,liquid
+377,loba-g,loba-g
+378,lufilox,rosu
+379,lullonl dx,calboral
+380,lutilax,rivarox
+381,lyric,nexe
+382,magni,meropenem
+383,maxdol,maxdol
+384,maxima,maxima
+385,maxima,maxima
+386,maxima,matina
+387,maxpro,maxpro
+388,maxpro,omeprazole
+389,maxrin,norium
+390,megaba,algin
+391,merincal-d,microgest
+392,merocil,supp
+393,meropen,fenadin
+394,meropen,linax plus
+395,meropenem,ceftriaxone
+396,meropenem,omeprazole
+397,meropenem,omeprazole
+398,meropenem,omeprazole
+399,meropenem,budicort
+400,meropenem,ceftriaxone
+401,merthomol,metaomol
+402,mesacol,napa one
+403,methomol,neuroxen
+404,metro,metro
+405,metro,drop
+406,metro,amitip
+407,metronidazole,metronidazole
+408,metronidazole,nexe mups
+409,microcef,myolax
+410,microcef,cinamycin
+411,microgcofi,acliz plus
+412,microgest,gestrenol
+413,mig,mig
+414,mig 2.5,dexter
+415,migo,diet
+416,minnate,amitip
+417,mitpr,emistat
+418,mixit,mixit
+419,m-lucas,m-lucas
+420,m-lucas,relaxo
+421,m-lucas 10,m-lucas 10
+422,m-lucas 10,m-lucas
+423,m-lucas 10,m-lucas 10
+424,monas,napa
+425,monas 10,rosuva
+426,monfast,ceftriaxone
+427,montelon,montelon
+428,montelukast,nidipine sr
+429,montene,desolon
+430,montene,broxolite
+431,montene,montene
+432,montene,nifin sr
+433,montelukast,niobcard rtd
+434,morphin,montelon
+435,moxibac,zo.mups 20
+436,myolax,raditil
+437,myolax,acliz plus
+438,nafro a plm,profenid gell
+439,nafro a plus,dophyllin
+440,nafumef,nabumet
+441,nafumef,neuroxen
+442,nalbun 2,motigut
+443,nalbun 2,vonocab
+444,nalbun 2,nalbun 2
+445,nalbun 2,voltalin
+446,nalbun-2,ketorolac
+447,nameton,montene
+448,napa,cefotil plus
+449,napa,dopecgut
+450,napa,lutilax 24
+451,napa,napa
+452,napa,napa
+453,napa,napa
+454,napa,napa
+455,napa,napa
+456,napa,diet
+457,napa,napa
+458,napa,xamic
+459,napa,rolac
+460,napa,napa
+461,napa,napa
+462,napa,capsule
+463,napa,napa
+464,napa,nexe
+465,napa,tablet
+466,napa,napa
+467,napa,diet
+468,napa,algin
+469,napa,napa
+470,napa,napa
+471,napa,napa
+472,napa,oxycol
+473,napa one,montelon
+474,napa one,nexe mups
+475,napa one,omeprazole
+476,napa one,voltalin
+477,napa rapid,telfro max
+478,naprox,naprox
+479,naprox,nexum
+480,naprox,linax
+481,naprox,naprox
+482,nasal,napa
+483,nebulization,nexmig 2.5
+484,neopem,napxon
+485,nervion,nebanol
+486,neso,nexe
+487,neuro,neuro
+488,neuro,neuro
+489,neuro,lecor
+490,neuro a plw sw,radiflex rafid
+491,neuro b,neuro-b
+492,neuro b,neuro b
+493,neuro-b,neuro-b
+494,neuro-b,neuro-b
+495,neuro-b,neuro-b
+496,neuro-b,neuro-b
+497,neuro-b,neuro-b
+498,neuro-b,naprox
+499,neuro-b,neuro-b
+500,neuro-b,neuro b
+501,neuro-b,neuro-b
+502,neuro-b,n-max
+503,neuro-b,neuro-b
+504,neuro-b,neuro-b
+505,neuro-b,neuro-b
+506,neurolin,roxtal xp
+507,neuroxen,neuroxen
+508,neuroxen,neuroxen
+509,neuroxen,neuroxen
+510,neuroxen,neuroxen
+511,neuroxen,neuroxen
+512,neuroxen,neuroxen
+513,neuroxen,neuroxen
+514,neuroxen,neuroxen
+515,neuroxen,neuroxen
+516,neuroxen,nexe mups
+517,neuvoxew,neuroxen
+518,nexe,diet
+519,nexe,nexe
+520,nexe,nexe
+521,nexe,nexum
+522,nexe,nexe
+523,nexe,xinc b
+524,nexe,neuro
+525,nexe,nexe
+526,nexe,nexe
+527,nexe,nexe
+528,nexe,nexe
+529,nexe,nexe
+530,nexe,nexe
+531,nexe,nexe
+532,nexe,napa
+533,nexe mups,nexum mups 20
+534,nexe mups,pronex mups
+535,nexe mups,nexe mups
+536,nexe mups,bron wasfi
+537,nexe mups,nalbun 2
+538,nexe mups,omeprazole
+539,nexe mups,nexe mups
+540,nexe mups,nexe mups
+541,nexe mups,myolax
+542,nexe mups,nexe mups
+543,nexum mups 20,ddr-bomg
+544,nexum mups 20,nexe mups
+545,nexum mups 20,neuroxen
+546,nexum mups 20,neuroxen
+547,nexe-mups,nexe-mups
+548,nexum,esprazo
+549,nexum,nexum
+550,nexum,devixil
+551,nexum,telfro max
+552,nexum,zimax
+553,nexum,nexum
+554,nexum,nexum
+555,nexum,nexum
+556,nislofs,bislol 5
+557,nitr,xinc b
+558,nitro-sr,aropen
+559,norim d,nalbun
+560,norium,nexum
+561,norium,nufw
+562,norium,norium
+563,normal,nexum mups 20
+564,normal,brain.v
+565,normal,napa
+566,normal,xinc b
+567,normal,nexum mups
+568,normanal,coragen-d
+569,noswvc,rofip
+570,nuhw,nufw
+571,nulrifil golf,cefotil plus
+572,nutrifil,glymfa
+573,nuvifer,dexilend
+574,ocof,syrup
+575,ofran,ofran
+576,ointment,voligel
+577,ointment,omeprazole
+578,omep,omep
+579,omeprazole,ceftriaxone
+580,omeprazole,omeprazole
+581,omeprazole,omeprazole
+582,omeprazole,ceftriaxone
+583,omeprazole,clonapex
+584,omeprazole,barbit
+585,omeprazole,omeprazole
+586,omeprazole,omeprazole
+587,omeprazole,omeprazole
+588,omeprazole,meropenem
+589,omeprazole,omeprazole
+590,omeprazole,omeprazole
+591,omeprazole,lactomore
+592,omeprazole,meropen
+593,omeprazole,meropenem
+594,omeprazole,rosuva 5
+595,omeprazole,acemox
+596,omidon,5% dns
+597,omidon,xamic
+598,omidon,deixil
+599,omidon,anadol
+600,optimax,xinc b
+601,optimox,ambrox
+602,oricef,cefrid
+603,ornopain,omeprazole
+604,ossica,xiva
+605,ossica,xamic
+606,othera,frabex
+607,othera,othera
+608,othera,d-cap
+609,ovit-a,alcef
+610,p/c,capsule
+611,pair,napa
+612,paloxi,nufvw
+613,paloxi,paloxi
+614,paloxi,calcor-dx
+615,paracetamol,paracetamol
+616,pel. desolan,folzin
+617,pethidine,ointment
+618,pg,pg
+619,phauolid soaf,profenid gell
+620,phylopen,voltalin
+621,phylopen,voltalin
+622,phylopen,voltalin
+623,phylopen,novonil
+624,povital,deslong
+625,pregmo,flemex
+626,prestal,fylox
+627,prindof,prindof
+628,prindof,prindof
+629,pro gio,menoril
+630,progest,naprox
+631,prompton,histacin
+632,pronex,pronex
+633,propenta,clacef
+634,prosesf,esprazo
+635,protein,5% dns
+636,protein,fexo
+637,purifen,purifen
+638,quridew,calboral d
+639,raditil,prestel
+640,raditil,raditil
+641,ratinol forte,omeprazole
+642,ratnol,ratinol
+643,rausiflex plus,syp asyntamax
+644,reelifr,calboral d
+645,reelifr,cildip
+646,resitfex plus,calboral dx
+647,reto,omep
+648,revert,protein
+649,revital,revarol
+650,revocit,revocit
+651,rex,normal
+652,rexlife,relenfn
+653,ribosore,clavusef
+654,rivotril,othera
+655,rivotril,cap. foldin
+656,rivyox,devixil
+657,rofip,prindof
+658,rohie,folzin
+659,rohuf,seclo
+660,rolac,tuspel
+661,rolac,clavutil
+662,rolac,rolac
+663,rolac,rolac
+664,rolac,ceevit
+665,rolac,capsule
+666,rolac,syrup
+667,rolac,texit
+668,rostil,mixit
+669,rosu,seko
+670,rosu,rosu
+671,rosu 10,voltalin
+672,rosuva 5,bizoran
+673,rosv,syrup
+674,ruchigold,maxpro
+675,rupin,voltalin
+676,seclo,flux
+677,seclo,diet
+678,seclo,sefr
+679,secrin,xyril
+680,seko,seko
+681,seko,seclo
+682,sergel,alfix
+683,sindala,bexitrol
+684,solupred,specbac
+685,solupred,mixit
+686,solupred,solupred
+687,solupred,voltalin
+688,spilac,bilaxe
+689,spilac,spilac
+690,spilac f,tryptin
+691,supp,fexo
+692,supp,pase
+693,supp,diet
+694,syp,diet
+695,syp,crp
+696,syp xyril,roxtal xp
+697,syrup,nexe
+698,syrup,cotrim
+699,syrup,syrup
+700,syrup,pg
+701,syrup,capsule
+702,syrup,capsule
+703,syrup,syrup
+704,tab,tablet
+705,tab,tablet
+706,tab,inj
+707,tab,tablet
+708,tab cordca,tab. cifotil
+709,tab. arislovit-b,tab. normens
+710,tab. calboral,calboral d
+711,tab. calcor-d,calboral d
+712,tab. galoa,neuroxen
+713,tab. neuro.b,uric acid
+714,tab. normen,ceftriaxone
+715,tab. ouocm-d,tab. penouly
+716,tablet,tablet
+717,tablet,tablet
+718,tablet,capsule
+719,tablet,tablet
+720,tablet,tablet
+721,tablet,inj
+722,tablet,tablet
+723,tablet,tablet
+724,tablet,tablet
+725,tablet,tablet
+726,tablet,tablet
+727,tablet,tablet
+728,tablet,tablet
+729,tablet,tablet
+730,tablet,tablet
+731,tablet,tablet
+732,tablet,tablet
+733,tb. calboral-d,tab. beklo
+734,tb. n- max,dia-k
+735,telcard,diabetic
+736,telmiva,telmivas
+737,terbi max,texfro max
+738,terbikill,flamfix
+739,termitan,limtab
+740,tevox 500,itokine 50
+741,texit,texit
+742,texit,texit
+743,texit,texit
+744,texit,texit
+745,texit,texit
+746,thyrox,thyrox
+747,thyrox,thyrox
+748,todol,esotid
+749,tofen,texit
+750,tomdolin,maxrin
+751,toradolin,voltalin
+752,toramex,toramax
+753,toramex 10,arth a max
+754,torax,n-max
+755,torax,pripmmf
+756,torax,??r??
+757,torax,cefotil
+758,torax,torax
+759,torax,oricef
+760,torax,exium
+761,torix,torax
+762,tosou 50,coragen-d
+763,traxy 500,palpitation
+764,traxyl,traxyl
+765,trd coutine,trd coutine
+766,trd couture,omeprazole
+767,trevox,coral rd
+768,trevox,etorac
+769,triptin,napa
+770,troxyf,dexter
+771,tryptin,tryptin
+772,ulfix,xyflo
+773,unatin,unatin
+774,unbery,calboral d
+775,valix cr,valic cr
+776,vancomycin,ceftriaxone
+777,vasco,omep
+778,vasco,torax
+779,velcal,halcorl
+780,vergon,bizoran
+781,verqon,rosuva
+782,vifas,biscor
+783,vigfimef,movafllfj
+784,vildamef,indever f
+785,vildamef,reelife
+786,viodin,xinc b
+787,viscxywgxne,nexe mups
+788,viset,fexo
+789,voltalin,nexe mups
+790,voltalin,voltalin
+791,voltalin,voltalin
+792,voltalin,xinc b
+793,voltalin,solupred
+794,voltalin,voltalin
+795,voltalin,flugat
+796,voltalin,clavutil
+797,voltalin,uric acid
+798,voltalin,voltalin
+799,voltalin,voltalin
+800,vonocab,nervoprx
+801,vonocab,calcor-d
+802,vonocab,vonocab
+803,vonocab,vonorab
+804,vonocab,mixit
+805,vonocab,napa
+806,voxbone,coragen-d
+807,xanna,neuro-b
+808,x-dol,nexe
+809,xinc,xinc b
+810,xinc,xinc
+811,xinc,xinc
+812,xinc b,ayim
+813,xinc b,xinc b
+814,xinc b,geston
+815,xinc b,doxiva
+816,xyflo,lasix
+817,xyflo,xyflo
+818,xyril,xyril
+819,xyril,xyril
+820,yonocab,napxon
+821,zenup,algin
+822,zesup,nexe
+823,zesup,calboral
+824,zesup,geoton
+825,zif-ci,a-flux
+826,zimax,flamex
+827,zimax,metro
+828,zimax,biscor
+829,zithrox,etorix
+830,zo.mups 20,brezofil 200
+831,zo.mups 20,omeprazole
+832,zolfin,efedio
+833,zollium,eslilex
+834,zollium 0.5,tab. ceevix
+835,?icrogent,calboral
+836,??r??,texit
+837,aceta,aceta
+838,aceta,diflu
+839,aceta,aceta
+840,aceta,conaz
+841,aceta,aceta
+842,aceta,aceta
+843,aceta,metro
+844,aceta,aceta
+845,aceta,aceta
+846,aceta,aceta
+847,ace,ace
+848,ace,aceta
+849,ace,ace
+850,ace,ace
+851,ace,ace
+852,ace,ace
+853,ace,candinil
+854,ace,ace
+855,ace,ace
+856,ace,ace
+857,alatrol,alatrol
+858,alatrol,atrizin
+859,alatrol,alatrol
+860,alatrol,alatrol
+861,alatrol,rhinil
+862,alatrol,alatrol
+863,alatrol,beklo
+864,alatrol,beklo
+865,alatrol,alatrol
+866,alatrol,alatrol
+867,amodis,omastin
+868,amodis,montene
+869,amodis,dinafex
+870,amodis,omastin
+871,amodis,amodis
+872,amodis,amodis
+873,amodis,amodis
+874,amodis,amodis
+875,amodis,amodis
+876,amodis,amodis
+877,atrizin,leptic
+878,atrizin,bacmax
+879,atrizin,atrizin
+880,atrizin,alatrol
+881,atrizin,atrizin
+882,atrizin,omastin
+883,atrizin,omastin
+884,atrizin,candinil
+885,atrizin,atrizin
+886,atrizin,atrizin
+887,axodin,axodin
+888,axodin,axodin
+889,axodin,axodin
+890,axodin,napa
+891,axodin,opton
+892,axodin,axodin
+893,axodin,axodin
+894,axodin,axodin
+895,axodin,amodis
+896,axodin,axodin
+897,azithrocin,azithrocin
+898,azithrocin,azithrocin
+899,azithrocin,baclofen
+900,azithrocin,azithrocin
+901,azithrocin,azithrocin
+902,azithrocin,azithrocin
+903,azithrocin,azithrocin
+904,azithrocin,azithrocin
+905,azithrocin,azithrocin
+906,azithrocin,azithrocin
+907,azyth,rozith
+908,azyth,azyth
+909,azyth,bacaid
+910,azyth,azyth
+911,azyth,azyth
+912,azyth,azyth
+913,azyth,azyth
+914,azyth,azyth
+915,azyth,azyth
+916,azyth,azyth
+917,az,az
+918,az,az
+919,az,az
+920,az,az
+921,az,az
+922,az,az
+923,az,az
+924,az,az
+925,az,az
+926,az,az
+927,bacaid,bacaid
+928,bacaid,bacaid
+929,bacaid,bacaid
+930,bacaid,bacaid
+931,bacaid,bacaid
+932,bacaid,bacaid
+933,bacaid,bacaid
+934,bacaid,bacaid
+935,bacaid,bacaid
+936,bacaid,bacaid
+937,backtone,fexofast
+938,backtone,backtone
+939,backtone,ketoral
+940,backtone,baclofen
+941,backtone,lumona
+942,backtone,baclofen
+943,backtone,backtone
+944,backtone,backtone
+945,backtone,backtone
+946,backtone,backtone
+947,baclofen,baclofen
+948,baclofen,baclon
+949,baclofen,baclon
+950,baclofen,baclon
+951,baclofen,baclofen
+952,baclofen,baclofen
+953,baclofen,baclofen
+954,baclofen,baclofen
+955,baclofen,baclofen
+956,baclofen,baclofen
+957,baclon,baclon
+958,baclon,montex
+959,baclon,baclon
+960,baclon,baclon
+961,baclon,baclon
+962,baclon,baclon
+963,baclon,baclon
+964,baclon,baclon
+965,baclon,baclon
+966,baclon,baclon
+967,bacmax,montair
+968,bacmax,bacmax
+969,bacmax,bacmax
+970,bacmax,bacmax
+971,bacmax,bacmax
+972,bacmax,bacmax
+973,bacmax,bacmax
+974,bacmax,bacmax
+975,bacmax,bacmax
+976,bacmax,bacmax
+977,beklo,beklo
+978,beklo,montene
+979,beklo,beklo
+980,beklo,candinil
+981,beklo,beklo
+982,beklo,candinil
+983,beklo,beklo
+984,beklo,beklo
+985,beklo,beklo
+986,beklo,beklo
+987,bicozin,bicozin
+988,bicozin,romycin
+989,bicozin,bicozin
+990,bicozin,bicozin
+991,bicozin,romycin
+992,bicozin,romycin
+993,bicozin,exium
+994,bicozin,bicozin
+995,bicozin,baclon
+996,bicozin,bicozin
+997,canazole,canazole
+998,canazole,canazole
+999,canazole,canazole
+1000,canazole,canazole
+1001,canazole,canazole
+1002,canazole,canazole
+1003,canazole,canazole
+1004,canazole,omastin
+1005,canazole,canazole
+1006,canazole,canazole
+1007,candinil,candinil
+1008,candinil,denixil
+1009,candinil,ketoral
+1010,candinil,candinil
+1011,candinil,candinil
+1012,candinil,candinil
+1013,candinil,candinil
+1014,candinil,candinil
+1015,candinil,candinil
+1016,candinil,fexofast
+1017,cetisoft,cetisoft
+1018,cetisoft,cetisoft
+1019,cetisoft,filmet
+1020,cetisoft,cetisoft
+1021,cetisoft,flexibac
+1022,cetisoft,cetisoft
+1023,cetisoft,cetisoft
+1024,cetisoft,cetisoft
+1025,cetisoft,cetisoft
+1026,cetisoft,flexibac
+1027,conaz,conaz
+1028,conaz,conaz
+1029,conaz,conaz
+1030,conaz,conaz
+1031,conaz,conaz
+1032,conaz,conaz
+1033,conaz,conaz
+1034,conaz,conaz
+1035,conaz,nexcap
+1036,conaz,conaz
+1037,dancel,alatrol
+1038,dancel,axodin
+1039,dancel,dancel
+1040,dancel,dancel
+1041,dancel,dancel
+1042,dancel,bacmax
+1043,dancel,dancel
+1044,dancel,sergel
+1045,dancel,dancel
+1046,dancel,dancel
+1047,denixil,denixil
+1048,denixil,provair
+1049,denixil,denixil
+1050,denixil,denixil
+1051,denixil,denixil
+1052,denixil,bacaid
+1053,denixil,denixil
+1054,denixil,denixil
+1055,denixil,denixil
+1056,denixil,denixil
+1057,diflu,diflu
+1058,diflu,diflu
+1059,diflu,diflu
+1060,diflu,diflu
+1061,diflu,diflu
+1062,diflu,diflu
+1063,diflu,diflu
+1064,diflu,diflu
+1065,diflu,diflu
+1066,diflu,diflu
+1067,dinafex,dinafex
+1068,dinafex,nexum
+1069,dinafex,dinafex
+1070,dinafex,dinafex
+1071,dinafex,dinafex
+1072,dinafex,dinafex
+1073,dinafex,dinafex
+1074,dinafex,dinafex
+1075,dinafex,dinafex
+1076,dinafex,dinafex
+1077,disopan,disopan
+1078,disopan,disopan
+1079,disopan,disopan
+1080,disopan,disopan
+1081,disopan,disopan
+1082,disopan,metro
+1083,disopan,disopan
+1084,disopan,metro
+1085,disopan,maxima
+1086,disopan,metro
+1087,esonix,esonix
+1088,esonix,napa
+1089,esonix,esonix
+1090,esonix,esonix
+1091,esonix,esonix
+1092,esonix,esonix
+1093,esonix,esonix
+1094,esonix,esonix
+1095,esonix,renova
+1096,esonix,esonix
+1097,esoral,fenadin
+1098,esoral,exium
+1099,esoral,esoral
+1100,esoral,esoral
+1101,esoral,esoral
+1102,esoral,esoral
+1103,esoral,esoral
+1104,esoral,esoral
+1105,esoral,esoral
+1106,esoral,esoral
+1107,etizin,bicozin
+1108,etizin,aceta
+1109,etizin,etizin
+1110,etizin,etizin
+1111,etizin,etizin
+1112,etizin,ritch
+1113,etizin,etizin
+1114,etizin,etizin
+1115,etizin,etizin
+1116,etizin,etizin
+1117,exium,renova
+1118,exium,provair
+1119,exium,renova
+1120,exium,esonix
+1121,exium,fenadin
+1122,exium,esonix
+1123,exium,exium
+1124,exium,esonix
+1125,exium,renova
+1126,exium,exium
+1127,fenadin,nexum
+1128,fenadin,canazole
+1129,fenadin,fexofast
+1130,fenadin,fenadin
+1131,fenadin,fenadin
+1132,fenadin,bacmax
+1133,fenadin,fenadin
+1134,fenadin,fenadin
+1135,fenadin,fenadin
+1136,fenadin,candinil
+1137,fexofast,disopan
+1138,fexofast,disopan
+1139,fexofast,fenadin
+1140,fexofast,fexofast
+1141,fexofast,m-kast
+1142,fexofast,fexofast
+1143,fexofast,provair
+1144,fexofast,provair
+1145,fexofast,fexofast
+1146,fexofast,fexofast
+1147,fexo,vifas
+1148,fexo,ace
+1149,fexo,aceta
+1150,fexo,fexo
+1151,fexo,vifas
+1152,fexo,fexo
+1153,fexo,fexo
+1154,fexo,ace
+1155,fexo,fexo
+1156,fexo,fexo
+1157,filmet,filmet
+1158,filmet,filmet
+1159,filmet,axodin
+1160,filmet,exium
+1161,filmet,filmet
+1162,filmet,filmet
+1163,filmet,rozith
+1164,filmet,axodin
+1165,filmet,filmet
+1166,filmet,rozith
+1167,fixal,fixal
+1168,fixal,fexo
+1169,fixal,fixal
+1170,fixal,fixal
+1171,fixal,fixal
+1172,fixal,fixal
+1173,fixal,fixal
+1174,fixal,fixal
+1175,fixal,fixal
+1176,fixal,fixal
+1177,flamyd,flamyd
+1178,flamyd,ketozol
+1179,flamyd,flamyd
+1180,flamyd,ketocon
+1181,flamyd,flamyd
+1182,flamyd,bacaid
+1183,flamyd,flamyd
+1184,flamyd,bacaid
+1185,flamyd,flamyd
+1186,flamyd,flamyd
+1187,flexibac,filmet
+1188,flexibac,filmet
+1189,flexibac,ketocon
+1190,flexibac,ketocon
+1191,flexibac,flexibac
+1192,flexibac,flexibac
+1193,flexibac,flexibac
+1194,flexibac,bacaid
+1195,flexibac,ketocon
+1196,flexibac,baclofen
+1197,flexilax,flexilax
+1198,flexilax,ketocon
+1199,flexilax,flexilax
+1200,flexilax,flexilax
+1201,flexilax,flexilax
+1202,flexilax,flexilax
+1203,flexilax,ketoral
+1204,flexilax,flexilax
+1205,flexilax,ketoral
+1206,flexilax,flexilax
+1207,flugal,flugal
+1208,flugal,axodin
+1209,flugal,flugal
+1210,flugal,fexofast
+1211,flugal,sergel
+1212,flugal,flugal
+1213,flugal,esoral
+1214,flugal,flugal
+1215,flugal,flugal
+1216,flugal,flugal
+1217,ketocon,bacaid
+1218,ketocon,fenadin
+1219,ketocon,flexibac
+1220,ketocon,bicozin
+1221,ketocon,ketocon
+1222,ketocon,metsina
+1223,ketocon,montex
+1224,ketocon,ketocon
+1225,ketocon,ketocon
+1226,ketocon,ketocon
+1227,ketoral,ketoral
+1228,ketoral,ketoral
+1229,ketoral,ketoral
+1230,ketoral,ketoral
+1231,ketoral,ketoral
+1232,ketoral,ketoral
+1233,ketoral,ketoral
+1234,ketoral,ketoral
+1235,ketoral,ketoral
+1236,ketoral,ketoral
+1237,ketotab,ketotab
+1238,ketotab,ketotab
+1239,ketotab,ketotab
+1240,ketotab,axodin
+1241,ketotab,ketotab
+1242,ketotab,ketotab
+1243,ketotab,ketotab
+1244,ketotab,ketotab
+1245,ketotab,ketotab
+1246,ketotab,ketotab
+1247,ketozol,ketozol
+1248,ketozol,ketozol
+1249,ketozol,fexofast
+1250,ketozol,ketozol
+1251,ketozol,ketozol
+1252,ketozol,ketozol
+1253,ketozol,m-kast
+1254,ketozol,ace
+1255,ketozol,ketozol
+1256,ketozol,ketozol
+1257,leptic,leptic
+1258,leptic,tridosil
+1259,leptic,maxima
+1260,leptic,opton
+1261,leptic,aceta
+1262,leptic,leptic
+1263,leptic,opton
+1264,leptic,tamen
+1265,leptic,leptic
+1266,leptic,leptic
+1267,lucan-r,fexofast
+1268,lucan-r,lucan-r
+1269,lucan-r,canazole
+1270,lucan-r,lucan-r
+1271,lucan-r,backtone
+1272,lucan-r,lucan-r
+1273,lucan-r,lucan-r
+1274,lucan-r,baclofen
+1275,lucan-r,tamen
+1276,lucan-r,lucan-r
+1277,lumona,lumona
+1278,lumona,lumona
+1279,lumona,lumona
+1280,lumona,lumona
+1281,lumona,lumona
+1282,lumona,lumona
+1283,lumona,lumona
+1284,lumona,lumona
+1285,lumona,lumona
+1286,lumona,lumona
+1287,m-kast,m-kast
+1288,m-kast,montair
+1289,m-kast,nidazyl
+1290,m-kast,m-kast
+1291,m-kast,m-kast
+1292,m-kast,m-kast
+1293,m-kast,m-kast
+1294,m-kast,m-kast
+1295,m-kast,m-kast
+1296,m-kast,m-kast
+1297,maxima,maxima
+1298,maxima,axodin
+1299,maxima,maxima
+1300,maxima,maxima
+1301,maxima,maxima
+1302,maxima,maxima
+1303,maxima,maxima
+1304,maxima,azithrocin
+1305,maxima,maxima
+1306,maxima,maxima
+1307,maxpro,ketotab
+1308,maxpro,bacmax
+1309,maxpro,ketotab
+1310,maxpro,napa extend
+1311,maxpro,ketotab
+1312,maxpro,maxpro
+1313,maxpro,maxpro
+1314,maxpro,dinafex
+1315,maxpro,ketocon
+1316,maxpro,nidazyl
+1317,metro,metro
+1318,metro,alatrol
+1319,metro,metro
+1320,metro,metro
+1321,metro,metro
+1322,metro,metro
+1323,metro,metro
+1324,metro,metro
+1325,metro,metro
+1326,metro,metro
+1327,metsina,provair
+1328,metsina,bacmax
+1329,metsina,flexilax
+1330,metsina,flexibac
+1331,metsina,metsina
+1332,metsina,provair
+1333,metsina,maxima
+1334,metsina,metsina
+1335,metsina,lumona
+1336,metsina,metsina
+1337,monas,monas
+1338,monas,monas
+1339,monas,monas
+1340,monas,alatrol
+1341,monas,monas
+1342,monas,monas
+1343,monas,monas
+1344,monas,monas
+1345,monas,renova
+1346,monas,lumona
+1347,montair,tamen
+1348,montair,azithrocin
+1349,montair,nizoder
+1350,montair,nizoder
+1351,montair,nizoder
+1352,montair,montex
+1353,montair,metro
+1354,montair,montex
+1355,montair,montex
+1356,montair,azyth
+1357,montene,montene
+1358,montene,provair
+1359,montene,montene
+1360,montene,montene
+1361,montene,provair
+1362,montene,montene
+1363,montene,montene
+1364,montene,montair
+1365,montene,provair
+1366,montene,ketocon
+1367,montex,montex
+1368,montex,canazole
+1369,montex,montex
+1370,montex,montex
+1371,montex,monas
+1372,montex,montex
+1373,montex,amodis
+1374,montex,montex
+1375,montex,montex
+1376,montex,montex
+1377,napa extend,napa extend
+1378,napa extend,flexilax
+1379,napa extend,napa extend
+1380,napa extend,napa extend
+1381,napa extend,napa extend
+1382,napa extend,napa extend
+1383,napa extend,rivotril
+1384,napa extend,napa extend
+1385,napa extend,napa extend
+1386,napa extend,napa extend
+1387,napa,napa
+1388,napa,diet
+1389,napa,azyth
+1390,napa,ketozol
+1391,napa,ketoral
+1392,napa,napa
+1393,napa,napa
+1394,napa,diflu
+1395,napa,diflu
+1396,napa,eyium
+1397,nexcap,nexcap
+1398,nexcap,lucan-r
+1399,nexcap,nexcap
+1400,nexcap,nexcap
+1401,nexcap,nexcap
+1402,nexcap,nexcap
+1403,nexcap,nexcap
+1404,nexcap,nexcap
+1405,nexcap,nexcap
+1406,nexcap,nexcap
+1407,nexum,dinafex
+1408,nexum,ketozol
+1409,nexum,trilock
+1410,nexum,disopan
+1411,nexum,lumona
+1412,nexum,dinafex
+1413,nexum,nexum
+1414,nexum,nexum
+1415,nexum,nexum
+1416,nexum,renova
+1417,nidazyl,nidazyl
+1418,nidazyl,maxima
+1419,nidazyl,metro
+1420,nidazyl,nidazyl
+1421,nidazyl,nidazyl
+1422,nidazyl,tamen
+1423,nidazyl,esonix
+1424,nidazyl,nidazyl
+1425,nidazyl,conaz
+1426,nidazyl,flexibac
+1427,nizoder,nizoder
+1428,nizoder,exium
+1429,nizoder,nizoder
+1430,nizoder,nizoder
+1431,nizoder,romycin
+1432,nizoder,nizoder
+1433,nizoder,nizoder
+1434,nizoder,nizoder
+1435,nizoder,nizoder
+1436,nizoder,nizoder
+1437,odmon,odmon
+1438,odmon,denixil
+1439,odmon,odmon
+1440,odmon,provair
+1441,odmon,odmon
+1442,odmon,flexilax
+1443,odmon,odmon
+1444,odmon,odmon
+1445,odmon,odmon
+1446,odmon,odmon
+1447,omastin,ace
+1448,omastin,axodin
+1449,omastin,omastin
+1450,omastin,canazole
+1451,omastin,omastin
+1452,omastin,bacaid
+1453,omastin,renova
+1454,omastin,alatrol
+1455,omastin,omastin
+1456,omastin,fenadin
+1457,opton,opton
+1458,opton,exium
+1459,opton,opton
+1460,opton,opton
+1461,opton,opton
+1462,opton,opton
+1463,opton,opton
+1464,opton,opton
+1465,opton,opton
+1466,opton,opton
+1467,progut,progut
+1468,progut,esoral
+1469,progut,baclon
+1470,progut,progut
+1471,progut,progut
+1472,progut,esoral
+1473,progut,progut
+1474,progut,progut
+1475,progut,rozith
+1476,progut,diflu
+1477,provair,provair
+1478,provair,baclofen
+1479,provair,provair
+1480,provair,provair
+1481,provair,provair
+1482,provair,provair
+1483,provair,provair
+1484,provair,provair
+1485,provair,provair
+1486,provair,provair
+1487,renova,eyium
+1488,renova,disopan
+1489,renova,renova
+1490,renova,fenadin
+1491,renova,renova
+1492,renova,omastin
+1493,renova,fenadin
+1494,renova,candinil
+1495,renova,monas
+1496,renova,renova
+1497,rhinil,rhinil
+1498,rhinil,flugal
+1499,rhinil,denixil
+1500,rhinil,rhinil
+1501,rhinil,ritch
+1502,rhinil,denixil
+1503,rhinil,rhinil
+1504,rhinil,ritch
+1505,rhinil,rhinil
+1506,rhinil,rhinil
+1507,ritch,ritch
+1508,ritch,nizoder
+1509,ritch,ritch
+1510,ritch,ritch
+1511,ritch,etizin
+1512,ritch,ritch
+1513,ritch,rhinil
+1514,ritch,alatrol
+1515,ritch,ritch
+1516,ritch,ritch
+1517,rivotril,tridosil
+1518,rivotril,alatrol
+1519,rivotril,montene
+1520,rivotril,rivotril
+1521,rivotril,rivotril
+1522,rivotril,rivotril
+1523,rivotril,napa
+1524,rivotril,candinil
+1525,rivotril,candinil
+1526,rivotril,candinil
+1527,romycin,romycin
+1528,romycin,romycin
+1529,romycin,omastin
+1530,romycin,maxima
+1531,romycin,nizoder
+1532,romycin,maxima
+1533,romycin,provair
+1534,romycin,romycin
+1535,romycin,provair
+1536,romycin,bacmax
+1537,rozith,azyth
+1538,rozith,rozith
+1539,rozith,rozith
+1540,rozith,axodin
+1541,rozith,flamyd
+1542,rozith,axodin
+1543,rozith,filmet
+1544,rozith,ketozol
+1545,rozith,axodin
+1546,rozith,axodin
+1547,sergel,sergel
+1548,sergel,napa extend
+1549,sergel,sergel
+1550,sergel,dancel
+1551,sergel,sergel
+1552,sergel,canazole
+1553,sergel,alatrol
+1554,sergel,sergel
+1555,sergel,candinil
+1556,sergel,beklo
+1557,tamen,dinafex
+1558,tamen,tamen
+1559,tamen,tamen
+1560,tamen,montex
+1561,tamen,tamen
+1562,tamen,tamen
+1563,tamen,tamen
+1564,tamen,dinafex
+1565,tamen,tamen
+1566,tamen,montex
+1567,telfast,azyth
+1568,telfast,tamen
+1569,telfast,dancel
+1570,telfast,dancel
+1571,telfast,trilock
+1572,telfast,telfast
+1573,telfast,leptic
+1574,telfast,trilock
+1575,telfast,nidazyl
+1576,telfast,trilock
+1577,tridosil,tridosil
+1578,tridosil,napa extend
+1579,tridosil,bacaid
+1580,tridosil,nidazyl
+1581,tridosil,tridosil
+1582,tridosil,tridosil
+1583,tridosil,tamen
+1584,tridosil,tridosil
+1585,tridosil,tridosil
+1586,tridosil,tridosil
+1587,trilock,fenadin
+1588,trilock,exium
+1589,trilock,trilock
+1590,trilock,trilock
+1591,trilock,trilock
+1592,trilock,trilock
+1593,trilock,trilock
+1594,trilock,trilock
+1595,trilock,trilock
+1596,trilock,trilock
+1597,vifas,vifas
+1598,vifas,progut
+1599,vifas,vifas
+1600,vifas,vifas
+1601,vifas,flexilax
+1602,vifas,vifas
+1603,vifas,vifas
+1604,vifas,vifas
+1605,vifas,vifas
+1606,vifas,vifas
+1607,zithrin,zithrin
+1608,zithrin,zithrin
+1609,zithrin,zithrin
+1610,zithrin,zithrin
+1611,zithrin,zithrin
+1612,zithrin,zithrin
+1613,zithrin,zithrin
+1614,zithrin,zithrin
+1615,zithrin,zithrin
+1616,zithrin,metro
